@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bblbru1tnnowq"]
 
-[ext_resource type="PackedScene" uid="uid://bm1313mo6brii" path="res://scenes/player.tscn" id="1_ihgjj"]
+[ext_resource type="Script" uid="uid://dt6n7hd71622c" path="res://scripts/Network/network_manager.gd" id="2_iw2lj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n72g3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +41,8 @@ mesh = SubResource("PlaneMesh_n72g3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=2015787741]
 shape = SubResource("ConcavePolygonShape3D_ihgjj")
 
-[node name="Player" parent="." unique_id=459859261 instance=ExtResource("1_ihgjj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2847722, 0)
-linear_damp = 3.0
+[node name="NetworkManager" type="Node" parent="." unique_id=2082734249]
+script = ExtResource("2_iw2lj")
+
+[node name="Players" type="Node3D" parent="." unique_id=1937416617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05375, 0)

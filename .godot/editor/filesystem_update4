@@ -1,2 +1,5 @@
 res://scenes/koray_level.tscn
+res://scripts/Network/network_manager.gd
 res://scripts/Player/player.gd
+res://scenes/player.tscn
+res://scripts/Network/multiplayer_synchronizer.gd

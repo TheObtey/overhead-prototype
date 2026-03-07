@@ -1,3 +1,11 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1772906829
+::res://::1772912228
 icon.svg::CompressedTexture2D::4565472444752351004::1772905679::1772905690::1::::<><><>0<>0<>20fbf845b4c3caea7cc1dad114e59ea6<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://scenes/::1772912169
+koray_level.tscn::PackedScene::2479409849628031692::1772912169::0::1::::<><><>0<>0<><>::uid://dt6n7hd71622c::::res://scripts/Network/network_manager.gd
+player.tscn::PackedScene::3284108625263070740::1772912030::0::1::::<><><>0<>0<><>::uid://dxcd4rx4u67ab::::res://scripts/Player/player.gd
+::res://scripts/::1772910223
+::res://scripts/Network/::1772912008
+network_manager.gd::GDScript::8557692630676485340::1772912008::0::1::::<>Node<><>0<>0<><>::
+::res://scripts/Player/::1772909141
+player.gd::GDScript::8777969079036772377::1772909141::0::1::::<>RigidBody3D<><>0<>0<><>::
