@@ -1,6 +1,7 @@
-MultiplayerSynchronizer
-Node
-Node3D
+CollisionShape3D
 MeshInstance3D
 RigidBody3D
 Camera3D
+MultiplayerSynchronizer
+Node
+Node3D
