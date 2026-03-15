@@ -79,13 +79,13 @@ transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0,
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D2/Head" unique_id=676789886]
 
 [node name="Bloc1" type="CSGBox3D" parent="." unique_id=202940498]
-transform = Transform3D(4.2181277, 0, 0, 0, 4.2538705, 0, 0, 0, 4.3062706, -6, 2, 0)
+transform = Transform3D(4.2181277, 0, 0, 0, 4.2538705, 0, 0, 0, 4.3062706, -6, 0.81242657, 2.4367833)
 use_collision = true
-size = Vector3(1, 0.89746094, 1)
+size = Vector3(1, 0.33911133, 1)
 material = SubResource("StandardMaterial3D_6qvqw")
 
 [node name="Bloc2" type="CSGBox3D" parent="." unique_id=659020118]
-transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 4, -6, 0.7, 7.582)
+transform = Transform3D(4, 0, 0, 0, 1.0563462, 0, 0, 0, 4, -6, 0.47392863, 7.582)
 use_collision = true
 size = Vector3(1, 0.89746094, 1)
 material = SubResource("StandardMaterial3D_tvkhb")
