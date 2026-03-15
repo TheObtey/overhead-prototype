@@ -1,8 +1,15 @@
 extends CharacterBody3D
 
+#Basics Const
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.005
+
+#Sine wave Const
+const FREQUENCY = 2.0
+const AMPLITUDE = 0.08
+
+var t_sineWave = 0.0
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -36,4 +43,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0.0
 		velocity.z = 0.0
 
+	t_sineWave += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _sineWave(t_sineWave)
+
 	move_and_slide()
+
+func _sineWave(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * FREQUENCY) * AMPLITUDE
+	pos.x = cos(time * FREQUENCY/2) * AMPLITUDE
+	return pos
