@@ -1,7 +1,9 @@
-CollisionShape3D
+Node3D
 MeshInstance3D
+CharacterBody3D
+CSGBox3D
+CollisionShape3D
 RigidBody3D
 Camera3D
 MultiplayerSynchronizer
 Node
-Node3D

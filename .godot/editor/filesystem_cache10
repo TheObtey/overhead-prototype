@@ -1,13 +1,13 @@
 63f7b34db8d8cdea90c76aacccf841ec
 ::res://::1773603106
 icon.svg::CompressedTexture2D::4565472444752351004::1772967187::1772967187::1::::<><><>0<>0<>20fbf845b4c3caea7cc1dad114e59ea6<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://scenes/::1773011239
-elouan_level.tscn::PackedScene::7097572283314064626::1773011239::0::1::::<><><>0<>0<><>::
+::res://scenes/::1773604856
+elouan_level.tscn::PackedScene::7097572283314064626::1773604896::0::1::::<><><>0<>0<><>::uid://c3qjsw36jh0qn::::res://scenes/MainCharacter.gd
 koray_level.tscn::PackedScene::2479409849628031692::1772967187::0::1::::<><><>0<>0<><>::uid://dt6n7hd71622c::::res://scripts/Network/network_manager.gd
-player.tscn::PackedScene::3284108625263070740::1772967187::0::1::::<><><>0<>0<><>::uid://dxcd4rx4u67ab::::res://scripts/Player/player.gd
 ::res://scripts/::1772967187
 ::res://scripts/Network/::1772967187
 network_manager.gd::GDScript::8557692630676485340::1772967187::0::1::::<>Node<><>0<>0<><>::
 ::res://scripts/Player/::1772969088
 ElouanPlayer.gd::GDScript::2867573186874650698::1772969088::0::1::::<>RigidBody3D<><>0<>0<><>::
 player.gd::GDScript::8777969079036772377::1772967187::0::1::::<>RigidBody3D<><>0<>0<><>::
+MainCharacter.gd::GDScript::6771738830730308153::1773604516::0::1::::<>CharacterBody3D<><>0<>0<><>::
