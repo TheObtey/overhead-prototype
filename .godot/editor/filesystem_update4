@@ -1,7 +1,1 @@
 res://scenes/nicolas_level.tscn
-res://interactions_components/interactable.tscn
-res://interactions_components/interactable.gd
-res://interactions_components/interacting_component.gd
-res://interactions_components/interacting_component.tscn
-res://interactions_components/cube.tscn
-res://interactions_components/cube.gd

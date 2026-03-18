@@ -65,9 +65,11 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 50, -25, 1, 0)
 use_collision = true
 
-[node name="CharacterBody3D2" type="CharacterBody3D" parent="." unique_id=886012857]
+[node name="CharacterBody3D2" type="CharacterBody3D" parent="." unique_id=886012857 node_paths=PackedStringArray("groundRay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2393385, 0)
 script = ExtResource("1_j12nr")
+dropBellowPlayer = true
+groundRay = NodePath("GroundRay")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D2" unique_id=1668691193]
 mesh = SubResource("CapsuleMesh_dnam6")
