@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://brsewk2l35jd0"]
+
+[ext_resource type="Script" uid="uid://h7mh176whvwt" path="res://interactions_components/interacting_component.gd" id="1_hvrr4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qgdif"]
+
+[sub_resource type="FontVariation" id="FontVariation_hvrr4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aduaf"]
+font = SubResource("FontVariation_hvrr4")
+font_size = 36
+outline_size = 2
+outline_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+
+[node name="InteractingComponent" type="Node3D" unique_id=1815587096]
+script = ExtResource("1_hvrr4")
+
+[node name="InteractRange" type="Area3D" parent="." unique_id=1601458262]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractRange" unique_id=107516047]
+shape = SubResource("SphereShape3D_qgdif")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=875391767]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.5
+offset_top = -11.5
+offset_right = 70.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to Interact"
+label_settings = SubResource("LabelSettings_aduaf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
