@@ -33,8 +33,6 @@ const FOV_CHANGE = 1.5
 @onready var interactRay = $Head/Camera3D/InteractRay
 var heldObject: RigidBody3D
 
-
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -42,7 +40,7 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta: float) -> void:
 	handle_holding_object()

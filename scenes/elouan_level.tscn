@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8ed8jgpoeqgg"]
 
 [ext_resource type="PackedScene" uid="uid://bldyqgwggrwhb" path="res://scripts/Player/character_body_3d_2.tscn" id="1_0p4q2"]
+[ext_resource type="PackedScene" uid="uid://dpx3siu7oittm" path="res://scenes/FrameCode3D.tscn" id="1_6qvqw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_370ao"]
 sky_top_color = Color(0, 0.0020112668, 0.011213176, 1)
@@ -50,13 +51,6 @@ albedo_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cj86"]
 albedo_color = Color(0.6189305, 0.6108897, 0.12932357, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_sbdvp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmm75"]
-albedo_color = Color(0.9019046, 0.28720608, 0.28080258, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tk168"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aae2o"]
 albedo_color = Color(0.9794051, 0.979405, 0.979405, 1)
@@ -316,46 +310,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_3cj86")
 
 [node name="Code" type="Node3D" parent="Level1/Props" unique_id=1743009861]
 
-[node name="InputCode" type="MeshInstance3D" parent="Level1/Props/Code" unique_id=907939645]
-transform = Transform3D(3.1001532, 0, 0, 0, 3.0646274, 0, 0, 0, 0.35845447, 5.0329323, 6.3637705, -24.338312)
-mesh = SubResource("BoxMesh_sbdvp")
-surface_material_override/0 = SubResource("StandardMaterial3D_vmm75")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=853616667]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999996, -0.30144262, 0.29246616, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=988581477]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999994, 0.015901327, 0.29246616, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=1636257858]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.99999934, 0.30969465, 0.29246616, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=1503645930]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999995, -0.30144262, -0.036810637, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=1640476167]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.99999934, 0.015901327, -0.036810637, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=856975298]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999992, 0.30969465, -0.036810637, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=608013797]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999994, -0.30144262, -0.35105097, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=679849213]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.9999992, 0.015901327, -0.35105097, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="Level1/Props/Code/InputCode" unique_id=2113673203]
-transform = Transform3D(0.18024105, 0, 0, 0, 0.18470624, 0, 0, 0, 0.99999917, 0.30969465, -0.35105097, 0.12600708)
-mesh = SubResource("BoxMesh_tk168")
+[node name="FrameCode3d" parent="Level1/Props/Code" unique_id=1610239234 instance=ExtResource("1_6qvqw")]
+transform = Transform3D(2.6507273, 0, 0, 0, 2.6049564, 0, 0, 0, 1.0076799, 5.063531, 6.0209513, -24.332754)
 
 [node name="CodePart4" type="MeshInstance3D" parent="Level1/Props/Code" unique_id=1021257495]
 transform = Transform3D(1, 0, 0, 0, -3.079036e-08, -1, 0, 0.7044013, -4.371139e-08, -22.47463, 11.230605, 2.5788074)
