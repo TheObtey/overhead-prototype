@@ -5,8 +5,13 @@ const WALK_SPEED = 5.0
 const RUN_SPEED = 7.5
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.005
+const DEFAULT_GRAVITY_STRENGTH: float = 20.0
 
-var speed
+#Gravity shit
+var gravity_direction: Vector3 = Vector3.DOWN
+var gravity_strength: float = 20.0
+var current_gravity_field: Area3D = null
+var speed := WALK_SPEED
 
 #Sine wave Const
 const FREQUENCY = 2.0
@@ -35,6 +40,8 @@ var heldObject: RigidBody3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	up_direction = -gravity_direction
+	floor_stop_on_slope = true
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
@@ -45,39 +52,51 @@ func _unhandled_input(event: InputEvent):
 func _physics_process(delta: float) -> void:
 	handle_holding_object()
 	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	up_direction = -gravity_direction
+	
+	var gravity_velocity := gravity_direction * velocity.dot(gravity_direction)
+	var planar_velocity := velocity - gravity_velocity
 	
 	if Input.is_action_pressed("sprint"):
 		speed = RUN_SPEED
 	else:
 		speed = WALK_SPEED
-		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if is_on_floor():
-		if direction:
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		else:
-			velocity.x = 0.0
-			velocity.z = 0.0
-	else:
-		velocity.x = lerp(velocity.x, direction.x, delta * 7.0)
-		velocity.z = lerp(velocity.z, direction.z, delta * 7.0)
 	
-	t_sineWave += delta * velocity.length() * float(is_on_floor())
+	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	
+	var forward: Vector3 = -head.global_transform.basis.z
+	var right: Vector3 = head.global_transform.basis.x
+	
+	forward = forward.slide(gravity_direction).normalized()
+	right = right.slide(gravity_direction).normalized()
+	
+	var direction: Vector3 = (right * input_dir.x + forward * input_dir.y).normalized()
+	
+	if is_on_floor():
+		if direction != Vector3.ZERO:
+			planar_velocity = direction * speed
+		else:
+			planar_velocity = Vector3.ZERO
+	else:
+		if direction != Vector3.ZERO:
+			planar_velocity = planar_velocity.lerp(direction * speed, delta * 7.0)
+	
+	# Add the gravity.
+	if not is_on_floor():
+		gravity_velocity += gravity_direction * gravity_strength * delta
+	else:
+		if Input.is_action_just_pressed("ui_accept"):
+			gravity_velocity = -gravity_direction * JUMP_VELOCITY
+		else:
+			gravity_velocity = gravity_direction * 0.1
+	
+	velocity = planar_velocity + gravity_velocity
+	
+	t_sineWave += delta * planar_velocity.length() * float(is_on_floor())
 	camera.transform.origin = _sineWave(t_sineWave)
 	
 	#FOV
-	var velocity_clamped = clamp(velocity.length(), 0.5, RUN_SPEED * 1.5)
+	var velocity_clamped = clamp(planar_velocity.length(), 0.5, RUN_SPEED * 1.5)
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
@@ -120,4 +139,11 @@ func handle_holding_object():
 		
 		if dropBellowPlayer && groundRay.is_colliding():
 			if groundRay.get_collider() == heldObject: drop_held_object() 
-		
+
+func set_gravity_field(new_direction: Vector3, new_strength: float) -> void:
+	gravity_direction = new_direction.normalized()
+	gravity_strength = new_strength
+
+func clear_gravity_field(field: Area3D) -> void:
+	gravity_direction = Vector3.DOWN
+	gravity_strength = DEFAULT_GRAVITY_STRENGTH

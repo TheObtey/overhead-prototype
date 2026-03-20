@@ -1,9 +1,5 @@
-res://scenes/elouan_level.tscn
-res://scenes/FrameCode.tscn
-res://scenes/code_frame.gd
-res://scripts/code_frame.gd
-res://scenes/FrameCode3D.tscn
-res://interactions_components/cube.tscn
-res://scenes/frame_code_3d.gd
-res://scripts/frame_code_3d.gd
+res://fields/GravityField.tscn
+res://scripts/GravityField/gravity_field.gd
 res://scripts/Player/MainCharacter.gd
+res://scenes/elouan_level.tscn
+res://interactions_components/interacting_component.gd

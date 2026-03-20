@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bldyqgwggrwhb" path="res://scripts/Player/character_body_3d_2.tscn" id="1_0p4q2"]
 [ext_resource type="PackedScene" uid="uid://dpx3siu7oittm" path="res://scenes/FrameCode3D.tscn" id="1_6qvqw"]
+[ext_resource type="PackedScene" uid="uid://bxp2flp0xdgmo" path="res://fields/GravityField.tscn" id="2_tvkhb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_370ao"]
 sky_top_color = Color(0, 0.0020112668, 0.011213176, 1)
@@ -340,6 +341,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_r31f8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level1/Props" unique_id=705068705]
 transform = Transform3D(1.324619, 0, 0, 0, 5.2416997, 0, 0, 0, 1, 6.8626733, 27.41077, -8.543185)
 mesh = SubResource("SphereMesh_0p4q2")
+
+[node name="GravityField" parent="Level1" unique_id=481600865 instance=ExtResource("2_tvkhb")]
+transform = Transform3D(8.439308, 0, 0, 0, 16.345844, 0, 0, 0, 12.307036, 20.109423, 8.429934, -19.222988)
+field_gravity_direction = Vector3(0, 1, 0)
 
 [node name="CharacterBody3D2" parent="." unique_id=343458654 instance=ExtResource("1_0p4q2")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5.105285, 0)
