@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://c8ed8jgpoeqgg"]
 
 [ext_resource type="PackedScene" uid="uid://bldyqgwggrwhb" path="res://scripts/Player/character_body_3d_2.tscn" id="1_0p4q2"]
-[ext_resource type="PackedScene" uid="uid://dpx3siu7oittm" path="res://scenes/FrameCode3D.tscn" id="1_6qvqw"]
-[ext_resource type="PackedScene" uid="uid://e8mxc1g6hcuk" path="res://breakables/breakable_glass_box.tscn" id="2_a5y23"]
-[ext_resource type="PackedScene" uid="uid://bxp2flp0xdgmo" path="res://fields/GravityField.tscn" id="2_tvkhb"]
-[ext_resource type="PackedScene" uid="uid://el5gumv8gqvx" path="res://interactions_components/cube.tscn" id="4_3cj86"]
+[ext_resource type="PackedScene" uid="uid://dpx3siu7oittm" path="res://scripts/FrameCode/FrameCode3D.tscn" id="1_6qvqw"]
+[ext_resource type="PackedScene" uid="uid://c00ogmvjrkhkx" path="res://scripts/BroomAndStains/Stains.tscn" id="1_a5y23"]
+[ext_resource type="PackedScene" uid="uid://cmxhj8hysf6lm" path="res://scripts/BroomAndStains/Broom.tscn" id="2_tvkhb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_370ao"]
 sky_top_color = Color(0, 0.0020112668, 0.011213176, 1)
@@ -29,11 +28,6 @@ albedo_color = Color(0.39606687, 0.06700324, 0.10433871, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvkhb"]
 albedo_color = Color(0.55360055, 0.11989526, 0.7488199, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0p4q2"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5y23"]
-albedo_color = Color(0.34241718, 0.02056472, 0.0120856315, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0p4q2"]
 
@@ -86,8 +80,6 @@ albedo_color = Color(0, 0.8, 0.8, 0.7294118)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r31f8"]
 albedo_color = Color(0.9343285, 0.03641919, 0.5930715, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_0p4q2"]
 
 [node name="World" type="Node3D" unique_id=1297022994]
 
@@ -255,25 +247,14 @@ material = SubResource("StandardMaterial3D_tvkhb")
 
 [node name="Tâches" type="Node3D" parent="Level1/Props" unique_id=678171021]
 
-[node name="Tâche1" type="MeshInstance3D" parent="Level1/Props/Tâches" unique_id=1327438122]
-transform = Transform3D(0.23520231, 0, 0, 0, 2.9955304, -0.5948635, 0, 0.33838508, 5.2659883, -24.443676, 18.534037, -10.918879)
-mesh = SubResource("BoxMesh_0p4q2")
-surface_material_override/0 = SubResource("StandardMaterial3D_a5y23")
+[node name="Stain" parent="Level1/Props/Tâches" unique_id=1949980383 instance=ExtResource("1_a5y23")]
+transform = Transform3D(-0.09587852, -0.932111, 0, 3.375509, -0.026475837, 0, 0, 0, 3.50316, 24.349665, 22.67857, -19.11679)
 
-[node name="Tâche2" type="MeshInstance3D" parent="Level1/Props/Tâches" unique_id=543892395]
-transform = Transform3D(-1.0040299e-08, 0.972642, 5.0160627, 2.2117292e-09, 2.8533616, -1.7098544, -0.2352023, -1.4688435e-08, -2.3020401e-07, -13.732319, 6.635977, -24.35918)
-mesh = SubResource("BoxMesh_0p4q2")
-surface_material_override/0 = SubResource("StandardMaterial3D_a5y23")
+[node name="Stain2" parent="Level1/Props/Tâches" unique_id=333890794 instance=ExtResource("1_a5y23")]
+transform = Transform3D(3.3768706, 0, 0, 0, 0.9324871, 0, 0, 0, 3.50316, -9.4474125, 29.674995, -19.11679)
 
-[node name="Tâche3" type="MeshInstance3D" parent="Level1/Props/Tâches" unique_id=1634913092]
-transform = Transform3D(-6.7879165e-09, -1.9903406, -3.98021, 0.2352023, -1.3177154e-07, 0, -7.721628e-09, -2.264122, 3.4989164, 17.611347, 0.05937159, 5.908058)
-mesh = SubResource("BoxMesh_0p4q2")
-surface_material_override/0 = SubResource("StandardMaterial3D_a5y23")
-
-[node name="Tâche4" type="MeshInstance3D" parent="Level1/Props/Tâches" unique_id=374219740]
-transform = Transform3D(0.23520231, 0, 0, 0, 2.1997316, 3.6236289, 0, -2.0612829, 3.8670154, 24.492474, 23.553024, -19.883602)
-mesh = SubResource("BoxMesh_0p4q2")
-surface_material_override/0 = SubResource("StandardMaterial3D_a5y23")
+[node name="Stain3" parent="Level1/Props/Tâches" unique_id=1485194202 instance=ExtResource("1_a5y23")]
+transform = Transform3D(3.3768706, 0, 0, 0, 0.9324871, 0, 0, 0, 3.50316, -7.095661, 0.07514572, 16.542496)
 
 [node name="Sceaux" type="Node3D" parent="Level1/Props" unique_id=1775546550]
 
@@ -340,22 +321,8 @@ transform = Transform3D(2.3484643, 0, 0, 0, 1.7290273, -1.4245551, 0, 1.9005092,
 mesh = SubResource("PrismMesh_0p4q2")
 surface_material_override/0 = SubResource("StandardMaterial3D_r31f8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level1/Props" unique_id=705068705]
-transform = Transform3D(1.324619, 0, 0, 0, 5.2416997, 0, 0, 0, 1, 6.8626733, 27.41077, -8.543185)
-mesh = SubResource("SphereMesh_0p4q2")
-
-[node name="BreakableGlassBox" parent="Level1/Props" unique_id=1280996782 instance=ExtResource("2_a5y23")]
-transform = Transform3D(4.10977, 0, 0, 0, 4.10977, 0, 0, 0, 4.10977, 22.291348, 4.3547096, -1.6999898)
-break_impact_threshold = 0.005
-
-[node name="GravityField" parent="Level1" unique_id=481600865 instance=ExtResource("2_tvkhb")]
-transform = Transform3D(9.812913, 0, 0, 0, 32.437134, 0, 0, 0, 11.228619, 20.72794, 14.79611, -19.939442)
-
-[node name="GravityField2" parent="Level1" unique_id=579728395 instance=ExtResource("2_tvkhb")]
-transform = Transform3D(53.838356, 0, 0, 0, 15.201067, 0, 0, 0, 53.533875, 0.38383007, 22.773794, -0.38570023)
-
-[node name="cube" parent="Level1" unique_id=1055829007 instance=ExtResource("4_3cj86")]
-transform = Transform3D(4.653645, 0, 0, 0, 4.653645, 0, 0, 0, 4.653645, 18.230694, 2.3915558, 15.870922)
+[node name="Broom" parent="Level1/Props" unique_id=660175120 instance=ExtResource("2_tvkhb")]
+transform = Transform3D(1, 0, 0, 0, -0.9995578, -0.0297361, 0, 0.0297361, -0.9995578, 9.188049, 30.344103, -8.4479065)
 
 [node name="CharacterBody3D2" parent="." unique_id=343458654 instance=ExtResource("1_0p4q2")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5.105285, 0)

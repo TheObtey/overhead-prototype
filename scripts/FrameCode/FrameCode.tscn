@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwrtoluqhpesl"]
 
-[ext_resource type="Script" uid="uid://c1c10aoeqjloi" path="res://scripts/code_frame.gd" id="1_5orkk"]
+[ext_resource type="Script" uid="uid://c1c10aoeqjloi" path="res://scripts/FrameCode/code_frame.gd" id="1_5orkk"]
 [ext_resource type="Texture2D" uid="uid://lw46i1lrhhcl" path="res://Resources/CodeFrame.png" id="2_0k01j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5orkk"]
