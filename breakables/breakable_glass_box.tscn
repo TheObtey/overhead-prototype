@@ -11,14 +11,21 @@ roughness = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e4gkc"]
 
-[node name="BreakableGlassBox" type="RigidBody3D" unique_id=1280996782]
-contact_monitor = true
-max_contacts_reported = 10
+[sub_resource type="BoxShape3D" id="BoxShape3D_wu2y6"]
+
+[node name="BreakableGlassBox" type="Node3D" unique_id=212407084]
 script = ExtResource("1_e4gkc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1381273331]
 mesh = SubResource("BoxMesh_wu2y6")
 surface_material_override/0 = SubResource("StandardMaterial3D_7dt4p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=32459983]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2069104888]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=32459983]
 shape = SubResource("BoxShape3D_e4gkc")
+
+[node name="HitArea" type="Area3D" parent="." unique_id=1964554228]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitArea" unique_id=1398599312]
+shape = SubResource("BoxShape3D_wu2y6")

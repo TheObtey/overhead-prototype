@@ -345,8 +345,8 @@ transform = Transform3D(1.324619, 0, 0, 0, 5.2416997, 0, 0, 0, 1, 6.8626733, 27.
 mesh = SubResource("SphereMesh_0p4q2")
 
 [node name="BreakableGlassBox" parent="Level1/Props" unique_id=1280996782 instance=ExtResource("2_a5y23")]
-transform = Transform3D(4.10977, 0, 0, 0, 4.10977, 0, 0, 0, 4.10977, 22.291348, 17.566164, -1.6999898)
-freeze = true
+transform = Transform3D(4.10977, 0, 0, 0, 4.10977, 0, 0, 0, 4.10977, 22.291348, 4.3547096, -1.6999898)
+break_impact_threshold = 0.005
 
 [node name="GravityField" parent="Level1" unique_id=481600865 instance=ExtResource("2_tvkhb")]
 transform = Transform3D(9.812913, 0, 0, 0, 32.437134, 0, 0, 0, 11.228619, 20.72794, 14.79611, -19.939442)
@@ -355,7 +355,7 @@ transform = Transform3D(9.812913, 0, 0, 0, 32.437134, 0, 0, 0, 11.228619, 20.727
 transform = Transform3D(53.838356, 0, 0, 0, 15.201067, 0, 0, 0, 53.533875, 0.38383007, 22.773794, -0.38570023)
 
 [node name="cube" parent="Level1" unique_id=1055829007 instance=ExtResource("4_3cj86")]
-transform = Transform3D(4.653645, 0, 0, 0, 4.653645, 0, 0, 0, 4.653645, 10.087666, 2.6250548, 13.805792)
+transform = Transform3D(4.653645, 0, 0, 0, 4.653645, 0, 0, 0, 4.653645, 18.230694, 2.3915558, 15.870922)
 
 [node name="CharacterBody3D2" parent="." unique_id=343458654 instance=ExtResource("1_0p4q2")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5.105285, 0)

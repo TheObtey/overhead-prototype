@@ -1,8 +1,10 @@
 CollisionShape3D
+Node3D
+Area3D
+StaticBody3D
 MeshInstance3D
 RigidBody3D
 Marker3D
-Area3D
 CSGBox3D
 Sprite2D
 CollisionShape2D
@@ -10,5 +12,3 @@ Label
 GridContainer
 Control
 CanvasLayer
-Area2D
-RayCast3D
