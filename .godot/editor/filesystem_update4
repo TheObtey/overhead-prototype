@@ -3,3 +3,6 @@ res://scripts/GravityField/gravity_field.gd
 res://scripts/Player/MainCharacter.gd
 res://scenes/elouan_level.tscn
 res://interactions_components/interacting_component.gd
+res://scripts/Breakables/breakable_glass.gd
+res://breakables/breakable_glass_box.tscn
+res://scenes/nicolas_level.tscn

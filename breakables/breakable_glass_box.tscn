@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://e8mxc1g6hcuk"]
+
+[ext_resource type="Script" uid="uid://bycsg1dhngvej" path="res://scripts/Breakables/breakable_glass.gd" id="1_e4gkc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wu2y6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dt4p"]
+transparency = 1
+albedo_color = Color(0.61960787, 1, 1, 0.5882353)
+roughness = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e4gkc"]
+
+[node name="BreakableGlassBox" type="RigidBody3D" unique_id=1280996782]
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_e4gkc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1381273331]
+mesh = SubResource("BoxMesh_wu2y6")
+surface_material_override/0 = SubResource("StandardMaterial3D_7dt4p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=32459983]
+shape = SubResource("BoxShape3D_e4gkc")
