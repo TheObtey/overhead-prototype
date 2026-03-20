@@ -23,6 +23,7 @@ const FOV_CHANGE = 1.5
 
 
 @export_category("Holding Object")
+@export var Can_Holding_Object = false
 @export var throwForce = 7.5
 @export var followSpeed = 5.0
 @export var followDistance = 2.5
@@ -104,22 +105,26 @@ func throw_held_object():
 	drop_held_object()
 	obj.apply_central_impulse(-camera.global_transform.basis.z * throwForce *10)
 
+
+
 func handle_holding_object():
-	if Input.is_action_just_pressed("throw"):
-		if heldObject != null: throw_held_object()
+	if Can_Holding_Object:
 		
-	if Input.is_action_just_pressed("interact"):
-		if heldObject != null: drop_held_object()
-		elif interactRay.is_colliding(): set_held_object(interactRay.get_collider())
-		
-	if heldObject != null:
-		var targetPos =camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))
-		var objectPos = heldObject.global_transform.origin
-		heldObject.linear_velocity = ( targetPos - objectPos) * followSpeed
-		
-		if heldObject.global_position.distance_to(camera.global_position) > maxDistanceFromCamera:
-			drop_held_object()
-		
-		if dropBellowPlayer && groundRay.is_colliding():
-			if groundRay.get_collider() == heldObject: drop_held_object() 
-		
+		if Input.is_action_just_pressed("throw"):
+			if heldObject != null: throw_held_object()
+			
+		if Input.is_action_just_pressed("interact"):
+			if heldObject != null: drop_held_object()
+			elif interactRay.is_colliding(): set_held_object(interactRay.get_collider())
+			
+		if heldObject != null:
+			var targetPos =camera.global_transform.origin + (camera.global_basis * Vector3(0, 0, -followDistance))
+			var objectPos = heldObject.global_transform.origin
+			heldObject.linear_velocity = ( targetPos - objectPos) * followSpeed
+			
+			if heldObject.global_position.distance_to(camera.global_position) > maxDistanceFromCamera:
+				drop_held_object()
+			
+			if dropBellowPlayer && groundRay.is_colliding():
+				if groundRay.get_collider() == heldObject: drop_held_object() 
+			

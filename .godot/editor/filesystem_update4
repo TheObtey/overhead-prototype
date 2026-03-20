@@ -1,2 +1,1 @@
-res://scenes/elouan_level.tscn
-res://scenes/nicolas_level.tscn
+res://scripts/GravityGun/gravity_gun.gd
