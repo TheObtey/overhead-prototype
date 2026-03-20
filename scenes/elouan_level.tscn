@@ -343,8 +343,10 @@ transform = Transform3D(1.324619, 0, 0, 0, 5.2416997, 0, 0, 0, 1, 6.8626733, 27.
 mesh = SubResource("SphereMesh_0p4q2")
 
 [node name="GravityField" parent="Level1" unique_id=481600865 instance=ExtResource("2_tvkhb")]
-transform = Transform3D(8.439308, 0, 0, 0, 16.345844, 0, 0, 0, 12.307036, 20.109423, 8.429934, -19.222988)
-field_gravity_direction = Vector3(0, 1, 0)
+transform = Transform3D(9.812913, 0, 0, 0, 32.437134, 0, 0, 0, 11.228619, 20.72794, 14.79611, -19.939442)
+
+[node name="GravityField2" parent="Level1" unique_id=579728395 instance=ExtResource("2_tvkhb")]
+transform = Transform3D(53.838356, 0, 0, 0, 15.201067, 0, 0, 0, 53.533875, 0.38383007, 22.773794, -0.38570023)
 
 [node name="CharacterBody3D2" parent="." unique_id=343458654 instance=ExtResource("1_0p4q2")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 5.105285, 0)

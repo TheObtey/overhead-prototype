@@ -3,9 +3,10 @@ extends CharacterBody3D
 #Basics Const
 const WALK_SPEED = 5.0
 const RUN_SPEED = 7.5
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 20.0
 const MOUSE_SENSITIVITY = 0.005
 const DEFAULT_GRAVITY_STRENGTH: float = 20.0
+const GRAVITY_ALIGN_SPEED: float = 5.0
 
 #Gravity shit
 var gravity_direction: Vector3 = Vector3.DOWN
@@ -25,7 +26,6 @@ const FOV_CHANGE = 1.5
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-
 
 @export_category("Holding Object")
 @export var throwForce = 7.5
@@ -64,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	var forward: Vector3 = -head.global_transform.basis.z
+	var forward: Vector3 = head.global_transform.basis.z
 	var right: Vector3 = head.global_transform.basis.x
 	
 	forward = forward.slide(gravity_direction).normalized()
@@ -100,6 +100,7 @@ func _physics_process(delta: float) -> void:
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	_align_to_gravity(delta)
 	move_and_slide()
 
 func _sineWave(time) -> Vector3:
@@ -147,3 +148,25 @@ func set_gravity_field(new_direction: Vector3, new_strength: float) -> void:
 func clear_gravity_field(field: Area3D) -> void:
 	gravity_direction = Vector3.DOWN
 	gravity_strength = DEFAULT_GRAVITY_STRENGTH
+
+func _align_to_gravity(delta: float) -> void:
+	var target_up: Vector3 = -gravity_direction.normalized()
+	var current_up: Vector3 = global_transform.basis.y.normalized()
+
+	var dot_value: float = clamp(current_up.dot(target_up), -1.0, 1.0)
+
+	if dot_value > 0.9999:
+		return
+
+	var rotation_axis: Vector3 = current_up.cross(target_up)
+
+	if rotation_axis.length() < 0.001:
+		rotation_axis = global_transform.basis.x.normalized()
+
+	rotation_axis = rotation_axis.normalized()
+
+	var angle: float = acos(dot_value)
+	var step: float = min(angle, GRAVITY_ALIGN_SPEED * delta)
+
+	global_rotate(rotation_axis, step)
+	global_transform.basis = global_transform.basis.orthonormalized()
