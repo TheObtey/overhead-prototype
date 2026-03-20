@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dpx3siu7oittm"]
 
-[ext_resource type="Script" uid="uid://cniklnk0n5r1y" path="res://scripts/frame_code_3d.gd" id="1_04is8"]
+[ext_resource type="Script" uid="uid://cniklnk0n5r1y" path="res://scripts/FrameCode/frame_code_3d.gd" id="1_04is8"]
 [ext_resource type="PackedScene" uid="uid://dj3y40nvn0ern" path="res://interactions_components/interactable.tscn" id="2_4bqwy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4bqwy"]

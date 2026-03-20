@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cmxhj8hysf6lm"]
+
+[ext_resource type="PackedScene" uid="uid://dj3y40nvn0ern" path="res://interactions_components/interactable.tscn" id="1_crxyl"]
+[ext_resource type="Script" uid="uid://d32bnluyf8qat" path="res://scripts/BroomAndStains/broom.gd" id="1_sk67i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_crxyl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1haj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abkle"]
+albedo_color = Color(0.5917386, 0.24385023, 0.0083074635, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sk67i"]
+bottom_radius = 1.31
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rba8i"]
+albedo_color = Color(0.6996878, 0.42515698, 0.31164446, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sk67i"]
+
+[node name="Broom" type="RigidBody3D" unique_id=660175120]
+script = ExtResource("1_sk67i")
+
+[node name="Interactable" parent="." unique_id=397187995 instance=ExtResource("1_crxyl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable" unique_id=1642118262]
+transform = Transform3D(5.6086283, 0, 0, 0, 5.6086283, 0, 0, 0, 5.6086283, 0, 3.4773445, 0)
+shape = SubResource("SphereShape3D_crxyl")
+
+[node name="Manche" type="MeshInstance3D" parent="." unique_id=1843070635]
+transform = Transform3D(0.7407563, 0, 0, 0, 2.342483, 0, 0, 0, 0.7135714, 0, 3.8074975, 0)
+mesh = SubResource("CylinderMesh_1haj4")
+surface_material_override/0 = SubResource("StandardMaterial3D_abkle")
+
+[node name="Balai" type="MeshInstance3D" parent="Manche" unique_id=135895793]
+transform = Transform3D(1, 0, 0, 0, 0.16706777, 0, 0, 0, 1.0000001, 0, -1.1106485, 0)
+mesh = SubResource("CylinderMesh_sk67i")
+surface_material_override/0 = SubResource("StandardMaterial3D_rba8i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1901032720]
+transform = Transform3D(2.39338, 0, 0, 0, 2.39338, 0, 0, 0, 2.39338, 0, 3.4949472, 0)
+shape = SubResource("CylinderShape3D_sk67i")
