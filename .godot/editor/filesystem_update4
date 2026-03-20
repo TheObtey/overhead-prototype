@@ -1,1 +1,7 @@
+res://Items/gravity_gun.tscn
 res://scripts/GravityGun/gravity_gun.gd
+res://scripts/Player/MainCharacter.gd
+res://scripts/Player/character_body_3d_2.tscn
+res://interactions_components/cube.gd
+res://scenes/nicolas_level.tscn
+res://interactions_components/cube.tscn

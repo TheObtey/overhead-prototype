@@ -1,24 +1,43 @@
 [gd_scene format=3 uid="uid://btwa1c0qsbcmo"]
 
 [ext_resource type="Script" uid="uid://bs08g27830qm6" path="res://scripts/GravityGun/gravity_gun.gd" id="1_yxxxr"]
+[ext_resource type="PackedScene" uid="uid://dj3y40nvn0ern" path="res://interactions_components/interactable.tscn" id="2_el5is"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_el5is"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j58g"]
 albedo_color = Color(0.68168443, 0.27187073, 0, 1)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_el5is"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8j58g"]
+radius = 1.1736125
+
 [node name="GravityGun" type="Node3D" unique_id=967418193]
 script = ExtResource("1_yxxxr")
 
-[node name="MeshGun" type="MeshInstance3D" parent="." unique_id=2118734818]
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1867441233]
+
+[node name="MeshGun" type="MeshInstance3D" parent="RigidBody3D" unique_id=2118734818]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.19920778, 0)
 mesh = SubResource("BoxMesh_el5is")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j58g")
 
-[node name="InteractRay" type="RayCast3D" parent="MeshGun" unique_id=541633171]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+[node name="InteractRay" type="RayCast3D" parent="RigidBody3D/MeshGun" unique_id=541633171]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, -0.66085184)
 target_position = Vector3(0, 0, -5)
 
-[node name="GroundRay" type="RayCast3D" parent="." unique_id=529530329]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1907869207]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.19920778, 0)
+shape = SubResource("ConvexPolygonShape3D_el5is")
+
+[node name="Interactable" parent="RigidBody3D" unique_id=397187995 instance=ExtResource("2_el5is")]
+interact_name = "GravityGun"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Interactable" unique_id=479784939]
+shape = SubResource("SphereShape3D_8j58g")
+
+[node name="GroundRay" type="RayCast3D" parent="RigidBody3D" unique_id=529530329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 target_position = Vector3(0, -0.1, 0)

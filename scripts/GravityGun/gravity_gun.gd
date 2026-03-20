@@ -10,14 +10,36 @@ extends Node3D
 @export var dropBellowPlayer = false
 @export var groundRay: RayCast3D
 
-@onready var mesh_gun: MeshInstance3D = $MeshGun
-@onready var interactRay: RayCast3D = $MeshGun/InteractRay
+@onready var mesh_gun: MeshInstance3D = $RigidBody3D/MeshGun
+@onready var interactRay: RayCast3D = $RigidBody3D/MeshGun/InteractRay
 var heldObject: RigidBody3D
+
+
+
+@onready var interactable: Area3D = $RigidBody3D/Interactable
+@onready var collision_shape_3d: CollisionShape3D = $RigidBody3D/Interactable/CollisionShape3D
+
+func _ready() -> void:
+	interactable.interact = _on_interact
+	
+
+func _on_interact():
+	if interactable.is_interactable:
+		interactable.is_interactable = false
+		collision_shape_3d.disabled = true
+		Can_Holding_Object = true
+		print("GravityGun is carry")
+	
+
+func _physics_process(delta: float) -> void:
+	handle_holding_object()
 
 
 func set_held_object(body: RigidBody3D):
 	if body is RigidBody3D:
 		heldObject = body
+		print("held_object")
+
 
 func drop_held_object():
 	heldObject = null
@@ -31,11 +53,10 @@ func throw_held_object():
 
 func handle_holding_object():
 	if Can_Holding_Object:
-		
 		if Input.is_action_just_pressed("throw"):
 			if heldObject != null: throw_held_object()
 			
-		if Input.is_action_just_pressed("interact"):
+		if Input.is_action_just_pressed("useItem"):
 			if heldObject != null: drop_held_object()
 			elif interactRay.is_colliding(): set_held_object(interactRay.get_collider())
 			

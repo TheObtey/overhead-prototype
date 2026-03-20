@@ -12,7 +12,7 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 radius = 1.1736125
 
 [node name="cube" type="RigidBody3D" unique_id=1055829007]
-mass = 10.0
+mass = 7.0
 angular_damp = 0.5
 script = ExtResource("1_ox53u")
 

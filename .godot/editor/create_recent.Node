@@ -1,12 +1,12 @@
-CSGBox3D
+RigidBody3D
 MeshInstance3D
-RayCast3D
 CollisionShape3D
+Node3D
+CSGBox3D
+RayCast3D
 Label
 Area3D
-RigidBody3D
 CharacterBody3D
-Node3D
 Camera3D
 MultiplayerSynchronizer
 Node

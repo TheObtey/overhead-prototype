@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bldyqgwggrwhb" path="res://scripts/Player/character_body_3d_2.tscn" id="1_7ag8r"]
 [ext_resource type="PackedScene" uid="uid://el5gumv8gqvx" path="res://interactions_components/cube.tscn" id="3_fju2s"]
+[ext_resource type="PackedScene" uid="uid://btwa1c0qsbcmo" path="res://Items/gravity_gun.tscn" id="3_o8wp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ag8r"]
 sky_top_color = Color(0, 0.0020112668, 0.011213176, 1)
@@ -387,7 +388,10 @@ transform = Transform3D(1.324619, 0, 0, 0, 5.2416997, 0, 0, 0, 1, 6.8626733, 27.
 mesh = SubResource("SphereMesh_j03vg")
 
 [node name="CharacterBody3D2" parent="." unique_id=343458654 instance=ExtResource("1_7ag8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.105285, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1989021, 0)
 
 [node name="cube" parent="." unique_id=1055829007 instance=ExtResource("3_fju2s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7490382, 6.018715)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.632112, 7.1674795)
+
+[node name="GravityGun" parent="." unique_id=967418193 instance=ExtResource("3_o8wp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032714963, 3.3786418, 10.991613)
