@@ -152,21 +152,27 @@ func clear_gravity_field(field: Area3D) -> void:
 func _align_to_gravity(delta: float) -> void:
 	var target_up: Vector3 = -gravity_direction.normalized()
 	var current_up: Vector3 = global_transform.basis.y.normalized()
-
+	
 	var dot_value: float = clamp(current_up.dot(target_up), -1.0, 1.0)
-
+	
 	if dot_value > 0.9999:
 		return
-
+		
 	var rotation_axis: Vector3 = current_up.cross(target_up)
-
+	
 	if rotation_axis.length() < 0.001:
 		rotation_axis = global_transform.basis.x.normalized()
-
+		
 	rotation_axis = rotation_axis.normalized()
-
+	
 	var angle: float = acos(dot_value)
 	var step: float = min(angle, GRAVITY_ALIGN_SPEED * delta)
-
+	
+	var current_scale: Vector3 = global_transform.basis.get_scale()
+	
 	global_rotate(rotation_axis, step)
-	global_transform.basis = global_transform.basis.orthonormalized()
+	
+	var new_basis: Basis = global_transform.basis.orthonormalized()
+	new_basis = new_basis.scaled(current_scale)
+	
+	global_transform.basis = new_basis
