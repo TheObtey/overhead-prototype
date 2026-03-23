@@ -1,25 +1,33 @@
 extends CharacterBody3D
 
-@onready var camera_root: Node3D = $CameraRoot
-@onready var camera: Camera3D = $CameraRoot/Camera3D
+@onready var oCameraRoot: Node3D = $CameraRoot
+@onready var oCamera: Camera3D = $CameraRoot/Camera3D
 
-@onready var movement_component = $Components/MovementComponent
-@onready var camera_component = $Components/CameraComponent
+@onready var oMovementComponent = $Components/MovementComponent
+@onready var oCameraComponent = $Components/CameraComponent
+
+const vecDefaultGravityDireciton: Vector3 = Vector3.DOWN
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	movement_component.setup(self)
-	camera_component.setup(self, camera_root, camera)
+	oMovementComponent.Setup(self)
+	oCameraComponent.Setup(self, oCameraRoot, oCamera)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+func _unhandled_input(oEvent: InputEvent) -> void:
+	if oEvent.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	if event is InputEventMouseButton and event.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+	if oEvent is InputEventMouseButton and oEvent.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	camera_component.handle_input(event)
+	oCameraComponent.HandleInput(oEvent)
 
 func _physics_process(iDelta: float) -> void:
-	movement_component.physics_update(iDelta)
+	oMovementComponent.PhysicsUpdate(iDelta)
+
+func SetGravityDirection(vecNewGravityDirection: Vector3) -> void:
+	oMovementComponent.SetGravityDirection(vecNewGravityDirection)
+
+func ResetGravityDirection() -> void:
+	oMovementComponent.SetGravityDirection(vecDefaultGravityDireciton)

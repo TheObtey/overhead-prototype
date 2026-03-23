@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r4mci"]
 
-[node name="PlayerBase" type="CharacterBody3D" unique_id=632260283]
+[node name="PlayerBase" type="CharacterBody3D" unique_id=632260283 groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1464987, 0)
 script = ExtResource("1_r4mci")
 

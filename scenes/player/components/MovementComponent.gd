@@ -1,34 +1,44 @@
 extends Node
 
-@export var move_speed: float = 6.0
-@export var jump_velocity: float = 5.0
-@export var gravity_strength: float = 19.0
+@export var iMoveSpeed: float = 6.0
+@export var iJumpVelocity: float = 5.0
+@export var iGravityStrength: float = 20.0
+@export var iGravityDetachForce: float = 0.05
 
-var player: CharacterBody3D
-var gravity_direction: Vector3 = Vector3.DOWN
+var oPlayer: CharacterBody3D
+var vecGravityDirection: Vector3 = Vector3.DOWN
 
-func setup(p_player: CharacterBody3D) -> void:
-	player = p_player
+func Setup(oNewPlayer: CharacterBody3D) -> void:
+	oPlayer = oNewPlayer
+	oPlayer.up_direction = -vecGravityDirection
 
-func physics_update(iDelta: float) -> void:
-	apply_gravity(iDelta)
-	handle_jump()
-	handle_movement()
-	player.move_and_slide()
+func PhysicsUpdate(iDelta: float) -> void:
+	ApplyGravity(iDelta)
+	HandleJump()
+	HandleMovement()
+	
+	oPlayer.move_and_slide()
 
-func apply_gravity(iDelta: float) -> void:
-	if not player.is_on_floor():
-		player.velocity += gravity_direction * gravity_strength * iDelta
+func SetGravityDirection(vecNewGravityDirection: Vector3) -> void:
+	vecGravityDirection = vecNewGravityDirection.normalized()
+	oPlayer.up_direction = -vecGravityDirection
+	
+	if oPlayer.is_on_floor():
+		oPlayer.velocity += vecGravityDirection * iGravityDetachForce
 
-func handle_jump() -> void:
-	if Input.is_action_just_pressed("jump") and player.is_on_floor():
-		player.velocity -= gravity_direction * jump_velocity
+func ApplyGravity(iDelta: float) -> void:
+	if not oPlayer.is_on_floor():
+		oPlayer.velocity += vecGravityDirection * iGravityStrength * iDelta
 
-func handle_movement() -> void:
+func HandleJump() -> void:
+	if Input.is_action_just_pressed("jump") and oPlayer.is_on_floor():
+		oPlayer.velocity -= vecGravityDirection * iJumpVelocity
+
+func HandleMovement() -> void:
 	var vecInputDir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	var vecForward: Vector3 = player.global_transform.basis.z
-	var vecRight: Vector3 = player.global_transform.basis.x
+	var vecForward: Vector3 = oPlayer.global_transform.basis.z
+	var vecRight: Vector3 = oPlayer.global_transform.basis.x
 	
 	vecForward.y = 0.0
 	vecRight.y = 0.0
@@ -39,8 +49,8 @@ func handle_movement() -> void:
 	var vecMoveDir: Vector3 = (vecRight * vecInputDir.x + vecForward * vecInputDir.y).normalized()
 	
 	if vecMoveDir != Vector3.ZERO:
-		player.velocity.x = vecMoveDir.x * move_speed
-		player.velocity.z = vecMoveDir.z * move_speed
+		oPlayer.velocity.x = vecMoveDir.x * iMoveSpeed
+		oPlayer.velocity.z = vecMoveDir.z * iMoveSpeed
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0.0, move_speed)
-		player.velocity.z = move_toward(player.velocity.z, 0.0, move_speed)
+		oPlayer.velocity.x = move_toward(oPlayer.velocity.x, 0.0, iMoveSpeed)
+		oPlayer.velocity.z = move_toward(oPlayer.velocity.z, 0.0, iMoveSpeed)

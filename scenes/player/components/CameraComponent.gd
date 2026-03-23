@@ -1,28 +1,28 @@
 extends Node
 
-@export var mouse_sensitivity: float = 0.002
-@export var min_pitch: float = -89.0
-@export var max_pitch: float = 89.0
+@export var iMouseSensitivity: float = 0.002
+@export var iMinPitch: float = -89.0
+@export var iMaxPitch: float = 89.0
 
-var player: CharacterBody3D
-var camera_root: Node3D
-var camera: Camera3D
+var oPlayer: CharacterBody3D
+var oCameraRoot: Node3D
+var oCamera: Camera3D
 
-var pitch: float = 0.0
+var iPitch: float = 0.0
 
-func setup(p_player: CharacterBody3D, p_camera_root: Node3D, p_camera: Camera3D) -> void:
-	player = p_player
-	camera_root = p_camera_root
-	camera = p_camera
+func Setup(oNewPlayer: CharacterBody3D, oNewCameraRoot: Node3D, oNewCamera: Camera3D) -> void:
+	oPlayer = oNewPlayer
+	oCameraRoot = oNewCameraRoot
+	oCamera = oNewCamera
 
-func handle_input(event: InputEvent) -> void:
+func HandleInput(oEvent: InputEvent) -> void:
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		return
 	
-	if event is InputEventMouseMotion:
-		player.rotate_y(-event.relative.x * mouse_sensitivity)
+	if oEvent is InputEventMouseMotion:
+		oPlayer.rotate_y(-oEvent.relative.x * iMouseSensitivity)
 		
-		pitch -= event.relative.y * mouse_sensitivity
-		pitch = clamp(pitch, deg_to_rad(min_pitch), deg_to_rad(max_pitch))
+		iPitch -= oEvent.relative.y * iMouseSensitivity
+		iPitch = clamp(iPitch, deg_to_rad(iMinPitch), deg_to_rad(iMaxPitch))
 		
-		camera_root.rotation.x = pitch
+		oCameraRoot.rotation.x = iPitch
