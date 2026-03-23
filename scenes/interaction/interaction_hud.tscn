@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1wf0cvtfr3dq"]
+
+[node name="InteractionHud" type="Node2D" unique_id=1942665813]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1135824560]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=328895572]
+anchors_preset = -1
+anchor_left = 0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.15200007
+offset_right = 1.0
+offset_bottom = 2.0

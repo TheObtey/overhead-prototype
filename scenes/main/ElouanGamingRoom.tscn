@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://774840n8vnjf"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5dhf3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ge8"]
+albedo_color = Color(0.2677903, 0.2677903, 0.2677903, 1)
+
+[node name="ElouanGamingRoom" type="Node3D" unique_id=1005311978]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=991201792]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_5dhf3")
+surface_material_override/0 = SubResource("StandardMaterial3D_00ge8")
