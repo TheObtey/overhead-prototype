@@ -111,7 +111,7 @@ res://
 |       → structures de données (ItemData, etc.)
 |
 +-- assets/
-    → modèles, textures, sons
+	→ modèles, textures, sons
 ```
 
 ---
@@ -260,7 +260,7 @@ Le player interagit via un système générique :
 
 ```
 if entity.can_interact():
-    entity.interact(player)
+	entity.interact(player)
 ```
 
 👉 Le player ne doit jamais connaître le type exact de l’entité.
