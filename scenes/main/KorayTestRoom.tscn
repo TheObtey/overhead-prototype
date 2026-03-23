@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dw1lxdkpmok8y"]
 
-[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="1_0v1y0"]
-[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_wwu56"]
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_o0i0b"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_nx2fd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
 
@@ -31,13 +31,13 @@ mesh = SubResource("BoxMesh_0v1y0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall" unique_id=1923742791]
 shape = SubResource("BoxShape3D_wwu56")
 
-[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_wwu56")]
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_o0i0b")]
 transform = Transform3D(9.912121, 0, 0, 0, -3.7404973e-07, -10.389285, 0, 8.55726, -4.5413006e-07, 8.213209, 5.0763936, 10.711437)
-vecGravityDirection = Vector3(0, 1, 0)
+vecGravityDirection = Vector3(0, 0, 1)
 
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
-[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("1_0v1y0")]
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("2_nx2fd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4621041, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]

@@ -20,9 +20,14 @@ func HandleInput(oEvent: InputEvent) -> void:
 		return
 	
 	if oEvent is InputEventMouseMotion:
-		oPlayer.rotate_y(-oEvent.relative.x * iMouseSensitivity)
-		
-		iPitch -= oEvent.relative.y * iMouseSensitivity
-		iPitch = clamp(iPitch, deg_to_rad(iMinPitch), deg_to_rad(iMaxPitch))
-		
-		oCameraRoot.rotation.x = iPitch
+		HandleMouseLook(oEvent)
+
+func HandleMouseLook(oEvent: InputEventMouseMotion) -> void:
+	var vecLocalUp: Vector3 = oPlayer.transform.basis.y.normalized()
+	
+	oPlayer.rotate(vecLocalUp, -oEvent.relative.x * iMouseSensitivity)
+	
+	iPitch -= oEvent.relative.y * iMouseSensitivity
+	iPitch = clamp(iPitch, deg_to_rad(iMinPitch), deg_to_rad(iMaxPitch))
+	
+	oCameraRoot.rotation.x = iPitch

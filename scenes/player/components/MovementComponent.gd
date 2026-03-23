@@ -4,6 +4,7 @@ extends Node
 @export var iJumpVelocity: float = 5.0
 @export var iGravityStrength: float = 20.0
 @export var iGravityDetachForce: float = 0.05
+@export var iRotationSpeed: float = 4.0
 
 var oPlayer: CharacterBody3D
 var vecGravityDirection: Vector3 = Vector3.DOWN
@@ -13,6 +14,7 @@ func Setup(oNewPlayer: CharacterBody3D) -> void:
 	oPlayer.up_direction = -vecGravityDirection
 
 func PhysicsUpdate(iDelta: float) -> void:
+	UpdateOrientation(iDelta)
 	ApplyGravity(iDelta)
 	HandleJump()
 	HandleMovement()
@@ -37,20 +39,55 @@ func HandleJump() -> void:
 func HandleMovement() -> void:
 	var vecInputDir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
+	var vecUp: Vector3 = -vecGravityDirection
 	var vecForward: Vector3 = oPlayer.global_transform.basis.z
-	var vecRight: Vector3 = oPlayer.global_transform.basis.x
 	
-	vecForward.y = 0.0
-	vecRight.y = 0.0
+	vecForward = vecForward.slide(vecGravityDirection).normalized()
 	
-	vecForward = vecForward.normalized()
-	vecRight = vecRight.normalized()
+	if vecForward.length() < 0.001:
+		vecForward = Vector3.FORWARD.slide(vecGravityDirection).normalized()
 	
-	var vecMoveDir: Vector3 = (vecRight * vecInputDir.x + vecForward * vecInputDir.y).normalized()
+	var vecRight: Vector3 = -vecForward.cross(vecUp).normalized()
+	var vecMoveDir: Vector3 = (
+		vecRight * vecInputDir.x +
+		vecForward * vecInputDir.y
+	).normalized()
+	
+	var vecGravityVelocity: Vector3 = vecGravityDirection * oPlayer.velocity.dot(vecGravityDirection)
+	var vecPlanarVelocity: Vector3 = oPlayer.velocity - vecGravityVelocity
 	
 	if vecMoveDir != Vector3.ZERO:
-		oPlayer.velocity.x = vecMoveDir.x * iMoveSpeed
-		oPlayer.velocity.z = vecMoveDir.z * iMoveSpeed
+		vecPlanarVelocity = vecMoveDir * iMoveSpeed
 	else:
-		oPlayer.velocity.x = move_toward(oPlayer.velocity.x, 0.0, iMoveSpeed)
-		oPlayer.velocity.z = move_toward(oPlayer.velocity.z, 0.0, iMoveSpeed)
+		vecPlanarVelocity = vecPlanarVelocity.move_toward(Vector3.ZERO, iMoveSpeed * 0.15)
+	
+	oPlayer.velocity = vecPlanarVelocity + vecGravityVelocity
+
+func UpdateOrientation(iDelta: float) -> void:
+	var vecTargetUp: Vector3 = -vecGravityDirection.normalized()
+	var vecCurrentForward: Vector3 = -oPlayer.global_transform.basis.z
+	
+	var vecTargetForward: Vector3 = vecCurrentForward.slide(vecGravityDirection).normalized()
+	
+	if vecTargetForward.length() < 0.001:
+		vecTargetForward = Vector3.FORWARD.slide(vecGravityDirection).normalized()
+	
+	if vecTargetForward.length() < 0.001:
+		vecTargetForward = Vector3.RIGHT.slide(vecGravityDirection).normalized()
+	
+	var vecTargetRight: Vector3 = vecTargetForward.cross(vecTargetUp).normalized()
+	vecTargetForward = vecTargetUp.cross(vecTargetRight).normalized()
+	
+	var oTargetBasis: Basis = Basis(
+		vecTargetRight,
+		vecTargetUp,
+		-vecTargetForward
+	).orthonormalized()
+	
+	var qCurrent: Quaternion = oPlayer.global_transform.basis.get_rotation_quaternion()
+	var qTarget: Quaternion = oTargetBasis.get_rotation_quaternion()
+	
+	var iWeight: float = clamp(iRotationSpeed * iDelta, 0.0, 1.0)
+	var qResult: Quaternion = qCurrent.slerp(qTarget, iWeight)
+	
+	oPlayer.global_transform.basis = Basis(qResult).orthonormalized()

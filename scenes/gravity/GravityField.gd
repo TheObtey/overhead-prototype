@@ -13,7 +13,7 @@ func _OnBodyEntered(oBody: Node3D) -> void:
 	if not oBody.has_method("SetGravityDirection"):
 		return
 	
-	oBody.SetGravityDirection(vecGravityDirection)
+	oBody.SetGravityDirection(self, vecGravityDirection)
 
 func _OnBodyExited(oBody: Node3D) -> void:
 	if not oBody.is_in_group("Player"):
@@ -22,4 +22,4 @@ func _OnBodyExited(oBody: Node3D) -> void:
 	if not oBody.has_method("ResetGravityDirection"):
 		return
 	
-	oBody.ResetGravityDirection()
+	oBody.ClearActiveGravityField(self)

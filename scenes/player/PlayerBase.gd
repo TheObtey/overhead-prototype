@@ -8,6 +8,8 @@ extends CharacterBody3D
 
 const vecDefaultGravityDireciton: Vector3 = Vector3.DOWN
 
+var oActiveGravityField: Area3D
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -26,8 +28,16 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 func _physics_process(iDelta: float) -> void:
 	oMovementComponent.PhysicsUpdate(iDelta)
 
-func SetGravityDirection(vecNewGravityDirection: Vector3) -> void:
+func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
+	oActiveGravityField = oField
 	oMovementComponent.SetGravityDirection(vecNewGravityDirection)
 
 func ResetGravityDirection() -> void:
 	oMovementComponent.SetGravityDirection(vecDefaultGravityDireciton)
+
+func ClearActiveGravityField(oField: Area3D) -> void:
+	if oActiveGravityField != oField:
+		return
+	
+	oActiveGravityField = null
+	ResetGravityDirection()
