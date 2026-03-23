@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dw1lxdkpmok8y"]
+
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_o0i0b"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_nx2fd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wwu56"]
+
+[node name="TestRoom" type="Node3D" unique_id=311504040]
+
+[node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="Floor" type="RigidBody3D" parent="World" unique_id=506256184]
+transform = Transform3D(30, 0, 0, 0, 0.25, 0, 0, 0, 30, 0, 0, 0)
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Floor" unique_id=947671287]
+mesh = SubResource("BoxMesh_0v1y0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor" unique_id=1563319589]
+shape = SubResource("BoxShape3D_wwu56")
+
+[node name="Wall" type="RigidBody3D" parent="World" unique_id=1841475316]
+transform = Transform3D(30, 0, 0, 0, -1.0927847e-08, 30, 0, -0.25, -1.3113416e-06, 0, 15, 15)
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Wall" unique_id=138958334]
+mesh = SubResource("BoxMesh_0v1y0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Wall" unique_id=1923742791]
+shape = SubResource("BoxShape3D_wwu56")
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_o0i0b")]
+transform = Transform3D(9.912121, 0, 0, 0, -3.7404973e-07, -10.389285, 0, 8.55726, -4.5413006e-07, 8.213209, 5.0763936, 10.711437)
+vecGravityDirection = Vector3(0, 0, 1)
+
+[node name="Players" type="Node" parent="." unique_id=1879509615]
+
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("2_nx2fd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4621041, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)

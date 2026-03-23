@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://wqqyby20gai6"]
+
+[ext_resource type="Script" uid="uid://d2ukkhvcntcco" path="res://scenes/gravity/GravityField.gd" id="1_pkalv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4402"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pkalv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly6hs"]
+transparency = 1
+albedo_color = Color(0.7607843, 1, 1, 0.19607843)
+
+[node name="GravityField" type="Area3D" unique_id=1949901627]
+script = ExtResource("1_pkalv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1478763357]
+shape = SubResource("BoxShape3D_y4402")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1491261148]
+mesh = SubResource("BoxMesh_pkalv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ly6hs")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1297842896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7377883, 0)

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cd8a4o661vrla"]
+
+[ext_resource type="Script" uid="uid://dm1y5xfqui0o8" path="res://scenes/player/PlayerBase.gd" id="1_r4mci"]
+[ext_resource type="Script" uid="uid://262rmjs558hc" path="res://scenes/player/components/MovementComponent.gd" id="2_01k7g"]
+[ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r4mci"]
+
+[node name="PlayerBase" type="CharacterBody3D" unique_id=632260283 groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1464987, 0)
+script = ExtResource("1_r4mci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=323766239]
+shape = SubResource("CapsuleShape3D_qeolr")
+
+[node name="CameraRoot" type="Node3D" parent="." unique_id=1541449080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54507685, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
+
+[node name="Components" type="Node" parent="." unique_id=877173999]
+
+[node name="MovementComponent" type="Node" parent="Components" unique_id=174316900]
+script = ExtResource("2_01k7g")
+
+[node name="CameraComponent" type="Node" parent="Components" unique_id=724385409]
+script = ExtResource("3_qeolr")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Visuals" unique_id=1062025898]
+mesh = SubResource("CapsuleMesh_r4mci")
