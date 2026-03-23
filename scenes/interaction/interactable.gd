@@ -6,6 +6,3 @@ func interact(interactor: Node) -> void:
 
 func get_prompt() -> String:
 	return "Interagir"  # Texte à surcharger
-
-func can_interact(interactor: Node) -> bool:
-	return true

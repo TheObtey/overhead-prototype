@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://brq4wv3r70wjd"]
+
+[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/EntityBase.tscn" id="1_qy8j6"]
+[ext_resource type="Script" uid="uid://fk5k7ytcb1b8" path="res://scenes/entities/Door/Door.gd" id="2_b5l2o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5l2o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oti6"]
+albedo_color = Color(0.36484432, 0.14496073, 0, 1)
+
+[node name="EntityBase" unique_id=108843216 instance=ExtResource("1_qy8j6")]
+script = ExtResource("2_b5l2o")
+sEntityName = "Door"
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=357188468]
+transform = Transform3D(2.0858212, 0, 0, 0, 3.3653054, 0, 0, 0, 0.7361664, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="." index="2" unique_id=283055417]
+transform = Transform3D(2, 0, 0, 0, 4, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_b5l2o")
+surface_material_override/0 = SubResource("StandardMaterial3D_0oti6")

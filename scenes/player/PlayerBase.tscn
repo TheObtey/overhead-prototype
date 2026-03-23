@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm1y5xfqui0o8" path="res://scenes/player/PlayerBase.gd" id="1_r4mci"]
 [ext_resource type="Script" uid="uid://262rmjs558hc" path="res://scenes/player/components/MovementComponent.gd" id="2_01k7g"]
+[ext_resource type="Script" uid="uid://cbmlcgrxv1eo8" path="res://scenes/player/components/InteractComponent.gd" id="2_5e8hm"]
 [ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
@@ -21,6 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54507685, 0)
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
 
 [node name="Components" type="Node" parent="." unique_id=877173999]
+script = ExtResource("2_5e8hm")
 
 [node name="MovementComponent" type="Node" parent="Components" unique_id=174316900]
 script = ExtResource("2_01k7g")
@@ -28,7 +30,23 @@ script = ExtResource("2_01k7g")
 [node name="CameraComponent" type="Node" parent="Components" unique_id=724385409]
 script = ExtResource("3_qeolr")
 
+[node name="InteractComponent" type="Node" parent="Components" unique_id=1155074294]
+script = ExtResource("2_5e8hm")
+
 [node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="Visuals" unique_id=1062025898]
 mesh = SubResource("CapsuleMesh_r4mci")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1167788545]
+
+[node name="Text" type="Label" parent="CanvasLayer" unique_id=884020134]
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.91300005
+anchor_right = 0.499
+anchor_bottom = 0.91300005
+offset_left = -574.848
+offset_top = -52.624023
+offset_right = 574.152
+offset_bottom = 52.375977
