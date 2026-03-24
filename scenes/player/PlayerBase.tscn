@@ -38,9 +38,9 @@ script = ExtResource("2_5e8hm")
 [node name="PlayerMesh" type="MeshInstance3D" parent="Visuals" unique_id=1062025898]
 mesh = SubResource("CapsuleMesh_r4mci")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1167788545]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
 
-[node name="Text" type="Label" parent="CanvasLayer" unique_id=884020134]
+[node name="Text" type="Label" parent="HUD" unique_id=884020134]
 anchors_preset = -1
 anchor_left = 0.499
 anchor_top = 0.91300005
@@ -50,3 +50,5 @@ offset_left = -574.848
 offset_top = -52.624023
 offset_right = 574.152
 offset_bottom = 52.375977
+horizontal_alignment = 1
+vertical_alignment = 1

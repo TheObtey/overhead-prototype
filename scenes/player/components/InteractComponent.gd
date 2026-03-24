@@ -19,7 +19,9 @@ func ProcessUpdate() -> void:
 		TryInteract()
 
 func TryInteract() -> void:
+	print("I try interact")
 	if oCurrentEntity and oCurrentEntity.CanInteract(oPlayer):
+		print("is interacting")
 		oCurrentEntity.Interact(oPlayer)
 
 func GetCurrentPrompt() -> String:
@@ -31,7 +33,7 @@ func _SetupRayCast() -> void:
 	oRayCast = RayCast3D.new()
 	oRayCast.target_position = Vector3(0, 0, -iInteractDistance)
 	oRayCast.collision_mask = 1
-	oPlayer.add_child(oRayCast)
+	oPlayer.get_node("CameraRoot").add_child(oRayCast)
 
 func _CheckInteraction() -> void:
 	if oRayCast.is_colliding():

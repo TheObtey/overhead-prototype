@@ -9,7 +9,7 @@ albedo_color = Color(0.16335335, 0.38489646, 0.19509748, 1)
 [node name="ElouanGamingRoom" type="Node3D" unique_id=1005311978]
 
 [node name="EntityBase" parent="." unique_id=108843216 instance=ExtResource("1_ta4rn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15674722, 1.9993178, -0.98100615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15674722, 0.13181221, -0.2099421)
 
 [node name="PlayerBase" parent="." unique_id=632260283 instance=ExtResource("2_830eq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36152947, 1.3887985, 2.2502694)

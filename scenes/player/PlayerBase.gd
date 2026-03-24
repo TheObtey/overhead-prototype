@@ -34,10 +34,10 @@ func _physics_process(iDelta: float) -> void:
 
 func _OnEntityChanged(oEntity: Node) -> void:
 	if oEntity:
-		$CanvasLayer/Text.text = "[E] " + oInteractComponent.GetCurrentPrompt()
-		$CanvasLayer/Text.visible = true
+		$HUD/Text.text = "[E] " + oInteractComponent.GetCurrentPrompt()
+		$HUD/Text.visible = true
 	else:
-		$CanvasLayer/Text.visible = false
+		$HUD/Text.visible = false
 
 func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
 	oActiveGravityField = oField
