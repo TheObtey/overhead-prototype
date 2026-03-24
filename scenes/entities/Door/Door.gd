@@ -9,9 +9,16 @@ func GetPrompt() -> String:
 		return "Fermer " + sEntityName
 
 func Interact(pPlayer: CharacterBody3D) -> void:
-	if isOpen == false:
-		isOpen = true
-		print("Ouverture de la porte")
+	toggle_door()
+
+func toggle_door():
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	
+	if not isOpen:
+		tween.tween_property(self, "rotation_degrees:y", 90.0, 0.6)
 	else:
-		isOpen = false
-		print("Fermeture de la porte")
+		tween.tween_property(self, "rotation_degrees:y", 0.0, 0.6)
+	
+	isOpen = !isOpen
