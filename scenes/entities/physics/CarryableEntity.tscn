@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bexqq70pwxkyp"]
+
+[ext_resource type="Script" uid="uid://bl4xkhglhomdp" path="res://scenes/entities/physics/CarryableEntity.gd" id="1_6d3ir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nr51q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6d3ir"]
+
+[node name="CarryableEntity" type="RigidBody3D" unique_id=942434338]
+script = ExtResource("1_6d3ir")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=562112087]
+shape = SubResource("BoxShape3D_nr51q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=476620103]
+mesh = SubResource("BoxMesh_6d3ir")

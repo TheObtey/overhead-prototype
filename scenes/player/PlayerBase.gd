@@ -25,12 +25,18 @@ func _ready() -> void:
 	oInventoryComponent.Setup(self)
 	oEquipmentComponent.Setup(self)
 	
-	if oStarterItemScene:
-		var oStarterItem = oStarterItemScene.instantiate()
-		add_child(oStarterItem)
-		
-		oInventoryComponent.AddItem(oStarterItem)
-		oEquipmentComponent.EquipItem(oStarterItem)
+	var oGravityGun = preload("res://scenes/items/GravityGun.gd").new()
+	add_child(oGravityGun)
+	
+	oInventoryComponent.AddItem(oGravityGun)
+	oEquipmentComponent.EquipItem(oGravityGun)
+	
+	#if oStarterItemScene:
+		#var oStarterItem = oStarterItemScene.instantiate()
+		#add_child(oStarterItem)
+		#
+		#oInventoryComponent.AddItem(oStarterItem)
+		#oEquipmentComponent.EquipItem(oStarterItem)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
 	if oEvent.is_action_pressed("ui_cancel"):
