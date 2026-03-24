@@ -9,6 +9,7 @@ extends CharacterBody3D
 @onready var oInventoryComponent = $Components/InventoryComponent
 @onready var oEquipmentComponent = $Components/EquipmentComponent
 @onready var oHotbarUI = $HotbarUI
+@onready var oViewmodelRoot: Node3D = $CameraRoot/ViewmodelRoot
 
 @export var oStarterItemScene: PackedScene
 
@@ -24,22 +25,15 @@ func _ready() -> void:
 	oInteractComponent.Setup(self)
 	oInteractComponent.oEntityChanged.connect(_OnEntityChanged)
 	oInventoryComponent.Setup(self)
-	oEquipmentComponent.Setup(self)
+	oEquipmentComponent.Setup(self, oViewmodelRoot)
 	
-	var oGravityGun = preload("res://scenes/items/GravityGun.gd").new()
+	var oGravityGun = preload("res://scenes/items/weapons/gravity_gun/GravityGun.tscn").instantiate()
 	add_child(oGravityGun)
 	
 	oInventoryComponent.AddItem(oGravityGun)
 	oEquipmentComponent.EquipItem(oGravityGun)
 	
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
-	
-	if oStarterItemScene:
-		var oStarterItem = oStarterItemScene.instantiate()
-		add_child(oStarterItem)
-		
-		oInventoryComponent.AddItem(oStarterItem)
-		#oEquipmentComponent.EquipItem(oStarterItem)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
 	if oEvent.is_action_pressed("ui_cancel"):

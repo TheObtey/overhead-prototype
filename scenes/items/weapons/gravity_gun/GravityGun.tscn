@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmixk5axege2a"]
+
+[ext_resource type="Script" uid="uid://davninkqdupgj" path="res://scenes/items/weapons/gravity_gun/GravityGun.gd" id="1_lish2"]
+[ext_resource type="PackedScene" uid="uid://de7rma60ejbmo" path="res://scenes/items/weapons/gravity_gun/GravityGunViewmodel.tscn" id="2_oc5sf"]
+
+[node name="GravityGun" type="Node" unique_id=701555522]
+script = ExtResource("1_lish2")
+sItemName = "Gravity Gun"
+oViewmodelScene = ExtResource("2_oc5sf")

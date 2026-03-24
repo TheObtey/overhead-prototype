@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://bgegkfgoul1vs"]
-
-[ext_resource type="Script" uid="uid://n6amkijmotg6" path="res://scenes/items/TestGun.gd" id="1_0vqok"]
-
-[node name="TestGun" type="Node" unique_id=2105307196]
-script = ExtResource("1_0vqok")
-sItemName = "PewGun"
