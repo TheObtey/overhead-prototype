@@ -69,16 +69,12 @@ func HandleHotbarInput(oEvent: InputEvent) -> void:
 	
 	var tItems: Array = oInventoryComponent.GetItems()
 	
-	if Input.is_action_just_pressed("hotbar_1"):
-		oEquipmentComponent.EquipItemByIndex(0, tItems)
-	elif Input.is_action_just_pressed("hotbar_2"):
-		oEquipmentComponent.EquipItemByIndex(1, tItems)
-	elif Input.is_action_just_pressed("hotbar_3"):
-		oEquipmentComponent.EquipItemByIndex(2, tItems)
-	elif Input.is_action_just_pressed("hotbar_4"):
-		oEquipmentComponent.EquipItemByIndex(3, tItems)
-	elif Input.is_action_just_pressed("hotbar_5"):
-		oEquipmentComponent.EquipItemByIndex(4, tItems)
+	for iIndex in range(5):
+		var sAction = "hotbar_" + str(iIndex + 1)
+		
+		if Input.is_action_just_pressed(sAction):
+			oEquipmentComponent.EquipItemByIndex(iIndex, tItems)
+			break
 
 func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
 	oActiveGravityField = oField
