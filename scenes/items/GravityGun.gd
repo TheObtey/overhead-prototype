@@ -4,6 +4,9 @@ extends EquippableItemBase
 
 var eHeldEntity: RigidBody3D
 
+func _ready() -> void:
+	sItemName = "Gravity Gun"
+
 func OnPrimaryAction() -> void:
 	if eHeldEntity:
 		DropEntity()

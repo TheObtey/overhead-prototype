@@ -1,5 +1,7 @@
 extends Node
 
+signal EquippedItemChanged
+
 var pPlayer: CharacterBody3D
 var oCurrentItem: ItemBase
 
@@ -15,6 +17,8 @@ func EquipItem(oItem: Node) -> void:
 	
 	oCurrentItem = oItem
 	oCurrentItem.OnEquip(pPlayer)
+	
+	EquippedItemChanged.emit()
 
 func UnequipCurrentItem() -> void:
 	if not oCurrentItem:
@@ -22,6 +26,8 @@ func UnequipCurrentItem() -> void:
 	
 	oCurrentItem.OnUnequip()
 	oCurrentItem = null
+	
+	EquippedItemChanged.emit()
 
 func GetCurrentItem() -> Node:
 	return oCurrentItem

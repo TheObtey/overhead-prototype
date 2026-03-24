@@ -1,5 +1,7 @@
 extends Node
 
+signal InventoryChanged
+
 var pPlayer: CharacterBody3D
 var tItems: Array = []
 
@@ -12,6 +14,8 @@ func AddItem(oItem: Node) -> void:
 	
 	tItems.append(oItem)
 	oItem.OnAdded(pPlayer)
+	
+	InventoryChanged.emit()
 
 func RemoveItem(oItem: Node) -> void:
 	if not tItems.has(oItem):
@@ -19,6 +23,8 @@ func RemoveItem(oItem: Node) -> void:
 	
 	tItems.erase(oItem)
 	oItem.OnRemove(pPlayer)
+	
+	InventoryChanged.emit()
 
 func GetItems() -> Array:
 	return tItems

@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://d0si14aljx0pv" path="res://scenes/player/components/InventoryComponent.gd" id="2_ab463"]
 [ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
 [ext_resource type="Script" uid="uid://d3f53tko8hfvb" path="res://scenes/player/components/EquipmentComponent.gd" id="6_5525k"]
+[ext_resource type="PackedScene" uid="uid://bva130iqyut2" path="res://scenes/ui/HotbarUI.tscn" id="8_qh3el"]
+[ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
 
@@ -63,3 +65,6 @@ offset_bottom = 52.375977
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HotbarUI" parent="." unique_id=836705610 instance=ExtResource("8_qh3el")]
+oHotbarSlotScene = ExtResource("9_e2kkn")

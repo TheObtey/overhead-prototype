@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var oInteractComponent = $Components/InteractComponent
 @onready var oInventoryComponent = $Components/InventoryComponent
 @onready var oEquipmentComponent = $Components/EquipmentComponent
+@onready var oHotbarUI = $HotbarUI
 
 @export var oStarterItemScene: PackedScene
 
@@ -31,11 +32,13 @@ func _ready() -> void:
 	oInventoryComponent.AddItem(oGravityGun)
 	oEquipmentComponent.EquipItem(oGravityGun)
 	
-	#if oStarterItemScene:
-		#var oStarterItem = oStarterItemScene.instantiate()
-		#add_child(oStarterItem)
-		#
-		#oInventoryComponent.AddItem(oStarterItem)
+	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
+	
+	if oStarterItemScene:
+		var oStarterItem = oStarterItemScene.instantiate()
+		add_child(oStarterItem)
+		
+		oInventoryComponent.AddItem(oStarterItem)
 		#oEquipmentComponent.EquipItem(oStarterItem)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
