@@ -50,5 +50,6 @@ offset_left = -574.848
 offset_top = -52.624023
 offset_right = 574.152
 offset_bottom = 52.375977
+theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1
