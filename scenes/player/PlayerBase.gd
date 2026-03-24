@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 @onready var oMovementComponent = $Components/MovementComponent
 @onready var oCameraComponent = $Components/CameraComponent
+@onready var oInteractComponent = $Components/InteractComponent
 
 const vecDefaultGravityDireciton: Vector3 = Vector3.DOWN
 
@@ -15,6 +16,8 @@ func _ready() -> void:
 	
 	oMovementComponent.Setup(self)
 	oCameraComponent.Setup(self, oCameraRoot, oCamera)
+	oInteractComponent.Setup(self)
+	oInteractComponent.oEntityChanged.connect(_OnEntityChanged)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
 	if oEvent.is_action_pressed("ui_cancel"):
@@ -27,6 +30,14 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 
 func _physics_process(iDelta: float) -> void:
 	oMovementComponent.PhysicsUpdate(iDelta)
+	oInteractComponent.ProcessUpdate()
+
+func _OnEntityChanged(oEntity: Node) -> void:
+	if oEntity:
+		$HUD/Text.text = "[E] " + oInteractComponent.GetCurrentPrompt()
+		$HUD/Text.visible = true
+	else:
+		$HUD/Text.visible = false
 
 func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
 	oActiveGravityField = oField

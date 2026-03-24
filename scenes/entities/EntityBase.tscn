@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bomc1q6gjlf5v" path="res://scenes/entities/EntityBase.gd" id="1_qh3cd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3e6fi"]
-
 [node name="EntityBase" type="Node3D" unique_id=108843216 groups=["Entity"]]
 script = ExtResource("1_qh3cd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=357188468]
-shape = SubResource("BoxShape3D_3e6fi")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=490728609]
