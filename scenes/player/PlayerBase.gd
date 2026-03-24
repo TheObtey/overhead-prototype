@@ -49,6 +49,7 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	oCameraComponent.HandleInput(oEvent)
+	HandleHotbarInput(oEvent)
 
 func _physics_process(iDelta: float) -> void:
 	oMovementComponent.PhysicsUpdate(iDelta)
@@ -61,6 +62,23 @@ func _OnEntityChanged(oEntity: Node) -> void:
 		$HUD/Text.visible = true
 	else:
 		$HUD/Text.visible = false
+
+func HandleHotbarInput(oEvent: InputEvent) -> void:
+	if not oEvent.is_pressed():
+		return
+	
+	var tItems: Array = oInventoryComponent.GetItems()
+	
+	if Input.is_action_just_pressed("hotbar_1"):
+		oEquipmentComponent.EquipItemByIndex(0, tItems)
+	elif Input.is_action_just_pressed("hotbar_2"):
+		oEquipmentComponent.EquipItemByIndex(1, tItems)
+	elif Input.is_action_just_pressed("hotbar_3"):
+		oEquipmentComponent.EquipItemByIndex(2, tItems)
+	elif Input.is_action_just_pressed("hotbar_4"):
+		oEquipmentComponent.EquipItemByIndex(3, tItems)
+	elif Input.is_action_just_pressed("hotbar_5"):
+		oEquipmentComponent.EquipItemByIndex(4, tItems)
 
 func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
 	oActiveGravityField = oField

@@ -7,6 +7,6 @@ func SetItemName(sNewItemName: String) -> void:
 
 func SetSelected(bSelected: bool) -> void:
 	if bSelected:
-		modulate = Color(1.0, 0.85, 0.35, 1.0)
+		modulate = Color(0.328, 1.0, 0.704, 1.0)
 	else:
 		modulate = Color(1.0, 1.0, 1.0, 1.0)

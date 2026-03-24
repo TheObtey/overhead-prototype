@@ -29,6 +29,15 @@ func UnequipCurrentItem() -> void:
 	
 	EquippedItemChanged.emit()
 
+func EquipItemByIndex(iIndex: int, tItems: Array) -> void:
+	if iIndex < 0 or iIndex >= tItems.size():
+		return
+	
+	var oItem = tItems[iIndex]
+	
+	if oItem != oCurrentItem:
+		EquipItem(oItem)
+
 func GetCurrentItem() -> Node:
 	return oCurrentItem
 
