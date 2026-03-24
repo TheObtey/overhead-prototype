@@ -19,9 +19,7 @@ func ProcessUpdate() -> void:
 		TryInteract()
 
 func TryInteract() -> void:
-	print("I try interact")
 	if oCurrentEntity and oCurrentEntity.CanInteract(oPlayer):
-		print("is interacting")
 		oCurrentEntity.Interact(oPlayer)
 
 func GetCurrentPrompt() -> String:
