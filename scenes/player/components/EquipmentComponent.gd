@@ -1,7 +1,7 @@
 extends Node
 
 var pPlayer: CharacterBody3D
-var oCurrentItem: Node
+var oCurrentItem: ItemBase
 
 func Setup(pNewPlayer: CharacterBody3D) -> void:
 	pPlayer = pNewPlayer
@@ -30,7 +30,7 @@ func HandleInput() -> void:
 	if not oCurrentItem:
 		return
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("primary_attack"):
 		oCurrentItem.OnPrimaryAction()
 	
 	if Input.is_action_just_pressed("secondary_attack"):

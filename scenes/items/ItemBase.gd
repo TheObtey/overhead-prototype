@@ -1,3 +1,4 @@
+class_name ItemBase
 extends Node
 
 @export var sItemName: String = "Item"

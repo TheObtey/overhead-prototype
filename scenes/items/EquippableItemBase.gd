@@ -1,11 +1,13 @@
-extends "res://scenes/items/ItemBase.gd"
+class_name EquippableItemBase
+extends ItemBase
 
 var pOwner: CharacterBody3D
 var bIsEquipped: bool = false
 
-func onEquip(pPlayer: CharacterBody3D) -> void:
+func OnEquip(pPlayer: CharacterBody3D) -> void:
 	bIsEquipped = true
 	pOwner = pPlayer
+	print(pOwner.name + " equipped " + name)
 
 func OnUnequip() -> void:
 	bIsEquipped = false

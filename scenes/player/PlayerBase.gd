@@ -6,6 +6,10 @@ extends CharacterBody3D
 @onready var oMovementComponent = $Components/MovementComponent
 @onready var oCameraComponent = $Components/CameraComponent
 @onready var oInteractComponent = $Components/InteractComponent
+@onready var oInventoryComponent = $Components/InventoryComponent
+@onready var oEquipmentComponent = $Components/EquipmentComponent
+
+@export var oStarterItemScene: PackedScene
 
 const vecDefaultGravityDireciton: Vector3 = Vector3.DOWN
 
@@ -18,6 +22,15 @@ func _ready() -> void:
 	oCameraComponent.Setup(self, oCameraRoot, oCamera)
 	oInteractComponent.Setup(self)
 	oInteractComponent.oEntityChanged.connect(_OnEntityChanged)
+	oInventoryComponent.Setup(self)
+	oEquipmentComponent.Setup(self)
+	
+	if oStarterItemScene:
+		var oStarterItem = oStarterItemScene.instantiate()
+		add_child(oStarterItem)
+		
+		oInventoryComponent.AddItem(oStarterItem)
+		oEquipmentComponent.EquipItem(oStarterItem)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
 	if oEvent.is_action_pressed("ui_cancel"):
@@ -31,6 +44,7 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 func _physics_process(iDelta: float) -> void:
 	oMovementComponent.PhysicsUpdate(iDelta)
 	oInteractComponent.ProcessUpdate()
+	oEquipmentComponent.HandleInput()
 
 func _OnEntityChanged(oEntity: Node) -> void:
 	if oEntity:
