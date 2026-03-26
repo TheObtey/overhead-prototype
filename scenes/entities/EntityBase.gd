@@ -1,4 +1,4 @@
-class_name Entity
+class_name EntityBase
 extends Node3D
 
 @export var sEntityName: String = "Entity"

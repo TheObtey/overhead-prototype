@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_o0i0b"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_nx2fd"]
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="2_oscr4"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_oscr4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
 
@@ -36,8 +37,12 @@ shape = SubResource("BoxShape3D_wwu56")
 transform = Transform3D(9.912121, 0, 0, 0, -3.7404973e-07, -10.389285, 0, 8.55726, -4.5413006e-07, 8.213209, 5.0763936, 10.711437)
 vecGravityDirection = Vector3(0, 0, 1)
 
-[node name="CarryableEntity" parent="World" unique_id=942434338 instance=ExtResource("2_oscr4")]
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("2_oscr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
+
+[node name="Steve" parent="World" unique_id=108843216 instance=ExtResource("3_oscr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
+bAutoEquipOnPickup = true
 
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 

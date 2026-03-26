@@ -27,12 +27,6 @@ func _ready() -> void:
 	oInventoryComponent.Setup(self)
 	oEquipmentComponent.Setup(self, oViewmodelRoot)
 	
-	var oGravityGun = preload("res://scenes/items/weapons/gravity_gun/GravityGun.tscn").instantiate()
-	add_child(oGravityGun)
-	
-	oInventoryComponent.AddItem(oGravityGun)
-	oEquipmentComponent.EquipItem(oGravityGun)
-	
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
@@ -56,6 +50,12 @@ func _OnEntityChanged(oEntity: Node) -> void:
 		$HUD/Text.visible = true
 	else:
 		$HUD/Text.visible = false
+
+func GetInventoryComponent() -> Node:
+	return oInventoryComponent
+
+func GetEquipmentComponent() -> Node:
+	return oEquipmentComponent
 
 func HandleHotbarInput(oEvent: InputEvent) -> void:
 	if not oEvent.is_pressed():

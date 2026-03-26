@@ -45,7 +45,7 @@ func _CheckInteraction() -> void:
 func _FindEntity(oNode: Node) -> Node:
 	var oCurrent: Node = oNode
 	while oCurrent:
-		if oCurrent is Entity:
+		if oCurrent is EntityBase:
 			return oCurrent
 		oCurrent = oCurrent.get_parent()
 	return null

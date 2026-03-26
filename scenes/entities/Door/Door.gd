@@ -1,4 +1,4 @@
-extends "res://scenes/entities/EntityBase.gd"
+extends EntityBase
 
 var isOpen = false
 
