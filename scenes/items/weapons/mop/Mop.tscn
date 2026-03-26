@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c318mv7kbn4pq"]
+
+[ext_resource type="Script" uid="uid://nrg0k583axu4" path="res://scenes/items/weapons/mop/Mop.gd" id="1_xo0uk"]
+[ext_resource type="PackedScene" uid="uid://xc66j08i42tq" path="res://scenes/items/weapons/mop/MopViewmodel.tscn" id="2_2xftt"]
+
+[node name="Mop" type="Node" unique_id=713200488]
+script = ExtResource("1_xo0uk")
+sItemName = "Mop"
+oViewmodelScene = ExtResource("2_2xftt")

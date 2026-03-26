@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xc66j08i42tq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lbwfj"]
+
+[node name="MopViewmodel" type="Node3D" unique_id=1691402946]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=883398653]
+transform = Transform3D(0.161647, 0, 0, 0, 0.9267646, 0, 0, 0, 0.16957617, 0, 0, 0)
+mesh = SubResource("BoxMesh_lbwfj")
