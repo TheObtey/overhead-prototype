@@ -1,6 +1,6 @@
 extends EquippableItemBase
 
-@export var iUseDistance: float = 2.0
+@export var iUseDistance: float = 3.0
 
 func OnPrimaryAction() -> void:
 	pass
