@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bexqq70pwxkyp"]
 
 [ext_resource type="Script" uid="uid://bl4xkhglhomdp" path="res://scenes/entities/physics/CarryableEntity.gd" id="1_6d3ir"]
+[ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="2_4k0r5"]
+[ext_resource type="Script" uid="uid://pn21fc8tw0xq" path="res://scenes/entities/components/RigidGravityApplierComponent.gd" id="2_7fu6q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nr51q"]
 
@@ -14,3 +16,12 @@ shape = SubResource("BoxShape3D_nr51q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=476620103]
 mesh = SubResource("BoxMesh_6d3ir")
+
+[node name="Components" type="Node" parent="." unique_id=1665191956]
+
+[node name="RigidGravityApplierComponent" type="Node" parent="Components" unique_id=1058619226]
+script = ExtResource("2_7fu6q")
+
+[node name="GravityReceiverComponent" type="Node" parent="Components" unique_id=1746056575]
+script = ExtResource("2_4k0r5")
+pGravityApplierPath = NodePath("../RigidGravityApplierComponent")

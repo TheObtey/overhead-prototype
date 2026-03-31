@@ -6,3 +6,5 @@
 script = ExtResource("1_qh3cd")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=490728609]
+
+[node name="Components" type="Node" parent="." unique_id=583119987]

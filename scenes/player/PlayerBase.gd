@@ -8,19 +8,17 @@ extends CharacterBody3D
 @onready var oInteractComponent = $Components/InteractComponent
 @onready var oInventoryComponent = $Components/InventoryComponent
 @onready var oEquipmentComponent = $Components/EquipmentComponent
+@onready var oGravityReceiverComponent = $Components/GravityReceiverComponent
 @onready var oHotbarUI = $HotbarUI
 @onready var oViewmodelRoot: Node3D = $CameraRoot/ViewmodelRoot
 
 @export var oStarterItemScene: PackedScene
 
-const vecDefaultGravityDireciton: Vector3 = Vector3.DOWN
-
-var oActiveGravityField: Area3D
-
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	oMovementComponent.Setup(self)
+	oGravityReceiverComponent.Setup(self)
 	oCameraComponent.Setup(self, oCameraRoot, oCamera)
 	oInteractComponent.Setup(self)
 	oInteractComponent.oEntityChanged.connect(_OnEntityChanged)
@@ -69,17 +67,3 @@ func HandleHotbarInput(oEvent: InputEvent) -> void:
 		if Input.is_action_just_pressed(sAction):
 			oEquipmentComponent.EquipItemByIndex(iIndex, tItems)
 			break
-
-func SetGravityDirection(oField: Area3D, vecNewGravityDirection: Vector3) -> void:
-	oActiveGravityField = oField
-	oMovementComponent.SetGravityDirection(vecNewGravityDirection)
-
-func ResetGravityDirection() -> void:
-	oMovementComponent.SetGravityDirection(vecDefaultGravityDireciton)
-
-func ClearActiveGravityField(oField: Area3D) -> void:
-	if oActiveGravityField != oField:
-		return
-	
-	oActiveGravityField = null
-	ResetGravityDirection()

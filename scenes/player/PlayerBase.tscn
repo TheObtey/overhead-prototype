@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://d0si14aljx0pv" path="res://scenes/player/components/InventoryComponent.gd" id="2_ab463"]
 [ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
 [ext_resource type="Script" uid="uid://d3f53tko8hfvb" path="res://scenes/player/components/EquipmentComponent.gd" id="6_5525k"]
+[ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="7_e2kkn"]
 [ext_resource type="PackedScene" uid="uid://bva130iqyut2" path="res://scenes/ui/HotbarUI.tscn" id="8_qh3el"]
+[ext_resource type="Script" uid="uid://4jgmnu5qw3at" path="res://scenes/player/components/CharacterGravityApplierComponent.gd" id="8_rqe1m"]
 [ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
@@ -29,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54507685, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
 
 [node name="Components" type="Node" parent="." unique_id=877173999]
-script = ExtResource("2_ab463")
 
 [node name="MovementComponent" type="Node" parent="Components" unique_id=174316900]
 script = ExtResource("2_01k7g")
@@ -45,6 +46,14 @@ script = ExtResource("2_ab463")
 
 [node name="EquipmentComponent" type="Node" parent="Components" unique_id=1196508434]
 script = ExtResource("6_5525k")
+
+[node name="GravityReceiverComponent" type="Node" parent="Components" unique_id=1478804273]
+script = ExtResource("7_e2kkn")
+pGravityApplierPath = NodePath("../CharacterGravityApplierComponent")
+
+[node name="CharacterGravityApplierComponent" type="Node" parent="Components" unique_id=1119200658]
+script = ExtResource("8_rqe1m")
+pMovementComponentPath = NodePath("../MovementComponent")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
 

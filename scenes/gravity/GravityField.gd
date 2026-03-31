@@ -7,19 +7,28 @@ func _ready() -> void:
 	body_exited.connect(_OnBodyExited)
 
 func _OnBodyEntered(oBody: Node3D) -> void:
-	if not oBody.is_in_group("Player"):
+	var oGravityReceiver: GravityReceiverComponent = _GetGravityReceiver(oBody)
+	
+	if oGravityReceiver == null:
 		return
 	
-	if not oBody.has_method("SetGravityDirection"):
-		return
-	
-	oBody.SetGravityDirection(self, vecGravityDirection)
+	oGravityReceiver.ReceiveGravityFromField(self, vecGravityDirection)
 
 func _OnBodyExited(oBody: Node3D) -> void:
-	if not oBody.is_in_group("Player"):
+	var oGravityReceiver: GravityReceiverComponent = _GetGravityReceiver(oBody)
+	
+	if oGravityReceiver == null:
 		return
 	
-	if not oBody.has_method("ResetGravityDirection"):
-		return
+	oGravityReceiver.ClearGravityFromField(self)
+
+func _GetGravityReceiver(oBody: Node) -> GravityReceiverComponent:
+	if oBody == null:
+		return null
 	
-	oBody.ClearActiveGravityField(self)
+	var oReceiver := oBody.get_node_or_null("Components/GravityReceiverComponent")
+	
+	if oReceiver != null:
+		return oReceiver as GravityReceiverComponent
+	
+	return null
