@@ -8,6 +8,9 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_6d3ir"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fu6q"]
+albedo_color = Color(0.90480345, 0.29152325, 0.8487193, 1)
+
 [node name="CarryableEntity" type="RigidBody3D" unique_id=942434338]
 script = ExtResource("1_6d3ir")
 
@@ -16,6 +19,7 @@ shape = SubResource("BoxShape3D_nr51q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=476620103]
 mesh = SubResource("BoxMesh_6d3ir")
+surface_material_override/0 = SubResource("StandardMaterial3D_7fu6q")
 
 [node name="Components" type="Node" parent="." unique_id=1665191956]
 

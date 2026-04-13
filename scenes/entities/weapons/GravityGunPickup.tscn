@@ -3,9 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://c26dgbj76sim6" path="res://scenes/entities/weapons/WeaponPickupBase.tscn" id="1_83fcn"]
 [ext_resource type="PackedScene" uid="uid://dmixk5axege2a" path="res://scenes/items/weapons/gravity_gun/GravityGun.tscn" id="2_mf3iq"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x1pub"]
+albedo_color = Color(0.82882845, 0.28116363, 0.21654212, 1)
+
 [node name="EntityBase" unique_id=108843216 instance=ExtResource("1_83fcn")]
 oWeaponScene = ExtResource("2_mf3iq")
 sEntityName = "GravityGun"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals" parent_id_path=PackedInt32Array(490728609) index="0" unique_id=1142787307]
 use_collision = true
+material = SubResource("StandardMaterial3D_x1pub")
