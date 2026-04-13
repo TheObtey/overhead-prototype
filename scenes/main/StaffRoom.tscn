@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://ckvrjb1svqxcl"]
+
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_36ojw"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/Door/Door.tscn" id="1_74xxn"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="2_74xxn"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_avrsf"]
+[ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_arcq3"]
+[ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_inj60"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="6_tcuxm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_74xxn"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arcq3"]
+albedo_color = Color(0.4035673, 0.4799993, 0.42384735, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avrsf"]
+albedo_color = Color(0.4603333, 0.78667796, 0.5604443, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36ojw"]
+albedo_color = Color(0.78998727, 0.8226866, 0.9658615, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74xxn"]
+albedo_color = Color(1, 0.72097266, 0.70098966, 1)
+
+[node name="StaffRoom" type="Node3D" unique_id=311504040]
+
+[node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="Level" type="Node" parent="World" unique_id=1040484940]
+
+[node name="Platform" type="MeshInstance3D" parent="World/Level" unique_id=1843599770]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 5.9239283, 4, 8)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform" unique_id=1951151715]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform/StaticBody3D" unique_id=1875475086]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Level" unique_id=1819965139]
+transform = Transform3D(7.3686786, -0.07568955, 0, 3.5101027, 0.15889333, 0, 0, 0, 4, -1.5369954, 2.265806, 8)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform2" unique_id=181455064]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform2/StaticBody3D" unique_id=920639072]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform3" type="MeshInstance3D" parent="World/Level" unique_id=167190343]
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, -6.942358, 7.5859566, -6.8477454)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_arcq3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform3" unique_id=489946295]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform3/StaticBody3D" unique_id=530238699]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall" type="Node" parent="World/Level" unique_id=716691792]
+
+[node name="Wall_Right" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1722667948]
+transform = Transform3D(20, 0, 0, 0, 4.2418365, 0, 0, 0, 0.5, 0, 1.9790943, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right" unique_id=1535811849]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right/StaticBody3D" unique_id=1129303150]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right3" type="MeshInstance3D" parent="World/Level/Wall" unique_id=791334645]
+transform = Transform3D(3, 0, 0, 0, 4.242, 0, 0, 0, 0.5, 8.5, 5.291, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right3" unique_id=924700459]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right3/StaticBody3D" unique_id=2098612333]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right4" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1082215419]
+transform = Transform3D(15, 0, 0, 0, 4.242, 0, 0, 0, 0.5, -2.5, 5, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right4" unique_id=304182562]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right4/StaticBody3D" unique_id=1198005463]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right2" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1162518987]
+transform = Transform3D(20, 0, 0, 0, 8.846475, 0, 0, 0, 0.5, 0.004, 11, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right2" unique_id=545280788]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right2/StaticBody3D" unique_id=1438163813]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Left" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1661648904]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 0.5, 0, 7, -10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Left" unique_id=2056333982]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Left/StaticBody3D" unique_id=1058540267]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Front" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1487352402]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, 10, 7, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Front" unique_id=2026058050]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Front/StaticBody3D" unique_id=1776819562]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Back" type="MeshInstance3D" parent="World/Level/Wall" unique_id=228135200]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, -10, 7, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Back" unique_id=1409560310]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Back/StaticBody3D" unique_id=1463871399]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Floor" type="MeshInstance3D" parent="World/Level/Wall" unique_id=977807780]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Floor" unique_id=1364012222]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Floor/StaticBody3D" unique_id=1480091565]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Ceiling" type="MeshInstance3D" parent="World/Level/Wall" unique_id=441920401]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 15, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_74xxn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Ceiling" unique_id=1963373424]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Ceiling/StaticBody3D" unique_id=1923175771]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_74xxn")]
+transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_36ojw")]
+transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0, 10, 0)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("2_74xxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
+
+[node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("3_avrsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
+bAutoEquipOnPickup = true
+
+[node name="Mop" parent="World" unique_id=2037755067 instance=ExtResource("4_arcq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
+
+[node name="DirtStains" type="Node" parent="World" unique_id=1126894720]
+
+[node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_inj60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
+
+[node name="Players" type="Node" parent="." unique_id=1879509615]
+
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("6_tcuxm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
