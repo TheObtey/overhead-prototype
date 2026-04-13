@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnwkt0dxo7qxp"]
+
+[ext_resource type="PackedScene" uid="uid://c26dgbj76sim6" path="res://scenes/entities/weapons/WeaponPickupBase.tscn" id="1_2ix1m"]
+[ext_resource type="PackedScene" uid="uid://c318mv7kbn4pq" path="res://scenes/items/weapons/mop/Mop.tscn" id="2_mcqai"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mcqai"]
+
+[node name="EntityBase" unique_id=108843216 instance=ExtResource("1_2ix1m")]
+oWeaponScene = ExtResource("2_mcqai")
+sEntityName = "Mop"
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Visuals" parent_id_path=PackedInt32Array(490728609) index="0" unique_id=283629398]
+transform = Transform3D(-0.18125606, 0, 0, 0, 1.9354305, 0, 0, 0, -0.18125606, 0, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_mcqai")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bva130iqyut2"]
+
+[ext_resource type="Script" uid="uid://c3vduhamhfa4p" path="res://scenes/ui/HotbarUI.gd" id="1_6og64"]
+
+[node name="HotbarUI" type="CanvasLayer" unique_id=836705610]
+script = ExtResource("1_6og64")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=480953073]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=637920053]
+layout_mode = 2
