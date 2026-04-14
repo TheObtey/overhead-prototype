@@ -2,18 +2,13 @@ extends EntityBase
 
 var isOpen = false
 
-func GetPrompt() -> String:
-	if isOpen == false:
-		return "Ouvrir " + sEntityName
-	else:
-		return "Fermer " + sEntityName
-
-func Interact(pPlayer: CharacterBody3D) -> void:
-	toggle_door()
-	
 func Interactkey() -> void:
 	toggle_door()
 	
+
+func CanInteract(pPlayer: CharacterBody3D) -> bool:
+	return false
+
 func toggle_door():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)

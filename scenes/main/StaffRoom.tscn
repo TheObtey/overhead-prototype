@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bl2y7i1uahuim" path="res://assets/models/télé.tscn" id="11_tcuxm"]
 [ext_resource type="PackedScene" uid="uid://cblofmwgojex" path="res://assets/models/vending_machine.tscn" id="12_76dmt"]
 [ext_resource type="PackedScene" uid="uid://haai1uqu60hh" path="res://Items/keypad.tscn" id="13_7pxxh"]
+[ext_resource type="PackedScene" uid="uid://bo4aorng4lf53" path="res://Items/glass_locker.tscn" id="14_uq3sc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
 
@@ -338,6 +339,10 @@ vecGravityDirection = Vector3(0, 1, 0)
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4, 2, 9)
 bAutoEquipOnPickup = true
 
+[node name="GravityGun2" parent="World" unique_id=2088488731 instance=ExtResource("3_avrsf")]
+transform = Transform3D(0.011308782, 0, -0.49987206, 0, 0.5, 0, 0.49987206, 0, 0.011308782, 7.2453594, 13.512745, -7.610622)
+bAutoEquipOnPickup = true
+
 [node name="Mop" parent="World" unique_id=2037755067 instance=ExtResource("4_arcq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
 
@@ -354,5 +359,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
 
-[node name="Keypad" parent="." unique_id=313838752 instance=ExtResource("13_7pxxh")]
+[node name="Keypad" parent="." unique_id=313838752 node_paths=PackedStringArray("target") instance=ExtResource("13_7pxxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.107339, 1.3983395, -3.7977455)
+correct_code = "123"
+target = NodePath("../World/Level/Door")
+
+[node name="Glass_locker" parent="." unique_id=1884566530 instance=ExtResource("14_uq3sc")]
+transform = Transform3D(1.26, 0, 0, 0, -0.7, 6.119594e-08, 0, -6.119594e-08, -0.7, 7.213175, 14.859735, -7.55682)

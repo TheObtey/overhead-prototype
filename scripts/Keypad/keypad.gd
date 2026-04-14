@@ -4,6 +4,8 @@ extends Node3D
 @export var correct_code : String = "1234567"
 var current_input : String = ""
 
+@export var target : Node3D
+
 signal code_correct
 signal code_incorrect
 
@@ -22,6 +24,8 @@ func validate():
 		number_on_screen.text = "correct"
 		print("Code correct !")
 		emit_signal("code_correct")
+		if target != null:
+			target.Interactkey()
 	else:
 		number_on_screen.text = "incorrect"
 		print("Code incorrect")
