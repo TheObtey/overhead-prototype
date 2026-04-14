@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dcwpl88n3j3qa"]
+
+[ext_resource type="PackedScene" uid="uid://nlxxtphtnutf" path="res://assets/models/HUB/SM_Hub_Floor.fbx" id="1_wtga2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wtga2"]
+points = PackedVector3Array(19.727337, 0.30823964, 19.727337, -19.727337, -0.30823964, -19.727337, -19.727337, 0.30823964, -19.727337, 19.727337, -0.30823964, -19.727337, -19.727337, -0.30823964, 19.727337, -19.727337, 0.30823964, 19.727337, 19.727337, 0.30823964, -19.727337, 19.727337, -0.30823964, 19.727337)
+
+[node name="SM_Hub_Floor" unique_id=1454081498 instance=ExtResource("1_wtga2")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_Hub_Floor" parent_id_path=PackedInt32Array(601347900) index="0" unique_id=1901045059]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_Hub_Floor/StaticBody3D" index="0" unique_id=491450861]
+shape = SubResource("ConvexPolygonShape3D_wtga2")

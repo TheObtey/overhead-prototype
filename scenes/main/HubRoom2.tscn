@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://byc4m50ubcpu3"]
+
+[ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="1_5ag7q"]
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_4x70x"]
+[ext_resource type="PackedScene" uid="uid://ds4ottg8j50ct" path="res://assets/models/HUB/sm_hub_1_er_etage.tscn" id="2_qk3pi"]
+[ext_resource type="PackedScene" uid="uid://eikb3ldrt20v" path="res://assets/models/HUB/sm_hub_armature.tscn" id="3_25cs0"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="3_vsjky"]
+[ext_resource type="PackedScene" uid="uid://k258ffu3efmu" path="res://assets/models/HUB/sm_hub_armature_renforecement.tscn" id="4_26bqc"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_pbw8y"]
+[ext_resource type="PackedScene" uid="uid://d2m3jpn8lsgce" path="res://assets/models/HUB/sm_hub_bordure_1_er_etage.tscn" id="5_28meq"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="5_jgrtc"]
+[ext_resource type="PackedScene" uid="uid://dbn58vb2lsdef" path="res://assets/models/HUB/sm_hub_desk.tscn" id="6_y5ey7"]
+[ext_resource type="PackedScene" uid="uid://dcwpl88n3j3qa" path="res://assets/models/HUB/sm_hub_floor.tscn" id="7_4uw7x"]
+[ext_resource type="PackedScene" uid="uid://bvwnxkbmb6exb" path="res://assets/models/HUB/sm_hub_roof.tscn" id="8_5tkqw"]
+[ext_resource type="PackedScene" uid="uid://bcjogl6rjnuek" path="res://assets/models/HUB/sm_hub_stairs_left.tscn" id="9_ma44l"]
+[ext_resource type="PackedScene" uid="uid://bcmtsovthi61g" path="res://assets/models/HUB/sm_hub_stairs_right.tscn" id="10_lj7xk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_f83uu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a6aw"]
+albedo_color = Color(0.99999994, 0.83748037, 0.42783576, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qk3pi"]
+points = PackedVector3Array(0.4578707, 0.19807906, 0.01578243, -0.48873997, -0.09168735, -0.04518683, -0.47150937, -0.1370268, -0.090701535, 0.07635914, -0.33327514, 0.36417928, 0.13656896, -0.33242497, -0.3469059, -0.15161654, 0.47198188, -0.060245913, -0.10534735, 0.21193622, 0.43966028, -0.045016855, 0.19809827, -0.4564163, 0.4090765, -0.15116782, 0.2425159, -0.27137637, -0.37776056, 0.18187061, 0.41147974, -0.07598096, -0.27324012, 0.19819722, -0.4561612, -0.04493101, -0.24064063, -0.33167413, -0.2857683, 0.22713655, 0.2567203, 0.36304116, 0.22752243, 0.42360392, -0.13548777, -0.37899047, 0.060702223, 0.31946206, -0.40674683, 0.18104935, -0.22569102, -0.014631338, -0.09176946, 0.49022886, -0.37785473, 0.30279276, 0.121712334, 0.046232317, 0.45601088, 0.19818504, -0.22746402, -0.060786348, -0.44034815, 0.22845526, 0.06072284, -0.43988743, -0.09113759, -0.48924586, -0.045174047, 0.44186506, -0.22821625, -0.044958085, 0.31717873, 0.24121423, -0.30081153, -0.044848714, 0.39473665, -0.30295488, -0.316348, -0.19622163, 0.33255145, 0.19844188, -0.03042933, 0.45723665, 0.061471395, -0.1522456, -0.47130713, 0.36308852, 0.25670764, 0.22707908, 0.15213433, -0.43948856, 0.18237916, -0.21072462, 0.36227608, 0.2722302)
+
+[node name="HubRoom" type="Node3D" unique_id=311504040]
+
+[node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="Level" type="Node" parent="World" unique_id=1040484940]
+
+[node name="Vent" parent="World/Level" unique_id=1168563654 instance=ExtResource("1_5ag7q")]
+transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, -16, 3.45, 19.63)
+
+[node name="Light" type="MeshInstance3D" parent="World/Level" unique_id=522943352]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54233503, 17.252274, 0)
+mesh = SubResource("SphereMesh_f83uu")
+surface_material_override/0 = SubResource("StandardMaterial3D_0a6aw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/Level/Light" unique_id=278343691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7745838, 0)
+light_color = Color(0.99999994, 0.7443943, 0.411648, 1)
+light_energy = 8.556
+shadow_enabled = true
+omni_range = 827.145
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Light" unique_id=425912035]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Light/StaticBody3D" unique_id=146017509]
+shape = SubResource("ConvexPolygonShape3D_qk3pi")
+
+[node name="SM_HUB_1er_etage" parent="World/Level" unique_id=1518851194 instance=ExtResource("2_qk3pi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="SM_HUB_Armature" parent="World/Level" unique_id=612694036 instance=ExtResource("3_25cs0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.3, 0)
+
+[node name="SM_HUB_Armature_renforecement" parent="World/Level" unique_id=1278576891 instance=ExtResource("4_26bqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, 0)
+
+[node name="SM_HUB_Armature_renforecement2" parent="World/Level" unique_id=1270494952 instance=ExtResource("4_26bqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 15, 0)
+
+[node name="SM_HUB_Bordure_1er_etage" parent="World/Level" unique_id=1924309279 instance=ExtResource("5_28meq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7, 0)
+
+[node name="SM_HUB_Desk" parent="World/Level" unique_id=718101474 instance=ExtResource("6_y5ey7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+
+[node name="SM_Hub_Floor" parent="World/Level" unique_id=1454081498 instance=ExtResource("7_4uw7x")]
+
+[node name="SM_HUB_Roof" parent="World/Level" unique_id=1392330983 instance=ExtResource("8_5tkqw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="SM_HUB_Stairs_Left" parent="World/Level" unique_id=2135686712 instance=ExtResource("9_ma44l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, -6.3)
+
+[node name="SM_HUB_Stairs_Right" parent="World/Level" unique_id=597971972 instance=ExtResource("10_lj7xk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 5, 6.3)
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_4x70x")]
+transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 17, 0)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_vsjky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
+
+[node name="GravityGun" parent="World" unique_id=993904583 instance=ExtResource("4_pbw8y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
+bAutoEquipOnPickup = true
+
+[node name="Players" type="Node" parent="." unique_id=1879509615]
+
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("5_jgrtc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
