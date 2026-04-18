@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="overhead-prototype"
-run/main_scene="uid://dw1lxdkpmok8y"
+config/name="overhead-VerticalSlice"
+run/main_scene="uid://bunwvaqlowttw"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://f7aapmy2wydy"
 
 [autoload]
 
