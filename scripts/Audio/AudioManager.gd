@@ -7,17 +7,14 @@ func _ready():
 	pPlayer = AudioStreamPlayer2D.new()
 	add_child(pPlayer)
 
-func PlayMusic(path: String):
-	if oCurrentPath == path:
+func PlayMusic(sPath: String):
+	if oCurrentPath == sPath:
 		return
 
-	oCurrentPath = path
-	var music = load(path)
-	pPlayer.stream = music
+	oCurrentPath = sPath
+	var oMusic = load(sPath)
+	pPlayer.stream = oMusic
 	pPlayer.play()
 
 func StopMusic():
 	pPlayer.stop()
-
-#TO_DO
-#SwitchMusic(newPath: String)

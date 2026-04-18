@@ -15,11 +15,11 @@ func _input(event):
 		return
 
 	if event is InputEventKey and event.pressed:
-		_GoToMainMenu()
+		_goToMainMenu()
 	elif event is InputEventMouseButton and event.pressed:
-		_GoToMainMenu()
+		_goToMainMenu()
 	elif event is InputEventJoypadButton and event.pressed:
-		_GoToMainMenu()
+		_goToMainMenu()
 
-func _GoToMainMenu():
+func _goToMainMenu():
 	get_tree().change_scene_to_packed(scMainMenu)
