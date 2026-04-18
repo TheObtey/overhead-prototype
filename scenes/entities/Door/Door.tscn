@@ -9,6 +9,7 @@ albedo_color = Color(0.35633364, 0.10391449, 0.030266998, 1)
 [node name="EntityBase" unique_id=108843216 instance=ExtResource("1_qy8j6")]
 script = ExtResource("2_b5l2o")
 sEntityName = "Door"
+bCanInteract = false
 
 [node name="Visuals" parent="." index="0" unique_id=490728609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.015851, 0)
