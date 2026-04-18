@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j3dm1eoursbd" path="res://scripts/UI/SplashScreen.gd" id="1_m0ilf"]
 [ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="1_yei5s"]
-[ext_resource type="PackedScene" uid="uid://774840n8vnjf" path="res://scenes/main/ElouanGamingRoom.tscn" id="2_eina6"]
+[ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/MainMenu.tscn" id="2_eina6"]
 
 [sub_resource type="FontVariation" id="FontVariation_yei5s"]
 
