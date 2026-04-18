@@ -7,8 +7,8 @@ extends EntityBase
 func GetPrompt() -> String:
 	return "Pickup"
 
-func Interact(pPlayer: CharacterBody3D) -> void:
-	if not pPlayer or not oWeaponScene:
+func Interact(oInteractor: Node) -> void:
+	if not oInteractor or not oWeaponScene:
 		return
 	
 	var oItem = oWeaponScene.instantiate()
@@ -16,8 +16,8 @@ func Interact(pPlayer: CharacterBody3D) -> void:
 	if not oItem:
 		return
 	
-	var oInventoryComponent = pPlayer.GetInventoryComponent()
-	var oEquipmentComponent = pPlayer.GetEquipmentComponent()
+	var oInventoryComponent = oInteractor.GetInventoryComponent()
+	var oEquipmentComponent = oInteractor.GetEquipmentComponent()
 	
 	if oInventoryComponent:
 		oInventoryComponent.AddItem(oItem)
@@ -26,4 +26,4 @@ func Interact(pPlayer: CharacterBody3D) -> void:
 		oEquipmentComponent.EquipItem(oItem)
 	
 	queue_free()
-	pPlayer._OnEntityChanged(null)
+	oInteractor._OnEntityChanged(null)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bexqq70pwxkyp"]
 
-[ext_resource type="Script" uid="uid://bl4xkhglhomdp" path="res://scenes/entities/physics/CarryableEntity.gd" id="1_6d3ir"]
+[ext_resource type="Script" uid="uid://bl4xkhglhomdp" path="res://scenes/entities/carriable_entity/CarriableEntity.gd" id="1_6d3ir"]
 [ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="2_4k0r5"]
 [ext_resource type="Script" uid="uid://pn21fc8tw0xq" path="res://scenes/entities/components/RigidGravityApplierComponent.gd" id="2_7fu6q"]
 

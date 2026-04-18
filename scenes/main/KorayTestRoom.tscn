@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_o0i0b"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_nx2fd"]
-[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="2_oscr4"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="2_oscr4"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_oscr4"]
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_gxka4"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_surqg"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="7_lv1bk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
 
@@ -53,6 +54,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.6905
 
 [node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_surqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
+
+[node name="Door" parent="World" unique_id=646612799 instance=ExtResource("7_lv1bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8253598, 0, 1.9252269)
+bCanInteract = true
 
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
