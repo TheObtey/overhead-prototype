@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bx7qobf52rvko"]
+
+[ext_resource type="Script" uid="uid://dg6lhhp3qftes" path="res://scripts/UI/MainMenu.gd" id="1_7hjkt"]
+[ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="2_qtf23"]
+[ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="3_3kp2c"]
+[ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="4_6k8rh"]
+
+[sub_resource type="Animation" id="Animation_2ysvc"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198), Color(0, 0, 0, 0.4509804)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpiny"]
+_data = {
+&"FadeIn": SubResource("Animation_2ysvc"),
+&"RESET": SubResource("Animation_xpiny")
+}
+
+[node name="MainMenu" type="Control" unique_id=12293144]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7hjkt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=503456321]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=407772391]
+libraries/ = SubResource("AnimationLibrary_xpiny")
+autoplay = &"FadeIn"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1959275553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qtf23")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=72748671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1682905975]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1882247710]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=276428641]
+layout_mode = 2
+
+[node name="Start" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=108654307]
+z_index = 29
+layout_mode = 2
+texture_normal = ExtResource("3_3kp2c")
+texture_hover = ExtResource("3_3kp2c")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1796601804]
+layout_mode = 2
+
+[node name="Options" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=532618816]
+z_index = 2
+layout_mode = 2
+texture_normal = ExtResource("3_3kp2c")
+texture_hover = ExtResource("3_3kp2c")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1620021708]
+layout_mode = 2
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=154688385]
+z_index = 2
+layout_mode = 2
+texture_normal = ExtResource("3_3kp2c")
+texture_hover = ExtResource("3_3kp2c")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("4_6k8rh")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

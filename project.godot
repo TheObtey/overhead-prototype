@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="overhead-VerticalSlice"
-run/main_scene="uid://bunwvaqlowttw"
+run/main_scene="uid://bvj24x6spqyos"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://f7aapmy2wydy"
+run/name="overhead-VerticalSlice"
+run/icon="uid://f7aapmy2wydy"
+run/size/mode=0
 
 [autoload]
 
