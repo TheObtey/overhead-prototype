@@ -42,6 +42,7 @@ sEntityName = "Lever"
 
 [node name="LeverActivator" type="Node" parent="." unique_id=1117461813]
 script = ExtResource("4_hidbb")
+tActivators = Array[NodePath]([NodePath("../Lever")])
 
 [node name="LampConfig" type="Node" parent="LeverActivator" unique_id=752299267 node_paths=PackedStringArray("oTarget")]
 script = ExtResource("5_swis6")
