@@ -18,9 +18,9 @@ func GetPrompt() -> String:
 		return super.GetPrompt()
 	
 	if codeIsCorrect:
-		return "Close %s" % sEntityName
+		return "Close Keypad"
 	
-	return "Open %s" % sEntityName
+	return "Open Keypad"
 
 func OpenCode(oInteractor: Node):
 	var instance = keypadUI.instantiate()
