@@ -18,6 +18,10 @@ run/name="overhead-VerticalSlice"
 run/icon="uid://f7aapmy2wydy"
 run/size/mode=0
 
+[audio]
+
+buses/default_bus_layout="uid://dd02iyj814ipf"
+
 [autoload]
 
 AudioManager="*uid://c30kycktb737j"

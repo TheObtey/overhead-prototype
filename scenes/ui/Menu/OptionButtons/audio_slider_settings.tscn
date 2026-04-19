@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dym18t4qasbie"]
+
+[ext_resource type="Script" uid="uid://b41x2a0wpttdj" path="res://scripts/UI/audio_slider_settings.gd" id="1_uodj7"]
+
+[node name="Audio_Slider_Settings" type="Control" unique_id=314009010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uodj7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=346327266]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 64
+
+[node name="Audio_Name" type="Label" parent="HBoxContainer" unique_id=447445099]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=107121647]
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer" unique_id=1519237006]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.001
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=2115485209]
+layout_mode = 2
+
+[node name="Audio_Num" type="Label" parent="HBoxContainer" unique_id=1695762812]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "64"
