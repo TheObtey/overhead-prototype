@@ -55,3 +55,23 @@ mesh = SubResource("BoxMesh_ta4rn")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1383973598]
 transform = Transform3D(7.2523, 0, 0, 0, 4.4971094, 0, 0, 0, 1, 5.101193, 2.6115246, 0)
 mesh = SubResource("BoxMesh_ta4rn")
+
+[node name="Lever" parent="." unique_id=789371155 instance=ExtResource("3_830eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61558104, 0.06890845, 3.4307508)
+sEntityName = "Lever"
+
+[node name="LeverActivator" type="Node" parent="." unique_id=1117461813]
+script = ExtResource("4_hidbb")
+tActivators = Array[NodePath]([NodePath("../Lever")])
+
+[node name="LampConfig" type="Node" parent="LeverActivator" unique_id=752299267 node_paths=PackedStringArray("oTarget")]
+script = ExtResource("5_swis6")
+oTarget = NodePath("../../Lamp")
+tFuncArgs = [Color(0.633156, 0.28751987, 0.3151009, 1), Color(0.14020842, 0.36598575, 0.2734373, 1)]
+
+[node name="DoorConfig" type="Node" parent="LeverActivator" unique_id=1074855540 node_paths=PackedStringArray("oTarget")]
+script = ExtResource("5_swis6")
+oTarget = NodePath("../../Door")
+
+[node name="Lamp" parent="." unique_id=1068817947 instance=ExtResource("5_mcd5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9291086, 0.5500002, 1.4097943)
