@@ -2,7 +2,7 @@ extends RigidBody3D
 
 @onready var oGravityReceiverComponent = $Components/GravityReceiverComponent
 
-@export var bIsCarryable: bool = true
+@export var bIsCarriable: bool = true
 @export var iHoldDistance: float = 2.5
 @export var iFollowSpeed: float = 12.0
 @export var iThrowForce: float = 10.0
@@ -14,7 +14,7 @@ func _ready() -> void:
 	oGravityReceiverComponent.Setup(self)
 
 func OnPickedUp(pPlayer: CharacterBody3D) -> void:
-	if not bIsCarryable:
+	if not bIsCarriable:
 		return
 	
 	pHolder = pPlayer

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c26dgbj76sim6"]
 
-[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/EntityBase.tscn" id="1_e3nmn"]
+[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/entity_base/EntityBase.tscn" id="1_e3nmn"]
 [ext_resource type="Script" uid="uid://bxyey6xc4sk6x" path="res://scenes/entities/weapons/WeaponPickupBase.gd" id="2_wo2ds"]
 
 [node name="EntityBase" unique_id=108843216 instance=ExtResource("1_e3nmn")]

@@ -5,14 +5,14 @@ extends EntityBase
 func GetPrompt() -> String:
 	return "Clean"
 
-func CanInteract(pPlayer: CharacterBody3D) -> bool:
+func CanInteract(oInteractor: Node) -> bool:
 	if bCanInteract == false:
 		return false
 	
-	if not pPlayer:
+	if not oInteractor:
 		return false
 	
-	var oEquipmentComponent = pPlayer.GetEquipmentComponent()
+	var oEquipmentComponent = oInteractor.GetEquipmentComponent()
 	
 	if not oEquipmentComponent:
 		return false
@@ -24,11 +24,11 @@ func CanInteract(pPlayer: CharacterBody3D) -> bool:
 	
 	return true
 
-func Interact(pPlayer: CharacterBody3D) -> void:
-	if not CanInteract(pPlayer):
+func Interact(oInteractor: Node) -> void:
+	if not CanInteract(oInteractor):
 		return
 	
 	print("stain cleaned")
 	
 	queue_free()
-	pPlayer._OnEntityChanged(null)
+	oInteractor._OnEntityChanged(null)
