@@ -2,8 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_pe0es"]
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_ejuck"]
+[ext_resource type="PackedScene" uid="uid://dehduapvev5l8" path="res://assets/models/hub/SM_HUB_Stairs_Left.fbx" id="2_vlaj0"]
+[ext_resource type="PackedScene" uid="uid://dvnu35gp62yui" path="res://assets/models/other/robot_nettoyeur.fbx" id="3_rhwk3"]
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_vlaj0"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_rhwk3"]
+[ext_resource type="PackedScene" uid="uid://entieha1rau5" path="res://assets/models/other/cartons.fbx" id="4_sgec4"]
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="5_sgec4"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="6_scpxf"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_p6qhr"]
@@ -38,15 +41,6 @@ mesh = SubResource("BoxMesh_36ojw")
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform" unique_id=1951151715]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform/StaticBody3D" unique_id=1875475086]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Platform2" type="MeshInstance3D" parent="World/Level" unique_id=1819965139]
-transform = Transform3D(7.3686786, -0.07568955, 0, 3.5101027, 0.15889333, 0, 0, 0, 4, -1.5369954, 2.265806, 8)
-mesh = SubResource("BoxMesh_36ojw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform2" unique_id=181455064]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform2/StaticBody3D" unique_id=920639072]
 shape = SubResource("ConvexPolygonShape3D_74xxn")
 
 [node name="Platform3" type="MeshInstance3D" parent="World/Level" unique_id=167190343]
@@ -154,8 +148,26 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 [node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_pe0es")]
 transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
 
+[node name="SM_HUB_Stairs_Left" parent="World/Level" unique_id=663477710 instance=ExtResource("2_vlaj0")]
+transform = Transform3D(-0.89637816, 0, 0.44329014, 0, 1, 0, -0.44329014, 0, -0.89637816, -2.248403, 1.6148648, 6.999776)
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Level/SM_HUB_Stairs_Left" unique_id=1819965139]
+transform = Transform3D(-7.8232193, 0.07289397, -1.0160966, 4.111382, 0.14857139, -0.021352721, 2.0320208, -0.019965084, -3.868735, -0.78772354, 0.38648558, -0.60648346)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/SM_HUB_Stairs_Left/Platform2" unique_id=181455064]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/SM_HUB_Stairs_Left/Platform2/StaticBody3D" unique_id=920639072]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="robot_nettoyeur" parent="World/Level" unique_id=255083203 instance=ExtResource("3_rhwk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680564, 0.15096286, 2.468274)
+
+[node name="cartons" parent="World/Level" unique_id=14626324 instance=ExtResource("4_sgec4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5466163, 0.6483673, -8.137729)
+
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_ejuck")]
-transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0, 10, 0)
+transform = Transform3D(20, 0, 0, 0, 3.3516822, 0, 0, 0, 20, 0, 12.673371, 0)
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_vlaj0")]
