@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://55u40ht0bbg"]
+
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_d52yl"]
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_xtvft"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_yng7l"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_6vecw"]
+[ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="5_yabut"]
+[ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="6_l1und"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_xtvft"]
+[ext_resource type="PackedScene" uid="uid://rb66a85rxt0v" path="res://scenes/entities/keypad/KeypadEntity.tscn" id="7_yng7l"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7jb1d"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_le0sw"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fjkd"]
+albedo_color = Color(0.4035673, 0.4799993, 0.42384735, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dmxr"]
+albedo_color = Color(0.4603333, 0.78667796, 0.5604443, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xovg"]
+albedo_color = Color(0.78998727, 0.8226866, 0.9658615, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7ir6"]
+albedo_color = Color(1, 0.72097266, 0.70098966, 1)
+
+[node name="PhStaffRoom" type="Node3D" unique_id=1324281756]
+
+[node name="World" type="Node" parent="." unique_id=2019254920]
+
+[node name="Level" type="Node" parent="World" unique_id=1661394147]
+
+[node name="Platform" type="MeshInstance3D" parent="World/Level" unique_id=1431949071]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 5.9239283, 4, 8)
+mesh = SubResource("BoxMesh_7jb1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform" unique_id=699728450]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform/StaticBody3D" unique_id=1776156481]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Level" unique_id=1742105249]
+transform = Transform3D(7.3686786, -0.07568955, 0, 3.5101027, 0.15889333, 0, 0, 0, 4, -1.5369954, 2.265806, 8)
+mesh = SubResource("BoxMesh_7jb1d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform2" unique_id=2002514460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform2/StaticBody3D" unique_id=1398077929]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Platform3" type="MeshInstance3D" parent="World/Level" unique_id=1645756308]
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, -6.942358, 7.5859566, -6.8477454)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_7fjkd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform3" unique_id=1440102622]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform3/StaticBody3D" unique_id=658044038]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall" type="Node" parent="World/Level" unique_id=814937560]
+
+[node name="Wall_Right" type="MeshInstance3D" parent="World/Level/Wall" unique_id=74712334]
+transform = Transform3D(20, 0, 0, 0, 4.2418365, 0, 0, 0, 0.5, 0, 1.9790943, 10)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right" unique_id=199613115]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right/StaticBody3D" unique_id=682024171]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Right3" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1034241354]
+transform = Transform3D(3, 0, 0, 0, 4.242, 0, 0, 0, 0.5, 8.5, 5.291, 10)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right3" unique_id=707338966]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right3/StaticBody3D" unique_id=317050838]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Right4" type="MeshInstance3D" parent="World/Level/Wall" unique_id=675035993]
+transform = Transform3D(15, 0, 0, 0, 4.242, 0, 0, 0, 0.5, -2.5, 5, 10)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right4" unique_id=1011833596]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right4/StaticBody3D" unique_id=664543252]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Right2" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1597317153]
+transform = Transform3D(20, 0, 0, 0, 8.846475, 0, 0, 0, 0.5, 0.004, 11, 10)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right2" unique_id=1182444735]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right2/StaticBody3D" unique_id=1718190866]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Left" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1909206383]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 0.5, 0, 7, -10)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Left" unique_id=1006367374]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Left/StaticBody3D" unique_id=785750308]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Front" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1716406010]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, 10, 7, 0)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Front" unique_id=368842091]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Front/StaticBody3D" unique_id=1921930738]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Wall_Back" type="MeshInstance3D" parent="World/Level/Wall" unique_id=866847044]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, -10, 7, 0)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dmxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Back" unique_id=1542795648]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Back/StaticBody3D" unique_id=1310003185]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Floor" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1876719008]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_7xovg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Floor" unique_id=1468304995]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Floor/StaticBody3D" unique_id=1602055385]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="Ceiling" type="MeshInstance3D" parent="World/Level/Wall" unique_id=2055008300]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 15, 0)
+mesh = SubResource("BoxMesh_7jb1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_c7ir6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Ceiling" unique_id=384166650]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Ceiling/StaticBody3D" unique_id=449289160]
+shape = SubResource("ConvexPolygonShape3D_le0sw")
+
+[node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_d52yl")]
+transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_xtvft")]
+transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0.18735266, 10.093277, 0.015919209)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_yng7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
+
+[node name="Steve" parent="World" unique_id=678767579 instance=ExtResource("4_6vecw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
+bAutoEquipOnPickup = true
+
+[node name="Mop" parent="World" unique_id=62436986 instance=ExtResource("5_yabut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
+
+[node name="DirtStains" type="Node" parent="World" unique_id=1271061060]
+
+[node name="DirtStain1" parent="World/DirtStains" unique_id=1042067815 instance=ExtResource("6_l1und")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
+
+[node name="EntityBase" parent="World" unique_id=1362413472 instance=ExtResource("7_yng7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431343, 5.407151, 8.416924)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2044211860]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
+
+[node name="PlayerBase" parent="DirectionalLight3D" unique_id=632260283 instance=ExtResource("7_xtvft")]
+transform = Transform3D(0.99999976, 0, 0, -3.7252903e-09, 1, 0, -1.4901161e-08, 0, 1, 1.3918401, 21.309675, 5.194419)

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://rb66a85rxt0v"]
+
+[ext_resource type="Script" uid="uid://c1iu2pa0k5avm" path="res://scenes/entities/keypad/KeypadEntity.gd" id="1_57a64"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8eb3"]
+albedo_color = Color(0.14509805, 0, 0, 1)
+
+[node name="EntityBase" type="Node3D" unique_id=1362413472]
+script = ExtResource("1_57a64")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=1597752126]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visuals" unique_id=483653206]
+transform = Transform3D(0.19009888, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010225177, 2.9802322e-08, 0.0012581944)
+use_collision = true
+material = SubResource("StandardMaterial3D_w8eb3")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=827131519]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, 0.30261683, -0.30194086)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=467530651]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.0009794384, -0.30194086)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=1567318938]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.0009794384, 0.0049633384)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=1991296490]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.0009794384, 0.31085348)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=934385561]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.30738255, 0.31085348)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=1332295798]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.30738255, 0.0024580061)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=2133853229]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, -0.30738255, -0.30902076)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=1425323962]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, 0.30261683, 0.30856255)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Visuals/CSGBox3D" unique_id=1507378850]
+transform = Transform3D(0.44537318, 0, 0, 0, 0.2520846, 0, 0, 0, 0.2479347, -0.6157908, 0.30261683, 0.00097334385)
+
+[node name="Components" type="Node" parent="." unique_id=415152643]

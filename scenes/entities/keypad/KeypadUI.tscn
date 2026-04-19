@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c1k8kwru48apg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5nwb"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_5l2oc"]
+
+[node name="KeypadUi" type="Control" unique_id=1956811983]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=574166248]
+material = SubResource("CanvasItemMaterial_l5nwb")
+layout_mode = 0
+offset_left = 542.0
+offset_top = 290.0
+offset_right = 1275.0
+offset_bottom = 823.0
+texture = SubResource("Texture2DRD_5l2oc")
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=558657693]
+layout_mode = 0
+offset_left = 192.99995
+offset_top = 349.0
+offset_right = 210.99995
+offset_bottom = 380.0
+scale = Vector2(2.24, 2.3200002)
+text = "1"
