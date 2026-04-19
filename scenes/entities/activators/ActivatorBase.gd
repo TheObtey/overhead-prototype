@@ -2,7 +2,6 @@ class_name ActivatorBase
 extends EntityBase
 
 @export var tTargets: Array[ActivationTarget] = []
-@export var sPrompt: String = "Interact with me!"
 @export var bTriggerOnce: bool = false
 
 var bHasBeenTriggered: bool = false

@@ -34,7 +34,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9291086, 0.5500002, 1.40979
 [node name="Lever01" parent="." unique_id=789371155 instance=ExtResource("3_830eq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0080492, 1.1435235, 0.61134315)
 tTargets = Array[ExtResource("3_mcd5n")]([SubResource("Resource_swis6"), SubResource("Resource_id453")])
-sPrompt = "Do shit"
+sPrompt = "Interact with me zebi"
+sPrompt = "Interact with me zebi"
 
 [node name="PlayerBase" parent="." unique_id=632260283 instance=ExtResource("2_830eq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151436925, 1.3887985, 5.1536775)

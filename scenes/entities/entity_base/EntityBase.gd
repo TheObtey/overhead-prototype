@@ -3,6 +3,7 @@ extends Node3D
 
 @export var sEntityName: String = "Entity"
 @export var bCanInteract: bool = true
+@export var sPrompt: String = "Interact with me!"
 
 @onready var oVisuals: Node3D = $Visuals
 @onready var oComponents: Node = $Components
@@ -35,4 +36,4 @@ func GetPrompt() -> String:
 			if sCustomPrompt != "":
 				return sCustomPrompt
 	
-	return "Interact with %s" % sEntityName
+	return sPrompt

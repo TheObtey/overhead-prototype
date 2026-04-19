@@ -57,7 +57,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168
 
 [node name="Door" parent="World" unique_id=646612799 instance=ExtResource("7_lv1bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8253598, 0, 1.9252269)
-bCanInteract = true
 
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
