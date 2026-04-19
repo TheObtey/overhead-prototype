@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bx7qobf52rvko"]
 
 [ext_resource type="Script" uid="uid://dg6lhhp3qftes" path="res://scripts/UI/MainMenu.gd" id="1_7hjkt"]
+[ext_resource type="PackedScene" uid="uid://dw1lxdkpmok8y" path="res://scenes/main/KorayTestRoom.tscn" id="2_3kp2c"]
 [ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="2_qtf23"]
 [ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="3_3kp2c"]
 [ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="4_6k8rh"]
@@ -50,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7hjkt")
+scGameScene = ExtResource("2_3kp2c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=503456321]
 z_index = 1

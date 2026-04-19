@@ -2,12 +2,13 @@ extends Control
 
 @onready var oOptionMenu = $OptionsMenu as OptionsMenu
 @onready var oMarginContainer = $MarginContainer as MarginContainer
-
+@export var scGameScene : PackedScene
+ 
 func _ready() -> void:
 	oOptionMenu.sExitMenu.connect(OnExitMenu)
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/main/ElouanGamingRoom.tscn")
+	get_tree().change_scene_to_packed(scGameScene)
 
 func _on_options_pressed() -> void:
 	oMarginContainer.visible = false
