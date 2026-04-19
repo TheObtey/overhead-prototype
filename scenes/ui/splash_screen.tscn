@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://j3dm1eoursbd" path="res://scripts/UI/SplashScreen.gd" id="1_m0ilf"]
 [ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="1_yei5s"]
 [ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/MainMenu.tscn" id="2_eina6"]
+[ext_resource type="AudioStream" uid="uid://f8vo23e0d54h" path="res://Audio/Musics/TestsOverhead.mp3" id="3_wh6tg"]
 
 [sub_resource type="FontVariation" id="FontVariation_yei5s"]
 
@@ -63,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m0ilf")
 scMainMenu = ExtResource("2_eina6")
+audioMusic = ExtResource("3_wh6tg")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=16517714]
