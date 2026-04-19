@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c1k8kwru48apg"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5nwb"]
+[ext_resource type="Texture2D" uid="uid://3uwmadq2wo7p" path="res://assets/models/other/grey.jpg" id="1_5l2oc"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_l5nwb"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_l5nwb"]
 
 [node name="KeypadUi" type="Control" unique_id=1956811983]
 layout_mode = 3
@@ -20,59 +20,59 @@ offset_top = 290.0
 offset_right = 1275.0
 offset_bottom = 823.0
 scale = Vector2(0.76, 1)
-texture = SubResource("ImageTexture_l5nwb")
+texture = ExtResource("1_5l2oc")
 
 [node name="Btn1" type="Button" parent="TextureRect" unique_id=558657693]
 layout_mode = 0
-offset_left = 217.00002
-offset_top = 210.0
-offset_right = 235.00002
-offset_bottom = 241.0
+offset_left = 217.10522
+offset_top = 171.0
+offset_right = 235.10522
+offset_bottom = 202.0
 scale = Vector2(5.4877424, 3.680005)
 text = "1"
 
 [node name="Btn2" type="Button" parent="TextureRect" unique_id=985746887]
 layout_mode = 0
-offset_left = 307.00003
-offset_top = 210.0
-offset_right = 325.00003
-offset_bottom = 241.0
+offset_left = 313.52628
+offset_top = 171.0
+offset_right = 331.52628
+offset_bottom = 202.0
 scale = Vector2(5.4877696, 3.6800053)
 text = "2"
 
 [node name="Btn3" type="Button" parent="TextureRect" unique_id=2096225961]
 layout_mode = 0
-offset_left = 410.00006
-offset_top = 210.0
-offset_right = 428.00006
-offset_bottom = 241.0
+offset_left = 416.5263
+offset_top = 171.0
+offset_right = 434.5263
+offset_bottom = 202.0
 scale = Vector2(5.4877424, 3.680005)
 text = "3"
 
 [node name="Btn4" type="Button" parent="TextureRect" unique_id=1122605600]
 layout_mode = 0
-offset_left = 217.99998
-offset_top = 300.0
-offset_right = 235.99998
-offset_bottom = 331.0
+offset_left = 218.42105
+offset_top = 286.0
+offset_right = 236.42105
+offset_bottom = 317.0
 scale = Vector2(5.4877424, 3.680005)
 text = "4"
 
 [node name="Btn5" type="Button" parent="TextureRect" unique_id=1899855731]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 300.0
-offset_right = 323.0
-offset_bottom = 331.0
+offset_left = 311.8421
+offset_top = 286.0
+offset_right = 329.8421
+offset_bottom = 317.0
 scale = Vector2(5.4877424, 3.680005)
 text = "5"
 
 [node name="Btn6" type="Button" parent="TextureRect" unique_id=1438133348]
 layout_mode = 0
-offset_left = 406.0
-offset_top = 300.0
-offset_right = 424.0
-offset_bottom = 331.0
+offset_left = 412.8421
+offset_top = 286.0
+offset_right = 430.8421
+offset_bottom = 317.0
 scale = Vector2(5.4877424, 3.680005)
 text = "6"
 
@@ -87,18 +87,26 @@ text = "7"
 
 [node name="Btn8" type="Button" parent="TextureRect" unique_id=54420655]
 layout_mode = 0
-offset_left = 308.0
+offset_left = 314.42105
 offset_top = 399.0
-offset_right = 326.0
+offset_right = 332.42105
 offset_bottom = 430.0
 scale = Vector2(5.4877424, 3.680005)
 text = "8"
 
 [node name="Btn9" type="Button" parent="TextureRect" unique_id=1557561580]
 layout_mode = 0
-offset_left = 406.0
+offset_left = 412.42105
 offset_top = 399.0
-offset_right = 424.0
+offset_right = 430.42105
 offset_bottom = 430.0
 scale = Vector2(5.4877424, 3.680005)
 text = "9"
+
+[node name="TextEdit" type="TextEdit" parent="TextureRect" unique_id=1133091516]
+layout_mode = 0
+offset_left = 307.89474
+offset_right = 315.89474
+offset_bottom = 8.0
+text = "0000"
+placeholder_text = "0000"

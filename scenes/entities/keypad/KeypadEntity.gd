@@ -5,6 +5,7 @@ extends EntityBase
 @export var keypadCode: int = 0121
 
 var codeIsCorrect: bool = false
+var instanceKeyPadUI
 
 func Interact(oInteractor: Node) -> void:
 	if not CanInteract(oInteractor):
@@ -25,6 +26,8 @@ func GetPrompt() -> String:
 func OpenCode(oInteractor: Node):
 	var instance = keypadUI.instantiate()
 	add_child(instance)
+	instanceKeyPadUI = instance
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	codeIsCorrect = not codeIsCorrect
 	return

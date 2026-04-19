@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://55u40ht0bbg"]
 
-[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_d52yl"]
-[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_xtvft"]
-[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_yng7l"]
-[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_6vecw"]
-[ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="5_yabut"]
-[ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="6_l1und"]
-[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_xtvft"]
-[ext_resource type="PackedScene" uid="uid://rb66a85rxt0v" path="res://scenes/entities/keypad/KeypadEntity.tscn" id="7_yng7l"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_8mvbq"]
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_hyb7w"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_olwd8"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_jqh1w"]
+[ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="5_ju7aq"]
+[ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="6_tkncs"]
+[ext_resource type="PackedScene" uid="uid://rb66a85rxt0v" path="res://scenes/entities/keypad/KeypadEntity.tscn" id="7_t3h44"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="8_bqoqi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7jb1d"]
 
@@ -152,33 +152,33 @@ surface_material_override/0 = SubResource("StandardMaterial3D_c7ir6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Ceiling/StaticBody3D" unique_id=449289160]
 shape = SubResource("ConvexPolygonShape3D_le0sw")
 
-[node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_d52yl")]
+[node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_8mvbq")]
 transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
 
-[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_xtvft")]
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_hyb7w")]
 transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0.18735266, 10.093277, 0.015919209)
 vecGravityDirection = Vector3(0, 1, 0)
 
-[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_yng7l")]
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_olwd8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
 
-[node name="Steve" parent="World" unique_id=678767579 instance=ExtResource("4_6vecw")]
+[node name="Steve" parent="World" unique_id=678767579 instance=ExtResource("4_jqh1w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
 bAutoEquipOnPickup = true
 
-[node name="Mop" parent="World" unique_id=62436986 instance=ExtResource("5_yabut")]
+[node name="Mop" parent="World" unique_id=62436986 instance=ExtResource("5_ju7aq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
 
 [node name="DirtStains" type="Node" parent="World" unique_id=1271061060]
 
-[node name="DirtStain1" parent="World/DirtStains" unique_id=1042067815 instance=ExtResource("6_l1und")]
+[node name="DirtStain1" parent="World/DirtStains" unique_id=1042067815 instance=ExtResource("6_tkncs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
 
-[node name="EntityBase" parent="World" unique_id=1362413472 instance=ExtResource("7_yng7l")]
+[node name="EntityBase" parent="World" unique_id=1362413472 instance=ExtResource("7_t3h44")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431343, 5.407151, 8.416924)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2044211860]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
 
-[node name="PlayerBase" parent="DirectionalLight3D" unique_id=632260283 instance=ExtResource("7_xtvft")]
+[node name="PlayerBase" parent="DirectionalLight3D" unique_id=632260283 instance=ExtResource("8_bqoqi")]
 transform = Transform3D(0.99999976, 0, 0, -3.7252903e-09, 1, 0, -1.4901161e-08, 0, 1, 1.3918401, 21.309675, 5.194419)
