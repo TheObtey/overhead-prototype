@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://774840n8vnjf"]
 
-[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/Door/Door.tscn" id="1_ta4rn"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_ta4rn"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_830eq"]
-[ext_resource type="PackedScene" uid="uid://b5sq1ryi8t1xn" path="res://scenes/entities/Lever/Lever.tscn" id="3_830eq"]
-[ext_resource type="Script" uid="uid://ds0uru3s1li3n" path="res://scripts/core/ActivatorSystem.gd" id="4_hidbb"]
-[ext_resource type="PackedScene" uid="uid://bl8pf1o3wcntb" path="res://scenes/entities/Lamp/Lamp.tscn" id="5_mcd5n"]
-[ext_resource type="Script" uid="uid://dfvymdihvgqmt" path="res://scripts/Structs/ActorConfig.gd" id="5_swis6"]
+[ext_resource type="PackedScene" uid="uid://b5sq1ryi8t1xn" path="res://scenes/entities/activators/lever/Lever.tscn" id="3_830eq"]
+[ext_resource type="Script" uid="uid://bajph4o5ga7ha" path="res://scenes/entities/activators/ActivationTarget.gd" id="3_mcd5n"]
+[ext_resource type="PackedScene" uid="uid://bl8pf1o3wcntb" path="res://scenes/entities/lamp/Lamp.tscn" id="5_mcd5n"]
+
+[sub_resource type="Resource" id="Resource_swis6"]
+script = ExtResource("3_mcd5n")
+TargetPath = NodePath("../Door01")
+metadata/_custom_type_script = "uid://bajph4o5ga7ha"
+
+[sub_resource type="Resource" id="Resource_id453"]
+script = ExtResource("3_mcd5n")
+TargetPath = NodePath("../Lamp01")
+tExtraArgs = [Color(0.9999998, 0.090942286, 0.05946441, 1), Color(0, 1, 0.6431373, 1)]
+metadata/_custom_type_script = "uid://bajph4o5ga7ha"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta4rn"]
 albedo_color = Color(0.16335335, 0.38489646, 0.19509748, 1)
@@ -14,11 +24,21 @@ albedo_color = Color(0.16335335, 0.38489646, 0.19509748, 1)
 
 [node name="ElouanGamingRoom" type="Node3D" unique_id=1005311978]
 
-[node name="Door" parent="." unique_id=108843216 instance=ExtResource("1_ta4rn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5367662, 0.13181221, -0.2099421)
+[node name="Door01" parent="." unique_id=108843216 instance=ExtResource("1_ta4rn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.4632338, 0.13181221, -0.2099421)
+bCanInteract = false
+
+[node name="Lamp01" parent="." unique_id=1068817947 instance=ExtResource("5_mcd5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9291086, 0.5500002, 1.4097943)
+
+[node name="Lever01" parent="." unique_id=789371155 instance=ExtResource("3_830eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0080492, 1.1435235, 0.61134315)
+tTargets = Array[ExtResource("3_mcd5n")]([SubResource("Resource_swis6"), SubResource("Resource_id453")])
+sPrompt = "Interact with me zebi"
+sPrompt = "Interact with me zebi"
 
 [node name="PlayerBase" parent="." unique_id=632260283 instance=ExtResource("2_830eq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8065225, 1.3887985, 5.922042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151436925, 1.3887985, 5.1536775)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=15781851]
 transform = Transform3D(20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0)
