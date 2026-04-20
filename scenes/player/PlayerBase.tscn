@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cd8a4o661vrla"]
 
-[ext_resource type="Script" uid="uid://dm1y5xfqui0o8" path="res://scenes/player/PlayerBase.gd" id="1_r4mci"]
+[ext_resource type="Script" uid="uid://dm1y5xfqui0o8" path="res://scenes/player/components/PlayerBase.gd" id="1_r4mci"]
 [ext_resource type="Script" uid="uid://262rmjs558hc" path="res://scenes/player/components/MovementComponent.gd" id="2_01k7g"]
 [ext_resource type="Script" uid="uid://cbmlcgrxv1eo8" path="res://scenes/player/components/InteractComponent.gd" id="2_5e8hm"]
 [ext_resource type="Script" uid="uid://d0si14aljx0pv" path="res://scenes/player/components/InventoryComponent.gd" id="2_ab463"]
@@ -10,22 +10,25 @@
 [ext_resource type="PackedScene" uid="uid://bva130iqyut2" path="res://scenes/ui/HotbarUI.tscn" id="8_qh3el"]
 [ext_resource type="Script" uid="uid://4jgmnu5qw3at" path="res://scenes/player/components/CharacterGravityApplierComponent.gd" id="8_rqe1m"]
 [ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
+[ext_resource type="PackedScene" uid="uid://bskvvfpviflor" path="res://scenes/player/FbxScenes/PlayerAnimated.scn" id="11_sp8x6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r4mci"]
+radius = 0.8569336
+height = 2.100708
 
 [node name="PlayerBase" type="CharacterBody3D" unique_id=632260283 groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1464987, 0)
 script = ExtResource("1_r4mci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=323766239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097961426, 0)
 shape = SubResource("CapsuleShape3D_qeolr")
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=1541449080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54507685, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41958213, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5080985, -0.04599893)
 
 [node name="ViewmodelRoot" type="Node3D" parent="CameraRoot" unique_id=1503638903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
@@ -57,8 +60,8 @@ pMovementComponentPath = NodePath("../MovementComponent")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
 
-[node name="PlayerMesh" type="MeshInstance3D" parent="Visuals" unique_id=1062025898]
-mesh = SubResource("CapsuleMesh_r4mci")
+[node name="PlayerAnimated" parent="Visuals" unique_id=1755753807 instance=ExtResource("11_sp8x6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.1410649, 0.2543347)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
 

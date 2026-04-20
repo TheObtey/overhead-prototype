@@ -38,6 +38,10 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 	HandleHotbarInput(oEvent)
 
 func _physics_process(iDelta: float) -> void:
+	if velocity != Vector3.ZERO:
+		AnimationHandler.enumNewState = AnimationHandler.AnimState.WALK
+	if velocity == Vector3.ZERO:
+		AnimationHandler.enumNewState = AnimationHandler.AnimState.IDLE
 	oMovementComponent.PhysicsUpdate(iDelta)
 	oInteractComponent.ProcessUpdate()
 	oEquipmentComponent.HandleInput()
@@ -67,3 +71,4 @@ func HandleHotbarInput(oEvent: InputEvent) -> void:
 		if Input.is_action_just_pressed(sAction):
 			oEquipmentComponent.EquipItemByIndex(iIndex, tItems)
 			break
+			

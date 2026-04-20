@@ -35,6 +35,7 @@ func ApplyGravity(iDelta: float) -> void:
 func HandleJump() -> void:
 	if Input.is_action_just_pressed("jump") and oPlayer.is_on_floor():
 		oPlayer.velocity -= vecGravityDirection * iJumpVelocity
+		AnimationHandler.enumNewState = AnimationHandler.AnimState.JUMP
 
 func HandleMovement() -> void:
 	var vecInputDir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")

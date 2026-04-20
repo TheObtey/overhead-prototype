@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ri32nw1fwpr6"
-path="res://.godot/imported/Finger pointing.fbx-eb2480fd668947f81e27e3c10f2c136c.scn"
+uid="uid://bx8otjpdck3d"
+path="res://.godot/imported/Gun Idle.fbx-80342b4dee541832e62f00bf54f8f430.scn"
 
 [deps]
 
-source_file="res://assets/Player/FBX/Finger pointing.fbx"
-dest_files=["res://.godot/imported/Finger pointing.fbx-eb2480fd668947f81e27e3c10f2c136c.scn"]
+source_file="res://assets/Player/FBX/Gun Idle.fbx"
+dest_files=["res://.godot/imported/Gun Idle.fbx-80342b4dee541832e62f00bf54f8f430.scn"]
 
 [params]
 
