@@ -35,13 +35,18 @@ func ApplyGravity(iDelta: float) -> void:
 		oPlayer.velocity += vecGravityDirection * iGravityStrength * iDelta
 
 func HandleJump() -> void:
-	if LocalInputRouter.ConsumeJumpJustPressed(iPlayerID) and oPlayer.is_on_floor():
+	if not oPlayer.is_on_floor():
+		return
+	
+	if LocalInputRouter.ConsumeJumpJustPressed(iPlayerID):
 		oPlayer.velocity -= vecGravityDirection * iJumpVelocity
 
 func HandleMovement() -> void:
-	var oState = LocalInputRouter.GetState(iPlayerID)
-	var vecInput = oState.vecMoveInput
+	var oState: LocalPlayerInputState = LocalInputRouter.GetState(iPlayerID)
+	if oState == null:
+		return
 	
+	var vecInput: Vector2 = oState.vecMoveInput	
 	var vecUp: Vector3 = -vecGravityDirection
 	var vecForward: Vector3 = oPlayer.global_transform.basis.z
 	

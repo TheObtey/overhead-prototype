@@ -7,7 +7,6 @@ extends Node
 
 func _ready() -> void:
 	var tPlayers = StartLocalGame()
-	print("Players spawned:", tPlayers.size())
 	
 	if tPlayers.is_empty():
 		return

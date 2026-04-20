@@ -8,163 +8,154 @@ var _states: Array[LocalPlayerInputState] = []
 var _bindings: Array[LocalPlayerDeviceBinding] = []
 
 func _ready() -> void:
-	for i in range(MAX_PLAYERS):
-		_states.append(LocalPlayerInputState.new())
-		_bindings.append(null)
-	
-	# TEMP setup (TODO: remove this temp shit)
-	_bindings[0] = LocalPlayerDeviceBinding.CreateKeyboardMouse()
-	_bindings[1] = LocalPlayerDeviceBinding.CreateJoypad(0)
+	_InitializeStates()
+	_InitializeDefaultBindings()
 
-func ConsumeLookInput(iPlayerID: int) -> Vector2:
-	if iPlayerID < 0 or iPlayerID >= _states.size():
-		return Vector2.ZERO
-	
-	var oBinding = GetBinding(iPlayerID)
-	if oBinding == null:
-		return Vector2.ZERO
-	
-	if oBinding.enumBindingType == LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
-		var vecLookInput: Vector2 = _states[iPlayerID].vecLookInput
-		_states[iPlayerID].vecLookInput = Vector2.ZERO
-		return vecLookInput
-	
-	if oBinding.enumBindingType == LocalPlayerDeviceBinding.BindingType.JOYPAD:
-		return _states[iPlayerID].vecLookInput
-	
-	return Vector2.ZERO
-
-func ConsumeJumpJustPressed(iPlayerID: int) -> bool:
-	if iPlayerID < 0 or iPlayerID >= _states.size():
-		return false
-	
-	var bWasJustPressed: bool = _states[iPlayerID].bJumpJustPressed
-	_states[iPlayerID].bJumpJustPressed = false
-	
-	return bWasJustPressed
+func _process(_iDelta: float) -> void:
+	for oState in _states:
+		oState.ClearFrameFlags()
 
 func _input(oEvent: InputEvent) -> void:
-	for i in range(MAX_PLAYERS):
-		var binding = _bindings[i]
-		if binding == null:
+	for iPlayerID in range(MAX_PLAYERS):
+		var oBinding: LocalPlayerDeviceBinding = _bindings[iPlayerID]
+		if oBinding == null:
 			continue
 		
-		match binding.enumBindingType:
-			LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
-				_HandleKeyboardMouseEvent(i, oEvent)
-			
-			LocalPlayerDeviceBinding.BindingType.JOYPAD:
-				_HandleJoypadEvent(i, oEvent, binding.iJoypadDeviceID)
-
-func _ApplyDeadzoneToAxis(iValue: float, iDeadzone: float) -> float:
-	if abs(iValue) < iDeadzone:
-		return 0.0
-	
-	return iValue
-
-func _HandleKeyboardMouseEvent(iPlayerID: int, oEvent: InputEvent) -> void:
-	var state = _states[iPlayerID]
-	
-	if oEvent is InputEventMouseMotion:
-		state.vecLookInput += oEvent.relative
-	
-	if oEvent is InputEventKey:
-		if oEvent.is_action_pressed("move_forward"):
-			state.bMoveForwardPressed = true
-		if oEvent.is_action_released("move_forward"):
-			state.bMoveForwardPressed = false
-		
-		if oEvent.is_action_pressed("move_backward"):
-			state.bMoveBackwardPressed = true
-		if oEvent.is_action_released("move_backward"):
-			state.bMoveBackwardPressed = false
-		
-		if oEvent.is_action_pressed("move_left"):
-			state.bMoveLeftPressed = true
-		if oEvent.is_action_released("move_left"):
-			state.bMoveLeftPressed = false
-		
-		if oEvent.is_action_pressed("move_right"):
-			state.bMoveRightPressed = true
-		if oEvent.is_action_released("move_right"):
-			state.bMoveRightPressed = false
-		
-		if oEvent.is_action_pressed("jump"):
-			state.bJumpPressed = true
-			state.bJumpJustPressed = true
-		
-		if oEvent.is_action_released("jump"):
-			state.bJumpPressed = false
-			state.bJumpJustReleased = true
-	
-	state.vecMoveInput = Vector2(
-		int(state.bMoveRightPressed) - int(state.bMoveLeftPressed),
-		int(state.bMoveBackwardPressed) - int(state.bMoveForwardPressed)
-	).normalized()
-
-func _HandleJoypadEvent(iPlayerID: int, oEvent: InputEvent, iDeviceID: int) -> void:
-	if not (oEvent is InputEventJoypadButton or oEvent is InputEventJoypadMotion):
-		return
-	
-	if oEvent.device != iDeviceID:
-		return
-	
-	var state = _states[iPlayerID]
-	
-	if oEvent is InputEventJoypadMotion:
-		match oEvent.axis:
-			# LOOK (right stick)
-			JOY_AXIS_RIGHT_X:
-				state.vecLookInput.x = _ApplyDeadzoneToAxis(oEvent.axis_value, LOOK_STICK_DEADZONE)
-			JOY_AXIS_RIGHT_Y:
-				state.vecLookInput.y = _ApplyDeadzoneToAxis(oEvent.axis_value, LOOK_STICK_DEADZONE)
-			
-			# MOVE (left stick)
-			JOY_AXIS_LEFT_X:
-				state.vecMoveInput.x = _ApplyDeadzoneToAxis(oEvent.axis_value, MOVE_STICK_DEADZONE)
-			JOY_AXIS_LEFT_Y:
-				state.vecMoveInput.y = _ApplyDeadzoneToAxis(oEvent.axis_value, MOVE_STICK_DEADZONE)
-	
-	if oEvent.is_action_pressed("jump"):
-		state.bJumpPressed = true
-		state.bJumpJustPressed = true
-	
-	if oEvent.is_action_released("jump"):
-		state.bJumpPressed = false
-		state.bJumpJustReleased = true
-
-func _UpdateKeyboardMouse() -> void:
-	for i in range(MAX_PLAYERS):
-		var binding = _bindings[i]
-		if binding == null:
-			continue
-		
-		if binding.enumBindingType != LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
-			continue
-		
-		var state = _states[i]
-		
-		state.vecMoveInput = Input.get_vector(
-			"move_left",
-			"move_right",
-			"move_forward",
-			"move_backward"
-		)
+		if _DoesEventMatchBinding(oEvent, oBinding):
+			_RouteEventToPlayer(iPlayerID, oEvent, oBinding)
 
 func GetState(iPlayerID: int) -> LocalPlayerInputState:
-	if iPlayerID < 0 or iPlayerID >= _states.size():
+	if not _IsValidPlayerID(iPlayerID):
 		return null
 	
 	return _states[iPlayerID]
 
 func GetBinding(iPlayerID: int) -> LocalPlayerDeviceBinding:
-	if iPlayerID < 0 or iPlayerID >= _bindings.size():
+	if not _IsValidPlayerID(iPlayerID):
 		return null
 	
 	return _bindings[iPlayerID]
 
 func SetBinding(iPlayerID: int, binding: LocalPlayerDeviceBinding) -> void:
-	if iPlayerID < 0 or iPlayerID >= _bindings.size():
+	if not _IsValidPlayerID(iPlayerID):
 		return
 	
 	_bindings[iPlayerID] = binding
+
+func ConsumeJumpJustPressed(iPlayerID: int) -> bool:
+	var oState: LocalPlayerInputState = GetState(iPlayerID)
+	if oState == null:
+		return false
+	
+	return oState.ConsumeJumpJustPressed()
+
+func ConsumeLookInput(iPlayerID: int) -> Vector2:
+	var oState: LocalPlayerInputState = GetState(iPlayerID)
+	if oState == null:
+		return Vector2.ZERO
+	
+	var oBinding: LocalPlayerDeviceBinding = GetBinding(iPlayerID)
+	if oBinding == null:
+		return Vector2.ZERO
+	
+	match oBinding.enumBindingType:
+		LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
+			return oState.ConsumeLookDelta()
+	
+		LocalPlayerDeviceBinding.BindingType.JOYPAD:
+			return oState.vecLookInput
+	
+	return Vector2.ZERO
+
+func _InitializeStates() -> void:
+	_states.clear()
+	
+	for i in range(MAX_PLAYERS):
+		_states.append(LocalPlayerInputState.new())
+
+func _InitializeDefaultBindings() -> void:
+	_bindings.clear()
+	
+	for _i in range(MAX_PLAYERS):
+		_bindings.append(null)
+	
+	# TODO: Remove this when there will be local multiplayer lobby
+	_bindings[0] = LocalPlayerDeviceBinding.CreateKeyboardMouse()
+	_bindings[1] = LocalPlayerDeviceBinding.CreateJoypad(0)
+
+func _DoesEventMatchBinding(oEvent: InputEvent, oBinding: LocalPlayerDeviceBinding) -> bool:
+	match oBinding.enumBindingType:
+		LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
+			return oEvent is InputEventKey or oEvent is InputEventMouseMotion
+		
+		LocalPlayerDeviceBinding.BindingType.JOYPAD:
+			if not (oEvent is InputEventJoypadButton or oEvent is InputEventJoypadMotion):
+				return false
+			
+			return oEvent.device == oBinding.iJoypadDeviceID
+	
+	return false
+
+func _RouteEventToPlayer(iPlayerID: int, oEvent: InputEvent, oBinding: LocalPlayerDeviceBinding) -> void:
+	var oState: LocalPlayerInputState = _states[iPlayerID]
+	
+	match oBinding.enumBindingType:
+		LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
+			_HandleKeyboardMouseEvent(oState, oEvent)
+		
+		LocalPlayerDeviceBinding.BindingType.JOYPAD:
+			_HandleJoypadEvent(oState, oEvent)
+
+func _HandleKeyboardMouseEvent(oState: LocalPlayerInputState, oEvent: InputEvent) -> void:
+	if oEvent is InputEventMouseMotion:
+		oState.AddMouseLookDelta(oEvent.relative)
+		return
+	
+	if oEvent is InputEventKey:
+		for sMoveAction in ["move_forward", "move_backward", "move_left", "move_right"]:
+			if oEvent.is_action_pressed(sMoveAction):
+				oState.SetMoveButtonState(sMoveAction, true)
+			elif oEvent.is_action_released(sMoveAction):
+				oState.SetMoveButtonState(sMoveAction, false)
+		
+		if oEvent.is_action_pressed("jump"):
+			oState.SetJumpPressed(true)
+		elif oEvent.is_action_released("jump"):
+			oState.SetJumpPressed(false)
+
+func _HandleJoypadEvent(oState: LocalPlayerInputState, oEvent: InputEvent) -> void:
+	if oEvent is InputEventJoypadMotion:
+		var vecMoveAxis: Vector2 = oState.vecMoveInput
+		var vecLookAxis: Vector2 = oState.vecLookInput
+		
+		match oEvent.axis:
+			JOY_AXIS_LEFT_X:
+				vecMoveAxis.x = _ApplyDeadzoneToAxis(oEvent.axis_value, MOVE_STICK_DEADZONE)
+			JOY_AXIS_LEFT_Y:
+				vecMoveAxis.y = _ApplyDeadzoneToAxis(oEvent.axis_value, MOVE_STICK_DEADZONE)
+			JOY_AXIS_RIGHT_X:
+				vecLookAxis.x = _ApplyDeadzoneToAxis(oEvent.axis_value, LOOK_STICK_DEADZONE)
+			JOY_AXIS_RIGHT_Y:
+				vecLookAxis.y = _ApplyDeadzoneToAxis(oEvent.axis_value, LOOK_STICK_DEADZONE)
+		
+		oState.SetJoypadMoveAxis(vecMoveAxis)
+		oState.SetJoypadLookAxis(vecLookAxis)
+		return
+	
+	if oEvent is InputEventJoypadButton:
+		if oEvent.is_action_pressed("jump"):
+			oState.SetJumpPressed(true)
+		elif oEvent.is_action_released("jump"):
+			oState.SetJumpPressed(false)
+
+func _ApplyDeadzoneToAxis(iValue: float, iDeadzone: float) -> float:
+	if abs(iValue) < iDeadzone:
+		return 0.0
+	
+	var iSign: float = sign(iValue)
+	var iMagnitude: float = (abs(iValue) - iDeadzone) / (1.0 - iDeadzone)
+	
+	return iSign * iMagnitude
+
+func _IsValidPlayerID(iPlayerID: int) -> bool:
+	return iPlayerID >= 0 and iPlayerID < MAX_PLAYERS

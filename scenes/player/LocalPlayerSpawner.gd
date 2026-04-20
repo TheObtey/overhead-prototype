@@ -39,7 +39,6 @@ func SpawnLocalPlayers(iPlayerCount: int) -> Array[Node]:
 		
 		if oPlayerInstance.has_method("SetPlayerID"):
 			oPlayerInstance.SetPlayerID(i)
-			print("Assigned player id:", i)
 		
 		tSpawnedPlayers.append(oPlayerInstance)
 	

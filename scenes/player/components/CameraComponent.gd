@@ -19,8 +19,8 @@ func Setup(oNewPlayer: CharacterBody3D, oNewCameraRoot: Node3D, oNewCamera: Came
 	oCamera = oNewCamera
 
 func UpdateLook(iDelta: float) -> void:
-	var oState = LocalInputRouter.GetState(iPlayerID)
-	if oState == null:
+	var oBinding: LocalPlayerDeviceBinding = LocalInputRouter.GetBinding(iPlayerID)
+	if oBinding == null:
 		return
 	
 	var vecLookInput: Vector2 = LocalInputRouter.ConsumeLookInput(iPlayerID)
@@ -29,10 +29,6 @@ func UpdateLook(iDelta: float) -> void:
 	
 	var iYawDelta: float = 0.0
 	var iPitchDelta: float = 0.0
-	
-	var oBinding = LocalInputRouter.GetBinding(iPlayerID)
-	if oBinding == null:
-		return
 	
 	match oBinding.enumBindingType:
 		LocalPlayerDeviceBinding.BindingType.KEYBOARD_MOUSE:
