@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://c3umfs8km1qla"]
+
+[ext_resource type="Texture2D" uid="uid://djcual4ut6w7a" path="res://UI/Assets/Backgrounds/Key_art_sans_bordure_01.png" id="1_5be3t"]
+
+[sub_resource type="Animation" id="Animation_2ysvc"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198), Color(0, 0, 0, 0.4509804)]
+}
+
+[sub_resource type="Animation" id="Animation_5be3t"]
+resource_name = "FadeOut"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.4509804), Color(0, 0, 0, 0.25490198)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0thgb"]
+_data = {
+&"FadeIn": SubResource("Animation_2ysvc"),
+&"FadeOut": SubResource("Animation_5be3t"),
+&"RESET": SubResource("Animation_xpiny")
+}
+
+[node name="LocalLobby" type="Control" unique_id=1371850392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1337614714]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = -0.15612793
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.254902)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1159286007]
+libraries/ = SubResource("AnimationLibrary_0thgb")
+autoplay = &"FadeOut"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1088153641]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5be3t")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
