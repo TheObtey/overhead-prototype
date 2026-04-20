@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bbi1p86eiax4y"]
 
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_6b3hv"]
-[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_ryri7"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="3_ryri7"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_gnv68"]
 [ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="5_f83uu"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_e7fb5"]

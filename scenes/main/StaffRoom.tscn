@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ckvrjb1svqxcl"]
 
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_36ojw"]
-[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_74xxn"]
-[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="2_74xxn"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/Door/Door.tscn" id="1_74xxn"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/physics/CarryableEntity.tscn" id="2_74xxn"]
 [ext_resource type="PackedScene" uid="uid://gicagihpgyjp" path="res://scenes/entities/Locker/Locker.tscn" id="2_avrsf"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_avrsf"]
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_arcq3"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="6_tcuxm"]
 [ext_resource type="PackedScene" uid="uid://i4lam4lifrgo" path="res://scenes/entities/Shelf/Shelf.tscn" id="9_arcq3"]
 [ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="10_inj60"]
-[ext_resource type="PackedScene" uid="uid://bl2y7i1uahuim" path="res://assets/models/stafRoom/télé.tscn" id="11_tcuxm"]
-[ext_resource type="PackedScene" uid="uid://cblofmwgojex" path="res://assets/models/stafRoom/vending_machine.tscn" id="12_76dmt"]
+[ext_resource type="PackedScene" uid="uid://bl2y7i1uahuim" path="res://assets/models/télé.tscn" id="11_tcuxm"]
+[ext_resource type="PackedScene" uid="uid://cblofmwgojex" path="res://assets/models/vending_machine.tscn" id="12_76dmt"]
 [ext_resource type="PackedScene" uid="uid://haai1uqu60hh" path="res://Items/keypad.tscn" id="13_7pxxh"]
 [ext_resource type="PackedScene" uid="uid://bo4aorng4lf53" path="res://Items/glass_locker.tscn" id="14_uq3sc"]
 
