@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3ital0cy27qv"
-path="res://.godot/imported/Idle Gun Anim.fbx-354bffb59fa149928869353f48eb53f7.scn"
+uid="uid://dy2u3umwqy6ax"
+path="res://.godot/imported/Walking Anim(1).fbx-a82a753b240c4ef4cef98cc1d7cf4d69.scn"
 
 [deps]
 
-source_file="res://assets/Player/FBX/Idle Gun Anim.fbx"
-dest_files=["res://.godot/imported/Idle Gun Anim.fbx-354bffb59fa149928869353f48eb53f7.scn"]
+source_file="res://assets/Player/FBX/Walking Anim(1).fbx"
+dest_files=["res://.godot/imported/Walking Anim(1).fbx-a82a753b240c4ef4cef98cc1d7cf4d69.scn"]
 
 [params]
 
@@ -39,11 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"Idle Gun Anim": {
+"Walking Anim": {
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://assets/Player/Animations/Idle Gun Anim.res",
+"save_to_file/fallback_path": "res://assets/Player/Animations/Walking Anim.res",
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "uid://byf7i4bc80afn",
+"save_to_file/path": "uid://b1yesob8whchp",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

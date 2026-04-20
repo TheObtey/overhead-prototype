@@ -1,3 +1,4 @@
+class_name GravityGun
 extends EquippableItemBase
 
 @export var iPickupDistance: float = 5.0

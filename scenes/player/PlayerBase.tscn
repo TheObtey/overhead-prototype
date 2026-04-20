@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://262rmjs558hc" path="res://scenes/player/components/MovementComponent.gd" id="2_01k7g"]
 [ext_resource type="Script" uid="uid://cbmlcgrxv1eo8" path="res://scenes/player/components/InteractComponent.gd" id="2_5e8hm"]
 [ext_resource type="Script" uid="uid://d0si14aljx0pv" path="res://scenes/player/components/InventoryComponent.gd" id="2_ab463"]
+[ext_resource type="Texture2D" uid="uid://d3uy2vru0v8b7" path="res://assets/Player/FBX/Talkie.png" id="2_ft5sv"]
 [ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
 [ext_resource type="Script" uid="uid://d3f53tko8hfvb" path="res://scenes/player/components/EquipmentComponent.gd" id="6_5525k"]
 [ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="7_e2kkn"]
@@ -21,17 +22,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1464987, 0)
 script = ExtResource("1_r4mci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=323766239]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097961426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097961426, -0.3230618)
 shape = SubResource("CapsuleShape3D_qeolr")
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=1541449080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41958213, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0.74)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5080985, -0.04599893)
+transform = Transform3D(1, 0, 0, 0, 0.9999876, -0.0049741566, 0, 0.0049741566, 0.9999876, 0, -0.212, -0.095)
+cull_mask = 1048573
 
 [node name="ViewmodelRoot" type="Node3D" parent="CameraRoot" unique_id=1503638903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
+
+[node name="TextureRect" type="TextureRect" parent="CameraRoot" unique_id=2134652159]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ft5sv")
+
+[node name="SubViewport" type="SubViewport" parent="CameraRoot" unique_id=741975438]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Camera3D" type="Camera3D" parent="CameraRoot/SubViewport" unique_id=1725018126]
+transform = Transform3D(0.93219125, 0, 0.36196625, 0, 1, 0, -0.36196625, 0, 0.93219125, 0.025959969, -0.070148945, 0.48346692)
 
 [node name="Components" type="Node" parent="." unique_id=877173999]
 
@@ -61,7 +75,7 @@ pMovementComponentPath = NodePath("../MovementComponent")
 [node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
 
 [node name="PlayerAnimated" parent="Visuals" unique_id=1755753807 instance=ExtResource("11_sp8x6")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.1410649, 0.2543347)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.141, 0)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
 

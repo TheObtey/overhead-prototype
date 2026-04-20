@@ -31,3 +31,4 @@ func HandleMouseLook(oEvent: InputEventMouseMotion) -> void:
 	iPitch = clamp(iPitch, deg_to_rad(iMinPitch), deg_to_rad(iMaxPitch))
 	
 	oCameraRoot.rotation.x = iPitch
+	AnimationHandler.SetCamPitch(iPitch)

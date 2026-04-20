@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bx8otjpdck3d"
-path="res://.godot/imported/Gun Idle.fbx-80342b4dee541832e62f00bf54f8f430.scn"
+uid="uid://cvfy4dq6xetgl"
+path="res://.godot/imported/Idle Bones.fbx-d9a05923de44fb85e9334f174c293bb6.scn"
 
 [deps]
 
-source_file="res://assets/Player/FBX/Gun Idle.fbx"
-dest_files=["res://.godot/imported/Gun Idle.fbx-80342b4dee541832e62f00bf54f8f430.scn"]
+source_file="res://assets/Player/FBX/Idle Bones.fbx"
+dest_files=["res://.godot/imported/Idle Bones.fbx-d9a05923de44fb85e9334f174c293bb6.scn"]
 
 [params]
 
