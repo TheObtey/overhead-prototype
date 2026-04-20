@@ -37,7 +37,13 @@ func Throw() -> void:
 	if not bIsHeld:
 		return
 	
-	var vecForward: Vector3 = -pHolder.global_transform.basis.z
+	var throw_basis: Basis = pHolder.global_transform.basis
+	
+	var oCameraRoot: Node3D = pHolder.get_node_or_null("CameraRoot")
+	if 	oCameraRoot != null:
+		throw_basis = oCameraRoot.global_transform.basis
+	
+	var vecForward: Vector3 = -throw_basis.z
 	linear_velocity = vecForward * iThrowForce
 	
 	OnDropped()
