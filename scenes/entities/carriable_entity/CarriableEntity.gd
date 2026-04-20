@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+# Physics object that can be picked up, carried, and thrown
+# by a character while preserving gravity behavior.
 @onready var oGravityReceiverComponent = $Components/GravityReceiverComponent
 
 @export var bIsCarriable: bool = true
@@ -10,9 +12,20 @@ extends RigidBody3D
 var pHolder: CharacterBody3D
 var bIsHeld: bool = false
 
+# --------------------------------------------------
+# Initializes the carriable entity.
+# Links the gravity receiver component to this body
+# so it can apply custom gravity behavior correctly.
+# --------------------------------------------------
 func _ready() -> void:
 	oGravityReceiverComponent.Setup(self)
 
+# --------------------------------------------------
+# Called when a player picks up the object.
+# Stores the holder, marks the object as held,
+# resets its current motion, and disables collision
+# with the player while it is being carried.
+# --------------------------------------------------
 func OnPickedUp(pPlayer: CharacterBody3D) -> void:
 	if not bIsCarriable:
 		return
@@ -26,6 +39,11 @@ func OnPickedUp(pPlayer: CharacterBody3D) -> void:
 	
 	SetCollisionWithPlayer(pPlayer, false)
 
+# --------------------------------------------------
+# Called when the object is released.
+# Clears the held state, restores collision with the
+# holder, and removes the holder reference.
+# --------------------------------------------------
 func OnDropped() -> void:
 	bIsHeld = false
 	
@@ -33,6 +51,12 @@ func OnDropped() -> void:
 	
 	pHolder = null
 
+# --------------------------------------------------
+# Throws the currently held object forward.
+# Uses the holder orientation by default, but gives
+# priority to the CameraRoot orientation if present
+# so the throw follows the player's view direction.
+# --------------------------------------------------
 func Throw() -> void:
 	if not bIsHeld:
 		return
@@ -48,12 +72,23 @@ func Throw() -> void:
 	
 	OnDropped()
 
+# --------------------------------------------------
+# Updates the object every physics frame while held.
+# If the object is currently carried, it continuously
+# moves toward its target hold position.
+# --------------------------------------------------
 func _physics_process(iDelta: float) -> void:
 	if not bIsHeld or not pHolder:
 		return
 	
 	UpdateHeldPosition(iDelta)
 
+# --------------------------------------------------
+# Moves the held object toward a target position in
+# front of the player's camera.
+# The object follows the camera using velocity,
+# creating a smooth carrying behavior.
+# --------------------------------------------------
 func UpdateHeldPosition(iDelta: float) -> void:
 	var oCamera: Camera3D = pHolder.get_node("CameraRoot/Camera3D")
 	
@@ -65,6 +100,13 @@ func UpdateHeldPosition(iDelta: float) -> void:
 	var vecDir: Vector3 = vecTargetPos - global_transform.origin
 	linear_velocity = vecDir * iFollowSpeed
 
+
+# --------------------------------------------------
+# Enables or disables collision between the carried
+# object and the player holding it.
+# This is used to avoid unwanted physics interference
+# while carrying the object.
+# --------------------------------------------------
 func SetCollisionWithPlayer(pPlayer: CharacterBody3D, bEnable: bool) -> void:
 	if not pPlayer:
 		return
