@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c86f33ftti3a0"
-path="res://.godot/imported/SM_HUB_Desk.fbx-6a7425eaff6cdfe91c85bd657d2b3dcf.scn"
+path="res://.godot/imported/SM_HUB_Desk.fbx-9ff82cdeb494f5ab3b5202bbb26e08ea.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Desk.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Desk.fbx-6a7425eaff6cdfe91c85bd657d2b3dcf.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Desk.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Desk.fbx-9ff82cdeb494f5ab3b5202bbb26e08ea.scn"]
 
 [params]
 

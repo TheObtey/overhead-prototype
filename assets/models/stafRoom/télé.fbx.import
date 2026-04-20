@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cnudokabpormt"
-path="res://.godot/imported/horloge.fbx-09a7000b1bdaa3eb13bbe5c532525491.scn"
+uid="uid://c1sdqyntawiep"
+path="res://.godot/imported/télé.fbx-28175321cf1dda5783e8b19c461284a8.scn"
 
 [deps]
 
-source_file="res://assets/models/horloge.fbx"
-dest_files=["res://.godot/imported/horloge.fbx-09a7000b1bdaa3eb13bbe5c532525491.scn"]
+source_file="res://assets/models/stafRoom/télé.fbx"
+dest_files=["res://.godot/imported/télé.fbx-28175321cf1dda5783e8b19c461284a8.scn"]
 
 [params]
 

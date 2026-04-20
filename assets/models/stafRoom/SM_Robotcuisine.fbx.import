@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2d32es1j53h0"
-path="res://.godot/imported/SM_Screen.fbx-49777d3852f762a24b06dd80862c9dc4.scn"
+uid="uid://cfd6e61r5vaao"
+path="res://.godot/imported/SM_Robotcuisine.fbx-2a6a39b247e2f32b311fa7112b12d4db.scn"
 
 [deps]
 
-source_file="res://assets/models/SM_Screen.fbx"
-dest_files=["res://.godot/imported/SM_Screen.fbx-49777d3852f762a24b06dd80862c9dc4.scn"]
+source_file="res://assets/models/stafRoom/SM_Robotcuisine.fbx"
+dest_files=["res://.godot/imported/SM_Robotcuisine.fbx-2a6a39b247e2f32b311fa7112b12d4db.scn"]
 
 [params]
 

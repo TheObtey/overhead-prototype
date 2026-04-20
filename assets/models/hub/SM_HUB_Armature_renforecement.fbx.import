@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b17l6t5nb5abj"
-path="res://.godot/imported/SM_HUB_Armature_renforecement.fbx-574fefbee4108a320aea5edb890ce211.scn"
+path="res://.godot/imported/SM_HUB_Armature_renforecement.fbx-145e68d88687c90df4c278e6bdbd86a6.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Armature_renforecement.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Armature_renforecement.fbx-574fefbee4108a320aea5edb890ce211.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Armature_renforecement.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Armature_renforecement.fbx-145e68d88687c90df4c278e6bdbd86a6.scn"]
 
 [params]
 

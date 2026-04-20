@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dnaqrc577xi0k"
-path="res://.godot/imported/SM_Walls.fbx-f178f17f89316e31ca76a9d11ac5824b.scn"
+uid="uid://bn0hfp72v6ksf"
+path="res://.godot/imported/verre_empilé.fbx-b2bfd6271bb5d79b80a6bb2f86519f7f.scn"
 
 [deps]
 
-source_file="res://assets/models/SM_Walls.fbx"
-dest_files=["res://.godot/imported/SM_Walls.fbx-f178f17f89316e31ca76a9d11ac5824b.scn"]
+source_file="res://assets/models/stafRoom/verre_empilé.fbx"
+dest_files=["res://.godot/imported/verre_empilé.fbx-b2bfd6271bb5d79b80a6bb2f86519f7f.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://be54cfp2tnlhb"
-path="res://.godot/imported/SM_HUB_Pilone_Low.fbx-b92649293cea3b15d5e8e71ebc5703d1.scn"
+path="res://.godot/imported/SM_HUB_Pilone_Low.fbx-48c9a32e3600288a51d6443ec657362c.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Pilone_Low.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Pilone_Low.fbx-b92649293cea3b15d5e8e71ebc5703d1.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Pilone_Low.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Pilone_Low.fbx-48c9a32e3600288a51d6443ec657362c.scn"]
 
 [params]
 

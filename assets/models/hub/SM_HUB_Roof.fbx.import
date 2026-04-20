@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cuufsk04e0uc2"
-path="res://.godot/imported/SM_HUB_Roof.fbx-7e70fe0ea943c296e4be2ee68b71e660.scn"
+path="res://.godot/imported/SM_HUB_Roof.fbx-7f5e0f175ea0ad401a2fc9ee1f494ced.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Roof.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Roof.fbx-7e70fe0ea943c296e4be2ee68b71e660.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Roof.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Roof.fbx-7f5e0f175ea0ad401a2fc9ee1f494ced.scn"]
 
 [params]
 

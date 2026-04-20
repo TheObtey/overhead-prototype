@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://br2grbtm2h55r"
-path="res://.godot/imported/livre.fbx-369681c1d48848705db06fecbe71ec2a.scn"
+path="res://.godot/imported/livre.fbx-0bdd3554d3b7c84a89ff34cd4693f074.scn"
 
 [deps]
 
-source_file="res://assets/models/livre.fbx"
-dest_files=["res://.godot/imported/livre.fbx-369681c1d48848705db06fecbe71ec2a.scn"]
+source_file="res://assets/models/stafRoom/livre.fbx"
+dest_files=["res://.godot/imported/livre.fbx-0bdd3554d3b7c84a89ff34cd4693f074.scn"]
 
 [params]
 

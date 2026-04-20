@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bucpfb7hg8vq2"
-path="res://.godot/imported/SM_Screen_Glass.fbx-08ff168f5d913a6c5bb61cd903202218.scn"
+uid="uid://2d32es1j53h0"
+path="res://.godot/imported/SM_Screen.fbx-a18d0b63f2916eea93b06f6766731296.scn"
 
 [deps]
 
-source_file="res://assets/models/SM_Screen_Glass.fbx"
-dest_files=["res://.godot/imported/SM_Screen_Glass.fbx-08ff168f5d913a6c5bb61cd903202218.scn"]
+source_file="res://assets/models/stafRoom/SM_Screen.fbx"
+dest_files=["res://.godot/imported/SM_Screen.fbx-a18d0b63f2916eea93b06f6766731296.scn"]
 
 [params]
 

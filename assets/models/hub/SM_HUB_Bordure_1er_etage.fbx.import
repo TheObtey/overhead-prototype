@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bnl31mhce4hm4"
-path="res://.godot/imported/SM_HUB_Bordure_1er_etage.fbx-3767c55d1cf012d9d6d96bdacd94c3e9.scn"
+path="res://.godot/imported/SM_HUB_Bordure_1er_etage.fbx-2a515d0ff5668553160c1083445c8a44.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Bordure_1er_etage.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Bordure_1er_etage.fbx-3767c55d1cf012d9d6d96bdacd94c3e9.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Bordure_1er_etage.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Bordure_1er_etage.fbx-2a515d0ff5668553160c1083445c8a44.scn"]
 
 [params]
 

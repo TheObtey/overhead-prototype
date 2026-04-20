@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6lav8621ma23"
-path="res://.godot/imported/SM_HUB_Siege.fbx-684d2850af9e84dac7ad8f00efa810b2.scn"
+path="res://.godot/imported/SM_HUB_Siege.fbx-5195a7c0899888f67592affafae718ce.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Siege.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Siege.fbx-684d2850af9e84dac7ad8f00efa810b2.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Siege.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Siege.fbx-5195a7c0899888f67592affafae718ce.scn"]
 
 [params]
 

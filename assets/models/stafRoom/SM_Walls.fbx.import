@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c2baqqs1s6tm1"
-path="res://.godot/imported/robot_nettoyeur.fbx-a5650eb08b43fa7d45a8138f67ad9a20.scn"
+uid="uid://dnaqrc577xi0k"
+path="res://.godot/imported/SM_Walls.fbx-e2aa1649e2346835ac35f47adf1588f6.scn"
 
 [deps]
 
-source_file="res://assets/models/robot_nettoyeur.fbx"
-dest_files=["res://.godot/imported/robot_nettoyeur.fbx-a5650eb08b43fa7d45a8138f67ad9a20.scn"]
+source_file="res://assets/models/stafRoom/SM_Walls.fbx"
+dest_files=["res://.godot/imported/SM_Walls.fbx-e2aa1649e2346835ac35f47adf1588f6.scn"]
 
 [params]
 

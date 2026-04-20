@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bl14kdnu3gw00"
-path="res://.godot/imported/cafe.fbx-8ae3361d43d240574cb96c1bd241da95.scn"
+uid="uid://buhhs3op1002y"
+path="res://.godot/imported/character.fbx-7ad4554fd2e110ed9ccf58e1bc42965f.scn"
 
 [deps]
 
-source_file="res://assets/models/cafe.fbx"
-dest_files=["res://.godot/imported/cafe.fbx-8ae3361d43d240574cb96c1bd241da95.scn"]
+source_file="res://assets/models/stafRoom/character.fbx"
+dest_files=["res://.godot/imported/character.fbx-7ad4554fd2e110ed9ccf58e1bc42965f.scn"]
 
 [params]
 

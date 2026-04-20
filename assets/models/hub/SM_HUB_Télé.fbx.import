@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d3eonacyo512h"
-path="res://.godot/imported/SM_HUB_Télé.fbx-28351122918011f2b1514afccd631e0a.scn"
+path="res://.godot/imported/SM_HUB_Télé.fbx-c1dde330283c90abc55aa5b80230f47a.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Télé.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Télé.fbx-28351122918011f2b1514afccd631e0a.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Télé.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Télé.fbx-c1dde330283c90abc55aa5b80230f47a.scn"]
 
 [params]
 

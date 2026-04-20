@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cfv7itmrnlql5"
-path="res://.godot/imported/SM_HUB_Stairs_Right.fbx-1c3a369573c8e9af00d14cc5e935b300.scn"
+path="res://.godot/imported/SM_HUB_Stairs_Right.fbx-182b54c095a2ef9ed7108edd74fe77ed.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Stairs_Right.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Stairs_Right.fbx-1c3a369573c8e9af00d14cc5e935b300.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Stairs_Right.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Stairs_Right.fbx-182b54c095a2ef9ed7108edd74fe77ed.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1sdqyntawiep"
-path="res://.godot/imported/télé.fbx-e6cd9e1ffdda582bf265b10659daddaf.scn"
+uid="uid://c05ut8fc0om0g"
+path="res://.godot/imported/vending_machine.fbx-d3ff7a2f582ab4a1d5229c94d4a6a390.scn"
 
 [deps]
 
-source_file="res://assets/models/télé.fbx"
-dest_files=["res://.godot/imported/télé.fbx-e6cd9e1ffdda582bf265b10659daddaf.scn"]
+source_file="res://assets/models/stafRoom/vending_machine.fbx"
+dest_files=["res://.godot/imported/vending_machine.fbx-d3ff7a2f582ab4a1d5229c94d4a6a390.scn"]
 
 [params]
 

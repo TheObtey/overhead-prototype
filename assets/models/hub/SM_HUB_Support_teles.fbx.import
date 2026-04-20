@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0ehepjvuuvph"
-path="res://.godot/imported/SM_HUB_Support_teles.fbx-1ce25accce25e9cba6551629eed5a4dd.scn"
+path="res://.godot/imported/SM_HUB_Support_teles.fbx-9f0226a471ec283ad7f84c6927063890.scn"
 
 [deps]
 
-source_file="res://assets/models/hub/SM_HUB_Support_teles.fbx"
-dest_files=["res://.godot/imported/SM_HUB_Support_teles.fbx-1ce25accce25e9cba6551629eed5a4dd.scn"]
+source_file="res://assets/models/HUB/SM_HUB_Support_teles.fbx"
+dest_files=["res://.godot/imported/SM_HUB_Support_teles.fbx-9f0226a471ec283ad7f84c6927063890.scn"]
 
 [params]
 

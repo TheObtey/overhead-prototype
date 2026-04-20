@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://brnrc458lpnb1"
-path="res://.godot/imported/cartons.fbx-df1001da58e5f1c2c7cd1cfff07e89e6.scn"
+uid="uid://bl14kdnu3gw00"
+path="res://.godot/imported/cafe.fbx-cd44b0f76d63b64c0c66dc3c990e4550.scn"
 
 [deps]
 
-source_file="res://assets/models/cartons.fbx"
-dest_files=["res://.godot/imported/cartons.fbx-df1001da58e5f1c2c7cd1cfff07e89e6.scn"]
+source_file="res://assets/models/stafRoom/cafe.fbx"
+dest_files=["res://.godot/imported/cafe.fbx-cd44b0f76d63b64c0c66dc3c990e4550.scn"]
 
 [params]
 

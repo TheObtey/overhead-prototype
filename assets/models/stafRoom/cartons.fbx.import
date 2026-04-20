@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://buhhs3op1002y"
-path="res://.godot/imported/character.fbx-2c9c7ae06c8e5b2699709aa22adb4580.scn"
+uid="uid://brnrc458lpnb1"
+path="res://.godot/imported/cartons.fbx-4741a72598eb659c26fe96275ce315c9.scn"
 
 [deps]
 
-source_file="res://assets/models/character.fbx"
-dest_files=["res://.godot/imported/character.fbx-2c9c7ae06c8e5b2699709aa22adb4580.scn"]
+source_file="res://assets/models/stafRoom/cartons.fbx"
+dest_files=["res://.godot/imported/cartons.fbx-4741a72598eb659c26fe96275ce315c9.scn"]
 
 [params]
 
