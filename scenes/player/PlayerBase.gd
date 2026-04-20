@@ -28,7 +28,7 @@ func _ready() -> void:
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
 
 func _unhandled_input(oEvent: InputEvent) -> void:
-	if oEvent.is_action_pressed("ui_cancel"):
+	if oEvent.is_action_pressed("Menu"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if oEvent is InputEventMouseButton and oEvent.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:

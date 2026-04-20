@@ -1,5 +1,46 @@
 [gd_scene format=3 uid="uid://ckdkvqvg7b04p"]
 
+[ext_resource type="Script" uid="uid://bnewbdvyv6k26" path="res://scripts/UI/InGameMenu.gd" id="1_30wqq"]
+[ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="1_pmn4w"]
+[ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="2_30wqq"]
+
+[sub_resource type="Animation" id="Animation_2ysvc"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198), Color(0, 0, 0, 0.4509804)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1fvel"]
+_data = {
+&"FadeIn": SubResource("Animation_2ysvc"),
+&"RESET": SubResource("Animation_xpiny")
+}
+
 [node name="InGameMenu" type="Control" unique_id=643540066]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +48,90 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_30wqq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2140158038]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 82.0
+offset_right = -110.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1577003775]
+libraries/ = SubResource("AnimationLibrary_1fvel")
+autoplay = &"FadeIn"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1213155976]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = 83.0
+offset_right = -107.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=2008355648]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=98029154]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Continue" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=889491524]
+z_index = 29
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_pmn4w")
+texture_hover = ExtResource("1_pmn4w")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=42401526]
+layout_mode = 2
+
+[node name="Options" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=2132762335]
+z_index = 2
+layout_mode = 2
+texture_normal = ExtResource("1_pmn4w")
+texture_hover = ExtResource("1_pmn4w")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1775174031]
+layout_mode = 2
+
+[node name="SaveAndQuit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=522224293]
+z_index = 2
+layout_mode = 2
+texture_normal = ExtResource("1_pmn4w")
+texture_hover = ExtResource("1_pmn4w")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1541850729]
+layout_mode = 2
+
+[node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("2_30wqq")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SaveAndQuit" to="." method="_on_save_and_quit_pressed"]
