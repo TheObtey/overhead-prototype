@@ -12,12 +12,13 @@ func CanInteract(oInteractor: Node) -> bool:
 	if not bCanInteract:
 		return false
 	
-	for oComponent in oComponents.get_children():
-		if not oComponent is EntityComponent:
-			continue
-		
-		if not oComponent.CanInteract(oInteractor):
-			return false
+	if oComponents != null:
+		for oComponent in oComponents.get_children():
+			if not oComponent is EntityComponent:
+				continue
+			
+			if not oComponent.CanInteract(oInteractor):
+				return false
 	
 	return true
 
