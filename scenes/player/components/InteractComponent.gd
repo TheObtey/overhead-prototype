@@ -4,6 +4,7 @@ extends Node
 @export var sDefaultPrompt: String = "Interagir"
 
 var oPlayer: CharacterBody3D
+var iPlayerID: int = 0
 var oRayCast: RayCast3D
 var oCurrentEntity: Node = null
 
@@ -11,11 +12,12 @@ signal oEntityChanged(oEntity: Node)
 
 func Setup(oNewPlayer: CharacterBody3D) -> void:
 	oPlayer = oNewPlayer
+	iPlayerID = oPlayer.GetPlayerID()
 	_SetupRayCast()
 
 func ProcessUpdate() -> void:
 	_CheckInteraction()
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact", iPlayerID):
 		TryInteract()
 
 func TryInteract() -> void:
