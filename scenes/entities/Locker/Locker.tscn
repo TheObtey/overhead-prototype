@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gicagihpgyjp"]
 
-[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/Door/Door.tscn" id="1_2r54o"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/door/door.tscn" id="1_2r54o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dyjst"]
 

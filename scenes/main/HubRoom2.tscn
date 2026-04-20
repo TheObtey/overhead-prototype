@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byc4m50ubcpu3"]
 
-[ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="1_5ag7q"]
+[ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/vent/Vent.tscn" id="1_5ag7q"]
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_4x70x"]
 [ext_resource type="PackedScene" uid="uid://ds4ottg8j50ct" path="res://assets/models/HUB/sm_hub_1_er_etage.tscn" id="2_qk3pi"]
 [ext_resource type="PackedScene" uid="uid://eikb3ldrt20v" path="res://assets/models/HUB/sm_hub_armature.tscn" id="3_25cs0"]

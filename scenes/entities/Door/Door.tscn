@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brq4wv3r70wjd"]
 
 [ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/EntityBase.tscn" id="1_qy8j6"]
-[ext_resource type="Script" uid="uid://fk5k7ytcb1b8" path="res://scenes/entities/Door/Door.gd" id="2_b5l2o"]
+[ext_resource type="Script" uid="uid://fk5k7ytcb1b8" path="res://scenes/entities/door/door.gd" id="2_b5l2o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5l2o"]
 albedo_color = Color(0.35633364, 0.10391449, 0.030266998, 1)
