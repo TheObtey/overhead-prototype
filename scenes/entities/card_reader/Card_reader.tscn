@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ck8kjb7hva6bx"]
+
+[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/entity_base/EntityBase.tscn" id="1_whkt6"]
+[ext_resource type="Script" uid="uid://bwilr52yc14xn" path="res://scenes/entities/card_reader/Card_reader.gd" id="2_6buy6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5b8jk"]
+albedo_color = Color(0.7498115, 0.7239909, 0.29777795, 1)
+
+[node name="Card_reader" unique_id=108843216 instance=ExtResource("1_whkt6")]
+transform = Transform3D(0.2847298, 0, 0, 0, 0.2606535, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("2_6buy6")
+sNeededItem = "KeyCardStaffRoom"
+sEntityName = "Card_reader"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visuals" parent_id_path=PackedInt32Array(490728609) index="0" unique_id=343114611]
+transform = Transform3D(1, 0, 0, 0, 1.3391012, 0, 0, 0, 0.16261178, 0, 0, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_5b8jk")

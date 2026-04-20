@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gicagihpgyjp"]
 
-[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/Door/Door.tscn" id="1_2r54o"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_2r54o"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dyjst"]
 
@@ -89,13 +89,3 @@ shape = SubResource("ConvexPolygonShape3D_00ncy")
 
 [node name="EntityBase" parent="." unique_id=108843216 instance=ExtResource("1_2r54o")]
 transform = Transform3D(0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5, 0, -0.5)
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="EntityBase" unique_id=947506286]
-transform = Transform3D(0.2, 0, 0, 0, 0.40000004, 0, 0, 0, 0.13333337, 1.7, 2, -0.054617107)
-mesh = SubResource("BoxMesh_dyjst")
-surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="EntityBase/MeshInstance3D7" unique_id=1771554198]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EntityBase/MeshInstance3D7/StaticBody3D" unique_id=595896496]
-shape = SubResource("ConvexPolygonShape3D_00ncy")

@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="10_inj60"]
 [ext_resource type="PackedScene" uid="uid://ce00kn54mkwur" path="res://assets/models/other/télé.fbx" id="11_tcuxm"]
 [ext_resource type="PackedScene" uid="uid://dirwvbfc4jolg" path="res://assets/models/other/vending_machine.fbx" id="12_76dmt"]
-[ext_resource type="PackedScene" uid="uid://ciwc14e3hlyo5" path="res://scenes/items/weapons/keyCard/KeyCardViewmodel.tscn" id="12_uq3sc"]
+[ext_resource type="PackedScene" uid="uid://ciwc14e3hlyo5" path="res://scenes/entities/weapons/KeyCardPickup.tscn" id="12_uq3sc"]
 [ext_resource type="PackedScene" uid="uid://bo4aorng4lf53" path="res://scenes/items/glass_locker/glass_locker.tscn" id="14_uq3sc"]
+[ext_resource type="PackedScene" uid="uid://ck8kjb7hva6bx" path="res://scenes/entities/card_reader/Card_reader.tscn" id="15_auq2t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
 
@@ -34,14 +35,6 @@ albedo_color = Color(0.15582603, 0.23878413, 0.6429392, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arcq3"]
 albedo_color = Color(0.4035673, 0.4799993, 0.42384735, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_inj60"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcuxm"]
-albedo_color = Color(0.39841208, 0.3984121, 0.39841208, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_76dmt"]
-points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [sub_resource type="SphereMesh" id="SphereMesh_inj60"]
 
@@ -301,16 +294,6 @@ transform = Transform3D(0.99703395, 6.7283104e-09, 0.07696277, 0, -1, 8.742278e-
 [node name="Door" parent="World/Level" unique_id=108843216 instance=ExtResource("1_74xxn")]
 transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="World/Level/Door" unique_id=2062484842]
-transform = Transform3D(0.2, 0, 0, 0, 0.40000004, 0, 0, 0, 0.13333337, 1.7, 2, -0.054617107)
-mesh = SubResource("BoxMesh_inj60")
-surface_material_override/0 = SubResource("StandardMaterial3D_tcuxm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Door/MeshInstance3D7" unique_id=1113460431]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Door/MeshInstance3D7/StaticBody3D" unique_id=1286152514]
-shape = SubResource("ConvexPolygonShape3D_76dmt")
-
 [node name="Vent" parent="World/Level" unique_id=1168563654 instance=ExtResource("10_inj60")]
 transform = Transform3D(-1.5, 0, -2.2649371e-07, 0, 1.5, 0, 2.2649371e-07, 0, -1.5, 6, 12, 9.67)
 
@@ -364,3 +347,7 @@ transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18
 
 [node name="Glass_locker" parent="." unique_id=1884566530 instance=ExtResource("14_uq3sc")]
 transform = Transform3D(1.26, 0, 0, 0, -0.7, 6.119594e-08, 0, -6.119594e-08, -0.7, 7.213175, 14.859735, -7.55682)
+
+[node name="Card_reader" parent="." unique_id=826750785 node_paths=PackedStringArray("target") instance=ExtResource("15_auq2t")]
+transform = Transform3D(0.2847298, 0, 0, 0, 0.2606535, 0, 0, 0, 1, 7.5441236, 5.5610056, 9.6686945)
+target = NodePath("../World/Level/Door")
