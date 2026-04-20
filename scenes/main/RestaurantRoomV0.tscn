@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dqu0hsee6fh4s"]
+
+[ext_resource type="PackedScene" uid="uid://dlcrpjli5qgnd" path="res://assets/models/restaurant/blockout/resto1.fbx" id="1_ctx1s"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_ivcce"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3xt7n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2nj7"]
+albedo_color = Color(0.78998727, 0.8226866, 0.9658615, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7kxm0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="RestaurantRoomV0" type="Node3D" unique_id=1025028854]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=377903945]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, -3.1912737, 0.7450862, -7.6966643)
+mesh = SubResource("BoxMesh_3xt7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_w2nj7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1548323909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=870648883]
+shape = SubResource("ConvexPolygonShape3D_7kxm0")
+
+[node name="resto1" parent="." unique_id=1695881469 instance=ExtResource("1_ctx1s")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Players" type="Node" parent="." unique_id=1665449498]
+
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("2_ivcce")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
