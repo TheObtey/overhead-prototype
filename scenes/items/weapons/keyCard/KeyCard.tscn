@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://be6n8yq7h8i1x"]
+
+[ext_resource type="Script" uid="uid://cqlk3qwombq0w" path="res://scenes/items/weapons/keyCard/KeyCard.gd" id="1_qwnyq"]
+
+[node name="KeyCard" type="Node" unique_id=713200488]
+script = ExtResource("1_qwnyq")
