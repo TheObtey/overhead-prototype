@@ -6,9 +6,11 @@ extends Control
  
 func _ready() -> void:
 	oOptionMenu.sExitMenu.connect(OnExitMenu)
+	InGameMenu.bCanOpen = false
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(scGameScene)
+	InGameMenu.bCanOpen = true
 
 func _on_options_pressed() -> void:
 	oMarginContainer.visible = false

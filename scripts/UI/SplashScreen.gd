@@ -6,6 +6,7 @@ extends Control
 var bCanSkip := false
 
 func _ready():
+	InGameMenu.bCanOpen = false
 	AudioManager.PlayMusic(audioMusic.resource_path)
 	
 	await get_tree().create_timer(0.5).timeout

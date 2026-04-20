@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bbi1p86eiax4y"]
 
-[ext_resource type="PackedScene" uid="uid://ckdkvqvg7b04p" path="res://scenes/ui/Menu/InGameMenu.tscn" id="1_f83uu"]
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_ryri7"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_gnv68"]
@@ -210,9 +209,3 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
-
-[node name="InGameMenu" parent="." unique_id=643540066 instance=ExtResource("1_f83uu")]
-offset_left = 2.0
-offset_top = 1.0
-offset_right = 2.0
-offset_bottom = 1.0
