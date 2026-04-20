@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bx7qobf52rvko"]
 
 [ext_resource type="Script" uid="uid://dg6lhhp3qftes" path="res://scripts/UI/MainMenu.gd" id="1_7hjkt"]
-[ext_resource type="PackedScene" uid="uid://dw1lxdkpmok8y" path="res://scenes/main/KorayTestRoom.tscn" id="2_3kp2c"]
-[ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="2_qtf23"]
 [ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="3_3kp2c"]
+[ext_resource type="Texture2D" uid="uid://djcual4ut6w7a" path="res://UI/Assets/Backgrounds/Key_art_sans_bordure_01.png" id="3_qtf23"]
 [ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="4_6k8rh"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
@@ -45,20 +44,21 @@ _data = {
 
 [node name="MainMenu" type="Control" unique_id=12293144]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 1.001
 anchor_bottom = 1.0
+offset_right = 0.079956055
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7hjkt")
-scGameScene = ExtResource("2_3kp2c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=503456321]
 z_index = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = -0.15612793
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.25490198)
@@ -74,7 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qtf23")
+texture = ExtResource("3_qtf23")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -83,7 +83,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 280.0
+offset_top = 134.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 28
@@ -97,21 +98,20 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1882247710]
 layout_mode = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 14
 alignment = 1
-
-[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=276428641]
-layout_mode = 2
 
 [node name="Start" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=108654307]
 z_index = 29
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("3_3kp2c")
 texture_hover = ExtResource("3_3kp2c")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1796601804]
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1796601804]
 layout_mode = 2
 
 [node name="Options" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=532618816]
@@ -122,7 +122,7 @@ texture_hover = ExtResource("3_3kp2c")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1620021708]
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1620021708]
 layout_mode = 2
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=154688385]
@@ -132,6 +132,9 @@ texture_normal = ExtResource("3_3kp2c")
 texture_hover = ExtResource("3_3kp2c")
 stretch_mode = 0
 metadata/_edit_use_anchors_ = true
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1086809169]
+layout_mode = 2
 
 [node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("4_6k8rh")]
 visible = false

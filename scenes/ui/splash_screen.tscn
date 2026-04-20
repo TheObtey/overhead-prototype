@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bunwvaqlowttw"]
 
 [ext_resource type="Script" uid="uid://j3dm1eoursbd" path="res://scripts/UI/SplashScreen.gd" id="1_m0ilf"]
-[ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="1_yei5s"]
 [ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/Menu/MainMenu.tscn" id="2_eina6"]
 [ext_resource type="AudioStream" uid="uid://f8vo23e0d54h" path="res://Audio/Musics/TestsOverhead.mp3" id="3_wh6tg"]
+[ext_resource type="Texture2D" uid="uid://djcual4ut6w7a" path="res://UI/Assets/Backgrounds/Key_art_sans_bordure_01.png" id="4_wh6tg"]
 
 [sub_resource type="FontVariation" id="FontVariation_yei5s"]
 
@@ -84,7 +84,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yei5s")
+texture = ExtResource("4_wh6tg")
 expand_mode = 1
 stretch_mode = 6
 

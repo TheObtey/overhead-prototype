@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2rlhf75waang"]
 
 [ext_resource type="Script" uid="uid://ce2hy3dw6t8ik" path="res://scripts/UI/OptionsMenu.gd" id="1_c3c6m"]
-[ext_resource type="Texture2D" uid="uid://f7aapmy2wydy" path="res://UI/Assets/Icons/OverHeadIcon.png" id="1_d7olf"]
+[ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="2_m2dws"]
 [ext_resource type="PackedScene" uid="uid://btfj0wmxqir5n" path="res://scenes/ui/Menu/SettingsTabContainer.tscn" id="3_m2dws"]
 
 [node name="OptionsMenu" type="Control" unique_id=259052409]
@@ -35,9 +35,9 @@ theme_override_constants/separation = 16
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=701930421]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-texture_normal = ExtResource("1_d7olf")
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("2_m2dws")
 stretch_mode = 0
 
 [node name="Control" parent="MarginContainer/VBoxContainer" unique_id=1095434011 instance=ExtResource("3_m2dws")]
