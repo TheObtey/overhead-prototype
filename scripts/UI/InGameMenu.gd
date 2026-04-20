@@ -2,6 +2,8 @@ extends Control
 
 @onready var oOptionMenu = $OptionsMenu as OptionsMenu
 @onready var oMarginContainer = $MarginContainer as MarginContainer
+@export var scMainMenu : PackedScene
+
 var bIsOpen = false
 var bCanOpen = false
 
@@ -13,6 +15,7 @@ func _ready() -> void:
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func ShowMenu() -> void:
+	get_tree().paused = true
 	bIsOpen = true
 	self.visible = true
 	oOptionMenu.visible = false
@@ -23,6 +26,7 @@ func HideMenu() -> void:
 	bIsOpen = false
 	self.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().paused = false
 
 func _input(event) -> void:
 	if bCanOpen == false:
@@ -31,9 +35,8 @@ func _input(event) -> void:
 	if event.is_action_pressed("Menu"):
 		if bIsOpen:
 			HideMenu()
-			get_tree().paused = false
+			
 		else:
-			get_tree().paused = true
 			ShowMenu()
 
 func _on_continue_pressed() -> void:
@@ -50,4 +53,6 @@ func OnExitMenu() -> void:
 	oOptionMenu.visible = false
 
 func _on_save_and_quit_pressed() -> void:
-	get_tree().quit()
+	# SaveGame()
+	HideMenu()
+	get_tree().change_scene_to_packed(scMainMenu)

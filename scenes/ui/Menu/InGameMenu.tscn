@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnewbdvyv6k26" path="res://scripts/UI/InGameMenu.gd" id="1_30wqq"]
 [ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="1_pmn4w"]
+[ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/Menu/MainMenu.tscn" id="2_1fvel"]
 [ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="2_30wqq"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
@@ -50,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_30wqq")
+scMainMenu = ExtResource("2_1fvel")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2140158038]
 z_index = 1

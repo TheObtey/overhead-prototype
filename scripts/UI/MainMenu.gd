@@ -7,6 +7,7 @@ extends Control
 func _ready() -> void:
 	oOptionMenu.sExitMenu.connect(OnExitMenu)
 	InGameMenu.bCanOpen = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(scGameScene)
