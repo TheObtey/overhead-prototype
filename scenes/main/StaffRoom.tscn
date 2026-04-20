@@ -155,7 +155,7 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
 
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_36ojw")]
-transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0, 10, 0)
+transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0.0021972656, 10.008474, -0.0076720715)
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("2_74xxn")]
@@ -173,6 +173,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.6905
 [node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_inj60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
 
+[node name="Door" parent="World" unique_id=939913208 instance=ExtResource("1_74xxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1599381, -0.015884638, -8.73374)
+
+[node name="Locker" type="Node" parent="World" unique_id=17319458]
+
+[node name="Platform" type="MeshInstance3D" parent="World/Locker" unique_id=1165861921]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 1, 3.2524457, 2.0190372, -9.173964)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform" unique_id=1959624863]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform/StaticBody3D" unique_id=2041884655]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Locker" unique_id=859451036]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 1, 1.0644442, 1.96806, -9.173964)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform2" unique_id=1981898875]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform2/StaticBody3D" unique_id=934295425]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform3" type="MeshInstance3D" parent="World/Locker" unique_id=78905494]
+transform = Transform3D(2.3, 0, 0, 0, 0.2, 0, 0, 0, 1, 2.1160293, 3.9227798, -9.172272)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform3" unique_id=955432294]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform3/StaticBody3D" unique_id=196661830]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
 [node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("6_tcuxm")]
@@ -180,3 +212,23 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
+
+[node name="Puzzle" type="Node" parent="." unique_id=1284850936]
+
+[node name="Platform" type="MeshInstance3D" parent="Puzzle" unique_id=859167616]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 5.9239283, 4, 8)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Platform" unique_id=649080984]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Platform/StaticBody3D" unique_id=727770427]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform2" type="MeshInstance3D" parent="Puzzle" unique_id=1569888051]
+transform = Transform3D(0.05, 0, 0, 0, 1.5, 0, 0, 0, 1, -9.724841, 11.929099, 1.445323)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Platform2" unique_id=664151202]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Platform2/StaticBody3D" unique_id=290802526]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
