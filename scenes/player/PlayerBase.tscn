@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bva130iqyut2" path="res://scenes/ui/HotbarUI.tscn" id="8_qh3el"]
 [ext_resource type="Script" uid="uid://4jgmnu5qw3at" path="res://scenes/player/components/CharacterGravityApplierComponent.gd" id="8_rqe1m"]
 [ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
+[ext_resource type="PackedScene" uid="uid://djxisuhms0nij" path="res://scenes/ui/HUD/EmoteWheel.tscn" id="11_8cpdt"]
 [ext_resource type="PackedScene" uid="uid://bskvvfpviflor" path="res://scenes/player/FbxScenes/PlayerAnimated.scn" id="11_sp8x6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
@@ -76,6 +77,9 @@ pMovementComponentPath = NodePath("../MovementComponent")
 
 [node name="PlayerAnimated" parent="Visuals" unique_id=1755753807 instance=ExtResource("11_sp8x6")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.141, 0)
+
+[node name="EmoteWheel" parent="Visuals" unique_id=221894441 instance=ExtResource("11_8cpdt")]
+visible = false
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
 
