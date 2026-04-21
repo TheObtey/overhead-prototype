@@ -1,7 +1,8 @@
 extends EntityBase
 
 
-@onready var keypad: Node3D = $"../../.."
+#@onready var keypad: Node3D = $"../../.."
+@onready var keypad: Node3D = $"../../../.."
 
 @export var value : String = "0"
 

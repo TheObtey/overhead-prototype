@@ -1,9 +1,9 @@
 extends EntityBase
 
 @export var sNeededItem: String
+@export var oTarget : Node3D
 
-@export var target : Node3D
-
+var oCollectible : Node
 
 func GetPrompt() -> String:
 	return "Use KeyCard"
@@ -15,25 +15,27 @@ func CanInteract(oInteractor: Node) -> bool:
 	if not oInteractor:
 		return false
 	
-	var oEquipmentComponent = oInteractor.GetEquipmentComponent()
+	var oInventoryComponent = oInteractor.GetInventoryComponent()
 	
-	if not oEquipmentComponent:
+	if not oInventoryComponent:
 		return false
 	
-	var oEquippedItem = oEquipmentComponent.GetCurrentItem()
+	oCollectible = oInventoryComponent.GetCollectibleByName(sNeededItem)
 	
-	if not oEquippedItem or oEquippedItem.GetItemName() != sNeededItem:
-		return false
+	print(oCollectible)
 	
-	return true
+	if oCollectible is ItemBase:
+		return true
+	
+	return false
 
 func Interact(oInteractor: Node) -> void:
 	if not CanInteract(oInteractor):
 		return
 	
-	print("door open")
-	if target != null:
-		target.Interact(oInteractor)
+	var oInventoryComponent = oInteractor.GetInventoryComponent()
+	oInventoryComponent.UseCollectible(oCollectible)
 	
-	#queue_free()
-	#oInteractor._OnEntityChanged(null)
+	if oTarget != null:
+		oTarget.Interact(oInteractor)
+	

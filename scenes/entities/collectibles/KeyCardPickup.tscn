@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ciwc14e3hlyo5"]
 
 [ext_resource type="PackedScene" uid="uid://c26dgbj76sim6" path="res://scenes/entities/weapons/WeaponPickupBase.tscn" id="1_pkq5k"]
+[ext_resource type="Script" uid="uid://cwrbb6kalt6km" path="res://scenes/entities/collectibles/CollectiblesPickupBase.gd" id="2_2by3u"]
 [ext_resource type="PackedScene" uid="uid://be6n8yq7h8i1x" path="res://scenes/items/weapons/keyCard/KeyCard.tscn" id="2_pkq5k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_mcqai"]
@@ -8,8 +9,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkq5k"]
 albedo_color = Color(0.8276191, 0, 0.24627244, 1)
 
-[node name="EntityBase" unique_id=108843216 instance=ExtResource("1_pkq5k")]
-oWeaponScene = ExtResource("2_pkq5k")
+[node name="KeyCard" unique_id=108843216 instance=ExtResource("1_pkq5k")]
+script = ExtResource("2_2by3u")
+oCollectibleScene = ExtResource("2_pkq5k")
 sEntityName = "KeyCardStaffRoom"
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Visuals" parent_id_path=PackedInt32Array(490728609) index="0" unique_id=283629398]

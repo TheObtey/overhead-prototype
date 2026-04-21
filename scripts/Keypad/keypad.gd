@@ -1,6 +1,6 @@
 extends ActivatorBase
 
-@onready var number_on_screen: Label3D = $Pad/Screen/Number_on_screen
+@onready var number_on_screen: Label3D = $Visuals/Pad/Screen/Number_on_screen
 @export var correct_code : String = "1234567"
 var current_input : String = ""
 

@@ -58,3 +58,6 @@ func GetPrompt() -> String:
 				return sCustomPrompt
 	
 	return sPrompt
+
+func GetName() -> String:
+	return sEntityName

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://541n4rkdiqdk" path="res://scenes/entities/Vent/Vent.tscn" id="10_inj60"]
 [ext_resource type="PackedScene" uid="uid://ce00kn54mkwur" path="res://assets/models/other/télé.fbx" id="11_tcuxm"]
 [ext_resource type="PackedScene" uid="uid://dirwvbfc4jolg" path="res://assets/models/other/vending_machine.fbx" id="12_76dmt"]
-[ext_resource type="PackedScene" uid="uid://ciwc14e3hlyo5" path="res://scenes/entities/weapons/KeyCardPickup.tscn" id="12_uq3sc"]
+[ext_resource type="PackedScene" uid="uid://ciwc14e3hlyo5" path="res://scenes/entities/collectibles/KeyCardPickup.tscn" id="12_uq3sc"]
 [ext_resource type="PackedScene" uid="uid://bo4aorng4lf53" path="res://scenes/items/glass_locker/glass_locker.tscn" id="14_uq3sc"]
 [ext_resource type="PackedScene" uid="uid://ck8kjb7hva6bx" path="res://scenes/entities/card_reader/Card_reader.tscn" id="15_auq2t"]
 
@@ -314,6 +314,13 @@ omni_range = 827.145
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Light/StaticBody3D" unique_id=393350265]
 shape = SubResource("ConvexPolygonShape3D_7pxxh")
 
+[node name="Glass_locker" parent="World/Level" unique_id=1884566530 instance=ExtResource("14_uq3sc")]
+transform = Transform3D(1.26, 0, 0, 0, -0.7, 6.119594e-08, 0, -6.119594e-08, -0.7, 7.213175, 14.859735, -7.55682)
+
+[node name="Card_reader" parent="World/Level" unique_id=826750785 node_paths=PackedStringArray("oTarget") instance=ExtResource("15_auq2t")]
+transform = Transform3D(0.2847298, 0, 0, 0, 0.2606535, 0, 0, 0, 1, 7.5441236, 5.5610056, 9.6686945)
+oTarget = NodePath("../Door")
+
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_36ojw")]
 transform = Transform3D(25.715, 0, 0, 0, 9, 0, 0, 0, 25.715, 0, 12, 0)
 vecGravityDirection = Vector3(0, 1, 0)
@@ -334,8 +341,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.6905
 [node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_inj60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
 
-[node name="EntityBase" parent="World" unique_id=377495319 instance=ExtResource("12_uq3sc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4301307, 1.7425737, 0.6585393)
+[node name="KeyCard" parent="World" unique_id=1786878456 instance=ExtResource("12_uq3sc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.011014, 1.2683446, 0.9788649)
 
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
@@ -344,10 +351,3 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
-
-[node name="Glass_locker" parent="." unique_id=1884566530 instance=ExtResource("14_uq3sc")]
-transform = Transform3D(1.26, 0, 0, 0, -0.7, 6.119594e-08, 0, -6.119594e-08, -0.7, 7.213175, 14.859735, -7.55682)
-
-[node name="Card_reader" parent="." unique_id=826750785 node_paths=PackedStringArray("target") instance=ExtResource("15_auq2t")]
-transform = Transform3D(0.2847298, 0, 0, 0, 0.2606535, 0, 0, 0, 1, 7.5441236, 5.5610056, 9.6686945)
-target = NodePath("../World/Level/Door")

@@ -5,7 +5,6 @@ var isOpen = false
 func Interactkey() -> void:
 	toggle_door()
 	
-
 func CanInteract(oInt: Node) -> bool:
 	return false
 
