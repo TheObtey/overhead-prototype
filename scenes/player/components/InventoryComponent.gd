@@ -1,13 +1,18 @@
 extends Node
 
+# Inventory container owned by a player.
+# Stores item instances and emits a change signal for UI/systems.
 signal InventoryChanged
 
-var pPlayer: CharacterBody3D
+var pPlayer: Node
 var tItems: Array = []
+var tCollectibles: Array = []
 
-func Setup(pNewPlayer: CharacterBody3D) -> void:
+# Binds this inventory to its player owner.
+func Setup(pNewPlayer: Node) -> void:
 	pPlayer = pNewPlayer
 
+# Adds an item and triggers the item's add lifecycle hook.
 func AddItem(oItem: Node) -> void:
 	if not oItem:
 		return
@@ -17,8 +22,9 @@ func AddItem(oItem: Node) -> void:
 	
 	InventoryChanged.emit()
 
+# Removes an item and triggers the item's remove lifecycle hook.
 func RemoveItem(oItem: Node) -> void:
-	if not tItems.has(oItem):
+	if not oItem or not tItems.has(oItem):
 		return
 	
 	tItems.erase(oItem)
@@ -26,5 +32,39 @@ func RemoveItem(oItem: Node) -> void:
 	
 	InventoryChanged.emit()
 
+# Returns the current items list.
 func GetItems() -> Array:
 	return tItems
+
+# Adds a collectible and triggers the item's add lifecycle hook.
+func AddCollectible(oCollectible: Node) -> void:
+	if not oCollectible:
+		return
+	
+	tCollectibles.append(oCollectible)
+	oCollectible.OnAdded(pPlayer)
+	
+	InventoryChanged.emit()
+
+# Removes a collectible and triggers the item's remove lifecycle hook.
+func RemoveCollectible(oCollectible: Node) -> void:
+	if not oCollectible or not tCollectibles.has(oCollectible):
+		return
+	
+	tCollectibles.erase(oCollectible)
+	oCollectible.OnRemove(pPlayer)
+	
+	InventoryChanged.emit()
+
+# Returns the current collectibles list.
+func GetCollectibles() -> Array:
+	return tCollectibles
+
+# Removes and return true if player has collectible, false otherwise
+func UseCollectible(oCollectible: Node) -> bool:
+	if not oCollectible or not tCollectibles.has(oCollectible):
+		return false
+	
+	RemoveCollectible(oCollectible)
+	
+	return true

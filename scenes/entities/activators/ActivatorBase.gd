@@ -1,11 +1,18 @@
 class_name ActivatorBase
 extends EntityBase
 
+# Base activator entity that calls `Toggle(interactor, ...)`
+# on configured targets when interacted with.
 @export var tTargets: Array[ActivationTarget] = []
 @export var bTriggerOnce: bool = false
 
 var bHasBeenTriggered: bool = false
 
+# --------------------------------------------------
+# Extends base interaction validation.
+# Prevents interaction if the activator is set to
+# trigger only once and has already been used.
+# --------------------------------------------------
 func CanInteract(oInteractor: Node) -> bool:
 	if not super.CanInteract(oInteractor):
 		return false
@@ -15,6 +22,12 @@ func CanInteract(oInteractor: Node) -> bool:
 	
 	return true
 
+# --------------------------------------------------
+# Main interaction logic.
+# Calls base interaction, then triggers all targets.
+# Optionally disables future interactions if set to
+# trigger only once.
+# --------------------------------------------------
 func Interact(oInteractor: Node) -> void:
 	if not CanInteract(oInteractor):
 		return
@@ -25,6 +38,12 @@ func Interact(oInteractor: Node) -> void:
 	if bTriggerOnce:
 		bHasBeenTriggered = true
 
+# --------------------------------------------------
+# Iterates over all configured targets and calls
+# their "Toggle" method.
+# Automatically injects the interactor as first arg,
+# then appends any extra arguments defined in editor.
+# --------------------------------------------------
 func _TriggerTargets(oInteractor: Node) -> void:
 	for entry in tTargets:
 		if entry == null:
@@ -44,6 +63,12 @@ func _TriggerTargets(oInteractor: Node) -> void:
 		
 		oTarget.callv("Toggle", tArgs)
 
+
+# --------------------------------------------------
+# Returns the interaction prompt.
+# Hides it if the activator is single-use and already
+# triggered.
+# --------------------------------------------------
 func GetPrompt() -> String:
 	if bTriggerOnce and bHasBeenTriggered:
 		return ""
