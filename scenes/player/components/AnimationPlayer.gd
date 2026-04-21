@@ -3,11 +3,11 @@ extends Node
 class_name AnimationHandler
 
 var animLauncher :AnimationPlayer;
-@onready var oEmptyHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/HandsPivot/Hand_R
-@onready var oGunPart1: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/HandsPivot/HandGun_R
-@onready var oGunPart2: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/HandsPivot/Battery_and_Tape
-@onready var oGunHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/HandsPivot/Canon
-@onready var oHandsPivot: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/HandsPivot
+@onready var oEmptyHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Hand_R
+@onready var oGunPart1: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/HandGun_R
+@onready var oGunPart2: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Battery_and_Tape
+@onready var oGunHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Canon
+@onready var oHandsPivot: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay
 
 static var bHasGun : bool = true
 static var iCamPitch :float = 0.0

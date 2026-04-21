@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var oGravityReceiverComponent = $Components/GravityReceiverComponent
 @onready var oHotbarUI = $HotbarUI
 @onready var oViewmodelRoot: Node3D = $CameraRoot/ViewmodelRoot
+@onready var oEmoteWheel: Control = $Visuals/EmoteWheel
 
 @export var oStarterItemScene: PackedScene
 
@@ -50,6 +51,7 @@ func _physics_process(iDelta: float) -> void:
 	oMovementComponent.PhysicsUpdate(iDelta)
 	oInteractComponent.ProcessUpdate()
 	oEquipmentComponent.HandleInput()
+	oEmoteWheel.Update(iDelta)
 
 # Updates on-screen interaction prompt when target changes.
 func _OnEntityChanged(oEntity: Node) -> void:

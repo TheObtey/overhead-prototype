@@ -9,15 +9,11 @@ var bIsEquipped: bool = false
 func OnEquip(pPlayer: CharacterBody3D) -> void:
 	bIsEquipped = true
 	pOwner = pPlayer
-	if self is GravityGun:
-		AnimationHandler.bHasGun = true
 
 # Called when the item is no longer active.
 func OnUnequip() -> void:
 	bIsEquipped = false
 	pOwner = null
-	if self is GravityGun:
-		AnimationHandler.bHasGun = false
 
 # Primary input action (e.g. fire/use).
 func OnPrimaryAction() -> void:

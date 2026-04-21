@@ -5,6 +5,15 @@ extends EquippableItemBase
 
 var eHeldEntity: RigidBody3D
 
+func OnEquip(pPlayer: CharacterBody3D) -> void:
+	super.OnEquip(pPlayer)
+	AnimationHandler.bHasGun = true
+
+# Called when the item is no longer active.
+func OnUnequip() -> void:
+	super.OnUnequip()
+	AnimationHandler.bHasGun = false
+
 func OnPrimaryAction() -> void:
 	if eHeldEntity:
 		DropEntity()

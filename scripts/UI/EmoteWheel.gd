@@ -7,9 +7,8 @@ extends Node
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	iOpenCD += 1.0/60.0
+func Update(iDelta: float) -> void:
+	iOpenCD += iDelta
 	if (Input.is_key_pressed(KEY_E)):
 		if bIsOpen and iOpenCD > 0.15:
 			bIsOpen = false
@@ -36,20 +35,6 @@ func CloseWheel() -> void:
 	oWheel.visible = false
 	pass
 
-func OnWheelEvent(viewport: Node, event: InputEvent, shape_idx: int,iEmoteID : int) -> void :
-	var oEmoteSprite : Sprite2D = oWheel.get_child(iEmoteID)
-	if oEmoteSprite.modulate.a == 155:
-		pass
-	if event is InputEventMouseButton == false:
-		pass
-	if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		CloseWheel()
-		match iEmoteID:
-			0:
-				AnimationHandler.enumNewState = AnimationHandler.AnimState.POINT
-		pass
-	pass
-	
 func OverWheelPart(iEmoteID : int) -> void :
 	var oEmoteSprite : Sprite2D = oWheel.get_child(iEmoteID)
 	oEmoteSprite.modulate.a = 210;

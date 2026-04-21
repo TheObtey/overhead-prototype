@@ -8,15 +8,21 @@ points = PackedVector2Array(-0.4259262, -1.6842108, 0.14814806, -1.6280708, 4.37
 
 [node name="EmoteWheel" type="Control" unique_id=221894441]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 675.0
+offset_top = -223.99997
+offset_right = 675.0
+offset_bottom = -223.99997
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_f8jyh")
 
 [node name="Wheel" type="Control" parent="." unique_id=16880370]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -136,21 +142,15 @@ scale = Vector2(36.000004, 47.5)
 shape = SubResource("ConvexPolygonShape2D_tftgd")
 one_way_collision_margin = 0.0
 
-[connection signal="input_event" from="Wheel/AnimPoint/StaticBody2D" to="." method="OnWheelEvent" binds= [0]]
 [connection signal="mouse_entered" from="Wheel/AnimPoint/StaticBody2D" to="." method="OverWheelPart" binds= [0]]
 [connection signal="mouse_exited" from="Wheel/AnimPoint/StaticBody2D" to="." method="NotOverWheelPart" binds= [0]]
-[connection signal="input_event" from="Wheel/Other/StaticBody2D" to="." method="OnWheelEvent" binds= [1]]
 [connection signal="mouse_entered" from="Wheel/Other/StaticBody2D" to="." method="OverWheelPart" binds= [1]]
 [connection signal="mouse_exited" from="Wheel/Other/StaticBody2D" to="." method="NotOverWheelPart" binds= [1]]
-[connection signal="input_event" from="Wheel/Other1/StaticBody2D" to="." method="OnWheelEvent" binds= [2]]
 [connection signal="mouse_entered" from="Wheel/Other1/StaticBody2D" to="." method="OverWheelPart" binds= [2]]
 [connection signal="mouse_exited" from="Wheel/Other1/StaticBody2D" to="." method="NotOverWheelPart" binds= [2]]
-[connection signal="input_event" from="Wheel/Other2/StaticBody2D" to="." method="OnWheelEvent" binds= [3]]
 [connection signal="mouse_entered" from="Wheel/Other2/StaticBody2D" to="." method="OverWheelPart" binds= [3]]
 [connection signal="mouse_exited" from="Wheel/Other2/StaticBody2D" to="." method="NotOverWheelPart" binds= [3]]
-[connection signal="input_event" from="Wheel/Other3/StaticBody2D" to="." method="OnWheelEvent" binds= [4]]
 [connection signal="mouse_entered" from="Wheel/Other3/StaticBody2D" to="." method="OverWheelPart" binds= [4]]
 [connection signal="mouse_exited" from="Wheel/Other3/StaticBody2D" to="." method="NotOverWheelPart" binds= [4]]
-[connection signal="input_event" from="Wheel/Other4/StaticBody2D" to="." method="OnWheelEvent" binds= [5]]
 [connection signal="mouse_entered" from="Wheel/Other4/StaticBody2D" to="." method="OverWheelPart" binds= [5]]
 [connection signal="mouse_exited" from="Wheel/Other4/StaticBody2D" to="." method="NotOverWheelPart" binds= [5]]
