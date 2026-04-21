@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duorto2qef821"
-path="res://.godot/imported/Overhead.png-8640c28e849d22e03eedcd20ab20b192.ctex"
+uid="uid://dlealclwo2yh8"
+path="res://.godot/imported/HoveredSettingsButton.png-c8388bc35e9fd00e2ad5ed2eaf1d5a83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Backgrounds/Overhead.png"
-dest_files=["res://.godot/imported/Overhead.png-8640c28e849d22e03eedcd20ab20b192.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/HoveredSettingsButton.png"
+dest_files=["res://.godot/imported/HoveredSettingsButton.png-c8388bc35e9fd00e2ad5ed2eaf1d5a83.ctex"]
 
 [params]
 

@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://bunwvaqlowttw"]
 
 [ext_resource type="Script" uid="uid://j3dm1eoursbd" path="res://scripts/UI/SplashScreen.gd" id="1_m0ilf"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_usb1j"]
 [ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/Menu/MainMenu.tscn" id="2_eina6"]
 [ext_resource type="AudioStream" uid="uid://f8vo23e0d54h" path="res://Audio/Musics/TestsOverhead.mp3" id="3_wh6tg"]
-[ext_resource type="Texture2D" uid="uid://djcual4ut6w7a" path="res://UI/Assets/Backgrounds/Key_art_sans_bordure_01.png" id="4_wh6tg"]
-
-[sub_resource type="FontVariation" id="FontVariation_yei5s"]
-
-[sub_resource type="FontVariation" id="FontVariation_m0ilf"]
-base_font = SubResource("FontVariation_yei5s")
-variation_embolden = -0.24
-
-[sub_resource type="LabelSettings" id="LabelSettings_yei5s"]
-font = SubResource("FontVariation_m0ilf")
-font_size = 60
-shadow_size = 20
-shadow_color = Color(0, 0, 0, 0.39215687)
+[ext_resource type="Texture2D" uid="uid://djcual4ut6w7a" path="res://UI/Assets/Backgrounds/bgBorderlessWithLogoCenter.png" id="4_wh6tg"]
 
 [sub_resource type="Animation" id="Animation_eina6"]
 resource_name = "Blink"
@@ -62,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usb1j")
 script = ExtResource("1_m0ilf")
 scMainMenu = ExtResource("2_eina6")
 audioMusic = ExtResource("3_wh6tg")
@@ -75,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usb1j")
 color = Color(0.05490196, 0.05490196, 0.05490196, 0.25490198)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2011453657]
@@ -84,6 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usb1j")
 texture = ExtResource("4_wh6tg")
 expand_mode = 1
 stretch_mode = 6
@@ -91,19 +83,18 @@ stretch_mode = 6
 [node name="Label" type="Label" parent="." unique_id=389213561]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.76100004
-anchor_right = 1.0
-anchor_bottom = 0.97400004
-offset_left = 6.0
-offset_top = 4.119934
-offset_right = 6.0
-offset_bottom = 4.079956
+anchor_left = 0.0017361111
+anchor_top = 0.77623457
+anchor_right = 0.9991319
+anchor_bottom = 0.99691355
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("1_usb1j")
+theme_override_font_sizes/font_size = 64
 text = "APPUYER SUR UNE TOUCHE"
-label_settings = SubResource("LabelSettings_yei5s")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=1599581123]
 libraries/ = SubResource("AnimationLibrary_wh6tg")

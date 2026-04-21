@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c1b8iquw2q3ra"]
 
 [ext_resource type="Script" uid="uid://ce2hy3dw6t8ik" path="res://scripts/UI/OptionsMenu.gd" id="1_eb32q"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_uhpau"]
 
 [node name="Options_Display_Button" type="Control" unique_id=1183087556]
 layout_mode = 3
@@ -9,24 +10,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_uhpau")
 script = ExtResource("1_eb32q")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1360943945]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_uhpau")
 theme_override_constants/separation = 160
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=386797941]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme = ExtResource("1_uhpau")
 theme_override_font_sizes/font_size = 32
 text = "BASE_LABEL"
 vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1295224888]
 layout_mode = 2
+theme = ExtResource("1_uhpau")
 
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=1568987228]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
+theme = ExtResource("1_uhpau")

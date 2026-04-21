@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djcual4ut6w7a"
-path="res://.godot/imported/Key_art_sans_bordure_01.png-8d7d6fb57f69fe76f919743c4d44b4a5.ctex"
+uid="uid://172nvsbu80"
+path="res://.godot/imported/HoveredPlayButton.png-ce5f9cf3958bc491a01ae052420b804e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Backgrounds/Key_art_sans_bordure_01.png"
-dest_files=["res://.godot/imported/Key_art_sans_bordure_01.png-8d7d6fb57f69fe76f919743c4d44b4a5.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/HoveredPlayButton.png"
+dest_files=["res://.godot/imported/HoveredPlayButton.png-ce5f9cf3958bc491a01ae052420b804e.ctex"]
 
 [params]
 
