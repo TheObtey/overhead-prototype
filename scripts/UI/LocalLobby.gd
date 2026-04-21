@@ -11,13 +11,14 @@ func _ready() -> void:
 	uiStartButton.visible = false
 
 func _input(event) -> void:
-	# pour debug iCurrentDeviceCount += 1
+	#iCurrentDeviceCount += 1
 	#store le premier divice dans imaginons oPlayer1device
 	#if event.device != pPlayer1device:
 		#store le deuxieme divice dans imaginons oPlayer2device
 
 	if iCurrentDeviceCount == 2:
 		uiStartButton.visible = true
+		uiBoxContainer.visible = true
 		
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_packed(scGameScene)
