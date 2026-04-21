@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c1fm6ystndqs4"]
-
-[ext_resource type="PackedScene" uid="uid://cc3bie32qrnjf" path="res://assets/models/restaurant/Texturés/assets enigmes/Mesh_Resto_pot.fbx" id="1_xfpxt"]
-
-[node name="Mesh_Resto_pot" unique_id=728320665 instance=ExtResource("1_xfpxt")]
