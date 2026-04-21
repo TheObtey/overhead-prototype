@@ -4,6 +4,7 @@ extends Node
 @export var iPlayerCount: int = 2
 
 @onready var oSpawner: LocalPlayerSpawner = $"../LocalPlayerSpawner"
+@onready var oSplitScreenRoot: SplitScreenRoot = $"../SplitScreenRoot"
 
 func _ready() -> void:
 	var tPlayers = StartLocalGame()
@@ -11,9 +12,8 @@ func _ready() -> void:
 	if tPlayers.is_empty():
 		return
 	
-	var oCamera = tPlayers[0].find_child("Camera3D", true, false)
-	if oCamera is Camera3D:
-		oCamera.current = true
+	if oSplitScreenRoot != null:
+		oSplitScreenRoot.Setup(tPlayers[0], tPlayers[1])
 
 func StartLocalGame() -> Array[Node]:
 	var tPlayers = oSpawner.SpawnLocalPlayers(iPlayerCount)
