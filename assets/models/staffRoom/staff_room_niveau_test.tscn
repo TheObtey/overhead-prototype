@@ -1,0 +1,388 @@
+[gd_scene format=3 uid="uid://cf4ehjq41vwe2"]
+
+[ext_resource type="PackedScene" uid="uid://cqrn253ym7nle" path="res://assets/models/staffRoom/Staff_Room_Niveau_test.fbx" id="1_ky5vu"]
+[ext_resource type="Texture2D" uid="uid://cm7xtusk1wyvy" path="res://assets/texture/Texture_staff_room.png" id="2_efmhl"]
+[ext_resource type="Texture2D" uid="uid://cadkfhx20hpgo" path="res://assets/texture/Affiche employé_03.png" id="3_af2jl"]
+[ext_resource type="Texture2D" uid="uid://c6mnl7v11v5c5" path="res://assets/texture/Affiche employé_01.png" id="4_321jy"]
+[ext_resource type="Texture2D" uid="uid://c0wd0hjdfopqs" path="res://assets/texture/Affiche employé_02.png" id="5_w8qnx"]
+[ext_resource type="Texture2D" uid="uid://byq1uomdduuyd" path="res://assets/texture/Affiche employé_04.png" id="6_ika7l"]
+[ext_resource type="Texture2D" uid="uid://bmh8fhsr7o7xv" path="res://assets/texture/Affiche employé_05.png" id="7_a4n6u"]
+[ext_resource type="Texture2D" uid="uid://cv0b02mfaj3pc" path="res://assets/texture/Affiche employé_06.png" id="8_qp6r1"]
+[ext_resource type="Texture2D" uid="uid://dbte88xwfebhy" path="res://assets/texture/Affiche employé_07.png" id="9_wdw0c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfka7"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j12vs"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_328xl"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4u5c"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nes5f"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvmrc"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq6p5"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65dd2"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81eir"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k4w7v"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_af2jl"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_321jy"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8qnx"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ika7l"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlvrn"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4n6u"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp6r1"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04oyg"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0avyf"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mvee"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1c35"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnvy4"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ta0ui"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ubq5"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nd6md"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qd1v8"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onurr"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfyas"]
+albedo_texture = ExtResource("2_efmhl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gjky"]
+albedo_texture = ExtResource("3_af2jl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv71h"]
+albedo_texture = ExtResource("4_321jy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nhq4"]
+albedo_texture = ExtResource("5_w8qnx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlu2n"]
+albedo_texture = ExtResource("5_w8qnx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dn4l"]
+albedo_texture = ExtResource("3_af2jl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmtr5"]
+albedo_texture = ExtResource("6_ika7l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y2or"]
+albedo_texture = ExtResource("4_321jy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tge1c"]
+albedo_texture = ExtResource("7_a4n6u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ueq"]
+albedo_texture = ExtResource("6_ika7l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_traaq"]
+albedo_texture = ExtResource("8_qp6r1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8hqg"]
+albedo_texture = ExtResource("7_a4n6u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5angx"]
+albedo_texture = ExtResource("9_wdw0c")
+
+[node name="Staff_Room_Niveau_test" unique_id=1575947945 instance=ExtResource("1_ky5vu")]
+
+[node name="SM_SR_tuyau_01" parent="." index="0" unique_id=244607454]
+material_override = SubResource("StandardMaterial3D_jfka7")
+
+[node name="SM_SR_tuyau_02" parent="." index="1" unique_id=1860962691]
+material_override = SubResource("StandardMaterial3D_j12vs")
+
+[node name="SM_SR_carton_plat_01" parent="." index="2" unique_id=889864900]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_fondation_05" parent="." index="3" unique_id=744980334]
+surface_material_override/0 = SubResource("StandardMaterial3D_x4u5c")
+
+[node name="SM_SR_carton_plat_02" parent="." index="4" unique_id=120951297]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_petit_livre_2" parent="." index="5" unique_id=732304149]
+material_override = SubResource("StandardMaterial3D_nes5f")
+
+[node name="SM_SR_fondation_04" parent="." index="6" unique_id=252981120]
+surface_material_override/0 = SubResource("StandardMaterial3D_x4u5c")
+
+[node name="SM_SR_petit_livre_1" parent="." index="7" unique_id=143543098]
+material_override = SubResource("StandardMaterial3D_kvmrc")
+
+[node name="SM_SR_livre_3" parent="." index="8" unique_id=364572055]
+material_override = SubResource("StandardMaterial3D_dq6p5")
+
+[node name="SM_SR_livre_1" parent="." index="9" unique_id=1719685141]
+material_override = SubResource("StandardMaterial3D_65dd2")
+
+[node name="SM_SR_fondation_03" parent="." index="10" unique_id=84279669]
+surface_material_override/0 = SubResource("StandardMaterial3D_x4u5c")
+
+[node name="SM_SR_Lave_Linge" parent="." index="11" unique_id=1224492061]
+material_override = SubResource("StandardMaterial3D_81eir")
+
+[node name="SM_SR_Table" parent="." index="12" unique_id=1420519069]
+surface_material_override/0 = SubResource("StandardMaterial3D_k4w7v")
+
+[node name="SM_SR_Fontaine_eau" parent="." index="13" unique_id=1535391568]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_Vent" parent="." index="14" unique_id=1643600404]
+material_override = SubResource("StandardMaterial3D_321jy")
+
+[node name="SM_SR_bureau" parent="." index="15" unique_id=892056161]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_ventillateur" parent="." index="16" unique_id=2015897846]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_Lit" parent="." index="17" unique_id=589486373]
+material_override = SubResource("StandardMaterial3D_w8qnx")
+
+[node name="SM_SR_Machine_cafe" parent="." index="18" unique_id=1287755598]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_Cam_01" parent="." index="19" unique_id=1079267985]
+material_override = SubResource("StandardMaterial3D_ika7l")
+
+[node name="SM_SR_poele" parent="." index="20" unique_id=1945133336]
+material_override = SubResource("StandardMaterial3D_mlvrn")
+
+[node name="SM_SR_Door_S" parent="." index="21" unique_id=2033873234]
+surface_material_override/0 = SubResource("StandardMaterial3D_a4n6u")
+
+[node name="SM_SR_fondation_01" parent="." index="22" unique_id=1294401644]
+material_override = SubResource("StandardMaterial3D_qp6r1")
+surface_material_override/0 = SubResource("StandardMaterial3D_x4u5c")
+
+[node name="SM_SR_fondation_02" parent="." index="23" unique_id=723762913]
+surface_material_override/0 = SubResource("StandardMaterial3D_x4u5c")
+
+[node name="SM_SR_Cam_02" parent="." index="24" unique_id=888631423]
+material_override = SubResource("StandardMaterial3D_04oyg")
+
+[node name="SM_SR_Cam_03" parent="." index="25" unique_id=1119972723]
+material_override = SubResource("StandardMaterial3D_0avyf")
+
+[node name="SM_SR_Cam_04" parent="." index="26" unique_id=215246713]
+material_override = SubResource("StandardMaterial3D_4mvee")
+
+[node name="SM_SR_horloge" parent="." index="27" unique_id=2125182286]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_imprimante" parent="." index="28" unique_id=1804962678]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_tele" parent="." index="29" unique_id=1670182955]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_toilets" parent="." index="30" unique_id=1956203546]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_casier_ouvert" parent="." index="31" unique_id=74917953]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_casier_fermer" parent="." index="32" unique_id=1795663400]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_pass_magnetique" parent="." index="33" unique_id=1829406784]
+surface_material_override/0 = SubResource("StandardMaterial3D_af2jl")
+
+[node name="SM_SR_Carton_plat" parent="." index="34" unique_id=620203881]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_plat_05" parent="." index="35" unique_id=374531560]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_Fauteuil_palette_01" parent="." index="36" unique_id=660553700]
+material_override = SubResource("StandardMaterial3D_o1c35")
+
+[node name="SM_SR_serveur_01" parent="." index="37" unique_id=220095509]
+surface_material_override/0 = SubResource("StandardMaterial3D_qnvy4")
+
+[node name="SM_SR_serveur_02" parent="." index="38" unique_id=1614277229]
+surface_material_override/0 = SubResource("StandardMaterial3D_qnvy4")
+
+[node name="SM_SR_serveur_03" parent="." index="39" unique_id=442053818]
+surface_material_override/0 = SubResource("StandardMaterial3D_qnvy4")
+
+[node name="SM_SR_carton_plat_03" parent="." index="40" unique_id=526021404]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_plat_04" parent="." index="41" unique_id=45621136]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_Vending_machine" parent="." index="42" unique_id=1578885997]
+surface_material_override/0 = SubResource("StandardMaterial3D_ta0ui")
+
+[node name="SM_SR_Etagere_01" parent="." index="43" unique_id=1707759908]
+surface_material_override/0 = SubResource("StandardMaterial3D_ta0ui")
+
+[node name="SM_SR_Etagere_02" parent="." index="44" unique_id=1078405324]
+surface_material_override/0 = SubResource("StandardMaterial3D_ta0ui")
+
+[node name="SM_SR_Palette_01" parent="." index="45" unique_id=1993789398]
+material_override = SubResource("StandardMaterial3D_0ubq5")
+
+[node name="SM_SR_casier_fermer_01" parent="." index="46" unique_id=46535626]
+surface_material_override/0 = SubResource("StandardMaterial3D_ta0ui")
+
+[node name="SM_SR_carton_01" parent="." index="47" unique_id=1361665941]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_14" parent="." index="48" unique_id=69426775]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_02" parent="." index="49" unique_id=1886071371]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_03" parent="." index="50" unique_id=346204305]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_04" parent="." index="51" unique_id=958557898]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_05" parent="." index="52" unique_id=1833994947]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_06" parent="." index="53" unique_id=1548552499]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_15" parent="." index="54" unique_id=1915990684]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_07" parent="." index="55" unique_id=156601820]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_08" parent="." index="56" unique_id=149487234]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_09" parent="." index="57" unique_id=1844972105]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_ouvert_01" parent="." index="58" unique_id=2085052451]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_10" parent="." index="59" unique_id=964060415]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_11" parent="." index="60" unique_id=588969360]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_12" parent="." index="61" unique_id=176724282]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_13" parent="." index="62" unique_id=492925173]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_plat_06" parent="." index="63" unique_id=1881105118]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_plat_07" parent="." index="64" unique_id=2110546783]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_16" parent="." index="65" unique_id=756214917]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_ouvert_03" parent="." index="66" unique_id=1338633778]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_17" parent="." index="67" unique_id=1778168975]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_18" parent="." index="68" unique_id=26690867]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_ouvert_02" parent="." index="69" unique_id=270460671]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_four" parent="." index="70" unique_id=245994929]
+material_override = SubResource("StandardMaterial3D_nd6md")
+
+[node name="SM_SR_Etagere_03" parent="." index="71" unique_id=1220993147]
+material_override = SubResource("StandardMaterial3D_qd1v8")
+
+[node name="SM_SR_carton_20" parent="." index="72" unique_id=92565593]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_carton_19" parent="." index="73" unique_id=619080452]
+surface_material_override/0 = SubResource("StandardMaterial3D_328xl")
+
+[node name="SM_SR_Fauteuil_palette_02" parent="." index="74" unique_id=1289175883]
+surface_material_override/0 = SubResource("StandardMaterial3D_onurr")
+
+[node name="SM_SR_livre_anneaux_01" parent="." index="75" unique_id=714876528]
+material_override = SubResource("StandardMaterial3D_yfyas")
+
+[node name="SM_SR_Affiche_01" parent="." index="88" unique_id=673542456]
+material_override = SubResource("StandardMaterial3D_0gjky")
+surface_material_override/0 = SubResource("StandardMaterial3D_pv71h")
+
+[node name="SM_SR_Affiche_02" parent="." index="89" unique_id=1824382689]
+surface_material_override/0 = SubResource("StandardMaterial3D_3nhq4")
+
+[node name="SM_SR_Affiche_03" parent="." index="90" unique_id=897901822]
+material_override = SubResource("StandardMaterial3D_wlu2n")
+surface_material_override/0 = SubResource("StandardMaterial3D_1dn4l")
+
+[node name="SM_SR_Affiche_04" parent="." index="91" unique_id=598149116]
+surface_material_override/0 = SubResource("StandardMaterial3D_mmtr5")
+
+[node name="SM_SR_Affiche_05" parent="." index="92" unique_id=2042416460]
+material_override = SubResource("StandardMaterial3D_8y2or")
+surface_material_override/0 = SubResource("StandardMaterial3D_tge1c")
+
+[node name="SM_SR_Affiche_06" parent="." index="93" unique_id=959904482]
+material_override = SubResource("StandardMaterial3D_16ueq")
+surface_material_override/0 = SubResource("StandardMaterial3D_traaq")
+
+[node name="SM_SR_Affiche_07" parent="." index="94" unique_id=535051894]
+material_override = SubResource("StandardMaterial3D_b8hqg")
+surface_material_override/0 = SubResource("StandardMaterial3D_5angx")
