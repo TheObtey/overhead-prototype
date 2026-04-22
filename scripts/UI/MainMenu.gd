@@ -3,7 +3,6 @@ extends Control
 @onready var uiOptionMenu = $OptionsMenu as OptionsMenu
 @onready var uiMarginContainer = $MarginContainer as MarginContainer
 @onready var uiLogo = $TextureRect2 as TextureRect
-
 @export var scLobby : PackedScene
  
 func _ready() -> void:

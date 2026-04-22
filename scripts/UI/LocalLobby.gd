@@ -11,7 +11,7 @@ func _ready() -> void:
 	uiStartButton.visible = false
 
 func _input(event) -> void:
-	#iCurrentDeviceCount += 1
+	iCurrentDeviceCount += 1
 	#store le premier divice dans imaginons oPlayer1device
 	#if event.device != pPlayer1device:
 		#store le deuxieme divice dans imaginons oPlayer2device
