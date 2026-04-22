@@ -209,7 +209,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 
 [node name="PlayerBase2" parent="Players" unique_id=1296541898 instance=ExtResource("7_e7fb5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.295763, 1.4621041, -3.689015)
-visible = false
 iPlayerID = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
@@ -217,3 +216,4 @@ transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1719813766]
 transform = Transform3D(-0.993564, 0.025773466, 0.11030152, 0.038826924, 0.9922679, 0.117884636, -0.10641037, 0.12140859, -0.9868823, 0, 2.9263203, -7.8771152)
+current = true

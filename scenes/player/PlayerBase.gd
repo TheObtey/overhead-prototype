@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var oInventoryComponent = $Components/InventoryComponent
 @onready var oEquipmentComponent = $Components/EquipmentComponent
 @onready var oGravityReceiverComponent = $Components/GravityReceiverComponent
+@onready var oPingComponent : Node3D = $Visuals/PingScene
 @onready var oHotbarUI = $HotbarUI
 @onready var oViewmodelRoot: Node3D = $CameraRoot/ViewmodelRoot
 @onready var oEmoteWheel: Control = $Visuals/EmoteWheel
@@ -31,6 +32,8 @@ func _ready() -> void:
 	oInventoryComponent.Setup(self)
 	oEquipmentComponent.Setup(self, oViewmodelRoot)
 	oPlayerMeshs.SetPlayerID(iPlayerID)
+	oPingComponent.LinkPing(iPlayerID)
+	oEmoteWheel.SetUp(oPingComponent)
 	oCamera.set_cull_mask_value(2+iPlayerID,false)
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
 

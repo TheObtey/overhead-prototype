@@ -6,19 +6,17 @@ extends Node
 @onready var oShoeL: MeshInstance3D = $charNode01/globalMove01/joints01/Skeleton3D/Shoe_L
 @onready var oShoeR: MeshInstance3D = $charNode01/globalMove01/joints01/Skeleton3D/Shoe_R
 
-@export var oMaterial1: Material
-@export var oMaterial2: Material
+@export var oMesh1: Mesh
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 func SetPlayerID(iPlayerID: int) -> void:
+	
 	match iPlayerID:
-		0:
-			oHead.mesh.surface_set_material(1,oMaterial1)
 		1:
-			oHead.mesh.surface_set_material(1,oMaterial2)
+			oHead.mesh = oMesh1
 			
 	SetCullMaskOfElements(2+iPlayerID)
 	pass

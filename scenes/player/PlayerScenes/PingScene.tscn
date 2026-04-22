@@ -15,11 +15,18 @@ script = ExtResource("1_ytvgo")
 material1 = SubResource("StandardMaterial3D_ytvgo")
 material2 = SubResource("StandardMaterial3D_m3ylq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1236437964]
-transform = Transform3D(0.45049894, 0, 0, 0, 0.45049894, 0, 0, 0, 0.45049894, 0, 0, 0)
+[node name="Visual" type="Node3D" parent="." unique_id=1690000594]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" unique_id=1236437964]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+layers = 1023
 mesh = SubResource("SphereMesh_hsw3b")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1192769355]
+[node name="SpotLight3D" type="SpotLight3D" parent="Visual" unique_id=1192769355]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
-spot_range = 4.3688006
-spot_angle = 3.838823
+layers = 1023
+light_energy = 15.0
+light_indirect_energy = 5.0
+light_size = 1.0
+spot_range = 3.7112944
+spot_angle = 4.5140967

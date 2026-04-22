@@ -4,9 +4,15 @@ extends Node
 @onready var bIsOpen : bool = false
 @onready var vecMouseOffset : Vector2 = Vector2(3.5,2)
 @onready var iSelectedEmote : int = 0
+
+var oPingComponent : Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
+
+func SetUp(oPingComp : Node3D) -> void:
+	oPingComponent  = oPingComp
+	pass
 
 func Update(iDelta: float) -> void:
 	if (Input.is_action_just_pressed("emote_wheel")):
@@ -58,6 +64,7 @@ func EmoteInterract(iEmoteID : int) -> void :
 	match iEmoteID:
 		0:
 			AnimationHandler.enumNewState = AnimationHandler.AnimState.POINT
+			oPingComponent.Ping()
 	pass
 
 func OpenWheel() -> void:
