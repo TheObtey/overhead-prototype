@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmwse6i7vuiyf"
-path="res://.godot/imported/HoveredQuitButton.png-6aa19d84a7dd652170086ea221e83d1c.ctex"
+uid="uid://crptievkrjwna"
+path="res://.godot/imported/curseur_orange.png-a04ea1a7ca2f13a13729e2907a5fbb17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Icons/MainMenu/HoveredQuitButton.png"
-dest_files=["res://.godot/imported/HoveredQuitButton.png-6aa19d84a7dd652170086ea221e83d1c.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/Settings/curseur_orange.png"
+dest_files=["res://.godot/imported/curseur_orange.png-a04ea1a7ca2f13a13729e2907a5fbb17.ctex"]
 
 [params]
 

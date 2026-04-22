@@ -6,12 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://voy0u0er4atu" path="res://UI/Assets/Backgrounds/bgBorderless.png" id="3_slxja"]
 [ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="4_6k8rh"]
 [ext_resource type="Texture2D" uid="uid://f7aapmy2wydy" path="res://UI/Assets/Icons/OverHeadIcon.png" id="4_bcp4n"]
-[ext_resource type="Texture2D" uid="uid://b0dj7236dtr2l" path="res://UI/Assets/Icons/MainMenu/BasicPlayButton.png" id="4_j5qqw"]
-[ext_resource type="Texture2D" uid="uid://172nvsbu80" path="res://UI/Assets/Icons/MainMenu/HoveredPlayButton.png" id="5_6v20d"]
-[ext_resource type="Texture2D" uid="uid://b4gqg83704brm" path="res://UI/Assets/Icons/MainMenu/BasicSettingsButton.png" id="6_6v20d"]
-[ext_resource type="Texture2D" uid="uid://dlealclwo2yh8" path="res://UI/Assets/Icons/MainMenu/HoveredSettingsButton.png" id="7_53n11"]
-[ext_resource type="Texture2D" uid="uid://r0o157te8th6" path="res://UI/Assets/Icons/MainMenu/BasicQuitButton.png" id="8_53n11"]
-[ext_resource type="Texture2D" uid="uid://dmwse6i7vuiyf" path="res://UI/Assets/Icons/MainMenu/HoveredQuitButton.png" id="9_slxja"]
 [ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="12_b7v77"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
@@ -118,59 +112,6 @@ theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 28
 theme_override_constants/margin_bottom = 28
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1882247710]
-visible = false
-z_index = 2
-layout_mode = 2
-theme = ExtResource("1_qtf23")
-theme_override_constants/separation = 14
-alignment = 1
-
-[node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=108654307]
-z_index = 2
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 4
-theme = ExtResource("1_qtf23")
-action_mode = 0
-texture_normal = ExtResource("4_j5qqw")
-texture_hover = ExtResource("5_6v20d")
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1796601804]
-layout_mode = 2
-theme = ExtResource("1_qtf23")
-
-[node name="Options" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=532618816]
-z_index = 2
-layout_mode = 2
-size_flags_horizontal = 8
-theme = ExtResource("1_qtf23")
-action_mode = 0
-texture_normal = ExtResource("6_6v20d")
-texture_hover = ExtResource("7_53n11")
-stretch_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1620021708]
-layout_mode = 2
-theme = ExtResource("1_qtf23")
-
-[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer" unique_id=154688385]
-z_index = 2
-layout_mode = 2
-size_flags_horizontal = 8
-theme = ExtResource("1_qtf23")
-action_mode = 0
-texture_normal = ExtResource("8_53n11")
-texture_hover = ExtResource("9_slxja")
-metadata/_edit_use_anchors_ = true
-
-[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1086809169]
-layout_mode = 2
-theme = ExtResource("1_qtf23")
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1931269948]
 z_index = 2
 layout_mode = 2
@@ -184,7 +125,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 theme = ExtResource("1_qtf23")
-theme_override_fonts/font = ExtResource("12_b7v77")
 theme_override_font_sizes/font_size = 36
 action_mode = 0
 text = "Start"
@@ -231,6 +171,6 @@ theme = ExtResource("1_qtf23")
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

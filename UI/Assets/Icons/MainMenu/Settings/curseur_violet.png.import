@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r0o157te8th6"
-path="res://.godot/imported/BasicQuitButton.png-e8999f128b82ce0f4340b78e1aaef078.ctex"
+uid="uid://2p34lb1ufq6r"
+path="res://.godot/imported/curseur_violet.png-5b9a54c73d9900c80a7e1098f3277f88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Icons/MainMenu/BasicQuitButton.png"
-dest_files=["res://.godot/imported/BasicQuitButton.png-e8999f128b82ce0f4340b78e1aaef078.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/Settings/curseur_violet.png"
+dest_files=["res://.godot/imported/curseur_violet.png-5b9a54c73d9900c80a7e1098f3277f88.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0dj7236dtr2l"
-path="res://.godot/imported/BasicPlayButton.png-2efad0672aa9511d0c6da3c3730cc18e.ctex"
+uid="uid://ds804q0g5omve"
+path="res://.godot/imported/rectangle effet texte selectioner.png-d7221492695f137117a2cfcd1400f8b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Icons/MainMenu/BasicPlayButton.png"
-dest_files=["res://.godot/imported/BasicPlayButton.png-2efad0672aa9511d0c6da3c3730cc18e.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/rectangle effet texte selectioner.png"
+dest_files=["res://.godot/imported/rectangle effet texte selectioner.png-d7221492695f137117a2cfcd1400f8b9.ctex"]
 
 [params]
 

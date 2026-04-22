@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bfmmqu78ul705"]
+
+[ext_resource type="Texture2D" uid="uid://ds804q0g5omve" path="res://UI/Assets/Icons/MainMenu/rectangle effet texte selectioner.png" id="1_fns5p"]
+
+[resource]
+texture = ExtResource("1_fns5p")
