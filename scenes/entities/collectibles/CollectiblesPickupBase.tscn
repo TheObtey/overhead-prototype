@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c3ky8rpcggh4m"]
+
+[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/entity_base/EntityBase.tscn" id="1_1u778"]
+[ext_resource type="Script" uid="uid://cwrbb6kalt6km" path="res://scenes/entities/collectibles/CollectiblesPickupBase.gd" id="2_acxnp"]
+
+[node name="EntityBase" unique_id=108843216 instance=ExtResource("1_1u778")]
+script = ExtResource("2_acxnp")
