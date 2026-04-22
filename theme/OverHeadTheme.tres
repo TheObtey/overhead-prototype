@@ -13,6 +13,9 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77xvi"]
 texture = ExtResource("1_jgvpi")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7r7h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="DPITexture" id="DPITexture_aeakx"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
 "
@@ -171,6 +174,7 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 Button/colors/font_hover_color = Color(0.9490196, 0.6509804, 0.3019608, 1)
 Button/fonts/font = ExtResource("1_4l1s6")
 Button/styles/hover = SubResource("StyleBoxTexture_77xvi")
+Button/styles/normal = SubResource("StyleBoxFlat_r7r7h")
 Button/styles/pressed = ExtResource("3_jb4vt")
 HSlider/constants/center_grabber = 0
 HSlider/constants/grabber_offset = 0

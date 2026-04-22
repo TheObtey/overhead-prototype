@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://64wmg74455v8" path="res://UI/Assets/Icons/bob.png" id="2_d6kfv"]
 [ext_resource type="PackedScene" uid="uid://bbi1p86eiax4y" path="res://scenes/main/HubRoom.tscn" id="2_i0te3"]
 [ext_resource type="Texture2D" uid="uid://cos4vpl8gpxdg" path="res://UI/Assets/Icons/bib.png" id="3_366lc"]
-[ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="4_366lc"]
 [ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="5_ogquj"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
@@ -50,6 +49,10 @@ _data = {
 &"FadeOut": SubResource("Animation_5be3t"),
 &"RESET": SubResource("Animation_xpiny")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3rr6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ogquj"]
 
 [node name="LocalLobby" type="Control" unique_id=1371850392]
 layout_mode = 3
@@ -150,11 +153,14 @@ theme = ExtResource("1_s4m2p")
 texture = ExtResource("3_366lc")
 expand_mode = 1
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=880023088]
+[node name="TextureButton" type="Button" parent="MarginContainer" unique_id=1749402422]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("1_s4m2p")
-texture_normal = ExtResource("4_366lc")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k3rr6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ogquj")
+text = "Jouer"
 
 [connection signal="pressed" from="MarginContainer/TextureButton" to="." method="_on_texture_button_pressed"]
