@@ -52,13 +52,23 @@ func RemoveCollectible(oCollectible: Node) -> void:
 		return
 	
 	tCollectibles.erase(oCollectible)
-	oCollectible.OnRemove(oPlayer)
+	oCollectible.OnRemoved(pPlayer)
 	
 	InventoryChanged.emit()
 
 # Returns the current collectibles list.
 func GetCollectibles() -> Array:
 	return tCollectibles
+
+func GetCollectibleByName(sCollectibleName: String) -> Node:
+	for oCollectible in tCollectibles:
+		if not oCollectible.has_method("GetItemName"):
+			continue
+		
+		if oCollectible.GetItemName() == sCollectibleName:
+			return oCollectible
+	
+	return null
 
 # Removes and return true if player has collectible, false otherwise
 func UseCollectible(oCollectible: Node) -> bool:

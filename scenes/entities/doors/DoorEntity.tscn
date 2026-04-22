@@ -8,6 +8,14 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5l2o"]
 albedo_color = Color(0.35633364, 0.10391449, 0.030266998, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_ejmqy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nybsf"]
+albedo_color = Color(0.39841208, 0.3984121, 0.39841208, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x7chn"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
 [node name="EntityBase" unique_id=108843216 instance=ExtResource("1_qy8j6")]
 script = ExtResource("2_b5l2o")
 iOpenedAngle = 90.0
@@ -24,6 +32,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 use_collision = true
 size = Vector3(2, 4, 0.1)
 material = SubResource("StandardMaterial3D_b5l2o")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Visuals/DoorPivot" index="1" unique_id=1962172505]
+transform = Transform3D(0.2, 0, 0, 0, 0.40000004, 0, 0, 0, 0.13333337, 1.7, 0.10210228, -0.054617107)
+mesh = SubResource("BoxMesh_ejmqy")
+surface_material_override/0 = SubResource("StandardMaterial3D_nybsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Visuals/DoorPivot/MeshInstance3D7" index="0" unique_id=263813784]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/DoorPivot/MeshInstance3D7/StaticBody3D" index="0" unique_id=1727710024]
+shape = SubResource("ConvexPolygonShape3D_x7chn")
 
 [node name="Components" parent="." index="1" unique_id=583119987]
 script = ExtResource("3_ejmqy")
