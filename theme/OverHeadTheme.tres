@@ -10,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cbkj4x5cx0o7p" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check 2.png" id="8_ihkht"]
 [ext_resource type="Texture2D" uid="uid://dy4hxhel5e6um" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check.png" id="9_aeakx"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgvpi"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77xvi"]
 texture = ExtResource("1_jgvpi")
+
+[sub_resource type="DPITexture" id="DPITexture_aeakx"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rbrf"]
 load_path = "res://.godot/imported/curseur_violet.png-4d5d191895520e3439eafec8084999e6.ctex"
@@ -168,9 +172,13 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 [resource]
 Button/colors/font_hover_color = Color(0.9490196, 0.6509804, 0.3019608, 1)
 Button/fonts/font = ExtResource("1_4l1s6")
-Button/styles/hover = SubResource("StyleBoxTexture_jgvpi")
+Button/styles/hover = SubResource("StyleBoxTexture_77xvi")
 Button/styles/pressed = ExtResource("3_jb4vt")
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/constants/tick_offset = 0
 HSlider/icons/grabber = ExtResource("4_8048b")
+HSlider/icons/grabber_disabled = SubResource("DPITexture_aeakx")
 HSlider/icons/grabber_highlight = ExtResource("5_8048b")
 HSlider/icons/tick = ExtResource("6_nuk4l")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_8048b")
