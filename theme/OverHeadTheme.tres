@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://crptievkrjwna" path="res://UI/Assets/Icons/MainMenu/Settings/curseur_orange.png" id="5_8048b"]
 [ext_resource type="Texture2D" uid="uid://dltj7qomhjgte" path="res://UI/Assets/Icons/MainMenu/barre_de_son.png" id="6_nuk4l"]
 [ext_resource type="Texture2D" uid="uid://chrot22ntxcxy" path="res://UI/Assets/Icons/MainMenu/Settings/fleche_bas.png" id="7_8048b"]
+[ext_resource type="Texture2D" uid="uid://cbkj4x5cx0o7p" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check 2.png" id="8_ihkht"]
+[ext_resource type="Texture2D" uid="uid://dy4hxhel5e6um" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check.png" id="9_aeakx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jgvpi"]
 texture = ExtResource("1_jgvpi")
@@ -214,7 +216,8 @@ PopupMenu/colors/font_hover_color = Color(0.9490196, 0.6509804, 0.3019608, 1)
 PopupMenu/fonts/font = ExtResource("1_4l1s6")
 PopupMenu/fonts/font_separator = ExtResource("1_4l1s6")
 PopupMenu/fonts/title_font = ExtResource("1_4l1s6")
-ProgressBar/fonts/font = ExtResource("1_4l1s6")
+PopupMenu/icons/radio_checked = ExtResource("8_ihkht")
+PopupMenu/icons/radio_unchecked = ExtResource("9_aeakx")
 TabBar/colors/drop_mark_color = Color(1, 1, 1, 1)
 TabBar/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 TabBar/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
