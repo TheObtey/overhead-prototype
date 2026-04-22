@@ -1,11 +1,11 @@
 extends Node
 
-var pPlayer: AudioStreamPlayer2D
+var pAudioPlayer: AudioStreamPlayer2D
 var oCurrentPath := ""
 
 func _ready():
-	pPlayer = AudioStreamPlayer2D.new()
-	add_child(pPlayer)
+	pAudioPlayer = AudioStreamPlayer2D.new()
+	add_child(pAudioPlayer)
 
 func PlayMusic(sPath: String):
 	if oCurrentPath == sPath:
@@ -13,8 +13,9 @@ func PlayMusic(sPath: String):
 
 	oCurrentPath = sPath
 	var oMusic = load(sPath)
-	pPlayer.stream = oMusic
-	pPlayer.play()
+	pAudioPlayer.stream = oMusic
+	pAudioPlayer.bus = "Music"
+	pAudioPlayer.play()
 
 func StopMusic():
-	pPlayer.stop()
+	pAudioPlayer.stop()

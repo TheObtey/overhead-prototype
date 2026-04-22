@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d2rlhf75waang"]
+
+[ext_resource type="Script" uid="uid://ce2hy3dw6t8ik" path="res://scripts/UI/OptionsMenu.gd" id="1_c3c6m"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_iw4fs"]
+[ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="2_m2dws"]
+[ext_resource type="PackedScene" uid="uid://btfj0wmxqir5n" path="res://scenes/ui/Menu/SettingsTabContainer.tscn" id="3_m2dws"]
+
+[node name="OptionsMenu" type="Control" unique_id=259052409]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iw4fs")
+script = ExtResource("1_c3c6m")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1827642837]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iw4fs")
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1464744554]
+layout_mode = 2
+theme = ExtResource("1_iw4fs")
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=939541077]
+layout_mode = 2
+theme = ExtResource("1_iw4fs")
+theme_override_constants/separation = 16
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=701930421]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("1_iw4fs")
+texture_normal = ExtResource("2_m2dws")
+stretch_mode = 0
+
+[node name="Control" parent="MarginContainer/VBoxContainer" unique_id=1095434011 instance=ExtResource("3_m2dws")]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_iw4fs")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
