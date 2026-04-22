@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c41vs5ax36nhw" path="res://scripts/UI/EmoteWheel.gd" id="1_f8jyh"]
 [ext_resource type="Texture2D" uid="uid://bcmafjdsqub6q" path="res://UI/Assets/EmoteWheelPart.png" id="2_0je0i"]
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_tftgd"]
-points = PackedVector2Array(-0.4259262, -1.6842108, 0.14814806, -1.6280708, 4.3703694, 0, 0.018518448, 1.6842108, -0.666667, 1.6280699, -1.314815, 1.1929827, -1.6296301, 0.39298248, -1.5740745, -0.70175457, -1.166667, -1.333334)
+[ext_resource type="Texture2D" uid="uid://d3vfbv86mi3bw" path="res://UI/Assets/Icons/Emotes/EmotePoint.png" id="3_0je0i"]
 
 [node name="EmoteWheel" type="Control" unique_id=221894441]
 layout_mode = 3
@@ -23,6 +21,7 @@ scale = Vector2(0.7, 0.7)
 script = ExtResource("1_f8jyh")
 
 [node name="Wheel" type="Control" parent="." unique_id=16880370]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,21 +33,15 @@ grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
 [node name="AnimPoint" type="Sprite2D" parent="Wheel" unique_id=553518102]
-modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
+self_modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
 scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/AnimPoint" unique_id=1453895343]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/AnimPoint/StaticBody2D" unique_id=1142171484]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
+[node name="Sprite2D" type="Sprite2D" parent="Wheel/AnimPoint" unique_id=396398132]
+position = Vector2(-167.61911, -819.0478)
+scale = Vector2(0.44841275, 0.44841275)
+texture = ExtResource("3_0je0i")
 
 [node name="Other" type="Sprite2D" parent="Wheel" unique_id=645366671]
 modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
@@ -57,17 +50,6 @@ scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/Other" unique_id=936748065]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/Other/StaticBody2D" unique_id=975101594]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
-
 [node name="Other1" type="Sprite2D" parent="Wheel" unique_id=205492411]
 modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
 rotation = 2.0943952
@@ -75,34 +57,12 @@ scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/Other1" unique_id=2047662710]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/Other1/StaticBody2D" unique_id=1740752991]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
-
 [node name="Other2" type="Sprite2D" parent="Wheel" unique_id=1372218931]
 modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
 rotation = 3.1415927
 scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/Other2" unique_id=975508699]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/Other2/StaticBody2D" unique_id=2097906168]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
 
 [node name="Other3" type="Sprite2D" parent="Wheel" unique_id=814896588]
 modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
@@ -112,17 +72,6 @@ scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/Other3" unique_id=751548735]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/Other3/StaticBody2D" unique_id=1049612463]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
-
 [node name="Other4" type="Sprite2D" parent="Wheel" unique_id=689645116]
 modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
 position = Vector2(0, -1)
@@ -130,27 +79,3 @@ rotation = 5.2359877
 scale = Vector2(0.25, 0.2)
 texture = ExtResource("2_0je0i")
 offset = Vector2(0, -575)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wheel/Other4" unique_id=603408311]
-scale = Vector2(3.9999998, 4.9999995)
-input_pickable = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wheel/Other4/StaticBody2D" unique_id=1755171574]
-position = Vector2(0, -164)
-rotation = 1.5707964
-scale = Vector2(36.000004, 47.5)
-shape = SubResource("ConvexPolygonShape2D_tftgd")
-one_way_collision_margin = 0.0
-
-[connection signal="mouse_entered" from="Wheel/AnimPoint/StaticBody2D" to="." method="OverWheelPart" binds= [0]]
-[connection signal="mouse_exited" from="Wheel/AnimPoint/StaticBody2D" to="." method="NotOverWheelPart" binds= [0]]
-[connection signal="mouse_entered" from="Wheel/Other/StaticBody2D" to="." method="OverWheelPart" binds= [1]]
-[connection signal="mouse_exited" from="Wheel/Other/StaticBody2D" to="." method="NotOverWheelPart" binds= [1]]
-[connection signal="mouse_entered" from="Wheel/Other1/StaticBody2D" to="." method="OverWheelPart" binds= [2]]
-[connection signal="mouse_exited" from="Wheel/Other1/StaticBody2D" to="." method="NotOverWheelPart" binds= [2]]
-[connection signal="mouse_entered" from="Wheel/Other2/StaticBody2D" to="." method="OverWheelPart" binds= [3]]
-[connection signal="mouse_exited" from="Wheel/Other2/StaticBody2D" to="." method="NotOverWheelPart" binds= [3]]
-[connection signal="mouse_entered" from="Wheel/Other3/StaticBody2D" to="." method="OverWheelPart" binds= [4]]
-[connection signal="mouse_exited" from="Wheel/Other3/StaticBody2D" to="." method="NotOverWheelPart" binds= [4]]
-[connection signal="mouse_entered" from="Wheel/Other4/StaticBody2D" to="." method="OverWheelPart" binds= [5]]
-[connection signal="mouse_exited" from="Wheel/Other4/StaticBody2D" to="." method="NotOverWheelPart" binds= [5]]

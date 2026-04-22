@@ -31,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0.74)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
 transform = Transform3D(1, 0, 0, 0, 0.9999876, -0.0049741566, 0, 0.0049741566, 0.9999876, 0, -0.212, -0.095)
-cull_mask = 1048573
 
 [node name="ViewmodelRoot" type="Node3D" parent="CameraRoot" unique_id=1503638903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
@@ -79,6 +78,10 @@ pMovementComponentPath = NodePath("../MovementComponent")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.141, 0)
 
 [node name="EmoteWheel" parent="Visuals" unique_id=221894441 instance=ExtResource("11_8cpdt")]
+offset_left = 666.0001
+offset_top = 61.00006
+offset_right = 666.0001
+offset_bottom = 61.00006
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
 

@@ -207,6 +207,11 @@ bAutoEquipOnPickup = true
 [node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("7_e7fb5")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
 
+[node name="PlayerBase2" parent="Players" unique_id=1296541898 instance=ExtResource("7_e7fb5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.295763, 1.4621041, -3.689015)
+visible = false
+iPlayerID = 1
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
 transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
 

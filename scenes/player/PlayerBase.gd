@@ -14,8 +14,10 @@ extends CharacterBody3D
 @onready var oHotbarUI = $HotbarUI
 @onready var oViewmodelRoot: Node3D = $CameraRoot/ViewmodelRoot
 @onready var oEmoteWheel: Control = $Visuals/EmoteWheel
+@onready var oPlayerMeshs: Node3D = $Visuals/PlayerAnimated
 
 @export var oStarterItemScene: PackedScene
+@export var iPlayerID : int #player 1 or 2 (0 or 1)
 
 # Initializes all components and the HUD/hotbar bindings.
 func _ready() -> void:
@@ -28,7 +30,8 @@ func _ready() -> void:
 	oInteractComponent.oEntityChanged.connect(_OnEntityChanged)
 	oInventoryComponent.Setup(self)
 	oEquipmentComponent.Setup(self, oViewmodelRoot)
-	
+	oPlayerMeshs.SetPlayerID(iPlayerID)
+	oCamera.set_cull_mask_value(2+iPlayerID,false)
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
 
 # Handles mouse capture toggling and delegates input.
@@ -40,6 +43,7 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	oCameraComponent.HandleInput(oEvent)
+	oEmoteWheel.HandleInput(oEvent)
 	HandleHotbarInput(oEvent)
 
 # Runs per-physics-frame player systems.

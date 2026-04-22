@@ -1,13 +1,12 @@
-extends Node
+extends AnimationPlayer
 
 class_name AnimationHandler
 
-var animLauncher :AnimationPlayer;
-@onready var oEmptyHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Hand_R
-@onready var oGunPart1: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/HandGun_R
-@onready var oGunPart2: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Battery_and_Tape
-@onready var oGunHand: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Canon
-@onready var oHandsPivot: Node3D = $charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay
+@onready var oEmptyHand: Node3D = $"../charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Hand_R"
+@onready var oGunPart1: Node3D =  $"../charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/HandGun_R"
+@onready var oGunPart2: Node3D = $"../charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Battery_and_Tape"
+@onready var oGunHand: Node3D = $"../charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay/Canon"
+@onready var oHandsPivot: Node3D = $"../charNode01/globalMove01/joints01/Skeleton3D/CameraOverlay"
 
 static var bHasGun : bool = true
 static var iCamPitch :float = 0.0
@@ -21,9 +20,9 @@ var enumCurrentState : AnimState;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animLauncher = $AnimationPlayer
 	enumCurrentState = AnimState.IDLE
 	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,7 +31,7 @@ func _process(delta: float) -> void:
 	if AnimationHandler.bChangeCamPitch == true:
 		ChangeCameraPitch(-AnimationHandler.iCamPitch)
 	
-	if animLauncher.is_playing() == false:
+	if is_playing() == false:
 		enumCurrentState = AnimState.NONE
 	if AnimationHandler.enumNewState == enumCurrentState:
 		pass
@@ -81,17 +80,23 @@ func ShootAnimation() -> void :
 	pass
 
 func PointAnimation() -> void :
-	if enumCurrentState != AnimState.IDLE:
-		pass
+	match enumCurrentState:
+		AnimState.JUMP:
+			return
+		AnimState.SHOOT:
+			return
 	enumCurrentState = AnimState.POINT;
-	animLauncher.play("PlayerAnimation/Point");
+	play("PlayerAnimation/Point");
 	pass
 
 func JumpAnimation() -> void :
-	if enumCurrentState == AnimState.JUMP:
-		pass
+	match enumCurrentState:
+		AnimState.JUMP:
+			return
+		AnimState.SHOOT:
+			return
 	enumCurrentState = AnimState.JUMP
-	animLauncher.play("PlayerAnimation/Jump");
+	play("PlayerAnimation/Jump");
 	pass
 	
 func StartWalkingAnim() -> void :
@@ -101,7 +106,7 @@ func StartWalkingAnim() -> void :
 		AnimState.SHOOT:
 			return
 	enumCurrentState = AnimState.WALK
-	animLauncher.play("PlayerAnimation/Walk");
+	play("PlayerAnimation/Walk");
 	pass
 
 func StartRunningAnim() -> void :
@@ -111,19 +116,21 @@ func StartRunningAnim() -> void :
 		AnimState.SHOOT:
 			return
 	enumCurrentState = AnimState.RUN
-	animLauncher.play("PlayerAnimation/Run");
+	play("PlayerAnimation/Run");
 	pass
 
 func StartIdleAnim() -> void :
 	match enumCurrentState:
 		AnimState.JUMP:
 			return
+		AnimState.POINT:
+			return
 	enumCurrentState = AnimState.IDLE
-	animLauncher.play("PlayerAnimation/Idle");
+	play("PlayerAnimation/Idle");
 	pass
 	
 func StopCurrentAnim() -> void :
-	animLauncher.stop();
+	stop();
 	enumCurrentState = AnimState.NONE
 	pass
 	
