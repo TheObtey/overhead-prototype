@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://obfd2bx3y3rg"]
 
 [ext_resource type="Texture2D" uid="uid://l0yipfk27aj1" path="res://assets/models/restaurant/Texturés/Bouteille Ramune_0.png" id="1_f0i0m"]
+[ext_resource type="Script" uid="uid://bfc5kbotigm8m" path="res://assets/models/restaurant/Placeable3D/gen_assiete.gd" id="2_uql4f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_exx5w"]
 size = Vector3(0.24466857, 0.38626605, 0.2446692)
@@ -49,6 +50,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_shpsi")
 
 [node name="GenAssiete" type="StaticBody3D" unique_id=636877582]
+script = ExtResource("2_uql4f")
+
+[node name="Visuals" type="Node3D" parent="." unique_id=140131585]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=568845831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.19313303, 2.3841858e-07)
@@ -57,3 +61,5 @@ shape = SubResource("BoxShape3D_exx5w")
 [node name="generateur_assiettes" type="MeshInstance3D" parent="." unique_id=647899985]
 material_override = SubResource("StandardMaterial3D_uql4f")
 mesh = SubResource("ArrayMesh_7a4na")
+
+[node name="Components" type="Node" parent="." unique_id=1637725418]
