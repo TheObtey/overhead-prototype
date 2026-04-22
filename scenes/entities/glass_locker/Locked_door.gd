@@ -1,6 +1,6 @@
 extends EntityBase
 
-var isOpen = false
+var bIsOpen = false
 
 func Interactkey() -> void:
 	toggle_door()
@@ -13,9 +13,9 @@ func toggle_door():
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	
-	if not isOpen:
+	if not bIsOpen:
 		tween.tween_property(self, "rotation_degrees:y", 90.0, 0.6)
 	else:
 		tween.tween_property(self, "rotation_degrees:y", 0.0, 0.6)
 	
-	isOpen = !isOpen
+	bIsOpen = !bIsOpen

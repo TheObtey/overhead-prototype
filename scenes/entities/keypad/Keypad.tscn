@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byiakf386rw06"]
 
-[ext_resource type="Script" uid="uid://deqk648e5h8ei" path="res://scripts/Keypad/keypad.gd" id="1_r6kpw"]
-[ext_resource type="Script" uid="uid://rsyxl8y5u4t4" path="res://scripts/Keypad/key_pad_button.gd" id="2_of1yp"]
+[ext_resource type="Script" uid="uid://deqk648e5h8ei" path="res://scenes/entities/keypad/Keypad.gd" id="1_f8mh8"]
+[ext_resource type="Script" uid="uid://rsyxl8y5u4t4" path="res://scenes/entities/keypad/Keypad_button.gd" id="2_0ge7b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wqewk"]
 
@@ -16,13 +16,14 @@ metallic = 1.0
 [sub_resource type="BoxMesh" id="BoxMesh_1fix0"]
 
 [node name="Keypad" type="Node3D" unique_id=313838752]
-script = ExtResource("1_r6kpw")
+script = ExtResource("1_f8mh8")
+sCorrect_code = "1234"
 
 [node name="Visuals" type="Node3D" parent="." unique_id=1354005555]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Pad" type="MeshInstance3D" parent="Visuals" unique_id=515394200]
-transform = Transform3D(0.5, 0, 0, 0, 0.7999999, 0, 0, 0, 0.1, 0, -1.325469, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.7999999, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("BoxMesh_wqewk")
 surface_material_override/0 = SubResource("StandardMaterial3D_r6kpw")
 
@@ -41,15 +42,15 @@ font_size = 45
 [node name="Key_pad_1" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=876847585 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999987, -0.28, 0.11999999, 0.5699999)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "1"
+script = ExtResource("2_0ge7b")
+sValue = "1"
 sEntityName = "1"
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_1" unique_id=1635095619]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_1/Visuals" unique_id=499513717]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, -1.325469, 0.15769386)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0.158)
 use_collision = true
 
 [node name="1" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_1" unique_id=867539772]
@@ -63,8 +64,8 @@ font_size = 60
 [node name="Key_pad_2" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=696949388 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999984, 0, 0.11999999, 0.5699999)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "2"
+script = ExtResource("2_0ge7b")
+sValue = "2"
 sEntityName = "2"
 
 [node name="2" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_2" unique_id=430055109]
@@ -76,17 +77,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_2" unique_id=1686607727]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_2" unique_id=1783126390]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_2/Visuals" unique_id=464912729]
-transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, -1.3254687, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_3" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=732629794 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999984, 0.28, 0.11999999, 0.5699999)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "3"
+script = ExtResource("2_0ge7b")
+sValue = "3"
 sEntityName = "3"
 
 [node name="3" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_3" unique_id=686354535]
@@ -98,17 +99,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_3" unique_id=209212556]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_3" unique_id=561486755]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_3/Visuals" unique_id=222079641]
-transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, -1.3254687, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_4" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=2041746779 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.1999998, -0.28, -0.036340423, 0.56999964)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "4"
+script = ExtResource("2_0ge7b")
+sValue = "4"
 sEntityName = "4"
 
 [node name="4" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_4" unique_id=1182573594]
@@ -120,17 +121,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_4" unique_id=476046309]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_4" unique_id=620679002]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_4/Visuals" unique_id=1851643560]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_5" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=373407626 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999976, 0, -0.036340423, 0.56999964)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "5"
+script = ExtResource("2_0ge7b")
+sValue = "5"
 sEntityName = "5"
 
 [node name="5" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_5" unique_id=331340998]
@@ -142,17 +143,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_5" unique_id=3417169]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_5" unique_id=337800665]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_5/Visuals" unique_id=1284960040]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_6" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=402772452 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999976, 0.28, -0.036340423, 0.56999964)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "6"
+script = ExtResource("2_0ge7b")
+sValue = "6"
 sEntityName = "6"
 
 [node name="6" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_6" unique_id=26351327]
@@ -164,17 +165,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_6" unique_id=232583908]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_6" unique_id=1728188964]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_6/Visuals" unique_id=429989012]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_7" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=1556855218 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999976, -0.28, -0.19999999, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "7"
+script = ExtResource("2_0ge7b")
+sValue = "7"
 sEntityName = "7"
 
 [node name="7" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_7" unique_id=1839508585]
@@ -186,17 +187,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_7" unique_id=963444250]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_7" unique_id=1156344460]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_7/Visuals" unique_id=3517429]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1.3254689, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_8" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=528463081 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999975, 0, -0.19999999, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "8"
+script = ExtResource("2_0ge7b")
+sValue = "8"
 sEntityName = "8"
 
 [node name="8" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_8" unique_id=1422793908]
@@ -208,17 +209,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_8" unique_id=573513657]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_8" unique_id=1531016482]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_8/Visuals" unique_id=33540060]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, -1.3254689, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_9" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=1754557533 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999975, 0.28, -0.19999999, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "9"
+script = ExtResource("2_0ge7b")
+sValue = "9"
 sEntityName = "9"
 
 [node name="9" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_9" unique_id=1805970271]
@@ -231,17 +232,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_9" unique_id=1947574514]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_9" unique_id=1356485672]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_9/Visuals" unique_id=721250088]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, -1.3254689, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_*" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=2119647506 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999976, -0.28, -0.35999998, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "*"
+script = ExtResource("2_0ge7b")
+sValue = "*"
 sEntityName = "*"
 
 [node name="*" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_*" unique_id=1215486274]
@@ -254,16 +255,16 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_*" unique_id=574992620]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_*" unique_id=926298216]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_*/Visuals" unique_id=319467671]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_0" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=2064290719 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999975, 0, -0.35999998, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
+script = ExtResource("2_0ge7b")
 sEntityName = "0"
 
 [node name="0" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_0" unique_id=807162454]
@@ -276,17 +277,17 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_0" unique_id=1062018913]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_0" unique_id=1852984187]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_0/Visuals" unique_id=2125909639]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0)
 use_collision = true
 
 [node name="Key_pad_#" type="MeshInstance3D" parent="Visuals/Pad/Key_pad" unique_id=612782676 groups=["Entity"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.13399994, 0, 0, 0, 0.19999975, 0.28, -0.35999998, 0.5699996)
 mesh = SubResource("BoxMesh_1fix0")
-script = ExtResource("2_of1yp")
-value = "#"
+script = ExtResource("2_0ge7b")
+sValue = "#"
 sEntityName = "#"
 
 [node name="#" type="Label3D" parent="Visuals/Pad/Key_pad/Key_pad_#" unique_id=1799788742]
@@ -299,10 +300,10 @@ font_size = 60
 [node name="Components" type="Node" parent="Visuals/Pad/Key_pad/Key_pad_#" unique_id=429368369]
 
 [node name="Visuals" type="Node3D" parent="Visuals/Pad/Key_pad/Key_pad_#" unique_id=916051891]
-transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 1.3254691, 0)
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Visuals/Pad/Key_pad/Key_pad_#/Visuals" unique_id=1974790044]
-transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, -1.325469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, 0, 0, 0)
 use_collision = true
 
 [node name="Components" type="Node" parent="." unique_id=655046269]

@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://be6n8yq7h8i1x"]
-
-[ext_resource type="Script" uid="uid://cqlk3qwombq0w" path="res://scenes/items/weapons/keyCard/KeyCard.gd" id="1_qwnyq"]
-[ext_resource type="PackedScene" uid="uid://cw4rj54d46mw4" path="res://scenes/items/weapons/keyCard/KeyCardViewmodel.tscn" id="2_c6230"]
-
-[node name="KeyCard" type="Node" unique_id=713200488]
-script = ExtResource("1_qwnyq")
-sItemName = "KeyCardStaffRoom"
-oViewmodelScene = ExtResource("2_c6230")

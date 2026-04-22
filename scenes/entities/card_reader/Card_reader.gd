@@ -5,8 +5,10 @@ extends EntityBase
 
 var oCollectible : Node
 
+
 func GetPrompt() -> String:
 	return "Use KeyCard"
+
 
 func CanInteract(oInteractor: Node) -> bool:
 	if bCanInteract == false:
@@ -21,13 +23,12 @@ func CanInteract(oInteractor: Node) -> bool:
 		return false
 	
 	oCollectible = oInventoryComponent.GetCollectibleByName(sNeededItem)
-	
-	print(oCollectible)
-	
+		
 	if oCollectible is ItemBase:
 		return true
 	
 	return false
+
 
 func Interact(oInteractor: Node) -> void:
 	if not CanInteract(oInteractor):

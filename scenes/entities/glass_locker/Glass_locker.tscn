@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bo4aorng4lf53"]
 
-[ext_resource type="Script" uid="uid://bwi434cocy58k" path="res://scripts/locked_door/locked_door.gd" id="1_h0qs0"]
-[ext_resource type="PackedScene" uid="uid://byiakf386rw06" path="res://scenes/items/keypad/keypad.tscn" id="2_n4442"]
+[ext_resource type="Script" uid="uid://bwi434cocy58k" path="res://scenes/entities/glass_locker/Locked_door.gd" id="1_h0qs0"]
+[ext_resource type="PackedScene" uid="uid://byiakf386rw06" path="res://scenes/entities/keypad/Keypad.tscn" id="2_n4442"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n4442"]
 
@@ -109,7 +109,6 @@ material = SubResource("StandardMaterial3D_cn385")
 
 [node name="Components" type="Node" parent="Visuals/Glass_door" unique_id=1469057351]
 
-[node name="Keypad" parent="Visuals/Glass_door" unique_id=313838752 node_paths=PackedStringArray("target") instance=ExtResource("2_n4442")]
+[node name="Keypad" parent="Visuals/Glass_door" unique_id=313838752 node_paths=PackedStringArray("oTarget") instance=ExtResource("2_n4442")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 0.6666668, 0, 1.0066387e-07, 0, -0.6666667, 1.6916796, 0.15104812, -0.060289145)
-correct_code = "1234"
-target = NodePath("..")
+oTarget = NodePath("..")

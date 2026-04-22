@@ -11,14 +11,18 @@ func GetPrompt() -> String:
 
 # Instantiates the configured collectible item, adds it to inventory,
 func Interact(oInteractor: Node) -> void:
+	
 	if not oInteractor or not oCollectibleScene:
 		return
+		
 	var oItem = oCollectibleScene.instantiate()
+	
 	if not oItem:
 		return
+		
 	var oInventoryComponent = oInteractor.GetInventoryComponent()
+	
 	if oInventoryComponent:
-		#oInventoryComponent.AddItem(oItem)
 		oInventoryComponent.AddCollectible(oItem)
 	
 	queue_free()
