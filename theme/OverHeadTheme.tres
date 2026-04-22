@@ -18,14 +18,12 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\">
 "
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6rbrf"]
-load_path = "res://.godot/imported/curseur_violet.png-4d5d191895520e3439eafec8084999e6.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8048b"]
 texture = SubResource("CompressedTexture2D_6rbrf")
 region_rect = Rect2(25.838161, 26.931896, 44.604984, 9.172802)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5t7k"]
-load_path = "res://.godot/imported/curseur_orange.png-1c7ceb98b8194af73b37622f7a04c120.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nuk4l"]
 texture = SubResource("CompressedTexture2D_j5t7k")
