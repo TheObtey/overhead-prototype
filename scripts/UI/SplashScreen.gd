@@ -6,7 +6,7 @@ extends Control
 var bCanSkip := false
 
 func _ready():
-	AudioManager.PlayMusic(audioMusic.ToString())
+z	AudioManager.PlayMusic(audioMusic.ToString())
 	
 	await get_tree().create_timer(0.5).timeout
 	bCanSkip = true

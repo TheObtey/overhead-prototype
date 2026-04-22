@@ -31,19 +31,6 @@ albedo_color = Color(1, 0.72097266, 0.70098966, 1)
 vertex_color_is_srgb = true
 albedo_color = Color(1, 1, 0.023529412, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcuxm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76dmt"]
-albedo_color = Color(1, 0.2784314, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pxxh"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_auq2t"]
-albedo_color = Color(0.24705882, 1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uq3sc"]
-albedo_color = Color(1, 1, 0.62352943, 1)
-
 [node name="StaffRoom" type="Node3D" unique_id=311504040]
 
 [node name="World" type="Node" parent="." unique_id=342419448]
@@ -173,12 +160,30 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 [node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_74xxn")]
 transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
 
+[node name="Platform4" type="MeshInstance3D" parent="World/Level" unique_id=383083872]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 6.293059, 9.162319, 8.009947)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform4" unique_id=1893334685]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform4/StaticBody3D" unique_id=1938794916]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform5" type="MeshInstance3D" parent="World/Level" unique_id=2146757927]
+transform = Transform3D(5.7714057, 0.12445079, 0, -5.7714057, 0.12445079, 0, 0, 0, 4, -0.2812786, 12.0029955, 8.009947)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform5" unique_id=2105615826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform5/StaticBody3D" unique_id=697965663]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_36ojw")]
 transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0.0021972656, 10.008474, -0.0076720715)
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("2_74xxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4528842, 3.7188854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.303706, 0.7901447, 3.7188854)
 
 [node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("3_avrsf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
@@ -298,102 +303,32 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 
 [node name="Piece" type="Node" parent="Puzzle" unique_id=2110495564]
 
-[node name="Piece#1" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=1718232767]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.5166974, 0.31384984, -0.74000925)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_tcuxm")
+[node name="Piece#1" parent="Puzzle/Piece" unique_id=558131901 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 6.251443)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#1" unique_id=1720408719]
+[node name="Piece#2" parent="Puzzle/Piece" unique_id=48028020 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 5.425102)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#1/StaticBody3D" unique_id=985003445]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
+[node name="Piece#3" parent="Puzzle/Piece" unique_id=1228521030 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, -1.4090296, 1.4528842, 3.7188854)
 
-[node name="Piece#2" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=1319054351]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.7364545, 0.31384984, 2.10499)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_76dmt")
+[node name="Piece#4" parent="Puzzle/Piece" unique_id=1578729460 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 2.7712116)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#2" unique_id=1937525173]
+[node name="Piece#5" parent="Puzzle/Piece" unique_id=2030462759 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, -2.5887556, 1.4528842, 3.7188854)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#2/StaticBody3D" unique_id=477771417]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
+[node name="Piece#6" parent="Puzzle/Piece" unique_id=1035181874 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 3.7188854)
 
-[node name="Piece#3" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=925051399]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.8497713, 0.31384984, -0.74000925)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
+[node name="Piece#7" parent="Puzzle/Piece" unique_id=963125410 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.6522028, 1.4528842, 3.7188854)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#3" unique_id=1732105487]
+[node name="Piece#8" parent="Puzzle/Piece" unique_id=1764309082 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 4.5387254)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#3/StaticBody3D" unique_id=1333195367]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
+[node name="Piece#9" parent="Puzzle/Piece" unique_id=1572636243 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 1.7868457)
 
-[node name="Piece#4" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=1344384031]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 2.6758795, 0.31384984, -0.74000925)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#4" unique_id=1594549300]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#4/StaticBody3D" unique_id=1902160767]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#5" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=213528691]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.8691792, 0.31384984, -1.7488778)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#5" unique_id=85925011]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#5/StaticBody3D" unique_id=1737344938]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#6" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=165569314]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.7508111, 0.31384984, 0.7389216)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_auq2t")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#6" unique_id=1689967797]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#6/StaticBody3D" unique_id=1183523547]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#7" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=691237618]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.7424376, 0.31384984, 1.1892164)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#7" unique_id=1179124630]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#7/StaticBody3D" unique_id=298721628]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#8" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=1332717114]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.7417464, 0.31384984, 1.6332145)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_uq3sc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#8" unique_id=1272027351]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#8/StaticBody3D" unique_id=2052752823]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#9" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=95237368]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 2.6758795, 0.31384984, -1.7213845)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#9" unique_id=2106264528]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#9/StaticBody3D" unique_id=1589358013]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
-
-[node name="Piece#10" type="MeshInstance3D" parent="Puzzle/Piece" unique_id=719525043]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 2.6758795, 0.31384984, -2.4946463)
-mesh = SubResource("BoxMesh_36ojw")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pxxh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Piece/Piece#10" unique_id=59482882]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Piece/Piece#10/StaticBody3D" unique_id=778821118]
-shape = SubResource("ConvexPolygonShape3D_74xxn")
+[node name="Piece#10" parent="Puzzle/Piece" unique_id=1693280585 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.1880672, 1.4528842, 3.7188854)
