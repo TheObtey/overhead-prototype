@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cf4ehjq41vwe2"]
 
 [ext_resource type="PackedScene" uid="uid://cqrn253ym7nle" path="res://assets/models/staffRoom/Staff_Room_Niveau_test.fbx" id="1_ky5vu"]
-[ext_resource type="Texture2D" uid="uid://cm7xtusk1wyvy" path="res://assets/texture/Texture_staff_room.png" id="2_efmhl"]
-[ext_resource type="Texture2D" uid="uid://cadkfhx20hpgo" path="res://assets/texture/Affiche employé_03.png" id="3_af2jl"]
-[ext_resource type="Texture2D" uid="uid://c6mnl7v11v5c5" path="res://assets/texture/Affiche employé_01.png" id="4_321jy"]
-[ext_resource type="Texture2D" uid="uid://c0wd0hjdfopqs" path="res://assets/texture/Affiche employé_02.png" id="5_w8qnx"]
-[ext_resource type="Texture2D" uid="uid://byq1uomdduuyd" path="res://assets/texture/Affiche employé_04.png" id="6_ika7l"]
-[ext_resource type="Texture2D" uid="uid://bmh8fhsr7o7xv" path="res://assets/texture/Affiche employé_05.png" id="7_a4n6u"]
-[ext_resource type="Texture2D" uid="uid://cv0b02mfaj3pc" path="res://assets/texture/Affiche employé_06.png" id="8_qp6r1"]
-[ext_resource type="Texture2D" uid="uid://dbte88xwfebhy" path="res://assets/texture/Affiche employé_07.png" id="9_wdw0c"]
+[ext_resource type="Texture2D" uid="uid://cm7xtusk1wyvy" path="res://assets/texture/staffRoom/Texture_staff_room.png" id="2_efmhl"]
+[ext_resource type="Texture2D" uid="uid://cadkfhx20hpgo" path="res://assets/texture/staffRoom/Affiche employé_03.png" id="3_af2jl"]
+[ext_resource type="Texture2D" uid="uid://c6mnl7v11v5c5" path="res://assets/texture/staffRoom/Affiche employé_01.png" id="4_321jy"]
+[ext_resource type="Texture2D" uid="uid://c0wd0hjdfopqs" path="res://assets/texture/staffRoom/Affiche employé_02.png" id="5_w8qnx"]
+[ext_resource type="Texture2D" uid="uid://byq1uomdduuyd" path="res://assets/texture/staffRoom/Affiche employé_04.png" id="6_ika7l"]
+[ext_resource type="Texture2D" uid="uid://bmh8fhsr7o7xv" path="res://assets/texture/staffRoom/Affiche employé_05.png" id="7_a4n6u"]
+[ext_resource type="Texture2D" uid="uid://cv0b02mfaj3pc" path="res://assets/texture/staffRoom/Affiche employé_06.png" id="8_qp6r1"]
+[ext_resource type="Texture2D" uid="uid://dbte88xwfebhy" path="res://assets/texture/staffRoom/Affiche employé_07.png" id="9_wdw0c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfka7"]
 albedo_texture = ExtResource("2_efmhl")
