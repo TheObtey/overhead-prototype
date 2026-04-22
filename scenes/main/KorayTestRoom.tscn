@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_gxka4"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_surqg"]
 [ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="7_lv1bk"]
-[ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scenes/player/LocalPlayerSpawner.gd" id="8_22e2d"]
-[ext_resource type="Script" uid="uid://dujb6mf6s7pdc" path="res://scenes/ui/SplitScreenRoot.gd" id="10_4le67"]
+[ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scripts/core/LocalPlayerSpawner.gd" id="8_22e2d"]
+[ext_resource type="Script" path="res://scenes/ui/SplitScreenRoot.gd" id="10_4le67"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
 

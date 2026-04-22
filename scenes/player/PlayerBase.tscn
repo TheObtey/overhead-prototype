@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
+radius = 0.69921875
+height = 2.100708
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r4mci"]
 

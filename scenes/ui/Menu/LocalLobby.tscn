@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cpsibfv4a7y31" path="res://scripts/UI/LocalLobby.gd" id="1_i57ok"]
 [ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_s4m2p"]
 [ext_resource type="Texture2D" uid="uid://64wmg74455v8" path="res://UI/Assets/Icons/bob.png" id="2_d6kfv"]
-[ext_resource type="PackedScene" uid="uid://bbi1p86eiax4y" path="res://scenes/main/HubRoom.tscn" id="2_i0te3"]
 [ext_resource type="Texture2D" uid="uid://cos4vpl8gpxdg" path="res://UI/Assets/Icons/bib.png" id="3_366lc"]
+[ext_resource type="PackedScene" uid="uid://dw1lxdkpmok8y" path="res://scenes/main/KorayTestRoom.tscn" id="3_s4m2p"]
 [ext_resource type="Texture2D" uid="uid://b6bswt0n18or1" path="res://icon.svg" id="4_366lc"]
 [ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="5_ogquj"]
 
@@ -60,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_s4m2p")
 script = ExtResource("1_i57ok")
-scGameScene = ExtResource("2_i0te3")
+scGameScene = ExtResource("3_s4m2p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1337614714]
 z_index = 1
@@ -113,13 +113,6 @@ theme = ExtResource("1_s4m2p")
 theme_override_constants/separation = 150
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1591563990]
-custom_minimum_size = Vector2(250, 200)
-layout_mode = 2
-theme = ExtResource("1_s4m2p")
-texture = ExtResource("2_d6kfv")
-expand_mode = 1
-
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=222380980]
 layout_mode = 2
 theme = ExtResource("1_s4m2p")
@@ -127,6 +120,14 @@ theme_override_font_sizes/font_size = 64
 text = "Player 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1591563990]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+theme = ExtResource("1_s4m2p")
+texture = ExtResource("2_d6kfv")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1177682528]
 layout_mode = 2
@@ -149,6 +150,7 @@ layout_mode = 2
 theme = ExtResource("1_s4m2p")
 texture = ExtResource("3_366lc")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer" unique_id=880023088]
 layout_mode = 2

@@ -38,15 +38,13 @@ func SpawnLocalPlayers(iPlayerCount: int) -> Array[Node]:
 		var sViewportPath = "SplitScreenRoot/VBoxContainer/Player" + sPlayerNumber + "View/ViewportP" + sPlayerNumber
 		var oPlayerViewport = get_parent().get_node_or_null(sViewportPath)
 		
-		print(sViewportPath, oPlayerViewport)
-		
-		if oPlayerViewport != null:
-			oPlayerViewport.add_child.call_deferred(oPlayerInstance)
-		
-		oPlayerInstance.global_transform = oSpawnPoint.global_transform
-		
 		if oPlayerInstance.has_method("SetPlayerID"):
 			oPlayerInstance.SetPlayerID(i)
+		
+		if oPlayerViewport != null:
+			oPlayerViewport.add_child(oPlayerInstance)
+		
+		oPlayerInstance.global_transform = oSpawnPoint.global_transform
 		
 		tSpawnedPlayers.append(oPlayerInstance)
 	

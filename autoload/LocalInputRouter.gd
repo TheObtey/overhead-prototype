@@ -42,6 +42,13 @@ func SetBinding(iPlayerID: int, binding: LocalPlayerDeviceBinding) -> void:
 	
 	_bindings[iPlayerID] = binding
 
+func ConfigureBindings(tNewBindings: Array[LocalPlayerDeviceBinding]) -> void:
+	for i in range(MAX_PLAYERS):
+		_bindings[i] = null
+	
+	for i in range( min(tNewBindings.size(), MAX_PLAYERS) ):
+		_bindings[i] = tNewBindings[i]
+
 func ConsumeJumpJustPressed(iPlayerID: int) -> bool:
 	var oState: LocalPlayerInputState = GetState(iPlayerID)
 	if oState == null:
@@ -78,10 +85,6 @@ func _InitializeDefaultBindings() -> void:
 	
 	for _i in range(MAX_PLAYERS):
 		_bindings.append(null)
-	
-	# TODO: Remove this when there will be local multiplayer lobby
-	_bindings[0] = LocalPlayerDeviceBinding.CreateKeyboardMouse()
-	_bindings[1] = LocalPlayerDeviceBinding.CreateJoypad(0)
 
 func _DoesEventMatchBinding(oEvent: InputEvent, oBinding: LocalPlayerDeviceBinding) -> bool:
 	match oBinding.enumBindingType:
