@@ -19,6 +19,7 @@ func ShowMenu() -> void:
 	get_tree().paused = true
 	bIsOpen = true
 	self.visible = true
+	uiBg.visible = true
 	uiOptionMenu.visible = false
 	uiMarginContainer.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
