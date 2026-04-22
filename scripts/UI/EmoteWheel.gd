@@ -6,12 +6,14 @@ extends Node
 @onready var iSelectedEmote : int = 0
 
 var oPingComponent : Node3D
+var iPlayerID : int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-func SetUp(oPingComp : Node3D) -> void:
+func SetUp(oPingComp : Node3D, iPlayer:int) -> void:
 	oPingComponent  = oPingComp
+	iPlayerID = iPlayer
 	pass
 
 func Update(iDelta: float) -> void:
@@ -63,7 +65,7 @@ func EmoteInterract(iEmoteID : int) -> void :
 	CloseWheel()
 	match iEmoteID:
 		0:
-			AnimationHandler.enumNewState = AnimationHandler.AnimState.POINT
+			AnimationHandler.enumNewStatePlayer[iPlayerID] = AnimationHandler.AnimState.POINT
 			oPingComponent.Ping()
 	pass
 

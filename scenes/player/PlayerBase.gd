@@ -17,6 +17,8 @@ extends CharacterBody3D
 @onready var oEmoteWheel: Control = $Visuals/EmoteWheel
 @onready var oPlayerMeshs: Node3D = $Visuals/PlayerAnimated
 
+@onready var oAnimationHandler: AnimationHandler = $Visuals/PlayerAnimated/AnimationPlayer
+
 @export var oStarterItemScene: PackedScene
 @export var iPlayerID : int #player 1 or 2 (0 or 1)
 
@@ -33,7 +35,7 @@ func _ready() -> void:
 	oEquipmentComponent.Setup(self, oViewmodelRoot)
 	oPlayerMeshs.SetPlayerID(iPlayerID)
 	oPingComponent.LinkPing(iPlayerID)
-	oEmoteWheel.SetUp(oPingComponent)
+	oEmoteWheel.SetUp(oPingComponent,iPlayerID)
 	oCamera.set_cull_mask_value(2+iPlayerID,false)
 	oHotbarUI.Setup(self, oInventoryComponent, oEquipmentComponent)
 
@@ -52,13 +54,14 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 # Runs per-physics-frame player systems.
 func _physics_process(iDelta: float) -> void:
 	if velocity != Vector3.ZERO:
-		AnimationHandler.enumNewState = AnimationHandler.AnimState.WALK
+		AnimationHandler.enumNewStatePlayer[iPlayerID] = AnimationHandler.AnimState.WALK
 	if velocity == Vector3.ZERO:
-		AnimationHandler.enumNewState = AnimationHandler.AnimState.IDLE
+		AnimationHandler.enumNewStatePlayer[iPlayerID] = AnimationHandler.AnimState.IDLE
 	oMovementComponent.PhysicsUpdate(iDelta)
 	oInteractComponent.ProcessUpdate()
 	oEquipmentComponent.HandleInput()
 	oEmoteWheel.Update(iDelta)
+	oAnimationHandler.UpdatePlayer(iPlayerID)
 
 # Updates on-screen interaction prompt when target changes.
 func _OnEntityChanged(oEntity: Node) -> void:
