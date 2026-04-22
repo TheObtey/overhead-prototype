@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/entity_base/EntityBase.tscn" id="1_qy8j6"]
 [ext_resource type="Script" uid="uid://fk5k7ytcb1b8" path="res://scenes/entities/doors/DoorEntity.gd" id="2_b5l2o"]
 [ext_resource type="Script" uid="uid://c1afrgpgnlmja" path="res://scenes/entities/components/LockComponent.gd" id="3_ejmqy"]
+[ext_resource type="AudioStream" uid="uid://bsnd6yvd07mc1" path="res://Audio/SFX/SlidingDoor.wav" id="4_nybsf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5l2o"]
 albedo_color = Color(0.35633364, 0.10391449, 0.030266998, 1)
@@ -29,3 +30,7 @@ script = ExtResource("3_ejmqy")
 
 [node name="LockComponent" type="Node" parent="Components" index="0" unique_id=1597559361]
 script = ExtResource("3_ejmqy")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=1490801901]
+stream = ExtResource("4_nybsf")
+bus = &"SFX"

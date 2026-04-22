@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://b47y4i6y8oqd1"]
+
+[ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="1_4l1s6"]
+
+[resource]
+Button/colors/font_hover_color = Color(1, 0.6776846, 0.46559447, 1)
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/fonts/font = ExtResource("1_4l1s6")

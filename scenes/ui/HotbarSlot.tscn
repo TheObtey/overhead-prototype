@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://kentnd7p8gla"]
 
 [ext_resource type="Script" uid="uid://cxipj5cvn5odg" path="res://scenes/ui/HotbarSlot.gd" id="1_c2eey"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_twmjk"]
 
 [node name="HotbarSlot" type="Panel" unique_id=295213906]
 custom_minimum_size = Vector2(80, 80)
 anchors_preset = -1
+theme = ExtResource("1_twmjk")
 script = ExtResource("1_c2eey")
 
 [node name="Label" type="Label" parent="." unique_id=1852648998]
@@ -14,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_twmjk")
 text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
