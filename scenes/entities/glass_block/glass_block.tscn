@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://trkfut55bby5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmw3e"]
+transparency = 1
+albedo_color = Color(0, 0.9436339, 0.9661228, 0.10980392)
+
+[node name="glass block" type="Node3D" unique_id=1374371120]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=578251912]
+use_collision = true
+material = SubResource("StandardMaterial3D_jmw3e")

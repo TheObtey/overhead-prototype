@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://gicagihpgyjp"]
+
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_2r54o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dyjst"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2r54o"]
+albedo_color = Color(0.39841208, 0.3984121, 0.39841208, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2r54o"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dyjst"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0licl"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ix8q5"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yfs7x"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_00ncy"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Locker" type="Node3D" unique_id=4318479]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=108568994]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=754471586]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=834813175]
+shape = SubResource("ConvexPolygonShape3D_2r54o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1024062515]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=8272970]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1003939994]
+shape = SubResource("ConvexPolygonShape3D_dyjst")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=289161429]
+transform = Transform3D(1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1008395551]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1454016419]
+shape = SubResource("ConvexPolygonShape3D_0licl")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=454305148]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 0.1, 0, 1.5, 0.5)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=2130599016]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=969443410]
+shape = SubResource("ConvexPolygonShape3D_ix8q5")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1778895853]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 1, 0.5, 1.5, 0)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=1585063465]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=2100366306]
+shape = SubResource("ConvexPolygonShape3D_yfs7x")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=255775201]
+transform = Transform3D(0.1, 0, 0, 0, 3, 0, 0, 0, 1, -0.5, 1.5, 0)
+mesh = SubResource("BoxMesh_dyjst")
+surface_material_override/0 = SubResource("StandardMaterial3D_2r54o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6" unique_id=1169702690]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=409020245]
+shape = SubResource("ConvexPolygonShape3D_00ncy")
+
+[node name="EntityBase" parent="." unique_id=108843216 instance=ExtResource("1_2r54o")]
+transform = Transform3D(0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.5, 0, -0.5)
