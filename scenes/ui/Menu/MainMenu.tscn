@@ -163,3 +163,7 @@ theme = ExtResource("1_qtf23")
 [node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("4_6k8rh")]
 visible = false
 layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]
