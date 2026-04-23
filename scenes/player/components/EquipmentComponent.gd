@@ -3,12 +3,14 @@ extends Node
 signal EquippedItemChanged
 
 var pPlayer: CharacterBody3D
+var iPlayerID: int = 0
 var oCurrentItem: ItemBase
 var oViewmodelRoot: Node3D
 var oCurrentViewmodel: Node3D
 
 func Setup(pNewPlayer: CharacterBody3D, oNewViewmodelRoot: Node3D) -> void:
 	pPlayer = pNewPlayer
+	iPlayerID = pPlayer.GetPlayerID()
 	oViewmodelRoot = oNewViewmodelRoot
 
 func CreateViewmodel(oItem: Node) -> void:
@@ -78,8 +80,8 @@ func HandleInput() -> void:
 	if not oCurrentItem:
 		return
 	
-	if Input.is_action_just_pressed("primary_attack"):
+	if Input.is_action_just_pressed("primary_attack", iPlayerID):
 		oCurrentItem.OnPrimaryAction()
 	
-	if Input.is_action_just_pressed("secondary_attack"):
+	if Input.is_action_just_pressed("secondary_attack", iPlayerID):
 		oCurrentItem.OnSecondaryAction()
