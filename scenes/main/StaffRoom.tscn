@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_arcq3"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_inj60"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="6_tcuxm"]
-[ext_resource type="Script" uid="uid://cxowpgp82odal" path="res://scenes/entities/Puzzle/Piece.gd" id="8_avrsf"]
+[ext_resource type="Script" uid="uid://cxowpgp82odal" path="res://scenes/entities/puzzle/Piece.gd" id="8_avrsf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
 
@@ -340,11 +340,6 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 
 [node name="Resolve1" type="Node" parent="Puzzle/Piece" unique_id=1135505932]
 script = ExtResource("8_avrsf")
-PosX = 7.4
-PosY = 2.0
-PosZ = -9.75
-RotX = 90.0
-RotY = 90.0
 
 [node name="Piece#1" parent="Puzzle/Piece/Resolve1" unique_id=558131901 instance=ExtResource("2_74xxn")]
 transform = Transform3D(-2.1855695e-09, 0.9, -1.9670125e-08, 0, -3.934025e-08, -0.45, -0.05, -3.934025e-08, 8.5980843e-16, 7.152399, 3.8107214, -6.8976717)
@@ -354,10 +349,6 @@ axis_lock_angular_z = true
 
 [node name="Resolve2" type="Node" parent="Puzzle/Piece" unique_id=122856247]
 script = ExtResource("8_avrsf")
-PosX = 6.7
-PosY = 3.124
-PosZ = -9.761
-RotY = 90.0
 
 [node name="Piece#2" parent="Puzzle/Piece/Resolve2" unique_id=48028020 instance=ExtResource("2_74xxn")]
 transform = Transform3D(-2.1855695e-09, 0, 0.45, 0, 0.9, 0, -0.05, 0, -1.9670125e-08, 0, 1.4528842, 5.425102)

@@ -38,5 +38,5 @@ func Interact(oInteractor: Node) -> void:
 	oInventoryComponent.UseCollectible(oCollectible)
 	
 	if oTarget != null:
-		oTarget.Interact(oInteractor)
+		oTarget.queue_free()
 	
