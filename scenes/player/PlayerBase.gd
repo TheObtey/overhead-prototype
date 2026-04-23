@@ -22,8 +22,6 @@ extends CharacterBody3D
 @export var oStarterItemScene: PackedScene
 @export var iPlayerID : int #player 1 or 2 (0 or 1)
 
-var iPlayerID: int = 0
-
 # Initializes all components and the HUD/hotbar bindings.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -49,7 +47,6 @@ func _unhandled_input(oEvent: InputEvent) -> void:
 	if oEvent is InputEventMouseButton and oEvent.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	oCameraComponent.HandleInput(oEvent)
 	oEmoteWheel.HandleInput(oEvent)
 	HandleHotbarInput(oEvent)
 
