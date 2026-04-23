@@ -1,25 +1,27 @@
 extends Control
 
-@onready var oOptionMenu = $OptionsMenu as OptionsMenu
-@onready var oMarginContainer = $MarginContainer as MarginContainer
+@onready var uiOptionMenu = $OptionsMenu as OptionsMenu
+@onready var uiMarginContainer = $MarginContainer as MarginContainer
+@onready var uiBg = $ColorRect as ColorRect
 @export var scMainMenu : PackedScene
 
 var bIsOpen = false
 var bCanOpen = false
 
 func _ready() -> void:
-	oOptionMenu.sExitMenu.connect(OnExitMenu)
+	uiOptionMenu.sExitMenu.connect(OnExitMenu)
 	self.visible = false
-	oOptionMenu.visible = false
-	oMarginContainer.visible = false
+	uiOptionMenu.visible = false
+	uiMarginContainer.visible = false
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func ShowMenu() -> void:
 	get_tree().paused = true
 	bIsOpen = true
 	self.visible = true
-	oOptionMenu.visible = false
-	oMarginContainer.visible = true
+	uiBg.visible = true
+	uiOptionMenu.visible = false
+	uiMarginContainer.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func HideMenu() -> void:
@@ -44,13 +46,15 @@ func _on_continue_pressed() -> void:
 	get_tree().paused = false
 
 func _on_options_pressed() -> void:
-	oMarginContainer.visible = false
-	oOptionMenu.set_process(true)
-	oOptionMenu.visible = true
+	uiMarginContainer.visible = false
+	uiOptionMenu.set_process(true)
+	uiOptionMenu.visible = true
+	uiBg.visible = false
 
 func OnExitMenu() -> void:
-	oMarginContainer.visible = true
-	oOptionMenu.visible = false
+	uiMarginContainer.visible = true
+	uiOptionMenu.visible = false
+	uiBg.visible = true
 
 func _on_save_and_quit_pressed() -> void:
 	# SaveGame()
