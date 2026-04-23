@@ -1,14 +1,16 @@
 extends Node
 
-@export var PosX = 0
-@export var PosY = 0
-@export var PosZ = 0
-var pHolder: CharacterBody3D
-var my_nodes_local_position = $MyNode.position
+@export var PosX: float = 0.0
+@export var PosY: float = 0.0
+@export var PosZ: float = 0.0
+@export var RotX: float = 0.0
+@export var RotY: float = 0.0
+@export var RotZ: float = 0.0
+var Child: Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Child = get_child(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -16,9 +18,20 @@ func _process(delta: float) -> void:
 	OnrangeOfFrame()
 	
 func OnrangeOfFrame() -> void:
-	if my_nodes_local_position[0] < 7 and my_nodes_local_position [0] > 6 and my_nodes_local_position[1] < 3 and my_nodes_local_position [1] > 2 and my_nodes_local_position[2] < -9 and my_nodes_local_position [2] > -10 :
-		my_nodes_local_position[0] = PosX
-		my_nodes_local_position[1] = PosY 
-		my_nodes_local_position[2] = PosZ
+	"if Child.bIsCarriable:
+		return
+	"
+	if Child and (Child is RigidBody3D):
+		var ChildPosition = Child.global_position
+		if (ChildPosition.x < 8 and ChildPosition.x > 6 and
+			ChildPosition.y < 4 and ChildPosition.y > 1.5 and
+			ChildPosition.z < -8.5 and ChildPosition.z > -9.5):
+				Child.set_collision_layer(2)
+				Child.set_collision_mask(2)
+				Child.freeze = true
+				Child.global_position = Vector3(PosX, PosY, PosZ)
+				#Child.rotate_object_local(Vector3(1, 1, 0), 0.1)
+				#Child.set_deferred("freeze", true)
+				Child.bIsCarriable = false
 	else :
 		return
