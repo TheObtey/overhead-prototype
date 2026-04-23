@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://djxisuhms0nij"]
+
+[ext_resource type="Script" uid="uid://c41vs5ax36nhw" path="res://scripts/UI/EmoteWheel.gd" id="1_f8jyh"]
+[ext_resource type="Texture2D" uid="uid://bcmafjdsqub6q" path="res://UI/Assets/EmoteWheelPart.png" id="2_0je0i"]
+[ext_resource type="Texture2D" uid="uid://d3vfbv86mi3bw" path="res://UI/Assets/Icons/Emotes/EmotePoint.png" id="3_0je0i"]
+
+[node name="EmoteWheel" type="Control" unique_id=221894441]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 675.0
+offset_top = -223.99997
+offset_right = 675.0
+offset_bottom = -223.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_f8jyh")
+
+[node name="Wheel" type="Control" parent="." unique_id=16880370]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimPoint" type="Sprite2D" parent="Wheel" unique_id=553518102]
+self_modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wheel/AnimPoint" unique_id=396398132]
+position = Vector2(-167.61911, -819.0478)
+scale = Vector2(0.44841275, 0.44841275)
+texture = ExtResource("3_0je0i")
+
+[node name="Other" type="Sprite2D" parent="Wheel" unique_id=645366671]
+modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
+rotation = 1.0471976
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)
+
+[node name="Other1" type="Sprite2D" parent="Wheel" unique_id=205492411]
+modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
+rotation = 2.0943952
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)
+
+[node name="Other2" type="Sprite2D" parent="Wheel" unique_id=1372218931]
+modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
+rotation = 3.1415927
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)
+
+[node name="Other3" type="Sprite2D" parent="Wheel" unique_id=814896588]
+modulate = Color(0.972549, 0.3882353, 1, 0.60784316)
+position = Vector2(0, -1)
+rotation = 4.1887903
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)
+
+[node name="Other4" type="Sprite2D" parent="Wheel" unique_id=689645116]
+modulate = Color(1, 0.6039216, 0.050980393, 0.60784316)
+position = Vector2(0, -1)
+rotation = 5.2359877
+scale = Vector2(0.25, 0.2)
+texture = ExtResource("2_0je0i")
+offset = Vector2(0, -575)

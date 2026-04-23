@@ -4,13 +4,13 @@ extends Node
 # Stores item instances and emits a change signal for UI/systems.
 signal InventoryChanged
 
-var pPlayer: Node
+var oPlayer: Node
 var tItems: Array = []
 var tCollectibles: Array = []
 
 # Binds this inventory to its player owner.
-func Setup(pNewPlayer: Node) -> void:
-	pPlayer = pNewPlayer
+func Setup(oNewPlayer: Node) -> void:
+	oPlayer = oNewPlayer
 
 # Adds an item and triggers the item's add lifecycle hook.
 func AddItem(oItem: Node) -> void:
@@ -18,7 +18,7 @@ func AddItem(oItem: Node) -> void:
 		return
 	
 	tItems.append(oItem)
-	oItem.OnAdded(pPlayer)
+	oItem.OnAdded(oPlayer)
 	
 	InventoryChanged.emit()
 
@@ -28,7 +28,7 @@ func RemoveItem(oItem: Node) -> void:
 		return
 	
 	tItems.erase(oItem)
-	oItem.OnRemove(pPlayer)
+	oItem.OnRemove(oPlayer)
 	
 	InventoryChanged.emit()
 
@@ -42,7 +42,7 @@ func AddCollectible(oCollectible: Node) -> void:
 		return
 	
 	tCollectibles.append(oCollectible)
-	oCollectible.OnAdded(pPlayer)
+	oCollectible.OnAdded(oPlayer)
 	
 	InventoryChanged.emit()
 
@@ -52,7 +52,7 @@ func RemoveCollectible(oCollectible: Node) -> void:
 		return
 	
 	tCollectibles.erase(oCollectible)
-	oCollectible.OnRemoved(pPlayer)
+	oCollectible.OnRemoved(oPlayer)
 	
 	InventoryChanged.emit()
 

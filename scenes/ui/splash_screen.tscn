@@ -1,21 +1,12 @@
 [gd_scene format=3 uid="uid://bunwvaqlowttw"]
 
 [ext_resource type="Script" uid="uid://j3dm1eoursbd" path="res://scripts/UI/SplashScreen.gd" id="1_m0ilf"]
-[ext_resource type="Texture2D" uid="uid://duorto2qef821" path="res://UI/Assets/Backgrounds/Overhead.png" id="1_yei5s"]
-[ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/MainMenu.tscn" id="2_eina6"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_usb1j"]
+[ext_resource type="PackedScene" uid="uid://bx7qobf52rvko" path="res://scenes/ui/Menu/MainMenu.tscn" id="2_eina6"]
 [ext_resource type="AudioStream" uid="uid://f8vo23e0d54h" path="res://Audio/Musics/TestsOverhead.mp3" id="3_wh6tg"]
-
-[sub_resource type="FontVariation" id="FontVariation_yei5s"]
-
-[sub_resource type="FontVariation" id="FontVariation_m0ilf"]
-base_font = SubResource("FontVariation_yei5s")
-variation_embolden = -0.24
-
-[sub_resource type="LabelSettings" id="LabelSettings_yei5s"]
-font = SubResource("FontVariation_m0ilf")
-font_size = 60
-shadow_size = 20
-shadow_color = Color(0, 0, 0, 0.39215687)
+[ext_resource type="Texture2D" uid="uid://voy0u0er4atu" path="res://UI/Assets/Backgrounds/bgBorderless.png" id="5_usb1j"]
+[ext_resource type="Texture2D" uid="uid://0r1qiytte8va" path="res://UI/Assets/Icons/Key_art_Over.png" id="6_it15u"]
+[ext_resource type="Texture2D" uid="uid://vqw8lx5pdj1l" path="res://UI/Assets/Icons/Key_art_Head.png" id="7_clcbi"]
 
 [sub_resource type="Animation" id="Animation_eina6"]
 resource_name = "Blink"
@@ -62,6 +53,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usb1j")
 script = ExtResource("1_m0ilf")
 scMainMenu = ExtResource("2_eina6")
 audioMusic = ExtResource("3_wh6tg")
@@ -75,6 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_usb1j")
 color = Color(0.05490196, 0.05490196, 0.05490196, 0.25490198)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2011453657]
@@ -84,28 +77,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yei5s")
+theme = ExtResource("1_usb1j")
+texture = ExtResource("5_usb1j")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="." unique_id=389213561]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.76100004
-anchor_right = 1.0
-anchor_bottom = 0.97400004
-offset_left = 6.0
-offset_top = 4.119934
-offset_right = 6.0
-offset_bottom = 4.079956
-grow_horizontal = 2
-grow_vertical = 0
+anchor_left = 0.026041666
+anchor_top = 0.8271605
+anchor_right = 0.9730903
+anchor_bottom = 0.9521605
+size_flags_vertical = 8
+theme = ExtResource("1_usb1j")
+theme_override_font_sizes/font_size = 64
 text = "APPUYER SUR UNE TOUCHE"
-label_settings = SubResource("LabelSettings_yei5s")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=1599581123]
 libraries/ = SubResource("AnimationLibrary_wh6tg")
 autoplay = &"Blink"
 playback_auto_capture = false
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1032591655]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065972224
+anchor_top = 0.19290124
+anchor_right = 0.9340278
+anchor_bottom = 0.8101852
+theme = ExtResource("1_usb1j")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1238235917]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_usb1j")
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1848943504]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_usb1j")
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1781743911]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_usb1j")
+texture = ExtResource("6_it15u")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1185575860]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("1_usb1j")
+theme_override_constants/separation = 200
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=916932518]
+custom_minimum_size = Vector2(250, 200)
+layout_mode = 2
+theme = ExtResource("1_usb1j")
+texture = ExtResource("7_clcbi")
+expand_mode = 1

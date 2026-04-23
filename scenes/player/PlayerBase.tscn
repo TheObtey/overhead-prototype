@@ -4,31 +4,64 @@
 [ext_resource type="Script" uid="uid://262rmjs558hc" path="res://scenes/player/components/MovementComponent.gd" id="2_01k7g"]
 [ext_resource type="Script" uid="uid://cbmlcgrxv1eo8" path="res://scenes/player/components/InteractComponent.gd" id="2_5e8hm"]
 [ext_resource type="Script" uid="uid://d0si14aljx0pv" path="res://scenes/player/components/InventoryComponent.gd" id="2_ab463"]
+[ext_resource type="Texture2D" uid="uid://d3uy2vru0v8b7" path="res://assets/Player/FBX/Talkie.png" id="2_ft5sv"]
 [ext_resource type="Script" uid="uid://crt6tbji6aqyk" path="res://scenes/player/components/CameraComponent.gd" id="3_qeolr"]
 [ext_resource type="Script" uid="uid://d3f53tko8hfvb" path="res://scenes/player/components/EquipmentComponent.gd" id="6_5525k"]
 [ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="7_e2kkn"]
 [ext_resource type="PackedScene" uid="uid://bva130iqyut2" path="res://scenes/ui/HotbarUI.tscn" id="8_qh3el"]
 [ext_resource type="Script" uid="uid://4jgmnu5qw3at" path="res://scenes/player/components/CharacterGravityApplierComponent.gd" id="8_rqe1m"]
 [ext_resource type="PackedScene" uid="uid://kentnd7p8gla" path="res://scenes/ui/HotbarSlot.tscn" id="9_e2kkn"]
+[ext_resource type="PackedScene" uid="uid://djxisuhms0nij" path="res://scenes/ui/HUD/EmoteWheel.tscn" id="11_8cpdt"]
+[ext_resource type="ArrayMesh" uid="uid://hnaugp4tbqmj" path="res://assets/Player/Mesh/OrangeHead.tres" id="11_lv4p0"]
+[ext_resource type="PackedScene" uid="uid://bskvvfpviflor" path="res://scenes/player/PlayerScenes/PlayerAnimated.scn" id="11_sp8x6"]
+[ext_resource type="PackedScene" uid="uid://c6kjhc5f4i5hl" path="res://scenes/player/PlayerScenes/PingScene.tscn" id="13_lv4p0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
+radius = 0.69921875
+height = 2.100708
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r4mci"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv4p0"]
+resource_name = "Rig_Bob:Material.070"
+albedo_color = Color(0.61960787, 0.25098044, 0.91372555, 1)
+emission_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cpdt"]
+albedo_color = Color(0.85882354, 0.9098039, 0.24705882, 1)
 
 [node name="PlayerBase" type="CharacterBody3D" unique_id=632260283 groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1464987, 0)
 script = ExtResource("1_r4mci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=323766239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097961426, 0.036657006)
 shape = SubResource("CapsuleShape3D_qeolr")
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=1541449080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54507685, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01318121, -0.033)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
+transform = Transform3D(1, 0, 0, 0, 0.99998766, -0.0049741575, 0, 0.004974157, 0.99998766, 0, 0.246, -0.1)
 
 [node name="ViewmodelRoot" type="Node3D" parent="CameraRoot" unique_id=1503638903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
+
+[node name="TextureRect" type="TextureRect" parent="CameraRoot" unique_id=2134652159]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_ft5sv")
+
+[node name="SubViewport" type="SubViewport" parent="CameraRoot" unique_id=741975438]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="SubCamera3D" type="Camera3D" parent="CameraRoot/SubViewport" unique_id=1725018126]
+transform = Transform3D(0.93219125, 0, 0.36196625, 0, 1, 0, -0.36196625, 0, 0.93219125, 0.025959969, -0.070148945, 0.48346692)
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraRoot" unique_id=70914949]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.255, -0.74)
+target_position = Vector3(0, -5, 0)
+collision_mask = 255
+collide_with_areas = true
 
 [node name="Components" type="Node" parent="." unique_id=877173999]
 
@@ -57,21 +90,32 @@ pMovementComponentPath = NodePath("../MovementComponent")
 
 [node name="Visuals" type="Node3D" parent="." unique_id=1374563872]
 
-[node name="PlayerMesh" type="MeshInstance3D" parent="Visuals" unique_id=1062025898]
-mesh = SubResource("CapsuleMesh_r4mci")
+[node name="PlayerAnimated" parent="Visuals" unique_id=1755753807 instance=ExtResource("11_sp8x6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1.141, 0)
+oMesh1 = ExtResource("11_lv4p0")
+
+[node name="EmoteWheel" parent="Visuals" unique_id=221894441 instance=ExtResource("11_8cpdt")]
+offset_left = 666.0001
+offset_top = 61.00006
+offset_right = 666.0001
+offset_bottom = 61.00006
+
+[node name="PingScene" parent="Visuals" unique_id=1637613879 instance=ExtResource("13_lv4p0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010494471, -4.98248)
+material1 = SubResource("StandardMaterial3D_lv4p0")
+material2 = SubResource("StandardMaterial3D_8cpdt")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
+follow_viewport_enabled = true
 
 [node name="Text" type="Label" parent="HUD" unique_id=884020134]
-anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.91300005
-anchor_right = 0.499
-anchor_bottom = 0.91300005
-offset_left = -574.848
-offset_top = -52.624023
-offset_right = 574.152
-offset_bottom = 52.375977
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -574.5
+offset_right = 574.5
+offset_bottom = 105.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,18 +1,25 @@
 [gd_scene format=3 uid="uid://dw1lxdkpmok8y"]
 
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_o0i0b"]
+[ext_resource type="Script" uid="uid://bv8undwefqu5g" path="res://scripts/core/LocalGameInitializer.gd" id="1_twwp5"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="2_nx2fd"]
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="2_oscr4"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_oscr4"]
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_gxka4"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_surqg"]
 [ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="7_lv1bk"]
+[ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scripts/core/LocalPlayerSpawner.gd" id="8_22e2d"]
+[ext_resource type="Script" uid="uid://dujb6mf6s7pdc" path="res://scripts/core/SplitScreenRoot.gd" id="10_4le67"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0v1y0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wwu56"]
 
 [node name="TestRoom" type="Node3D" unique_id=311504040]
+
+[node name="DummyCamera" type="Camera3D" parent="." unique_id=691169206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.859642, 0)
+cull_mask = 1048574
 
 [node name="World" type="Node" parent="." unique_id=342419448]
 
@@ -58,10 +65,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168
 [node name="Door" parent="World" unique_id=646612799 instance=ExtResource("7_lv1bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8253598, 0, 1.9252269)
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=611502070]
+transform = Transform3D(-0.9659259, 0, 0.2588191, 0.0500943, 0.98109055, 0.18695444, -0.25392497, 0.19354947, -0.9476607, 0, -19.113367, 0)
+
+[node name="SplitScreenRoot" type="CanvasLayer" parent="." unique_id=1290429796]
+script = ExtResource("10_4le67")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SplitScreenRoot" unique_id=1174059833]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Player1View" type="SubViewportContainer" parent="SplitScreenRoot/VBoxContainer" unique_id=723453461]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="ViewportP1" type="SubViewport" parent="SplitScreenRoot/VBoxContainer/Player1View" unique_id=918647825]
+handle_input_locally = false
+size = Vector2i(1920, 540)
+render_target_update_mode = 4
+
+[node name="Player2View" type="SubViewportContainer" parent="SplitScreenRoot/VBoxContainer" unique_id=1039118561]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="ViewportP2" type="SubViewport" parent="SplitScreenRoot/VBoxContainer/Player2View" unique_id=401418276]
+handle_input_locally = false
+size = Vector2i(1920, 540)
+render_target_update_mode = 4
+
 [node name="Players" type="Node" parent="." unique_id=1879509615]
 
-[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("2_nx2fd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
+[node name="LocalPlayerSpawner" type="Node" parent="." unique_id=950886156]
+script = ExtResource("8_22e2d")
+oPlayerScene = ExtResource("2_nx2fd")
+oSpawnPointsPath = NodePath("../SpawnPoints")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
-transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
+[node name="LocalGameInitializer" type="Node" parent="." unique_id=1244346600]
+script = ExtResource("1_twwp5")
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=798028771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0957098, 0)
+
+[node name="Player1" type="Node3D" parent="SpawnPoints" unique_id=1990491155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.434952, 0, -6.5126)
+
+[node name="Player2" type="Node3D" parent="SpawnPoints" unique_id=531255560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8853893, 0, -6.901396)
