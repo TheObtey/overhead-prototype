@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_arcq3"]
 [ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_inj60"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="6_tcuxm"]
+[ext_resource type="Script" uid="uid://cxowpgp82odal" path="res://scenes/entities/Puzzle/Piece.gd" id="8_avrsf"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
 
@@ -249,7 +250,7 @@ mesh = SubResource("BoxMesh_36ojw")
 shape = SubResource("ConvexPolygonShape3D_74xxn")
 
 [node name="Frame" type="MeshInstance3D" parent="Puzzle" unique_id=1046083271]
-transform = Transform3D(-2.1855695e-09, -3, 0, 0.05, -1.3113416e-07, 0, 0, 0, 2, 2.6728747, 0.2647767, 1.436638)
+transform = Transform3D(-2.1855695e-09, 0, -2, 0, 3, 0, 0.05, 0, -8.742278e-08, 6.9479523, 2.7123218, -9.77232)
 mesh = SubResource("BoxMesh_36ojw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame" unique_id=322833460]
@@ -305,6 +306,10 @@ shape = SubResource("ConvexPolygonShape3D_74xxn")
 
 [node name="Piece#1" parent="Puzzle/Piece" unique_id=558131901 instance=ExtResource("2_74xxn")]
 transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 6.251443)
+script = ExtResource("8_avrsf")
+PosX = 6
+PosY = 2
+PosZ = -10
 
 [node name="Piece#2" parent="Puzzle/Piece" unique_id=48028020 instance=ExtResource("2_74xxn")]
 transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 5.425102)
@@ -331,4 +336,4 @@ transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0
 transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 1.7868457)
 
 [node name="Piece#10" parent="Puzzle/Piece" unique_id=1693280585 instance=ExtResource("2_74xxn")]
-transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.1880672, 1.4528842, 3.7188854)
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.1880672, 1.4528842, 3.7658412)
