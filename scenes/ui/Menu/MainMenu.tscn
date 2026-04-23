@@ -1,0 +1,177 @@
+[gd_scene format=3 uid="uid://bx7qobf52rvko"]
+
+[ext_resource type="Script" uid="uid://dg6lhhp3qftes" path="res://scripts/UI/MainMenu.gd" id="1_7hjkt"]
+[ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_qtf23"]
+[ext_resource type="PackedScene" uid="uid://c3umfs8km1qla" path="res://scenes/ui/Menu/LocalLobby.tscn" id="3_bcp4n"]
+[ext_resource type="Texture2D" uid="uid://voy0u0er4atu" path="res://UI/Assets/Backgrounds/bgBorderless.png" id="3_slxja"]
+[ext_resource type="PackedScene" uid="uid://d2rlhf75waang" path="res://scenes/ui/Menu/OptionsMenu.tscn" id="4_6k8rh"]
+[ext_resource type="Texture2D" uid="uid://f7aapmy2wydy" path="res://UI/Assets/Icons/OverHeadIcon.png" id="4_bcp4n"]
+[ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="12_b7v77"]
+
+[sub_resource type="Animation" id="Animation_2ysvc"]
+resource_name = "FadeIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198), Color(0, 0, 0, 0.4509804)]
+}
+
+[sub_resource type="Animation" id="Animation_xpiny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.25490198)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpiny"]
+_data = {
+&"FadeIn": SubResource("Animation_2ysvc"),
+&"RESET": SubResource("Animation_xpiny")
+}
+
+[node name="MainMenu" type="Control" unique_id=12293144]
+layout_mode = 3
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_right = 0.079956055
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qtf23")
+script = ExtResource("1_7hjkt")
+scLobby = ExtResource("3_bcp4n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=503456321]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = -0.15612793
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qtf23")
+color = Color(0, 0, 0, 0.25490198)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=407772391]
+libraries/ = SubResource("AnimationLibrary_xpiny")
+autoplay = &"FadeIn"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1959275553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qtf23")
+texture = ExtResource("3_slxja")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1915322028]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024279589
+anchor_top = 0.063467495
+anchor_right = 0.30262774
+anchor_bottom = 0.42105263
+texture = ExtResource("4_bcp4n")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=72748671]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 374.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qtf23")
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1931269948]
+z_index = 2
+layout_mode = 2
+theme = ExtResource("1_qtf23")
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=2118026570]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("1_qtf23")
+theme_override_fonts/font = ExtResource("12_b7v77")
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "Start"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer2" unique_id=2019373642]
+layout_mode = 2
+theme = ExtResource("1_qtf23")
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=1020378617]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_qtf23")
+theme_override_fonts/font = ExtResource("12_b7v77")
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "Paramètres"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator2" type="Control" parent="MarginContainer/VBoxContainer2" unique_id=131901706]
+layout_mode = 2
+theme = ExtResource("1_qtf23")
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=1122679234]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("1_qtf23")
+theme_override_fonts/font = ExtResource("12_b7v77")
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "Quitter"
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer2" unique_id=1745436830]
+layout_mode = 2
+theme = ExtResource("1_qtf23")
+
+[node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("4_6k8rh")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

@@ -8,6 +8,7 @@ var bIsOpen: bool = false
 var bIsAnimating: bool = false
 
 @onready var oDoorPivot: Node3D = $Visuals/DoorPivot
+@onready var audioStreamPlayer: Node3D = $AudioStreamPlayer3D
 
 func Interact(oInteractor: Node) -> void:
 	if not CanInteract(oInteractor):
@@ -30,7 +31,7 @@ func Toggle(oInteractor: Node):
 		return
 	
 	bIsAnimating = true
-	
+	audioStreamPlayer.play()
 	var iTargetRotation: float = 0.0
 	if not bIsOpen:
 		iTargetRotation = iOpenedAngle

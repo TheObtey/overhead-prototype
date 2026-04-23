@@ -7,11 +7,13 @@ extends Node
 @export var iRotationSpeed: float = 4.0
 
 var oPlayer: CharacterBody3D
+var iPlayerID: int = 0
 var vecGravityDirection: Vector3 = Vector3.DOWN
 
 func Setup(oNewPlayer: CharacterBody3D) -> void:
 	oPlayer = oNewPlayer
 	oPlayer.up_direction = -vecGravityDirection
+	iPlayerID = oPlayer.GetPlayerID()
 
 func PhysicsUpdate(iDelta: float) -> void:
 	UpdateOrientation(iDelta)
@@ -33,13 +35,19 @@ func ApplyGravity(iDelta: float) -> void:
 		oPlayer.velocity += vecGravityDirection * iGravityStrength * iDelta
 
 func HandleJump() -> void:
-	if Input.is_action_just_pressed("jump") and oPlayer.is_on_floor():
+	if not oPlayer.is_on_floor():
+		return
+	
+	if LocalInputRouter.ConsumeJumpJustPressed(iPlayerID):
 		oPlayer.velocity -= vecGravityDirection * iJumpVelocity
 		AnimationHandler.enumNewStatePlayer[oPlayer.iPlayerID] = AnimationHandler.AnimState.JUMP
 
 func HandleMovement() -> void:
-	var vecInputDir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	var oState: LocalPlayerInputState = LocalInputRouter.GetState(iPlayerID)
+	if oState == null:
+		return
 	
+	var vecInput: Vector2 = oState.vecMoveInput	
 	var vecUp: Vector3 = -vecGravityDirection
 	var vecForward: Vector3 = oPlayer.global_transform.basis.z
 	
@@ -50,8 +58,8 @@ func HandleMovement() -> void:
 	
 	var vecRight: Vector3 = -vecForward.cross(vecUp).normalized()
 	var vecMoveDir: Vector3 = (
-		vecRight * vecInputDir.x +
-		vecForward * vecInputDir.y
+		vecRight * vecInput.x +
+		vecForward * vecInput.y
 	).normalized()
 	
 	var vecGravityVelocity: Vector3 = vecGravityDirection * oPlayer.velocity.dot(vecGravityDirection)

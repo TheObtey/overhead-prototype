@@ -106,17 +106,16 @@ material1 = SubResource("StandardMaterial3D_lv4p0")
 material2 = SubResource("StandardMaterial3D_8cpdt")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1167788545]
+follow_viewport_enabled = true
 
 [node name="Text" type="Label" parent="HUD" unique_id=884020134]
-anchors_preset = -1
-anchor_left = 0.499
-anchor_top = 0.91300005
-anchor_right = 0.499
-anchor_bottom = 0.91300005
-offset_left = -574.848
-offset_top = -52.624023
-offset_right = 574.152
-offset_bottom = 52.375977
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -574.5
+offset_right = 574.5
+offset_bottom = 105.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1
