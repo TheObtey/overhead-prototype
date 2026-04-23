@@ -34,7 +34,7 @@ func _input(event) -> void:
 	if bCanOpen == false:
 		return
 
-	if event.is_action_pressed("menu_corney_ntm_personne_verra"):
+	if event.is_action_pressed("menu"):
 		if bIsOpen:
 			HideMenu()
 			

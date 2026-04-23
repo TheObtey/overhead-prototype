@@ -16,6 +16,8 @@ extends CharacterBody3D
 
 @export var oStarterItemScene: PackedScene
 
+var iPlayerID: int = 0
+
 # Initializes all components and the HUD/hotbar bindings.
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,14 +34,16 @@ func _ready() -> void:
 
 # Handles mouse capture toggling and delegates input.
 func _unhandled_input(oEvent: InputEvent) -> void:
-	if oEvent.is_action_pressed("menu_corney_ntm_personne_verra"):
+	if oEvent.is_action_pressed("menu"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	if oEvent is InputEventMouseButton and oEvent.pressed and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	oCameraComponent.HandleInput(oEvent)
 	HandleHotbarInput(oEvent)
+
+func _process(iDelta: float) -> void:
+	oCameraComponent.UpdateLook(iDelta)
 
 # Runs per-physics-frame player systems.
 func _physics_process(iDelta: float) -> void:
@@ -54,6 +58,14 @@ func _OnEntityChanged(oEntity: Node) -> void:
 		$HUD/Text.visible = true
 	else:
 		$HUD/Text.visible = false
+
+# Sets the player's ID
+func SetPlayerID(iNewPlayerID: int) -> void:
+	iPlayerID = iNewPlayerID
+
+# Returns the player's ID
+func GetPlayerID() -> int:
+	return iPlayerID
 
 # Exposes inventory component to external callers.
 func GetInventoryComponent() -> Node:

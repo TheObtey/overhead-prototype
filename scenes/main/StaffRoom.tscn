@@ -50,7 +50,7 @@ points = PackedVector3Array(0.4578707, 0.19807906, 0.01578243, -0.48873997, -0.0
 
 [node name="Level" type="Node" parent="World" unique_id=1040484940]
 
-[node name="Wall" type="Node" parent="World/Level" unique_id=716691792]
+[node name="Wall" type="Node3D" parent="World/Level" unique_id=1023763833]
 
 [node name="Wall_Right" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1722667948]
 transform = Transform3D(20, 0, 0, 0, 4.2418365, 0, 0, 0, 0.5, 0, 1.9790943, 10)
@@ -336,7 +336,7 @@ bAutoEquipOnPickup = true
 [node name="Mop" parent="World" unique_id=2037755067 instance=ExtResource("4_arcq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
 
-[node name="DirtStains" type="Node" parent="World" unique_id=1126894720]
+[node name="DirtStains" type="Node3D" parent="World" unique_id=1037018072]
 
 [node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_inj60")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
