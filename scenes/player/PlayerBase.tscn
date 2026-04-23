@@ -37,10 +37,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.097961426, 0.036657006)
 shape = SubResource("CapsuleShape3D_qeolr")
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=1541449080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255, 0.74)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01318121, -0.033)
 
 [node name="Camera3D" type="Camera3D" parent="CameraRoot" unique_id=539204420]
-transform = Transform3D(1, 0, 0, 0, 0.9999876, -0.0049741566, 0, 0.0049741566, 0.9999876, 0, -0.212, -0.095)
+transform = Transform3D(1, 0, 0, 0, 0.99998766, -0.0049741575, 0, 0.004974157, 0.99998766, 0, 0.246, -0.1)
 
 [node name="ViewmodelRoot" type="Node3D" parent="CameraRoot" unique_id=1503638903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
@@ -54,7 +54,7 @@ texture = ExtResource("2_ft5sv")
 transparent_bg = true
 size = Vector2i(1920, 1080)
 
-[node name="Camera3D" type="Camera3D" parent="CameraRoot/SubViewport" unique_id=1725018126]
+[node name="SubCamera3D" type="Camera3D" parent="CameraRoot/SubViewport" unique_id=1725018126]
 transform = Transform3D(0.93219125, 0, 0.36196625, 0, 1, 0, -0.36196625, 0, 0.93219125, 0.025959969, -0.070148945, 0.48346692)
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraRoot" unique_id=70914949]
