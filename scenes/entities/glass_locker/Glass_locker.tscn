@@ -190,6 +190,7 @@ shape = SubResource("ConcavePolygonShape3D_wfo4y")
 
 [node name="Keypad" type="Node3D" parent="Visuals/SM_SR_Locker_Door" unique_id=978872893 node_paths=PackedStringArray("oTarget")]
 script = ExtResource("4_wfo4y")
+sCorrect_code = "3421567"
 oTarget = NodePath("..")
 
 [node name="Visuals" type="Node3D" parent="Visuals/SM_SR_Locker_Door/Keypad" unique_id=1280846067]
