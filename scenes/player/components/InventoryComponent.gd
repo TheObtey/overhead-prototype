@@ -52,7 +52,7 @@ func RemoveCollectible(oCollectible: Node) -> void:
 		return
 	
 	tCollectibles.erase(oCollectible)
-	oCollectible.OnRemoved(pPlayer)
+	oCollectible.OnRemoved(oPlayer)
 	
 	InventoryChanged.emit()
 
