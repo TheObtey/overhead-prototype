@@ -19,6 +19,7 @@ func _ready() -> void:
 	tBindings.clear()
 	uiBoxContainer.visible = true
 	uiStartButton.visible = true
+	InGameMenu.bCanOpen = false
 	RefreshUI()
 
 func _input(oEvent: InputEvent) -> void:

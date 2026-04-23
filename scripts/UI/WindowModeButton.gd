@@ -3,8 +3,8 @@ extends Control
 @onready var oOptionButton = $HBoxContainer/OptionButton as OptionButton
 
 const WINDOW_MODE_ARRAY : Array[String] = [
-	"Full-Screen",
 	"Window Mode",
+	"Full-Screen",
 	"Borderless Window",
 	"Borderless Full-Screen"
 ]
