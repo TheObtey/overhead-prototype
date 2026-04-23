@@ -1,3 +1,4 @@
+class_name PlayerBase
 extends CharacterBody3D
 
 # Main player root that wires input, movement, interaction,
