@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bbi1p86eiax4y"]
 
+[ext_resource type="PackedScene" uid="uid://fduhqpmdiyel" path="res://assets/models/hub/All/hub_with_collider.tscn" id="1_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="3_ryri7"]
 [ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_gnv68"]
-[ext_resource type="PackedScene" uid="uid://dlkaqhc1vs2wc" path="res://assets/models/hub/All/HubCopy.tscn" id="4_yqc2r"]
 [ext_resource type="Script" uid="uid://dujb6mf6s7pdc" path="res://scripts/core/SplitScreenRoot.gd" id="6_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_e7fb5"]
 [ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scripts/core/LocalPlayerSpawner.gd" id="7_ryri7"]
@@ -12,6 +12,9 @@
 [node name="HubRoom" type="Node3D" unique_id=311504040]
 
 [node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="HUB_Final" parent="World" unique_id=1571602726 instance=ExtResource("1_6b3hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -142.98517, -287.54556)
 
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_6b3hv")]
 transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.243055, 0)
@@ -24,9 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.535729, -0.08041179, -7.181
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61768, -0.07908082, -8.780334)
 bAutoEquipOnPickup = true
 sPrompt = "Interact with me !"
-
-[node name="HUB_Final" parent="World" unique_id=974044752 instance=ExtResource("4_yqc2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1440659, -142.83289, -289.9828)
 
 [node name="PlayerBase" parent="World" unique_id=632260283 instance=ExtResource("7_e7fb5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.140769, 1.4758248, -8.889986)
