@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cm7xtusk1wyvy" path="res://assets/texture/staffRoom/Texture_staff_room.png" id="2_yvaxx"]
 [ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="3_4b853"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yvaxx"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucnhk"]
 resource_name = "Texture_staff_room_base"
 vertex_color_use_as_albedo = true
@@ -50,15 +48,18 @@ shadow_mesh = SubResource("ArrayMesh_o5hpw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ap4h4"]
 albedo_texture = ExtResource("2_yvaxx")
 
-[node name="CarryableEntity" type="RigidBody3D" unique_id=942434338]
-script = ExtResource("1_08js6")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yvaxx"]
+points = PackedVector3Array(0.6497969, -0.5970125, 0.13787821, -0.6571028, -0.64568955, -0.20499331, -0.65600353, -0.6232022, -0.22607851, -0.24732973, 0.66548157, 0.65409696, 0.24589299, 0.6646874, -0.65459937, -0.20526908, -0.6463418, 0.6565162, 0.6544489, 0.66573006, 0.24632321, -0.6542249, 0.66434145, -0.24696395, 0.18132585, -0.6421545, -0.6535426, 0.54602915, -0.6860529, 0.2673948, -0.5012424, 0.712127, 0.14405034, -0.2877151, -0.61708254, 0.605757, 0.47561255, 0.6348667, -0.286235, 0.2867708, -0.61750793, -0.60745883, -0.5929143, -0.6893811, -0.2266329, -0.49802443, 0.6350772, 0.2217142, 0.57930946, -0.59045124, 0.30521065, -0.13926364, 0.66178757, 0.65046257, 0.13768652, 0.65971255, -0.6497048, -0.6064838, -0.61655325, -0.2875235, 0.4110742, 0.712127, -0.30092153, 0.22560793, -0.6895237, -0.5929457, -0.22679736, -0.68966746, 0.59191406, -0.6502858, -0.5964127, -0.13889568, -0.61133814, 0.66432196, -0.2898219, -0.13926364, -0.597722, 0.65046257, 0.6497969, 0.66100204, 0.13787821, 0.13768652, -0.59584785, -0.6497048, -0.6502858, 0.660338, -0.13889568, 0.57930946, 0.65373755, 0.30521065, -0.41221645, 0.712127, 0.2996377, 0.6565201, -0.6462399, 0.20401227)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1857778636]
-shape = SubResource("BoxShape3D_yvaxx")
+[node name="Carton_1_" type="RigidBody3D" unique_id=942434338]
+script = ExtResource("1_08js6")
 
 [node name="SM_SR_carton" type="MeshInstance3D" parent="." unique_id=1037263861]
 mesh = SubResource("ArrayMesh_22qiw")
 surface_material_override/0 = SubResource("StandardMaterial3D_ap4h4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1149241353]
+shape = SubResource("ConvexPolygonShape3D_yvaxx")
 
 [node name="Components" type="Node" parent="." unique_id=1665191956]
 
