@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://chrot22ntxcxy" path="res://UI/Assets/Icons/MainMenu/Settings/fleche_bas.png" id="11_glwc0"]
 [ext_resource type="Texture2D" uid="uid://cbkj4x5cx0o7p" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check 2.png" id="12_ox0ye"]
 [ext_resource type="Texture2D" uid="uid://dy4hxhel5e6um" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check.png" id="13_mn7pg"]
+[ext_resource type="Texture2D" uid="uid://b3m7n3bun07hj" path="res://UI/Assets/Icons/MainMenu/bouton x.png" id="14_erc88"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
 resource_name = "FadeIn"
@@ -302,6 +303,7 @@ script = ExtResource("1_30wqq")
 scMainMenu = ExtResource("2_1fvel")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2140158038]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -341,6 +343,7 @@ theme_override_constants/margin_bottom = 28
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=129596884]
+visible = false
 z_index = 2
 layout_mode = 2
 size_flags_horizontal = 4
@@ -396,6 +399,13 @@ metadata/_edit_use_anchors_ = true
 [node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer2" unique_id=563738776]
 layout_mode = 2
 theme = ExtResource("1_log8o")
+
+[node name="Crosshair" type="TextureRect" parent="MarginContainer" unique_id=903529201]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_erc88")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
