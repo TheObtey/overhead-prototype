@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dquki3v5k4dtv"
-path="res://.godot/imported/SelectSignalBg.png-17e7783e5f4d89fc5c429d5739a4179b.ctex"
+uid="uid://b3m7n3bun07hj"
+path="res://.godot/imported/bouton x.png-7b64bfd9f30c2ee00e5be0fa791d7376.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Icons/MainMenu/SelectSignalBg.png"
-dest_files=["res://.godot/imported/SelectSignalBg.png-17e7783e5f4d89fc5c429d5739a4179b.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/bouton x.png"
+dest_files=["res://.godot/imported/bouton x.png-7b64bfd9f30c2ee00e5be0fa791d7376.ctex"]
 
 [params]
 

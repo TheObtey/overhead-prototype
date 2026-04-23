@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://172nvsbu80"
-path="res://.godot/imported/HoveredPlayButton.png-ce5f9cf3958bc491a01ae052420b804e.ctex"
+uid="uid://b0ochyeol4y2s"
+path="res://.godot/imported/grand_rectangle_parametres.png-fe2894b5cadfc9ddef65c8ec8b776cb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Assets/Icons/MainMenu/HoveredPlayButton.png"
-dest_files=["res://.godot/imported/HoveredPlayButton.png-ce5f9cf3958bc491a01ae052420b804e.ctex"]
+source_file="res://UI/Assets/Icons/MainMenu/grand_rectangle_parametres.png"
+dest_files=["res://.godot/imported/grand_rectangle_parametres.png-fe2894b5cadfc9ddef65c8ec8b776cb6.ctex"]
 
 [params]
 

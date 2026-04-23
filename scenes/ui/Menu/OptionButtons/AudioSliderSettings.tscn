@@ -32,16 +32,12 @@ layout_mode = 2
 theme = ExtResource("1_330p2")
 
 [node name="HSlider" type="HSlider" parent="HBoxContainer" unique_id=1519237006]
-custom_minimum_size = Vector2(200, 32)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("1_330p2")
 max_value = 1.0
 step = 0.001
-
-[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=2115485209]
-layout_mode = 2
-theme = ExtResource("1_330p2")
 
 [node name="Audio_Num" type="Label" parent="HBoxContainer" unique_id=1695762812]
 custom_minimum_size = Vector2(300, 0)
