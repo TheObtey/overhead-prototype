@@ -1,0 +1,351 @@
+[gd_scene format=3 uid="uid://ckvrjb1svqxcl"]
+
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="1_36ojw"]
+[ext_resource type="PackedScene" uid="uid://brq4wv3r70wjd" path="res://scenes/entities/doors/DoorEntity.tscn" id="1_74xxn"]
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="2_74xxn"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="3_avrsf"]
+[ext_resource type="PackedScene" uid="uid://bnwkt0dxo7qxp" path="res://scenes/entities/weapons/MopPickup.tscn" id="4_arcq3"]
+[ext_resource type="PackedScene" uid="uid://btc4154p27b7b" path="res://scenes/entities/dirt_stain/DirtStain.tscn" id="5_inj60"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="6_tcuxm"]
+[ext_resource type="Script" uid="uid://cxowpgp82odal" path="res://scenes/entities/Puzzle/Piece.gd" id="8_avrsf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_36ojw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_74xxn"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arcq3"]
+albedo_color = Color(0.4035673, 0.4799993, 0.42384735, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avrsf"]
+albedo_color = Color(0.4603333, 0.78667796, 0.5604443, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36ojw"]
+albedo_color = Color(0.78998727, 0.8226866, 0.9658615, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74xxn"]
+albedo_color = Color(1, 0.72097266, 0.70098966, 1)
+
+[sub_resource type="Skin" id="Skin_avrsf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcuxm"]
+albedo_color = Color(0.0035191667, 0.0035191681, 0.0035191672, 0.98039216)
+
+[sub_resource type="Skin" id="Skin_74xxn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inj60"]
+vertex_color_is_srgb = true
+albedo_color = Color(1, 1, 0.023529412, 1)
+
+[node name="StaffRoom" type="Node3D" unique_id=311504040]
+
+[node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="Level" type="Node" parent="World" unique_id=1040484940]
+
+[node name="Platform" type="MeshInstance3D" parent="World/Level" unique_id=1843599770]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 5.9239283, 4, 8)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform" unique_id=1951151715]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform/StaticBody3D" unique_id=1875475086]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Level" unique_id=1819965139]
+transform = Transform3D(7.3686786, -0.07568955, 0, 3.5101027, 0.15889333, 0, 0, 0, 4, -1.5369954, 2.265806, 8)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform2" unique_id=181455064]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform2/StaticBody3D" unique_id=920639072]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform3" type="MeshInstance3D" parent="World/Level" unique_id=167190343]
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, -6.942358, 7.5859566, -6.8477454)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_arcq3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform3" unique_id=489946295]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform3/StaticBody3D" unique_id=530238699]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall" type="Node" parent="World/Level" unique_id=716691792]
+
+[node name="Wall_Right" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1722667948]
+transform = Transform3D(20, 0, 0, 0, 4.2418365, 0, 0, 0, 0.5, 0, 1.9790943, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right" unique_id=1535811849]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right/StaticBody3D" unique_id=1129303150]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right3" type="MeshInstance3D" parent="World/Level/Wall" unique_id=791334645]
+transform = Transform3D(3, 0, 0, 0, 4.242, 0, 0, 0, 0.5, 8.5, 5.291, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right3" unique_id=924700459]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right3/StaticBody3D" unique_id=2098612333]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right4" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1082215419]
+transform = Transform3D(15, 0, 0, 0, 4.242, 0, 0, 0, 0.5, -2.5, 5, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right4" unique_id=304182562]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right4/StaticBody3D" unique_id=1198005463]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Right2" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1162518987]
+transform = Transform3D(20, 0, 0, 0, 8.846475, 0, 0, 0, 0.5, 0.004, 11, 10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Right2" unique_id=545280788]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Right2/StaticBody3D" unique_id=1438163813]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Left" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1661648904]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 0.5, 0, 7, -10)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Left" unique_id=2056333982]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Left/StaticBody3D" unique_id=1058540267]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Front" type="MeshInstance3D" parent="World/Level/Wall" unique_id=1487352402]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, 10, 7, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Front" unique_id=2026058050]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Front/StaticBody3D" unique_id=1776819562]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Wall_Back" type="MeshInstance3D" parent="World/Level/Wall" unique_id=228135200]
+transform = Transform3D(-8.742278e-07, 0, 0.5, 0, 20, 0, -20, 0, -2.1855694e-08, -10, 7, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_avrsf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Wall_Back" unique_id=1409560310]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Wall_Back/StaticBody3D" unique_id=1463871399]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Floor" type="MeshInstance3D" parent="World/Level/Wall" unique_id=977807780]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0.004385099, -0.006650269, 0.03934744)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Floor" unique_id=1364012222]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Floor/StaticBody3D" unique_id=1480091565]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Ceiling" type="MeshInstance3D" parent="World/Level/Wall" unique_id=441920401]
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 15, 0)
+mesh = SubResource("BoxMesh_36ojw")
+surface_material_override/0 = SubResource("StandardMaterial3D_74xxn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Wall/Ceiling" unique_id=1963373424]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Wall/Ceiling/StaticBody3D" unique_id=1923175771]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="EntityBase" parent="World/Level" unique_id=108843216 instance=ExtResource("1_74xxn")]
+transform = Transform3D(0.999, 0, 0, 0, 0.62414426, 0, 0, 0, 1.849, 5.029, 4.1, 10.065)
+
+[node name="Platform4" type="MeshInstance3D" parent="World/Level" unique_id=383083872]
+transform = Transform3D(7.625, 0, 0, 0, 0.2, 0, 0, 0, 4, 6.293059, 9.162319, 8.009947)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform4" unique_id=1893334685]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform4/StaticBody3D" unique_id=1938794916]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform5" type="MeshInstance3D" parent="World/Level" unique_id=2146757927]
+transform = Transform3D(5.7714057, 0.12445079, 0, -5.7714057, 0.12445079, 0, 0, 0, 4, -0.2812786, 12.0029955, 8.009947)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Level/Platform5" unique_id=2105615826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Level/Platform5/StaticBody3D" unique_id=697965663]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("1_36ojw")]
+transform = Transform3D(20, 0, 0, 0, 7, 0, 0, 0, 20, 0.0021972656, 10.008474, -0.0076720715)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("2_74xxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.303706, 0.7901447, 3.7188854)
+
+[node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("3_avrsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.680721, 0.625, -3.6055298)
+bAutoEquipOnPickup = true
+
+[node name="Mop" parent="World" unique_id=2037755067 instance=ExtResource("4_arcq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4402094, 1.0927153, -0.69051266)
+
+[node name="DirtStains" type="Node" parent="World" unique_id=1126894720]
+
+[node name="DirtStain1" parent="World/DirtStains" unique_id=206193072 instance=ExtResource("5_inj60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3058853, 0.18233415, 2.168686)
+
+[node name="Door" parent="World" unique_id=939913208 instance=ExtResource("1_74xxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1599381, -0.015884638, -8.73374)
+
+[node name="Locker" type="Node" parent="World" unique_id=17319458]
+
+[node name="Platform" type="MeshInstance3D" parent="World/Locker" unique_id=1165861921]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 1, 3.2524457, 2.0190372, -9.173964)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform" unique_id=1959624863]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform/StaticBody3D" unique_id=2041884655]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform2" type="MeshInstance3D" parent="World/Locker" unique_id=859451036]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 1, 1.0644442, 1.96806, -9.173964)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform2" unique_id=1981898875]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform2/StaticBody3D" unique_id=934295425]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Platform3" type="MeshInstance3D" parent="World/Locker" unique_id=78905494]
+transform = Transform3D(2.3, 0, 0, 0, 0.2, 0, 0, 0, 1, 2.1160293, 3.9227798, -9.172272)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Locker/Platform3" unique_id=955432294]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Locker/Platform3/StaticBody3D" unique_id=196661830]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Players" type="Node" parent="." unique_id=1879509615]
+
+[node name="PlayerBase" parent="Players" unique_id=632260283 instance=ExtResource("6_tcuxm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4621041, -3.689015)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
+
+[node name="Puzzle" type="Node" parent="." unique_id=1284850936]
+
+[node name="Affiche" type="MeshInstance3D" parent="Puzzle" unique_id=1569888051]
+transform = Transform3D(0.05, 0, 0, 0, 1.5, 0, 0, 0, 1, -9.724841, 13.015899, 1.445323)
+mesh = SubResource("BoxMesh_36ojw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Affiche" unique_id=664151202]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Affiche/StaticBody3D" unique_id=290802526]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Frame" type="MeshInstance3D" parent="Puzzle" unique_id=1046083271]
+transform = Transform3D(-2.1855695e-09, 0, -2, 0, 3, 0, 0.05, 0, -8.742278e-08, 6.9479523, 2.7123218, -9.77232)
+mesh = SubResource("BoxMesh_36ojw")
+skin = SubResource("Skin_avrsf")
+surface_material_override/0 = SubResource("StandardMaterial3D_tcuxm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame" unique_id=322833460]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Frame/StaticBody3D" unique_id=1521520413]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="FrameTop" type="MeshInstance3D" parent="Puzzle/Frame" unique_id=445712635]
+transform = Transform3D(1, -7.1054274e-15, 0, 0, 0.033333335, 0, 0, 0, 1, 0.9814639, 0.4832665, 0.00026386976)
+mesh = SubResource("BoxMesh_36ojw")
+skin = SubResource("Skin_74xxn")
+surface_material_override/0 = SubResource("StandardMaterial3D_inj60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame/FrameTop" unique_id=401923857]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Frame/FrameTop/StaticBody3D" unique_id=1213582813]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="FrameBottom" type="MeshInstance3D" parent="Puzzle/Frame" unique_id=1501599977]
+transform = Transform3D(1, -7.1054274e-15, 0, 0, 0.033333335, 0, 0, 0, 1, 0.9814615, -0.48309743, 0.00026386976)
+mesh = SubResource("BoxMesh_36ojw")
+skin = SubResource("Skin_74xxn")
+surface_material_override/0 = SubResource("StandardMaterial3D_inj60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame/FrameBottom" unique_id=59123070]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Frame/FrameBottom/StaticBody3D" unique_id=1961776212]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="FrameLeft" type="MeshInstance3D" parent="Puzzle/Frame" unique_id=988580048]
+transform = Transform3D(1, -8.7422784e-08, -2.622683e-06, -7.2852324e-10, -1.4570463e-09, -1, 1.0927848e-09, 0.05, -6.556708e-08, 0.9814625, -0.00018024445, 0.47454196)
+mesh = SubResource("BoxMesh_36ojw")
+skin = SubResource("Skin_74xxn")
+surface_material_override/0 = SubResource("StandardMaterial3D_inj60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame/FrameLeft" unique_id=619748041]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Frame/FrameLeft/StaticBody3D" unique_id=342240728]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="FrameRight" type="MeshInstance3D" parent="Puzzle/Frame" unique_id=1814323212]
+transform = Transform3D(1, -8.7422784e-08, -2.622683e-06, -7.2852324e-10, -1.4570463e-09, -1, 1.0927848e-09, 0.05, -6.556708e-08, 0.9814625, -0.00018024445, -0.4755241)
+mesh = SubResource("BoxMesh_36ojw")
+skin = SubResource("Skin_74xxn")
+surface_material_override/0 = SubResource("StandardMaterial3D_inj60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/Frame/FrameRight" unique_id=15735080]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Frame/FrameRight/StaticBody3D" unique_id=1406020064]
+shape = SubResource("ConvexPolygonShape3D_74xxn")
+
+[node name="Piece" type="Node" parent="Puzzle" unique_id=2110495564]
+
+[node name="Piece#3" parent="Puzzle/Piece" unique_id=1228521030 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, -1.4090296, 1.4528842, 3.7188854)
+
+[node name="Piece#4" parent="Puzzle/Piece" unique_id=1578729460 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 2.7712116)
+
+[node name="Piece#5" parent="Puzzle/Piece" unique_id=2030462759 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, -2.5887556, 1.4528842, 3.7188854)
+
+[node name="Piece#6" parent="Puzzle/Piece" unique_id=1035181874 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 3.7188854)
+
+[node name="Piece#7" parent="Puzzle/Piece" unique_id=963125410 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 1.6522028, 1.4528842, 3.7188854)
+
+[node name="Piece#8" parent="Puzzle/Piece" unique_id=1764309082 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 4.5387254)
+
+[node name="Piece#9" parent="Puzzle/Piece" unique_id=1572636243 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 1.7868457)
+
+[node name="Piece#10" parent="Puzzle/Piece" unique_id=1693280585 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.1880672, 1.4528842, 3.7658412)
+
+[node name="Resolve1" type="Node" parent="Puzzle/Piece" unique_id=1135505932]
+script = ExtResource("8_avrsf")
+PosX = 6
+PosY = 2
+PosZ = -8
+
+[node name="Piece#1" parent="Puzzle/Piece/Resolve1" unique_id=558131901 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 3.6046152, 1.4528842, -1.3008857)
+
+[node name="Resolve2" type="Node" parent="Puzzle/Piece" unique_id=122856247]
+script = ExtResource("8_avrsf")
+
+[node name="Piece#2" parent="Puzzle/Piece/Resolve2" unique_id=48028020 instance=ExtResource("2_74xxn")]
+transform = Transform3D(-2.1855695e-09, -0.9, 0, 0.05, -3.934025e-08, 0, 0, 0, 0.45, 0, 1.4528842, 5.425102)
