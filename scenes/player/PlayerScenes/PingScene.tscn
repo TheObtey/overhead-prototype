@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c6kjhc5f4i5hl"]
+
+[ext_resource type="Script" uid="uid://dvhdafqaxmwme" path="res://scenes/player/components/PingComponent.gd" id="1_ytvgo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytvgo"]
+albedo_color = Color(0.61960787, 0.2509804, 0.9137255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3ylq"]
+albedo_color = Color(0.85882354, 0.9098039, 0.24705882, 1)
+
+[node name="PingScene" type="Node3D" unique_id=1637613879]
+script = ExtResource("1_ytvgo")
+material1 = SubResource("StandardMaterial3D_ytvgo")
+material2 = SubResource("StandardMaterial3D_m3ylq")
+
+[node name="Visual" type="Node3D" parent="." unique_id=1690000594]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Visual" unique_id=1236437964]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+layers = 1023
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Visual" unique_id=1192769355]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+layers = 1023
+light_energy = 15.0
+light_indirect_energy = 5.0
+light_size = 1.0
+spot_range = 3.7112944
+spot_angle = 4.5140967

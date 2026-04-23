@@ -40,6 +40,7 @@ func HandleJump() -> void:
 	
 	if LocalInputRouter.ConsumeJumpJustPressed(iPlayerID):
 		oPlayer.velocity -= vecGravityDirection * iJumpVelocity
+		AnimationHandler.enumNewStatePlayer[oPlayer.iPlayerID] = AnimationHandler.AnimState.JUMP
 
 func HandleMovement() -> void:
 	var oState: LocalPlayerInputState = LocalInputRouter.GetState(iPlayerID)

@@ -60,9 +60,11 @@ func _SyncViewportCameras() -> void:
 		oViewportCameraP1.fov = oSourceCameraP1.fov
 		oViewportCameraP1.near = oSourceCameraP1.near
 		oViewportCameraP1.far = oSourceCameraP1.far
+		oViewportCameraP1.cull_mask = oSourceCameraP1.cull_mask
 	
 	if oSourceCameraP2 != null:
 		oViewportCameraP2.global_transform = oSourceCameraP2.global_transform
 		oViewportCameraP2.fov = oSourceCameraP2.fov
 		oViewportCameraP2.near = oSourceCameraP2.near
 		oViewportCameraP2.far = oSourceCameraP2.far
+		oViewportCameraP2.cull_mask = oSourceCameraP2.cull_mask

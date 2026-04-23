@@ -1,8 +1,21 @@
+class_name GravityGun
 extends EquippableItemBase
 
 @export var iPickupDistance: float = 5.0
 
 var eHeldEntity: RigidBody3D
+var pPlayerStored : CharacterBody3D
+
+func OnEquip(pPlayer: CharacterBody3D) -> void:
+	super.OnEquip(pPlayer)
+	AnimationHandler.bHasGun[pPlayer.iPlayerID] = true
+	pPlayerStored = pPlayer
+
+# Called when the item is no longer active.
+func OnUnequip() -> void:
+	super.OnUnequip()
+	AnimationHandler.bHasGun[pPlayerStored.iPlayerID] = false
+	pPlayerStored = null
 
 func OnPrimaryAction() -> void:
 	if eHeldEntity:
