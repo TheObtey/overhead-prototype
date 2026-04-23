@@ -397,6 +397,13 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 theme = ExtResource("1_log8o")
 
+[node name="Crosshair" type="ColorRect" parent="MarginContainer" unique_id=638906215]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.09019608, 0.09019608, 0.09019608, 0.79607844)
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/SaveAndQuit" to="." method="_on_save_and_quit_pressed"]

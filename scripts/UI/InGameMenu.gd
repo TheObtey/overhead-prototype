@@ -2,6 +2,7 @@ extends Control
 
 @onready var uiOptionMenu = $OptionsMenu as OptionsMenu
 @onready var uiMarginContainer = $MarginContainer as MarginContainer
+@onready var uiCrosshair = $MarginContainer/Crosshair as ColorRect
 @onready var uiBg = $ColorRect as ColorRect
 @export var scMainMenu : PackedScene
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	uiOptionMenu.sExitMenu.connect(OnExitMenu)
 	self.visible = false
 	uiOptionMenu.visible = false
+	uiCrosshair.visible = false
 	uiMarginContainer.visible = false
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -22,11 +24,13 @@ func ShowMenu() -> void:
 	uiBg.visible = true
 	uiOptionMenu.visible = false
 	uiMarginContainer.visible = true
+	uiCrosshair.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func HideMenu() -> void:
 	bIsOpen = false
 	self.visible = false
+	uiCrosshair.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 
