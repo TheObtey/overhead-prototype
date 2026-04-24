@@ -7,7 +7,7 @@ extends RigidBody3D
 @export var bIsCarriable: bool = true
 @export var iHoldDistance: float = 2.5
 @export var iFollowSpeed: float = 12.0
-@export var iThrowForce: float = 10.0
+@export var iThrowForce: float = 14.0
 
 var pHolder: CharacterBody3D
 var bIsHeld: bool = false
