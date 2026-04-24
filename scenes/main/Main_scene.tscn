@@ -222,7 +222,7 @@ vecGravityDirection = Vector3(0, 1, 0)
 transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.574718, 12.048911, 27.521008)
 
 [node name="BasketballBasket" parent="World" unique_id=1533281731 instance=ExtResource("7_qjjs1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.194929, 10.963825, 45.76211)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -26.66738, 11.186701, 36.74253)
 
 [node name="Basketball" parent="World" unique_id=942434338 instance=ExtResource("8_sle41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0307045, 6.22772, 31.55021)
