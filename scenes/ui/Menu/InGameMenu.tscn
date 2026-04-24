@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://chrot22ntxcxy" path="res://UI/Assets/Icons/MainMenu/Settings/fleche_bas.png" id="11_glwc0"]
 [ext_resource type="Texture2D" uid="uid://cbkj4x5cx0o7p" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check 2.png" id="12_ox0ye"]
 [ext_resource type="Texture2D" uid="uid://dy4hxhel5e6um" path="res://UI/Assets/Icons/MainMenu/Settings/mark_check.png" id="13_mn7pg"]
-[ext_resource type="Texture2D" uid="uid://qbr1kn1xdueo" path="res://UI/Assets/Icons/crosshair.png" id="14_erc88"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
 resource_name = "FadeIn"
@@ -332,7 +331,6 @@ theme_override_constants/margin_left = 28
 theme_override_constants/margin_top = 28
 theme_override_constants/margin_right = 28
 theme_override_constants/margin_bottom = 28
-metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=129596884]
 visible = false
@@ -391,15 +389,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Seperator3" type="Control" parent="MarginContainer/VBoxContainer2" unique_id=563738776]
 layout_mode = 2
 theme = ExtResource("1_log8o")
-
-[node name="Crosshair" type="TextureRect" parent="MarginContainer" unique_id=903529201]
-custom_minimum_size = Vector2(300, 300)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("14_erc88")
-expand_mode = 1
-stretch_mode = 5
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/Options" to="." method="_on_options_pressed"]
