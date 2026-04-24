@@ -5,14 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b3m7n3bun07hj" path="res://UI/Assets/Icons/MainMenu/bouton x.png" id="3_iw4fs"]
 [ext_resource type="PackedScene" uid="uid://btfj0wmxqir5n" path="res://scenes/ui/Menu/SettingsTabContainer.tscn" id="3_m2dws"]
 
-[node name="OptionsMenu" type="Control" unique_id=259052409]
+[node name="OptionsMenu" type="Control" unique_id=1873436293]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_iw4fs")
+anchors_preset = 0
 script = ExtResource("1_c3c6m")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1827642837]
@@ -47,9 +42,6 @@ theme = ExtResource("1_iw4fs")
 texture_normal = ExtResource("3_iw4fs")
 stretch_mode = 0
 
-[node name="Control" parent="MarginContainer/VBoxContainer" unique_id=1095434011 instance=ExtResource("3_m2dws")]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("1_iw4fs")
+[node name="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=1095434011 instance=ExtResource("3_m2dws")]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
