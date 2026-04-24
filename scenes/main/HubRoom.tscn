@@ -11,29 +11,6 @@
 
 [node name="HubRoom" type="Node3D" unique_id=311504040]
 
-[node name="World" type="Node" parent="." unique_id=342419448]
-
-[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_6b3hv")]
-transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.243055, 0)
-vecGravityDirection = Vector3(0, 1, 0)
-
-[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_ryri7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.535729, -0.08041179, -7.181448)
-
-[node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("4_gnv68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61768, -0.07908082, -8.780334)
-bAutoEquipOnPickup = true
-sPrompt = "Interact with me !"
-
-[node name="HUB_Final" parent="World" unique_id=974044752 instance=ExtResource("4_yqc2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1440659, -142.83289, -289.9828)
-
-[node name="PlayerBase" parent="World" unique_id=632260283 instance=ExtResource("7_e7fb5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.140769, 1.4758248, -8.889986)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
-transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
-
 [node name="SplitScreenRoot" type="CanvasLayer" parent="." unique_id=1860563330]
 script = ExtResource("6_6b3hv")
 
@@ -65,6 +42,29 @@ stretch = true
 handle_input_locally = false
 size = Vector2i(1920, 540)
 render_target_update_mode = 4
+
+[node name="World" type="Node" parent="." unique_id=342419448]
+
+[node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_6b3hv")]
+transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.243055, 0)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Carlos" parent="World" unique_id=942434338 instance=ExtResource("3_ryri7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.535729, -0.08041179, -7.181448)
+
+[node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("4_gnv68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.61768, -0.07908082, -8.780334)
+bAutoEquipOnPickup = true
+sPrompt = "Interact with me !"
+
+[node name="HUB_Final" parent="World" unique_id=974044752 instance=ExtResource("4_yqc2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1440659, -142.83289, -289.9828)
+
+[node name="PlayerBase" parent="World" unique_id=632260283 instance=ExtResource("7_e7fb5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.140769, 1.4758248, -8.889986)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
+transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
 
 [node name="LocalPlayerSpawner" type="Node" parent="." unique_id=1404253362]
 script = ExtResource("7_ryri7")

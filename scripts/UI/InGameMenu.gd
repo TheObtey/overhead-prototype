@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var uiOptionMenu = $OptionsMenu as OptionsMenu
 @onready var uiMarginContainer = $MarginContainer as MarginContainer
@@ -11,16 +11,17 @@ var bCanOpen = false
 
 func _ready() -> void:
 	uiOptionMenu.sExitMenu.connect(OnExitMenu)
-	self.visible = false
+	self.custom_viewport = get_tree().root
+	self.hide()
 	uiOptionMenu.visible = false
-	uiCrosshair.visible = false
+	uiCrosshair.visible = true
 	uiMarginContainer.visible = false
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func ShowMenu() -> void:
 	get_tree().paused = true
 	bIsOpen = true
-	self.visible = true
+	self.show()
 	uiBg.visible = true
 	uiOptionMenu.visible = false
 	uiMarginContainer.visible = true

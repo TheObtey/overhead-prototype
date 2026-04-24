@@ -290,22 +290,16 @@ TabBar/icons/increment = SubResource("DPITexture_8048b")
 TabBar/icons/increment_highlight = SubResource("DPITexture_ihkht")
 TabContainer/fonts/font = ExtResource("5_pj7h6")
 
-[node name="InGameMenu" type="Control" unique_id=643540066]
+[node name="InGameMenu" type="CanvasLayer" unique_id=860708662]
 process_mode = 2
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_log8o")
+layer = 10
+follow_viewport_enabled = true
 script = ExtResource("1_30wqq")
 scMainMenu = ExtResource("2_1fvel")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2140158038]
 visible = false
 z_index = 1
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.090277776
 anchor_top = 0.12654321
@@ -323,11 +317,9 @@ autoplay = &"FadeIn"
 
 [node name="OptionsMenu" parent="." unique_id=259052409 instance=ExtResource("2_30wqq")]
 visible = false
-layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=552814381]
 z_index = 2
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.090277776
 anchor_top = 0.12808642
