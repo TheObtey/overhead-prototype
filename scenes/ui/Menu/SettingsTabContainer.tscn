@@ -4,16 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://cpascxe7scya8" path="res://scenes/ui/Menu/OptionButtons/ResolutionModeButton.tscn" id="2_chtps"]
 [ext_resource type="PackedScene" uid="uid://dym18t4qasbie" path="res://scenes/ui/Menu/OptionButtons/AudioSliderSettings.tscn" id="3_ljxnq"]
 
-[node name="SettingsTabContainer" type="Control" unique_id=1095434011]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SettingsTabContainer" type="CanvasLayer" unique_id=59523048]
 
 [node name="TabContainer" type="TabContainer" parent="." unique_id=1741962752]
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.078125
 anchor_top = 0.06944445

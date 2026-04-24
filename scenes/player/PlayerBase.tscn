@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://hnaugp4tbqmj" path="res://assets/Player/Mesh/OrangeHead.tres" id="11_lv4p0"]
 [ext_resource type="PackedScene" uid="uid://bskvvfpviflor" path="res://scenes/player/PlayerScenes/PlayerAnimated.scn" id="11_sp8x6"]
 [ext_resource type="PackedScene" uid="uid://c6kjhc5f4i5hl" path="res://scenes/player/PlayerScenes/PingScene.tscn" id="13_lv4p0"]
+[ext_resource type="Texture2D" uid="uid://qbr1kn1xdueo" path="res://UI/Assets/Icons/crosshair.png" id="14_8qad4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qeolr"]
 radius = 0.69921875
@@ -119,6 +120,22 @@ grow_horizontal = 2
 theme_override_font_sizes/font_size = 48
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Container" type="MarginContainer" parent="HUD" unique_id=688047105]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Crosshair" type="TextureRect" parent="HUD/Container" unique_id=1097159490]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_8qad4")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="HotbarUI" parent="." unique_id=836705610 instance=ExtResource("8_qh3el")]
 oHotbarSlotScene = ExtResource("9_e2kkn")
