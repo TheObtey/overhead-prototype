@@ -47,5 +47,6 @@ texture_normal = ExtResource("3_iw4fs")
 stretch_mode = 0
 
 [node name="TabContainer" parent="MarginContainer/VBoxContainer" unique_id=1095434011 instance=ExtResource("3_m2dws")]
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

@@ -12,17 +12,17 @@ func _ready() -> void:
 	self.layer = 10
 	uiOptionMenu.sExitMenu.connect(OnExitMenu)
 	self.hide()
-	uiOptionMenu.hide()
-	uiMarginContainer.hide()
+	uiOptionMenu.visible = false
+	uiMarginContainer.visible = false
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func ShowMenu() -> void:
 	get_tree().paused = true
 	bIsOpen = true
 	self.show()
-	uiBg.show()
-	uiOptionMenu.hide()
-	uiMarginContainer.show()
+	uiBg.visible = true
+	uiOptionMenu.visible = true
+	uiMarginContainer.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func HideMenu() -> void:
@@ -44,15 +44,15 @@ func _on_continue_pressed() -> void:
 	HideMenu()
 
 func _on_options_pressed() -> void:
-	uiMarginContainer.hide()
+	uiMarginContainer.visible = false
 	uiOptionMenu.set_process(true)
-	uiOptionMenu.show()
-	uiBg.hide()
+	uiOptionMenu.visible = true
+	uiBg.visible = false
 
 func OnExitMenu() -> void:
-	uiMarginContainer.show()
-	uiOptionMenu.hide()
-	uiBg.show()
+	uiMarginContainer.visible = true
+	uiOptionMenu.visible = false
+	uiBg.visible = true
 
 func _on_save_and_quit_pressed() -> void:
 	HideMenu()
