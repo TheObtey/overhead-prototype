@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://6g44s821vkee"]
+
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="1_t1evo"]
+[ext_resource type="ArrayMesh" uid="uid://cjbr0egegtfh6" path="res://assets/models/hub/All/StaticMeshes/Tongue_alien_R_3.res" id="2_8pcs1"]
+
+[node name="LaTongueBleuDuDaronPrime" unique_id=942434338 instance=ExtResource("1_t1evo")]
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=562112087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024414063, 0.115234375, 0.07595825)
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=476620103]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.55, 0, 0)
+mesh = ExtResource("2_8pcs1")
