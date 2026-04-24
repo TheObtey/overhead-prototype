@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cso7fd7prsutl"]
+
+[ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="1_ogs8p"]
+[ext_resource type="ArrayMesh" uid="uid://cakfc558t3swi" path="res://assets/models/basketball/SM_HUB_Balle.res" id="2_wx7ap"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wx7ap"]
+bounce = 0.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s6dee"]
+
+[node name="Basketball" unique_id=942434338 instance=ExtResource("1_ogs8p")]
+physics_material_override = SubResource("PhysicsMaterial_wx7ap")
+iThrowForce = 12.0
+
+[node name="CollisionShape3D" parent="." index="0" unique_id=562112087]
+transform = Transform3D(0.81512576, 0, 0, 0, 0.81512576, 0, 0, 0, 0.81512576, 0, 0, 0)
+shape = SubResource("SphereShape3D_s6dee")
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=476620103]
+transform = Transform3D(0.004069094, 0, 0, 0, 0.004069094, 0, 0, 0, 0.004069094, 0, 0, 0)
+mesh = ExtResource("2_wx7ap")

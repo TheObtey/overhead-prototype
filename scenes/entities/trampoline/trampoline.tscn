@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bgaftceyusrbe"]
+
+[ext_resource type="PackedScene" uid="uid://775lp7xn4oqa" path="res://scenes/entities/entity_base/EntityBase.tscn" id="1_078nl"]
+[ext_resource type="Script" uid="uid://choll3vjkii6a" path="res://scenes/entities/trampoline/Trampoline.gd" id="2_wptkj"]
+[ext_resource type="PackedScene" uid="uid://bmhlu41m35piv" path="res://assets/models/trampoline/anims/SpringAnim.fbx" id="3_wptkj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ouoca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wptkj"]
+
+[node name="Trampoline" unique_id=108843216 instance=ExtResource("1_078nl")]
+script = ExtResource("2_wptkj")
+iJumpForce = 15.0
+sEntityName = "Trampoline"
+bCanInteract = false
+sPrompt = ""
+
+[node name="Area3D" type="Area3D" parent="." index="2" unique_id=1317314817]
+transform = Transform3D(1.5492368, 0, 0, 0, 0.25674242, 0, 0, 0, 1.4244347, 0, 2.2559407, 0)
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1905340244]
+shape = SubResource("BoxShape3D_ouoca")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="3" unique_id=1644529780]
+freeze = true
+
+[node name="SpringAnim" parent="RigidBody3D" index="0" unique_id=602076003 instance=ExtResource("3_wptkj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="1" unique_id=2083333799]
+transform = Transform3D(1.9494046, 0, 0, 0, 2.2410274, 0, 0, 0, 2.0232599, 0, 0.99137676, 0)
+shape = SubResource("BoxShape3D_wptkj")
