@@ -68,6 +68,7 @@ collide_with_areas = true
 
 [node name="MovementComponent" type="Node" parent="Components" unique_id=174316900]
 script = ExtResource("2_01k7g")
+iJumpVelocity = 7.5
 
 [node name="CameraComponent" type="Node" parent="Components" unique_id=724385409]
 script = ExtResource("3_qeolr")

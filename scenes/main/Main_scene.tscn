@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="8_62vd0"]
 [ext_resource type="PackedScene" uid="uid://cso7fd7prsutl" path="res://scenes/entities/basketball/Basketball.tscn" id="8_sle41"]
 [ext_resource type="Script" uid="uid://bv8undwefqu5g" path="res://scripts/core/LocalGameInitializer.gd" id="9_qjjs1"]
+[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="13_qjjs1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_315v2"]
 albedo_texture = ExtResource("3_cavbx")
@@ -48,6 +49,9 @@ albedo_texture = ExtResource("4_iubea")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m81t0"]
 albedo_texture = ExtResource("4_iubea")
 
+[sub_resource type="Environment" id="Environment_62vd0"]
+background_mode = 2
+
 [node name="Main_Scene" type="Node3D" unique_id=470825545]
 
 [node name="World" type="Node3D" parent="." unique_id=147757341]
@@ -56,7 +60,7 @@ albedo_texture = ExtResource("4_iubea")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1525574e-06, 0.0015068054, -3.606081e-05)
 
 [node name="HubRoom" parent="World" unique_id=311504040 instance=ExtResource("2_ire3g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.650831, 8.192025, 38.366215)
+transform = Transform3D(0.9990582, 0, 0, 0, 0.9990582, 0, 0, 0, 0.9990582, -25.650831, 8.192025, 38.366215)
 
 [node name="corridors" type="Node3D" parent="World" unique_id=1374795633]
 
@@ -219,13 +223,16 @@ transform = Transform3D(8, 0, 0, 0, 7, 0, 0, 0, 18.71, -4.040422, 9.891857, 9.55
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="Trampoline" parent="World" unique_id=108843216 instance=ExtResource("6_62vd0")]
-transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.574718, 12.048911, 27.521008)
+transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.957526, 5.271507, 33.487385)
 
 [node name="BasketballBasket" parent="World" unique_id=1533281731 instance=ExtResource("7_qjjs1")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -26.66738, 11.186701, 36.74253)
+transform = Transform3D(-1.6219592, 0, -1.4179618e-07, 0, 1.6219592, 0, 1.4179618e-07, 0, -1.6219592, -26.66738, 11.186701, 36.74253)
 
 [node name="Basketball" parent="World" unique_id=942434338 instance=ExtResource("8_sle41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0307045, 6.22772, 31.55021)
+
+[node name="Basketball2" parent="World" unique_id=1086907238 instance=ExtResource("8_sle41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.620981, 6.2782707, 36.60339)
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="World" unique_id=1125024250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.507856, 18.901266, 34.356747)
@@ -233,6 +240,22 @@ light_energy = 1.603
 shadow_enabled = true
 omni_range = 31.446
 omni_attenuation = 0.384
+
+[node name="OmniLight3D" type="OmniLight3D" parent="World/DirectionalLight3D" unique_id=246497427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4600315, -11.0460005, -10.848486)
+omni_range = 2702.707
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="World/DirectionalLight3D" unique_id=592341787]
+transform = Transform3D(-0.70875853, 0, -0.7054512, 0, 1, 0, 0.7054512, 0, -0.70875853, 17.470718, -11.0460005, 15.016418)
+omni_range = 2702.707
+omni_attenuation = 0.5
+
+[node name="Trampoline2" parent="World" unique_id=421247531 instance=ExtResource("6_62vd0")]
+transform = Transform3D(0.5097464, 0, 0, 0, 0.5097464, 0, 0, 0, 0.5097464, -16.684177, 12.152002, 50.00718)
+
+[node name="Trampoline3" parent="World" unique_id=1548618243 instance=ExtResource("6_62vd0")]
+transform = Transform3D(-0.5097464, 4.4563443e-08, 0, -4.4563443e-08, -0.5097464, 0, 0, 0, 0.5097464, -16.684177, 21.601633, 50.00718)
 
 [node name="System" type="Node" parent="." unique_id=158583978]
 
@@ -280,7 +303,16 @@ script = ExtResource("9_qjjs1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0282373, 1.0957098, -8.91148)
 
 [node name="Player1" type="Node3D" parent="System/SpawnPoints" unique_id=206353400]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5042243, 0.68240595, -10.367161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.410617, 0.3652103, -3.8586578)
 
 [node name="Player2" type="Node3D" parent="System/SpawnPoints" unique_id=964431750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8853893, 20.382534, -6.901396)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34872723, 17.75925, -2.7302551)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2074062029]
+environment = SubResource("Environment_62vd0")
+
+[node name="EntityBase" parent="." unique_id=1281101576 instance=ExtResource("13_qjjs1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.251193, 5.8170414, 47.487026)
+
+[node name="EntityBase2" parent="." unique_id=1297307543 instance=ExtResource("13_qjjs1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.325104, 5.8170414, 46.99097)
