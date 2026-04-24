@@ -2,14 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://fduhqpmdiyel" path="res://assets/models/hub/All/hub_with_collider.tscn" id="1_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="2_6b3hv"]
-[ext_resource type="PackedScene" uid="uid://dt180n00k0vcj" path="res://scenes/entities/weapons/GravityGunPickup.tscn" id="4_gnv68"]
-[ext_resource type="Script" uid="uid://dujb6mf6s7pdc" path="res://scripts/core/SplitScreenRoot.gd" id="6_6b3hv"]
 [ext_resource type="PackedScene" uid="uid://6g44s821vkee" path="res://assets/models/hub/All/CarriableItems/la_tongue_bleu_du_daron_prime.tscn" id="6_6mqw4"]
 [ext_resource type="PackedScene" uid="uid://cw5d0km0e4aou" path="res://assets/models/hub/All/CarriableItems/DuckInANutshel.tscn" id="6_gnv68"]
 [ext_resource type="PackedScene" uid="uid://d2t5wykwq0c7s" path="res://assets/models/hub/All/CarriableItems/la_tongue_jaune_de_la_madre.tscn" id="7_60ei6"]
-[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="7_e7fb5"]
-[ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scripts/core/LocalPlayerSpawner.gd" id="7_ryri7"]
-[ext_resource type="Script" uid="uid://bv8undwefqu5g" path="res://scripts/core/LocalGameInitializer.gd" id="8_gnv68"]
 
 [node name="HubRoom" type="Node3D" unique_id=311504040]
 
@@ -28,18 +23,8 @@ transform = Transform3D(1.1028616, 0, 0.8237559, 0, 1.3765453, 0, -0.8237559, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -145.08151, -289.1689)
 
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_6b3hv")]
-transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 30.992878, 0)
+transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.684502, 0)
 vecGravityDirection = Vector3(0, 1, 0)
-
-[node name="Steve" parent="World" unique_id=993904583 instance=ExtResource("4_gnv68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.296903, -2.4039028, -8.780334)
-bAutoEquipOnPickup = true
-sPrompt = "Interact with me !"
-
-[node name="Steve2" parent="World" unique_id=108843216 instance=ExtResource("4_gnv68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.153358, -2.4039028, -8.780334)
-bAutoEquipOnPickup = true
-sPrompt = "Interact with me !"
 
 [node name="LaTongueBleuDuDaronPrime" parent="World" unique_id=1250055273 instance=ExtResource("6_6mqw4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.827118, 3.7782254, -13.094173)
@@ -64,55 +49,3 @@ transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.979
 
 [node name="LaTongueJauneDeLaMadre4" parent="World" unique_id=992303230 instance=ExtResource("7_60ei6")]
 transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 23.864809, -2.4917161, -3.3319058)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=611502070]
-transform = Transform3D(-0.9659258, 0, 0.25881907, 0.050094295, 0.98109055, 0.18695442, -0.25392494, 0.19354947, -0.9476607, 0, -19.113367, 0)
-
-[node name="SplitScreenRoot" type="CanvasLayer" parent="." unique_id=1860563330]
-script = ExtResource("6_6b3hv")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SplitScreenRoot" unique_id=1672374313]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="Player1View" type="SubViewportContainer" parent="SplitScreenRoot/VBoxContainer" unique_id=1043491522]
-layout_mode = 2
-size_flags_vertical = 3
-stretch = true
-
-[node name="ViewportP1" type="SubViewport" parent="SplitScreenRoot/VBoxContainer/Player1View" unique_id=1068353759]
-handle_input_locally = false
-size = Vector2i(1920, 540)
-render_target_update_mode = 4
-
-[node name="Player2View" type="SubViewportContainer" parent="SplitScreenRoot/VBoxContainer" unique_id=2131542056]
-layout_mode = 2
-size_flags_vertical = 3
-stretch = true
-
-[node name="ViewportP2" type="SubViewport" parent="SplitScreenRoot/VBoxContainer/Player2View" unique_id=1943663656]
-handle_input_locally = false
-size = Vector2i(1920, 540)
-render_target_update_mode = 4
-
-[node name="LocalPlayerSpawner" type="Node" parent="." unique_id=1404253362]
-script = ExtResource("7_ryri7")
-oPlayerScene = ExtResource("7_e7fb5")
-oSpawnPointsPath = NodePath("../SpawnPoints")
-
-[node name="LocalGameInitializer" type="Node" parent="." unique_id=885550348]
-script = ExtResource("8_gnv68")
-
-[node name="SpawnPoints" type="Node3D" parent="." unique_id=1126512520]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.140769, 2.5715346, -8.889986)
-
-[node name="Player1" type="Node3D" parent="SpawnPoints" unique_id=1464496920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6691084, -1.8429484, 0.68754864)
-
-[node name="Player2" type="Node3D" parent="SpawnPoints" unique_id=1245162738]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.793461, -1.7484508, 0.33867455)

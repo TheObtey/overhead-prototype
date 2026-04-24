@@ -1,9 +1,286 @@
 [gd_scene format=3 uid="uid://birpx0fdoboh7"]
 
 [ext_resource type="PackedScene" uid="uid://b0cvjvxsb6t3g" path="res://scenes/main/Staff_room.tscn" id="1_ohxca"]
+[ext_resource type="PackedScene" uid="uid://bbi1p86eiax4y" path="res://scenes/main/HubRoom.tscn" id="2_ire3g"]
+[ext_resource type="Texture2D" uid="uid://bk2dcpfdjumk3" path="res://assets/texture/staffRoom/Alpha_caution_blanc.png" id="3_cavbx"]
+[ext_resource type="Texture2D" uid="uid://bpug8b80d0lcd" path="res://assets/texture/staffRoom/Alpha_caution_bleu.png" id="4_iubea"]
+[ext_resource type="PackedScene" uid="uid://wqqyby20gai6" path="res://scenes/gravity/GravityField.tscn" id="5_g41md"]
+[ext_resource type="PackedScene" uid="uid://bgaftceyusrbe" path="res://scenes/entities/trampoline/trampoline.tscn" id="6_62vd0"]
+[ext_resource type="Script" uid="uid://dujb6mf6s7pdc" path="res://scripts/core/SplitScreenRoot.gd" id="6_jq872"]
+[ext_resource type="Script" uid="uid://bw32k4l40dtjn" path="res://scripts/core/LocalPlayerSpawner.gd" id="7_5iwx7"]
+[ext_resource type="PackedScene" uid="uid://bxkaimdph1xhb" path="res://scenes/entities/basketball/Basketball_Basket.tscn" id="7_qjjs1"]
+[ext_resource type="PackedScene" uid="uid://cd8a4o661vrla" path="res://scenes/player/PlayerBase.tscn" id="8_62vd0"]
+[ext_resource type="PackedScene" uid="uid://cso7fd7prsutl" path="res://scenes/entities/basketball/Basketball.tscn" id="8_sle41"]
+[ext_resource type="Script" uid="uid://bv8undwefqu5g" path="res://scripts/core/LocalGameInitializer.gd" id="9_qjjs1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_315v2"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_x1pud"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g41md"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq872"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5iwx7"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62vd0"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjjs1"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sle41"]
+albedo_texture = ExtResource("3_cavbx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yupe"]
+albedo_texture = ExtResource("4_iubea")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e13ly"]
+albedo_texture = ExtResource("4_iubea")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2r3m"]
+albedo_texture = ExtResource("4_iubea")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m81t0"]
+albedo_texture = ExtResource("4_iubea")
 
 [node name="Main_Scene" type="Node3D" unique_id=470825545]
 
 [node name="World" type="Node3D" parent="." unique_id=147757341]
 
 [node name="StaffRoom" parent="World" unique_id=19805100 instance=ExtResource("1_ohxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1525574e-06, 0.0015068054, -3.606081e-05)
+
+[node name="HubRoom" parent="World" unique_id=311504040 instance=ExtResource("2_ire3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.650831, 8.192025, 38.366215)
+
+[node name="corridors" type="Node3D" parent="World" unique_id=1374795633]
+
+[node name="corridor_1" type="Node3D" parent="World/corridors" unique_id=1242113271]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=901240890]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 10, -3.872, 5.175, 10.4)
+material_override = SubResource("StandardMaterial3D_315v2")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D" unique_id=1271755112]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D/StaticBody3D" unique_id=1965642628]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=1914403046]
+transform = Transform3D(-5, 8.742278e-08, 0, -4.371139e-07, -1, 0, 0, 0, 10, -3.872, 13.529157, 10.4)
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D2" unique_id=1349645088]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D2/StaticBody3D" unique_id=495627822]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=1839869334]
+transform = Transform3D(-2.1855695e-07, -1, 0, 5, -4.371139e-08, 0, 0, 0, 10, 0.93941855, 8.928838, 10.4)
+material_override = SubResource("StandardMaterial3D_jq872")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D3" unique_id=1986268562]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D3/StaticBody3D" unique_id=592386290]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=434240614]
+transform = Transform3D(-2.1855695e-07, 1, 0, -5, -4.371139e-08, 0, 0, 0, 10, -8.545, 8.929, 10.4)
+material_override = SubResource("StandardMaterial3D_5iwx7")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D4" unique_id=1572939957]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D4/StaticBody3D" unique_id=1523541871]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=256493106]
+transform = Transform3D(9.553427e-15, -4.371139e-08, -1, -5, -4.371139e-08, 0, -2.1855695e-07, 1, -4.371139e-08, -7.634582, 8.929, 1.1163173)
+material_override = SubResource("StandardMaterial3D_62vd0")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D5" unique_id=205691016]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D5/StaticBody3D" unique_id=1003099667]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=571601368]
+transform = Transform3D(9.553427e-15, -4.371139e-08, -1, -5, -4.371139e-08, 0, -2.1855695e-07, 1, -4.371139e-08, 0.06884086, 8.929, 1.1163173)
+material_override = SubResource("StandardMaterial3D_qjjs1")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D6" unique_id=650331874]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D6/StaticBody3D" unique_id=1500802075]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="World/corridors/corridor_1" unique_id=1998434714]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, -5, -1, -4.371139e-08, 0, -4.371139e-08, 1, -2.1855695e-07, -3.5274534, 12.92436, 1.1163173)
+material_override = SubResource("StandardMaterial3D_sle41")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1/MeshInstance3D7" unique_id=363752265]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1/MeshInstance3D7/StaticBody3D" unique_id=575550017]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="corridor_1_vent" type="Node3D" parent="World/corridors" unique_id=354823520]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.398155, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=1194155956]
+transform = Transform3D(3.68, 0, 0, 0, 0.9973869, -0.72246003, 0, 0.072246, 9.973868, -3.872, 7.557913, 10.4)
+material_override = SubResource("StandardMaterial3D_2yupe")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D" unique_id=1428114061]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D/StaticBody3D" unique_id=622530063]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=297696347]
+transform = Transform3D(-4.4, -1.509958e-07, 0, 6.626812e-07, -0.99744076, -0.71497446, 4.7501587e-08, -0.07149745, 9.974407, -3.872, 10.586113, 10.4)
+material_override = SubResource("StandardMaterial3D_e13ly")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D2" unique_id=1841899838]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D2/StaticBody3D" unique_id=1920040127]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=758290728]
+transform = Transform3D(-1.2326612e-07, -1.0000001, 0, 2.8200002, -4.3711392e-08, 0, 0, 0, 10.000002, -1.06301, 8.928837, 10.4)
+material_override = SubResource("StandardMaterial3D_j2r3m")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D3" unique_id=804405066]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D3/StaticBody3D" unique_id=1819777420]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=1879136549]
+transform = Transform3D(-1.18952364e-07, 0.99681795, 0.797118, -2.73, -4.371139e-08, 0, 9.512176e-09, -0.0797118, 9.96818, -5.1419287, 8.929001, 10.4)
+material_override = SubResource("StandardMaterial3D_m81t0")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D4" unique_id=1936214461]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D4/StaticBody3D" unique_id=1085301014]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=632165984]
+transform = Transform3D(4.9391215e-15, -7.688833e-08, -1.759, -2.585, -7.688833e-08, 2.2851703e-22, -1.1299394e-07, 1.759, -7.688833e-08, -6.899893, 8.929001, 0.467)
+material_override = SubResource("StandardMaterial3D_62vd0")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D5" unique_id=1205039995]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D5/StaticBody3D" unique_id=633629234]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=937276278]
+transform = Transform3D(5.493221e-15, -4.371139e-08, -1.63, -2.875, -4.371139e-08, 0, -1.2567024e-07, 1, -7.1249566e-08, -0.70235497, 8.929001, 0.467)
+material_override = SubResource("StandardMaterial3D_qjjs1")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D6" unique_id=659093842]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D6/StaticBody3D" unique_id=1147123842]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=717038019]
+transform = Transform3D(3.8041745e-15, -4.371139e-08, -3.4, -1.991, -4.371139e-08, 5.759824e-22, -8.702938e-08, 1, -1.4861872e-07, -3.5274534, 13.003706, 0.46748877)
+material_override = SubResource("StandardMaterial3D_sle41")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D7" unique_id=1958632450]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D7/StaticBody3D" unique_id=1054827860]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="World/corridors/corridor_1_vent" unique_id=121180105]
+transform = Transform3D(3.8041745e-15, -4.371139e-08, -3.85, -1.991, -4.371139e-08, 6.5221535e-22, -8.702938e-08, 1, -1.6828884e-07, -3.5274534, 6.329212, 0.46748877)
+material_override = SubResource("StandardMaterial3D_sle41")
+mesh = SubResource("PlaneMesh_x1pud")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/corridors/corridor_1_vent/MeshInstance3D8" unique_id=304524449]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/corridors/corridor_1_vent/MeshInstance3D8/StaticBody3D" unique_id=280271223]
+shape = SubResource("ConcavePolygonShape3D_g41md")
+
+[node name="GravityField" parent="World/corridors/corridor_1_vent" unique_id=1949901627 instance=ExtResource("5_g41md")]
+transform = Transform3D(8, 0, 0, 0, 7, 0, 0, 0, 18.71, -4.040422, 9.891857, 9.550713)
+vecGravityDirection = Vector3(0, 1, 0)
+
+[node name="Trampoline" parent="World" unique_id=108843216 instance=ExtResource("6_62vd0")]
+transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.574718, 5.287006, 32.935497)
+
+[node name="BasketballBasket" parent="World" unique_id=1533281731 instance=ExtResource("7_qjjs1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.194929, 10.963825, 45.76211)
+
+[node name="Basketball" parent="World" unique_id=942434338 instance=ExtResource("8_sle41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0307045, 6.22772, 31.55021)
+
+[node name="DirectionalLight3D" type="OmniLight3D" parent="World" unique_id=1125024250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.507856, 23.193089, 34.356747)
+light_energy = 1.603
+shadow_enabled = true
+omni_range = 31.446
+omni_attenuation = 0.384
+
+[node name="System" type="Node" parent="." unique_id=158583978]
+
+[node name="SplitScreenRoot" type="CanvasLayer" parent="System" unique_id=1798849694]
+script = ExtResource("6_jq872")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="System/SplitScreenRoot" unique_id=1393799449]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Player1View" type="SubViewportContainer" parent="System/SplitScreenRoot/VBoxContainer" unique_id=918596009]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="ViewportP1" type="SubViewport" parent="System/SplitScreenRoot/VBoxContainer/Player1View" unique_id=321568524]
+handle_input_locally = false
+size = Vector2i(1920, 540)
+render_target_update_mode = 4
+
+[node name="Player2View" type="SubViewportContainer" parent="System/SplitScreenRoot/VBoxContainer" unique_id=308948255]
+layout_mode = 2
+size_flags_vertical = 3
+stretch = true
+
+[node name="ViewportP2" type="SubViewport" parent="System/SplitScreenRoot/VBoxContainer/Player2View" unique_id=1682249580]
+handle_input_locally = false
+size = Vector2i(1920, 540)
+render_target_update_mode = 4
+
+[node name="LocalPlayerSpawner" type="Node" parent="System" unique_id=540845632]
+script = ExtResource("7_5iwx7")
+oPlayerScene = ExtResource("8_62vd0")
+oSpawnPointsPath = NodePath("../SpawnPoints")
+
+[node name="LocalGameInitializer" type="Node" parent="System" unique_id=1374182849]
+script = ExtResource("9_qjjs1")
+
+[node name="SpawnPoints" type="Node3D" parent="System" unique_id=2087235297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0282373, 1.0957098, -8.91148)
+
+[node name="Player1" type="Node3D" parent="System/SpawnPoints" unique_id=206353400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5042243, 0.68240595, -10.367161)
+
+[node name="Player2" type="Node3D" parent="System/SpawnPoints" unique_id=964431750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8853893, 20.382534, -6.901396)
