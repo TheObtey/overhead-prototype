@@ -64,7 +64,7 @@ static func SetCamPitch(iPitch : float,iPlayerID : int) -> void :
 	pass
 
 func SwitchDisplayedHand(iPlayerID: int) -> void:
-	match AnimationHandler.bHasGun:
+	match AnimationHandler.bHasGun[iPlayerID]:
 		true:
 			bIsGunDisplayed[iPlayerID] = true
 			oGunPart1.visible = true
