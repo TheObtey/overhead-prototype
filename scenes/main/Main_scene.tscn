@@ -219,7 +219,7 @@ transform = Transform3D(8, 0, 0, 0, 7, 0, 0, 0, 18.71, -4.040422, 9.891857, 9.55
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="Trampoline" parent="World" unique_id=108843216 instance=ExtResource("6_62vd0")]
-transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.574718, 5.287006, 32.935497)
+transform = Transform3D(0.33054486, 0, 0, 0, 0.33054486, 0, 0, 0, 0.33054486, -15.574718, 12.048911, 27.521008)
 
 [node name="BasketballBasket" parent="World" unique_id=1533281731 instance=ExtResource("7_qjjs1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.194929, 10.963825, 45.76211)
@@ -228,7 +228,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0307045, 6.22772, 31.55021)
 
 [node name="DirectionalLight3D" type="OmniLight3D" parent="World" unique_id=1125024250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.507856, 23.193089, 34.356747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.507856, 18.901266, 34.356747)
 light_energy = 1.603
 shadow_enabled = true
 omni_range = 31.446
