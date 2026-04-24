@@ -2,7 +2,7 @@ extends Control
 
 @onready var uiOptionMenu = $OptionsMenu as OptionsMenu
 @onready var uiMarginContainer = $MarginContainer as MarginContainer
-@onready var uiCrosshair = $MarginContainer/Crosshair as ColorRect
+@onready var uiCrosshair = $MarginContainer/Crosshair as TextureRect
 @onready var uiBg = $ColorRect as ColorRect
 @export var scMainMenu : PackedScene
 
