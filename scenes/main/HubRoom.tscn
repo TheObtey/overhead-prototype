@@ -11,7 +11,7 @@
 
 [node name="HubRoom" type="Node3D" unique_id=311504040]
 
-[node name="World" type="Node" parent="." unique_id=342419448]
+[node name="World" type="Node3D" parent="." unique_id=1489671301]
 
 [node name="GravityField" parent="World" unique_id=1949901627 instance=ExtResource("2_6b3hv")]
 transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.243055, 0)
