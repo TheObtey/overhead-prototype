@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cw5d0km0e4aou"]
+
+[ext_resource type="Script" uid="uid://bl4xkhglhomdp" path="res://scenes/entities/carriable_entity/CarriableEntity.gd" id="1_g0eux"]
+[ext_resource type="ArrayMesh" uid="uid://bs02v3d4l5qu4" path="res://assets/models/hub/All/StaticMeshes/SM_Duck_textured3.res" id="1_ygplg"]
+[ext_resource type="Script" uid="uid://pn21fc8tw0xq" path="res://scenes/entities/components/RigidGravityApplierComponent.gd" id="2_g0eux"]
+[ext_resource type="Script" uid="uid://bo3acvvc7cmbq" path="res://scenes/player/components/GravityReceiverComponent.gd" id="3_bicwe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g0eux"]
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g0eux"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0eux"]
+size = Vector3(0.38476563, 0.88879395, 0.27978516)
+
+[node name="ElMonstro" type="RigidBody3D" unique_id=1421029024]
+physics_material_override = SubResource("PhysicsMaterial_g0eux")
+script = ExtResource("1_g0eux")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=916220499]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_ygplg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=779274885]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.4908546, 0.8108253, 0)
+shape = SubResource("SphereShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1410305789]
+transform = Transform3D(0.56240875, 0.8698175, 3.8020932e-08, 0, -4.5276348e-08, 1.0358021, 0.8698175, -0.56240875, -2.4583667e-08, 1.1442357, 0.28952733, 0.7098958)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1726494880]
+transform = Transform3D(-0.054444384, 1.0343704, 4.521376e-08, 1.846325e-15, -4.527635e-08, 1.0358021, 1.0343704, 0.054444384, 2.379841e-09, 0.5658202, 0.28952733, 0.86777884)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=38854919]
+transform = Transform3D(-0.63294894, 0.81991583, 3.5839655e-08, 2.0397502e-15, -4.5276355e-08, 1.0358021, 0.81991583, 0.63294894, 2.7667076e-08, -0.10223764, 0.28952733, 0.5577237)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1960635722]
+transform = Transform3D(-1.0343552, 0.05473329, 2.392463e-09, 5.8328716e-16, -4.5276355e-08, 1.0358021, 0.05473329, 1.0343552, 4.52131e-08, -0.29538018, 0.28952733, -0.06374359)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=653951168]
+transform = Transform3D(-0.7550427, -0.70908177, -3.099495e-08, 5.8328716e-16, -4.5276355e-08, 1.0358021, -0.70908177, 0.7550427, 3.3003957e-08, 0.0368495, 0.28952733, -0.66846824)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=9795848]
+transform = Transform3D(0.18230367, -1.0196332, -4.456958e-08, 5.8328716e-16, -4.5276355e-08, 1.0358021, -1.0196332, -0.18230367, -7.968755e-09, 0.7702107, 0.28952733, -0.8152025)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=49700089]
+transform = Transform3D(0.86891335, -0.56380475, -2.4644677e-08, -6.4385615e-17, -4.527635e-08, 1.0358021, -0.56380475, -0.86891335, -3.798141e-08, 1.4473865, 0.29572293, -0.43202347)
+shape = SubResource("BoxShape3D_g0eux")
+debug_fill = false
+
+[node name="Components" type="Node" parent="." unique_id=2020390108]
+
+[node name="RigidGravityApplierComponent" type="Node" parent="Components" unique_id=44182618]
+script = ExtResource("2_g0eux")
+
+[node name="GravityReceiverComponent" type="Node" parent="Components" unique_id=747055396]
+script = ExtResource("3_bicwe")
+pGravityApplierPath = NodePath("../RigidGravityApplierComponent")
