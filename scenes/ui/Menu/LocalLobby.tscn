@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://b47y4i6y8oqd1" path="res://theme/OverHeadTheme.tres" id="1_s4m2p"]
 [ext_resource type="Texture2D" uid="uid://64wmg74455v8" path="res://UI/Assets/Icons/bob.png" id="2_d6kfv"]
 [ext_resource type="Texture2D" uid="uid://cos4vpl8gpxdg" path="res://UI/Assets/Icons/bib.png" id="3_366lc"]
-[ext_resource type="PackedScene" uid="uid://dw1lxdkpmok8y" path="res://scenes/main/KorayTestRoom.tscn" id="3_ogquj"]
+[ext_resource type="PackedScene" uid="uid://bbi1p86eiax4y" path="res://scenes/main/HubRoom.tscn" id="3_ogquj"]
 [ext_resource type="FontFile" uid="uid://c7kamib38jhyh" path="res://UI/Assets/Fonts/FuzzyBubbles-Bold.ttf" id="5_ogquj"]
 
 [sub_resource type="Animation" id="Animation_2ysvc"]
