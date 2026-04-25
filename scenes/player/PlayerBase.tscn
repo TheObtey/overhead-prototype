@@ -47,8 +47,11 @@ transform = Transform3D(1, 0, 0, 0, 0.99998766, -0.0049741575, 0, 0.004974157, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49021322, -0.41524744, -0.6513777)
 
 [node name="TextureRect" type="TextureRect" parent="CameraRoot" unique_id=2134652159]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_ft5sv")
 
 [node name="SubViewport" type="SubViewport" parent="CameraRoot" unique_id=741975438]

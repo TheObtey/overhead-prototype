@@ -27,25 +27,25 @@ transform = Transform3D(60, 0, 0, 0, 7, 0, 0, 0, 40, 0, 12.684502, 0)
 vecGravityDirection = Vector3(0, 1, 0)
 
 [node name="LaTongueBleuDuDaronPrime" parent="World" unique_id=1250055273 instance=ExtResource("6_6mqw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.827118, 3.7782254, -13.094173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.827118, 3.8328102, -13.094173)
 
 [node name="LaTongueBleuDuDaronPrime2" parent="World" unique_id=2126882646 instance=ExtResource("6_6mqw4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.309742, 3.778225, -12.219342)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.309742, 3.84722, -12.219342)
 
 [node name="LaTongueBleuDuDaronPrime3" parent="World" unique_id=698853287 instance=ExtResource("6_6mqw4")]
-transform = Transform3D(-0.020924991, 0, 0.9997811, 0, 1, 0, -0.9997811, 0, -0.020924991, 11.901885, -2.8871355, -6.958206)
+transform = Transform3D(-0.020924991, 0, 0.9997811, 0, 1, 0, -0.9997811, 0, -0.020924991, 11.901885, -2.897319, -6.958206)
 
 [node name="LaTongueBleuDuDaronPrime4" parent="World" unique_id=1889651737 instance=ExtResource("6_6mqw4")]
-transform = Transform3D(-0.020924991, 0, 0.9997811, 0, 1, 0, -0.9997811, 0, -0.020924991, 22.81631, -2.887135, 0.7197232)
+transform = Transform3D(-0.020924991, 0, 0.9997811, 0, 1, 0, -0.9997811, 0, -0.020924991, 22.81631, -2.904092, 0.7197232)
 
 [node name="LaTongueJauneDeLaMadre" parent="World" unique_id=606507805 instance=ExtResource("7_60ei6")]
-transform = Transform3D(0.35613465, 0, 0.93443465, 0, 1, 0, -0.93443465, 0, 0.35613465, 14.711773, 3.7782254, -11.979448)
+transform = Transform3D(0.35613465, 0, 0.93443465, 0, 1, 0, -0.93443465, 0, 0.35613465, 14.711773, 3.7979968, -11.979448)
 
 [node name="LaTongueJauneDeLaMadre2" parent="World" unique_id=1965861599 instance=ExtResource("7_60ei6")]
-transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 14.711773, -2.2091284, -11.979448)
+transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 14.711773, -2.8873627, -11.979448)
 
 [node name="LaTongueJauneDeLaMadre3" parent="World" unique_id=1811426075 instance=ExtResource("7_60ei6")]
-transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 7.502762, -2.2091284, -4.0788517)
+transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 7.502762, -2.8584645, -4.0788517)
 
 [node name="LaTongueJauneDeLaMadre4" parent="World" unique_id=992303230 instance=ExtResource("7_60ei6")]
-transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 23.864809, -2.4917161, -3.3319058)
+transform = Transform3D(0.9792865, 0, -0.20247966, 0, 1, 0, 0.20247966, 0, 0.9792865, 23.864809, -2.9053004, -3.3319058)

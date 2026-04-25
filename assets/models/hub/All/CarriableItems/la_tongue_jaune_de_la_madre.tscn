@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://d2t5wykwq0c7s"]
 
 [ext_resource type="PackedScene" uid="uid://bexqq70pwxkyp" path="res://scenes/entities/carriable_entity/CarriableEntity.tscn" id="1_7ny87"]
-[ext_resource type="ArrayMesh" uid="uid://b1lo6lv2ohdcx" path="res://assets/models/hub/All/StaticMeshes/Tongue_alien_L_2.res" id="2_qiftu"]
+[ext_resource type="ArrayMesh" uid="uid://6mxa6hjqrixw" path="res://assets/models/hub/All/StaticMeshes/Tongue_alien_L_2.res" id="2_qiftu"]
 
 [node name="LaTongueJauneDeLaMadre" unique_id=942434338 instance=ExtResource("1_7ny87")]
+iThrowForce = 100.0
 
 [node name="CollisionShape3D" parent="." index="0" unique_id=562112087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13134766, 0.08178711)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021850586, 0.13220215, 0.0703125)
 
 [node name="MeshInstance3D" parent="." index="1" unique_id=476620103]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.6068243, 0, 0)

@@ -278,7 +278,7 @@ stretch = true
 
 [node name="ViewportP1" type="SubViewport" parent="System/SplitScreenRoot/VBoxContainer/Player1View" unique_id=321568524]
 handle_input_locally = false
-size = Vector2i(1920, 540)
+size = Vector2i(3840, 1080)
 render_target_update_mode = 4
 
 [node name="Player2View" type="SubViewportContainer" parent="System/SplitScreenRoot/VBoxContainer" unique_id=308948255]
@@ -288,7 +288,7 @@ stretch = true
 
 [node name="ViewportP2" type="SubViewport" parent="System/SplitScreenRoot/VBoxContainer/Player2View" unique_id=1682249580]
 handle_input_locally = false
-size = Vector2i(1920, 540)
+size = Vector2i(3840, 1080)
 render_target_update_mode = 4
 
 [node name="LocalPlayerSpawner" type="Node" parent="System" unique_id=540845632]
